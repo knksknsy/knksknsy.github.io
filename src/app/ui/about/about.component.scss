@@ -2,6 +2,15 @@
 @import "~bootstrap/scss/bootstrap-grid.scss";
 
 @include media-breakpoint-down(sm) {
+    .info {
+        .name {
+            font-size: 3vw !important;
+            text-align: center;
+        }
+        .degree {
+            text-align: center;
+        }
+    }
     .photo {
         text-align: center;
         .img-fluid {
@@ -27,6 +36,7 @@
 }
 
 .name {
+    text-align: right;
     h1 {
         font-family: LatoWebBold;
         font-size: 4.5em !important;
