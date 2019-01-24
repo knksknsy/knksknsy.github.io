@@ -6,8 +6,13 @@
         width: 100% !important;
         height: 100% !important;
     }
-    .right-container {
-        padding-top: 1.5rem !important;
+}
+
+@include media-breakpoint-down(sm) {
+    .skills {
+        .main-container {
+            flex-direction: column-reverse;
+        }
     }
 }
 
@@ -74,13 +79,11 @@ div[size="A4"] {
     width: 100%;
     height: calc(90% - 3em);
     margin: 0;
+    padding-top: 1.5rem !important;
 }
 
 .left-container {
     justify-content: flex-start;
-    .left-box:last-of-type {
-        margin-bottom: 0;
-    }
 }
 
 .right-container {
