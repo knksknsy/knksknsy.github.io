@@ -21,6 +21,7 @@
               "src/favicon.ico"
             ],
             "styles": [
+              "src/assets/animate.css",
               "src/styles.scss",
               "src/assets/lato/latofonts.css",
               "src/assets/lato/latostyle.css"

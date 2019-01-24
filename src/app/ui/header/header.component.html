@@ -1,25 +1,18 @@
 <div class="wrapper">
-    <nav class="navbar navbar-dark mb-5">
-        <a class="navbar-brand" href="/">About Me</a>
-        <div class="navbar-expand mr-auto">
+    <nav class="navbar fixed-top navbar-dark mb-5">
+        <a class="navbar-brand" routerLink="/">{{ 'about_me' | translate}}</a>
+        <div class="navbar-expand ml-auto d-flex">
             <div class="navbar-nav">
-                <a class="nav-item nav-link" href="#">CV</a>
-                <a class="nav-item nav-link" href="#">Projects</a>
+                <a class="nav-item nav-link" routerLink="/cv/">{{ 'cv' | translate}}</a>
+                <span class="nav-item nav-link disabled">|</span>
+                <a class="nav-item nav-link" routerLink="/projects/">{{ 'projects' | translate}}</a>
             </div>
-        </div>
-        <div class="navbar-expand ml-auto navbar-nav">
             <div class="navbar-nav">
-                <a class="nav-item nav-link" href="https://github.com/Dschengis" target="_blank">
-                    <i class="fa fa-github"></i>
-                </a>
-                <a class="nav-item nav-link" href="https://youtube.com" target="_blank">
-                    <i class="fa fa-xing"></i>
-                </a>
-                <a class="nav-item nav-link" href="https://youtube.com" target="_blank">
-                    <i class="fa fa-linkedin"></i>
-                </a>
+                <button class="german btn btn-circle" (click)="translateDE()"></button>
+                <button class="anglais btn btn-circle" (click)="translateEN()"></button>
             </div>
         </div>
     </nav>
     <div class="frosting"></div>
+
 </div>

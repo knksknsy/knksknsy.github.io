@@ -1,0 +1,65 @@
+@import '~variables.scss';
+@import "~bootstrap/scss/bootstrap-grid.scss";
+
+@include media-breakpoint-down(sm) {
+    .photo {
+        text-align: center;
+        .img-fluid {
+            width: 50%;
+            height: auto;
+        }
+    }
+}
+
+.container-fluid {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    // height: 100%;
+    text-shadow: 2px 2px 2px rgba(0,0,0,0.5);
+}
+
+.info {
+    margin-bottom: 10em !important;
+}
+
+.name {
+    h1 {
+        font-family: LatoWebBold;
+        font-size: 6em !important;
+    }
+    span {
+        font-family: LatoWebLight;
+    }
+}
+
+.degree {
+    color: white !important;
+    font-family: LatoWebHairline;
+    font-size: 2em !important;
+}
+
+.img-fluid {
+    border-radius: 50%;
+    border: 5px solid white;
+    box-shadow: 5px 5px 15px 0 rgba(0,0,0,0.5);
+}
+
+.social {
+    a {
+        font-size: 2.5em;
+        color: white !important;
+    }
+}
+
+.discover {
+    color: white !important;
+    .fa {
+        font-size: 6em;
+        color: white !important;
+    }
+    a {
+        font-size: 2.5em;
+        color: white !important;
+    }
+}

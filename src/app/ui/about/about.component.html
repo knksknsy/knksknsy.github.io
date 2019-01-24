@@ -1,3 +1,35 @@
-<p>
-  about works!
-</p>
+<div class="container-fluid">
+    <div class="info row mb-5">
+        <div class="col-md-7 px-5 d-flex flex-column justify-content-center align-items-sm-start align-items-lg-end">
+            <div class="name row">
+                <h1><span>Kaan</span> Keskinsoy</h1>
+            </div>
+            <div class="degree row">
+                <h2>{{ 'degree' | translate }}</h2>
+            </div>
+        </div>
+        <div class="photo col-md-3 d-md-flex align-items-md-center">
+            <img class="img-fluid" src="/assets/images/profile-image.jpg">
+        </div>
+        <div class="social col-md-2 d-flex flex-md-column flex-xs-row justify-content-around">
+            <a href="https://github.com/knksknsy" target="_blank">
+                <i class="fa fa-github"></i>
+            </a>
+            <a href="https://github.com/knksknsy" target="_blank">
+                <i class="fa fa-xing"></i>
+            </a>
+            <a href="https://github.com/knksknsy" target="_blank">
+                <i class="fa fa-linkedin"></i>
+            </a>
+        </div>
+    </div>
+
+    <div class="discover row mb-5 d-flex flex-row-reverse align-items-center justify-content-start">
+        <div class="col-3 d-flex ml-4 fa fa-angle-left"></div>
+        <a class="m-0" routerLink="/cv/">{{ 'cv_long' | translate }}</a>
+    </div>
+    <div class="discover row mb-5 d-flex flex-row align-items-center justify-content-start">
+        <div class="col-3 d-flex mr-4 fa fa-angle-right justify-content-end"></div>
+        <a class="m-0" routerLink="/projects/">{{ 'discover' | translate }}</a>
+    </div>
+</div>
