@@ -1,18 +1,24 @@
 <div class="wrapper">
-    <nav class="navbar fixed-top navbar-dark mb-5">
+    <nav class="navbar fixed-top navbar-expand-md navbar-dark mb-5">
         <a class="navbar-brand" routerLink="/">{{ 'about_me' | translate}}</a>
-        <div class="navbar-expand ml-auto d-flex">
-            <div class="navbar-nav">
-                <a class="nav-item nav-link" routerLink="/cv/">{{ 'cv' | translate}}</a>
-                <span class="nav-item nav-link disabled">|</span>
-                <a class="nav-item nav-link" routerLink="/projects/">{{ 'projects' | translate}}</a>
-            </div>
-            <div class="navbar-nav">
-                <button class="german btn btn-circle" (click)="translateDE()"></button>
-                <button class="anglais btn btn-circle" (click)="translateEN()"></button>
+
+        <button class="navbar-toggler" type="button" (click)="toggleNavbar()">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+
+        <div class="collapse navbar-collapse" [ngClass]="{ 'show': navbarOpen }">
+            <div class="navbar-nav ml-auto">
+                <div class="navbar-nav align-items-end">
+                    <a class="nav-item nav-link" routerLink="/cv/">{{ 'cv' | translate}}</a>
+                    <a class="nav-item nav-link" routerLink="/projects/">{{ 'projects' | translate}}</a>
+                </div>
+                <div class="navbar-nav d-flex flex-row justify-content-end">
+                    <button class="german btn btn-circle" (click)="translateDE()"></button>
+                    <button class="anglais btn btn-circle" (click)="translateEN()"></button>
+                </div>
             </div>
         </div>
     </nav>
-    <div class="frosting"></div>
-
+    <div class="frosting" [ngClass]="{ 'show': navbarOpen }"></div>
 </div>
