@@ -21,10 +21,10 @@
               "src/favicon.ico"
             ],
             "styles": [
-              "src/assets/animate.css",
-              "src/styles.scss",
-              "src/assets/lato/latofonts.css",
-              "src/assets/lato/latostyle.css"
+              "src/assets/css/animate.css",
+              "src/assets/css/latofonts.css",
+              "src/assets/css/latostyle.css",
+              "src/styles.scss"
             ],
             "scripts": []
           },
