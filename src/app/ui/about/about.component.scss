@@ -9,6 +9,9 @@
             height: auto;
         }
     }
+    .social {
+        margin-top: $container-padding;
+    }
 }
 
 .container-fluid {
@@ -49,6 +52,9 @@
     a {
         font-size: 2.5em;
         color: white !important;
+    }
+    a:hover {
+        text-decoration: none;
     }
 }
 
