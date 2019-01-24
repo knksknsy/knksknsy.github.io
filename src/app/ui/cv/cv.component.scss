@@ -1,8 +1,23 @@
 @import '~variables.scss';
+@import "~bootstrap/scss/bootstrap-grid.scss";
+
+@include media-breakpoint-down(md) {
+    div[size="A4"] {
+        width: 100% !important;
+        height: 100% !important;
+    }
+    .right-container {
+        padding-top: 1.5rem !important;
+    }
+}
+
+@include media-breakpoint-down(sm) {
+    .image-container {
+        width: 75%;
+    }
+}
 
 .container-fluid {
-    // background: white;
-    // margin: 1em auto;
     margin: 0;
     padding: 0;
 }
@@ -23,22 +38,6 @@ div[size="A4"] {
     }
 }
 
-.flex-row {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-}
-
-.flex-col {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-}
-
-.flex-sb {
-    justify-content: space-between;
-}
-
 .header-container {
     justify-content: center;
     align-items: center;
@@ -51,7 +50,6 @@ div[size="A4"] {
     font-family: LatoWebLight;
     h1 {
         margin: 0;
-        margin-bottom: 0.25em;
         font-size: 4em;
         span {
             font-family: LatoWebBold;
@@ -59,6 +57,7 @@ div[size="A4"] {
     }
     p {
         margin: 0;
+        font-family: LatoWebHairline;
         font-size: 1.5em;
     }
 }
@@ -67,12 +66,11 @@ div[size="A4"] {
     justify-content: center;
     width: 100%;
     height: calc(90% - 3em);
+    margin: 0;
 }
 
 .left-container {
     justify-content: flex-start;
-    width: 34%;
-    margin: 2.5em 2.5em 2.5em 2.5em;
     .left-box:last-of-type {
         margin-bottom: 0;
     }
@@ -80,32 +78,18 @@ div[size="A4"] {
 
 .right-container {
     justify-content: flex-start;
-    width: 66%;
-    margin: 2.5em 2.5em 2.5em 0;
 }
 
 .image-container {
-    position: relative;
-    width: 250px;
-    height: 250px;
-    overflow: hidden;
     margin-bottom: 2.5em;
     box-shadow: 10px 10px 35px -10px rgba(0,0,0,0.25);
-    border-top: 10px solid white;
-    border-bottom: 10px solid white;
-    img {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        width: 90%;
-        height: auto;
-    }
+    border: 10px solid white;
 }
 
 .left-box {
     margin-bottom: 2.5em;
     h2 {
-        font-family: LatoWebBold;
+        font-family: LatoWeb;
         font-size: 16pt;
         margin: 0;
     }
@@ -119,7 +103,7 @@ div[size="A4"] {
 .right-box {
     margin-bottom: 1.5em;
     h2 {
-        font-family: LatoWebBold;
+        font-family: LatoWeb;
         font-size: 16pt;
         margin: 0;
     }
@@ -142,7 +126,6 @@ div[size="A4"] {
                     height: 3px;
                     background-color: #0066CC;
                     margin-right: -5px;
-                    //box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.25);
                 }
             }
             .location {
@@ -151,12 +134,12 @@ div[size="A4"] {
                 align-items: flex-start;
                 width: 98%;
                 h3 {
-                    font-family: LatoWebBlack;
+                    font-family: LatoWeb;
                     font-size: 12pt;
                     color: #0066CC;
                     margin: 0;
                     span {
-                        font-family: LatoWebBold;
+                        font-family: LatoWebLight;
                     }
                 }
                 p {
@@ -178,7 +161,6 @@ div[size="A4"] {
                     width: 3px;
                     height: 100%;
                     background-color: #0066CC;
-                    //box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.25);
                 }
             }
             .three-line {
@@ -199,7 +181,6 @@ div[size="A4"] {
                 }
                 .tech {
                     margin: 0;
-                    margin-top: 0.5em;
                 }
             }
         }
@@ -272,8 +253,4 @@ div[size="A4"] {
         content: ".";
         display: inline-block;
     }
-}
-
-.last-row {
-    margin-top: 0;
 }
