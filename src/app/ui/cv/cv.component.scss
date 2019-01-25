@@ -16,6 +16,27 @@
     }
 }
 
+.btn-circle {
+    margin-left: 10px;
+    border-radius: 50%;
+    height: 35px;
+    width: 35px;
+    border: 2px solid white;
+}
+
+.print-btn {
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    bottom: $footer-height + 20px;
+    right: 20px;
+    display: flex;
+    background-color: #505050;
+    color: white;
+    font-size: 2em;
+    justify-content: center;
+}
+
 .container-fluid {
     margin: 0;
     padding: 0;
