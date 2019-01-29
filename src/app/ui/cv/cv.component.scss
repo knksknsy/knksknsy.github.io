@@ -6,6 +6,9 @@
         width: 100% !important;
         height: 100% !important;
     }
+    .print-btn {
+        display: none !important;
+    }
 }
 
 @include media-breakpoint-down(sm) {
@@ -52,6 +55,15 @@
         text-decoration: none;
         color: #0066CC;
     }
+}
+.contact-alt {
+    font-family: LatoWeb;
+    font-size: 10pt;
+    margin: 0;
+}
+
+.hide {
+    display: none !important;
 }
 
 div[size="A4"] {  

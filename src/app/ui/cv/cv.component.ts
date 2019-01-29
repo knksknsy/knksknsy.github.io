@@ -16,7 +16,14 @@ export class CVComponent implements OnInit {
   }
 
   printCV() {
-    var data = document.getElementsByClassName('print-section');
+    let data = Object.assign({}, document.getElementsByClassName('print-section'));
+
+    let contactElement = document.getElementsByClassName('contact')[0];
+    contactElement.className += ' hide';
+
+    let contactAltElement = document.getElementsByClassName('contact-alt')[0];
+    contactAltElement.className = contactAltElement.className.replace(' hide', '');
+
     html2canvas(data[0]).then(canvas => {
       const contentDataURL = canvas.toDataURL('image/jpeg', 1.0);
       let pdf = new jspdf('p', 'mm', 'a4');
@@ -29,6 +36,9 @@ export class CVComponent implements OnInit {
           pdf.addPage('a4', 'p');
           pdf.addImage(contentDataURL, 'JPEG', 0, 0, 210, 297);
           pdf.save('Lebenslauf_Kaan_Keskinsoy.pdf');
+
+          contactElement.className = contactElement.className.replace(' hide', '');
+          contactAltElement.className += ' hide';
         });
       });
   }
