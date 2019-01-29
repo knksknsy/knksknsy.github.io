@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
@@ -9,9 +10,24 @@ import { TranslateService } from '@ngx-translate/core';
 export class HeaderComponent implements OnInit {
   navbarOpen = false;
 
-  constructor(public translate: TranslateService) { }
+  constructor(public translate: TranslateService, private router: Router) { }
 
   ngOnInit() {
+  }
+
+  navigateRoute(url: string) {
+    this.router.navigate([url])
+      .then((s) => {
+        if (!s) {
+          if (this.navbarOpen) {
+            this.navbarOpen = !this.navbarOpen
+          }
+        } else {
+          if (this.navbarOpen) {
+            this.navbarOpen = !this.navbarOpen;
+          }
+        }
+      });
   }
 
   toggleNavbar() {

@@ -10,8 +10,8 @@
         <div class="collapse navbar-collapse" [ngClass]="{ 'show': navbarOpen }">
             <div class="navbar-nav ml-auto">
                 <div class="navbar-nav align-items-end">
-                    <a class="nav-item nav-link" routerLink="/cv/">{{ 'cv' | translate}}</a>
-                    <a class="nav-item nav-link" routerLink="/projects/">{{ 'projects' | translate}}</a>
+                    <a class="nav-item nav-link" (click)="navigateRoute('/cv/')">{{ 'cv' | translate}}</a>
+                    <a class="nav-item nav-link" (click)="navigateRoute('/projects/')">{{ 'projects' | translate}}</a>
                 </div>
                 <div class="navbar-nav d-flex flex-row justify-content-end">
                     <button class="german btn btn-circle" (click)="translateDE()"></button>
