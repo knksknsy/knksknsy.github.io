@@ -1,5 +1,8 @@
 <div class="container-fluid">
-	<button class="print-btn btn btn-circle" (click)="printCV()">
+	<div class="print-btn btn btn-circle spinner-grow" role="status" [ngClass]="{'hide': !printing}">
+		<span class="sr-only">Loading...</span>
+	</div>
+	<button class="print-btn btn btn-circle" (click)="printCV()" [ngClass]="{'hide': printing}">
 		<i class="fa fa-print"></i>
 	</button>
 	<div size="A4" class="print-section">

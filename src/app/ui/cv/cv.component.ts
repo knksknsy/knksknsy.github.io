@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ɵgetComponentViewDefinitionFactory } from '@angular/core';
 
-import * as jspdf from 'jspdf';
+import * as jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
 
 @Component({
@@ -10,37 +10,63 @@ import html2canvas from 'html2canvas';
 })
 export class CVComponent implements OnInit {
 
+  private mimeType = 'image/svg+xml';
+  private dimension = { width: 210, height: 297 };
+  private fileName = 'Lebenslauf_Kaan_Keskinsoy.pdf';
+  private pdf: jsPDF;
+  private printSections: HTMLCollectionOf<Element>;
+  private contactIconsElement: Element;
+  private contactTextsElement: Element;
+
+  printing: boolean = false;
+
   constructor() { }
 
   ngOnInit() {
   }
 
   printCV() {
-    let data = Object.assign({}, document.getElementsByClassName('print-section'));
+    this.printing = true;
+    this.printSections = document.getElementsByClassName('print-section');
+    let promises = [];
+    this.pdf = new jsPDF('p', 'mm', 'a4');
+    this.contactIconsElement = document.getElementsByClassName('contact')[0];
+    this.contactTextsElement = document.getElementsByClassName('contact-alt')[0];
 
-    let contactElement = document.getElementsByClassName('contact')[0];
-    contactElement.className += ' hide';
+    for (let i = 0; i < this.printSections.length; i++) {
+      promises.push(html2canvas(this.printSections[i]));
+    }
 
-    let contactAltElement = document.getElementsByClassName('contact-alt')[0];
-    contactAltElement.className = contactAltElement.className.replace(' hide', '');
+    this.hideElement(this.contactIconsElement);
+    this.showElement(this.contactTextsElement);
 
-    html2canvas(data[0]).then(canvas => {
-      const contentDataURL = canvas.toDataURL('image/svg+xml', 1.0);
-      let pdf = new jspdf('p', 'mm', 'a4');
-      pdf.addImage(contentDataURL, 'JPEG', 0, 0, 210, 297);
-      return pdf;
-    })
-      .then(pdf => {
-        html2canvas(data[1]).then(canvas => {
-          const contentDataURL = canvas.toDataURL('image/svg+xml', 1.0);
-          pdf.addPage('a4', 'p');
-          pdf.addImage(contentDataURL, 'JPEG', 0, 0, 210, 297);
-          pdf.save('Lebenslauf_Kaan_Keskinsoy.pdf');
-
-          contactElement.className = contactElement.className.replace(' hide', '');
-          contactAltElement.className += ' hide';
-        });
+    Promise.all(promises)
+      .then((canvases: [HTMLCanvasElement]) => {
+        canvases.map(this.appendToPDF, this);
       });
+  }
+
+  private appendToPDF(canvas: HTMLCanvasElement, index: number) {
+    const contentDataURL = canvas.toDataURL(this.mimeType, 1.0);
+    this.pdf.addImage(contentDataURL, 'PNG', 0, 0, this.dimension.width, this.dimension.height);
+    if (index < this.printSections.length - 1) {
+      this.pdf.addPage('a4', 'p');
+    } else {
+      this.pdf.save(this.fileName)
+      this.showElement(this.contactIconsElement);
+      this.hideElement(this.contactTextsElement);
+      this.printing = false;
+    }
+  }
+
+  private hideElement(element: Element): Element {
+    element.className += ' hide';
+    return element;
+  }
+
+  private showElement(element: Element): Element {
+    element.className = element.className.replace(' hide', '');
+    return element;
   }
 
 }
