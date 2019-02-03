@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
@@ -20,7 +21,7 @@ const appRoutes: Routes = [
   { path: '**', component: AboutComponent }
 ];
 
-export function createTranslateLoader(http: HttpClient) {
+export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
 
@@ -34,12 +35,14 @@ export function createTranslateLoader(http: HttpClient) {
     AboutComponent
   ],
   imports: [
+    BrowserModule,
+    HttpClientModule,
     CommonModule,
     RouterModule.forRoot(appRoutes),
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
-        useFactory: (createTranslateLoader),
+        useFactory: HttpLoaderFactory,
         deps: [HttpClient]
       }
     })
