@@ -7,57 +7,11 @@ html, body {
 }
 
 body {
-    // background-image: url("/assets/images/urban.jpg");
-    // background-image: url(/assets/images/berge.jpg);
     background-image: url(/assets/images/alpen.jpeg);
     background-repeat: no-repeat;
     background-attachment: fixed;
+    background-position: center;
     background-size: cover;
     margin: 0;
     height: 100%;
 }
-
-// .flex-row {
-//     display: flex;
-//     flex-direction: row;
-// }
-
-// .flex-rrow {
-//     display: flex;
-//     flex-direction: row-reverse;
-// }
-
-// .flex-col {
-//     display: flex;
-//     flex-direction: column;
-// }
-
-// .flex-rcol {
-//     display: flex;
-//     flex-direction: column-reverse;
-// }
-
-// .flex-s {
-//     justify-content: flex-start;
-// }
-
-// .flex-e {
-//     justify-content: flex-end;
-// }
-
-// .flex-se {
-//     justify-content: space-evenly;
-// }
-
-// .flex-sb {
-//     justify-content: space-between;
-// }
-
-// .flex-sa {
-//     justify-content: space-around;
-// }
-
-// .flex-c {
-//     justify-content: center;
-// }
-
