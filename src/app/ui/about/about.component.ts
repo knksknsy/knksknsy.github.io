@@ -12,14 +12,14 @@ export class AboutComponent implements OnInit {
   ngOnInit() {
   }
 
-  private imageClicked() {
+  imageClicked() {
     let imageElement = document.getElementById('profile-picture');
     imageElement.className = imageElement.className.replace(' animated flipInY', '');
     imageElement.className += ' animated hinge';
     setTimeout(this.appendImage, 3000);
   }
 
-  private appendImage() {
+  appendImage() {
     let imageElement = document.getElementById('profile-picture');
     imageElement.className = imageElement.className.replace(' hinge', ' flipInY');
   }
