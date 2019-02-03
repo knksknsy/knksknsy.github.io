@@ -1,0 +1,27 @@
+.loading {
+    font-family: LatoWebLight;
+    font-size: 2em;
+    color: white !important;
+}
+
+.loading:after {
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: bottom;
+    -webkit-animation: ellipsis steps(5, end) 1000ms infinite;
+    animation: ellipsis steps(5, end) 1000ms infinite;
+    content: "\2026";
+    width: 0px;
+}
+
+@keyframes ellipsis {
+    to {
+        width: 1.1em;
+    }
+}
+
+@-webkit-keyframes ellipsis {
+    to {
+        width: 1.1em;
+    }
+}

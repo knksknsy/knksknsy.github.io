@@ -1,6 +1,5 @@
 @import '~variables.scss';
 @import "~bootstrap/scss/bootstrap-grid.scss";
-
 @include media-breakpoint-down(md) {
     div[size="A4"] {
         width: 100% !important;
@@ -56,6 +55,7 @@
         color: #0066CC;
     }
 }
+
 .contact-alt {
     font-family: LatoWeb;
     font-size: 10pt;
@@ -66,19 +66,20 @@
     display: none !important;
 }
 
-div[size="A4"] {  
+div[size="A4"] {
     background-color: white;
-    box-shadow: 0 0 0.5cm rgba(0,0,0,0.5);
+    box-shadow: 0 0 0.5cm rgba(0, 0, 0, 0.5);
     margin: 0 auto;
     margin-bottom: $container-padding;
     width: 21cm;
-    height: 29.7cm; 
+    height: 29.7cm;
 }
 
 @media print {
-    body, div[size="A4"] {
-      margin: 0;
-      box-shadow: 0;
+    body,
+    div[size="A4"] {
+        margin: 0;
+        box-shadow: 0;
     }
 }
 
@@ -125,13 +126,13 @@ div[size="A4"] {
 
 .image-container {
     margin-bottom: 2.5em;
-    box-shadow: 10px 10px 35px -10px rgba(0,0,0,0.25);
+    box-shadow: 10px 10px 35px -10px rgba(0, 0, 0, 0.25);
     border: 10px solid white;
-    position:relative;
-    overflow:hidden;
-    padding-bottom:100%;
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 100%;
     img {
-        position:absolute;
+        position: absolute;
     }
 }
 
@@ -145,7 +146,7 @@ div[size="A4"] {
     p {
         font-family: LatoWeb;
         font-size: 10pt;
-        margin: 0;  
+        margin: 0;
     }
 }
 
@@ -247,8 +248,9 @@ div[size="A4"] {
         margin-bottom: 0;
     }
     h3 {
-        font-family: LatoWebBold;
-        font-size: 10pt;   
+        font-family: LatoWeb;
+        font-size: 12pt;
+        color: #0066CC;
     }
     .exp-bar {
         justify-content: space-evenly;
@@ -257,14 +259,14 @@ div[size="A4"] {
             height: 15px;
             background-color: #0066CC;
             margin: 2px 2px 2px 0;
-            box-shadow: inset 2px 2px 10px 0px rgba(0,0,0,0.25);
+            box-shadow: inset 2px 2px 10px 0px rgba(0, 0, 0, 0.25);
         }
         .false {
             width: 16.67%;
             height: 15px;
             background-color: lightgray;
             margin: 2px 2px 2px 0;
-            box-shadow: inset 2px 2px 10px 0px rgba(0,0,0,0.25);
+            box-shadow: inset 2px 2px 10px 0px rgba(0, 0, 0, 0.25);
         }
     }
     .exp-bar :last-child {
@@ -290,7 +292,6 @@ div[size="A4"] {
     }
     li:last-of-type {
         margin-right: 0;
-        
     }
     li:first-of-type::before {
         content: "";
