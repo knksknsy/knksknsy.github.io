@@ -13,9 +13,9 @@
 
 @include media-breakpoint-down(sm) {
     .skills {
-        .main-container {
-            flex-direction: column-reverse;
-        }
+        // .main-container {
+        //     flex-direction: column-reverse;
+        // }
     }
 }
 

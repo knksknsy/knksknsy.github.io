@@ -8,7 +8,7 @@
 	<div size="A4" class="print-section">
 		<div class="d-flex flex-column header-container">
 			<h1>Kaan <span>Keskinsoy</span></h1>
-			<p>Medieninformatik B.Sc.</p>
+			<p>{{ 'degree' | translate }}</p>
 		</div>
 
 		<div class="row pt-4 main-container">
@@ -20,7 +20,7 @@
 				</div>
 
 				<div class="left-box">
-					<h2>Kontakt</h2>
+					<h2>{{ 'cv.contact' | translate }}</h2>
 					<div class="contact d-flex flex-row justify-content-around">
 						<div>
 							<a class="fa fa-envelope" href="mailto:k.keskinsoy@googlemail.com"></a>
@@ -44,22 +44,22 @@
 				</div>
 
 				<div class="left-box">
-					<h2>Sprachen</h2>
-					<p>Deutsch (Muttersprache)</p>
-					<p>Türkisch (Muttersprache)</p>
-					<p>English (fließend)</p>
+					<h2>{{ 'cv.languages.title' | translate }}</h2>
+					<p>{{ 'cv.languages.german' | translate }}</p>
+					<p>{{ 'cv.languages.turkish' | translate }}</p>
+					<p>{{ 'cv.languages.english' | translate }}</p>
 				</div>
 
 				<div class="left-box">
 					<h2>Hobbies</h2>
-					<p>Kraftsport im Fitnessstudio</p>
-					<p>Kochen</p>
+					<p>{{ 'cv.hobbies.weight_training' | translate }}</p>
+					<p>{{ 'cv.hobbies.cooking' | translate }}</p>
 				</div>
 			</div>
 
 			<div class="col-md-8 px-4 d-flex flex-column right-container">
 				<div class="right-box">
-					<h2>Bildungsweg</h2>
+					<h2>{{ 'cv.education.title' | translate }}</h2>
 					<div class="d-flex flex-column content">
 						<div class="d-flex flex-row upper">
 							<div class="d-flex flex-row icon">
@@ -75,9 +75,9 @@
 								<div></div>
 							</div>
 							<div class="d-flex flex-column right-content">
-								<p>Medieninformatik (Bachelor of Science)</p>
-								<p>Abschlussnote: 1,3 (Gesamtdurchschnitt: 1,9)</p>
-								<p>Abschlussarbeit: Android Mobility Detection Library (budo GmbH)</p>
+								<p>{{ 'cv.education.bsc' | translate }}</p>
+								<p>{{ 'cv.education.final_grade' | translate }} {{ 'cv.education.average_grade' | translate }}</p>
+								<p>{{ 'cv.education.thesis' | translate }} Android Mobility Detection Library (budo GmbH)</p>
 							</div>
 						</div>
 					</div>
@@ -97,7 +97,7 @@
 								<div></div>
 							</div>
 							<div class="d-flex flex-column right-content">
-								<p>Informatik (Bachelor of Science)</p>
+								<p>{{ 'cv.education.computer_science' | translate }}</p>
 							</div>
 						</div>
 					</div>
@@ -117,8 +117,8 @@
 								<div></div>
 							</div>
 							<div class="d-flex flex-column right-content">
-								<p>Allgemeine Hochschulreife</p>
-								<p>Profilfach: Informationstechnik</p>
+								<p>{{ 'cv.education.higher_education_qualification' | translate }}</p>
+								<p>{{ 'cv.education.major_subject' | translate }} {{ 'cv.education.information_technology' | translate }}</p>
 							</div>
 						</div>
 					</div>
@@ -137,14 +137,14 @@
 								<div></div>
 							</div>
 							<div class="d-flex flex-column right-content">
-								<p>Mittlere Reife</p>
+								<p>{{ 'cv.education.secondary_education' | translate }}</p>
 							</div>
 						</div>
 					</div>
 				</div>
 
 				<div class="right-box">
-					<h2>Berufserfahrung</h2>
+					<h2>{{ 'cv.work.title' | translate }}</h2>
 
 					<div class="d-flex flex-column content">
 						<div class="d-flex flex-row upper">
@@ -152,8 +152,8 @@
 								<div class="hor-bar"></div>
 							</div>
 							<div class="d-flex flex-row location">
-								<h3>M-Way Solutions GmbH<br /><span>Werkstudent</span><br /><span>Full-Stack
-										Entwicklung</span></h3>
+								<h3>M-Way Solutions GmbH<br /><span>{{ 'cv.work.student_trainee' | translate }}</span><br /><span>{{
+										'cv.work.full_stack_development' | translate }}</span></h3>
 								<div>03/2017 - 03/2018</div>
 							</div>
 						</div>
@@ -162,22 +162,17 @@
 								<div></div>
 							</div>
 							<div class="d-flex flex-column right-content">
-								<p>Entwicklung von Web Applications im Bereich B2E:</p>
+								<p>{{ 'cv.mway.description' | translate }}</p>
 								<ul>
-									<li class="large-text">Frameworkgestützte Entwicklung (client- und serverseitig)</li>
-									<li class="large-text">Entwurf und Umsetzung von responsive User-Interfaces</li>
-									<li class="large-text">Entwicklung und Anbindung von REST-Interfaces</li>
-									<li class="large-text">Entwicklung von Unit- und E2E-Tests</li>
-									<li class="large-text">Entwicklung von CLIs in Node.js</li>
-									<li class="large-text">Deployment, Betrieb und Wartung von Web-Anwendungen</li>
+									<li class="large-text" *ngFor="let task of ('cv.mway.tasks_student_trainee' | translate)">{{task}}</li>
 								</ul>
-								<p>Technologien:</p>
+								<p>{{ 'cv.technologies' | translate }}</p>
 								<ul class="d-flex flex-row languages tech">
 									<li>Angular</li>
 									<li>Ionic</li>
 									<li>TypeScript</li>
 									<li>Node.js</li>
-									<li>Rx.js</li>
+									<li>RxJS</li>
 									<li>SQL</li>
 									<li>Protractor</li>
 									<li>Jasmine</li>
@@ -186,7 +181,7 @@
 								<ul class="d-flex flex-row languages tech">
 									<li>Docker</li>
 									<li>HTML</li>
-									<li>CSS</li>
+									<li>CSS/SCSS</li>
 									<li>JIRA</li>
 									<li>Git</li>
 								</ul>
@@ -200,8 +195,8 @@
 								<div class="hor-bar"></div>
 							</div>
 							<div class="d-flex flex-row location">
-								<h3>M-Way Solutions GmbH<br /><span>Praxissemester</span><br /><span>Web App
-										Entwicklung</span></h3>
+								<h3>M-Way Solutions GmbH<br /><span>{{ 'cv.work.practical_semester' | translate }}</span><br /><span>{{
+										'cv.work.web_app_development' | translate }}</span></h3>
 								<div>09/2016 - 03/2017</div>
 							</div>
 						</div>
@@ -211,21 +206,17 @@
 							</div>
 							<div class="d-flex flex-column right-content">
 								<div class="large-text">
-									<p>Entwicklung von Web Applicationen im Bereich B2E:</p>
+									<p>{{ 'cv.mway.description' | translate }}</p>
 									<ul>
-										<li>Frameworkgestützte clientseitige Entwicklung</li>
-										<li>Entwurf und Umsetzung von responsive User-Interfaces</li>
-										<li>Anbindung von REST-Interfaces</li>
-										<li>Entwicklung von Unit- und E2E-Tests</li>
-										<li>Deployment, Betrieb und Wartung von Web-Anwendungen</li>
+										<li class="large-text" *ngFor="let task of ('cv.mway.tasks_practical_semester' | translate)">{{task}}</li>
 									</ul>
-									<p>Technologien:</p>
+									<p>{{ 'cv.technologies' | translate }}</p>
 									<ul class="d-flex flex-row languages tech">
 										<li>Angular</li>
 										<li>Ionic</li>
 										<li>TypeScript</li>
 										<li>Node.js</li>
-										<li>Rx.js</li>
+										<li>RxJS</li>
 										<li>SQL</li>
 										<li>Protractor</li>
 										<li>Jasmine</li>
@@ -234,7 +225,7 @@
 									<ul class="d-flex flex-row languages tech">
 										<li>Docker</li>
 										<li>HTML</li>
-										<li>CSS</li>
+										<li>CSS/SCSS</li>
 										<li>JIRA</li>
 										<li>Git</li>
 									</ul>
@@ -249,37 +240,84 @@
 	<div size="A4" class="print-section skills">
 		<div class="d-flex flex-column header-container">
 			<h1>Kaan <span>Keskinsoy</span></h1>
-			<p>Medieninformatik B.Sc.</p>
+			<p>{{ 'degree' | translate }}</p>
 		</div>
 
 		<div class="row main-container">
 			<div class="col-md-4 d-flex flex-column left-container">
 				<div class="left-box">
-					<h2>Fähigkeiten</h2>
+					<h2>{{ 'cv.skills.title' | translate }}</h2>
 					<div class="d-flex flex-column experience">
-						<h3>Programmiersprachen</h3>
+						<h3>{{ 'cv.skills.programming_languages' | translate }}</h3>
 						<ul class="d-flex flex-row languages">
+							<li>Java SE</li>
 							<li>TypeScript</li>
-							<li>Java SE 8</li>
-							<li>Java EE 7</li>
+						</ul>
+						<div class="d-flex flex-row exp-bar">
+							<div class="true"></div>
+							<div class="true"></div>
+							<div class="true"></div>
+							<div class="true"></div>
+							<div class="true"></div>
+							<div class="false"></div>
+						</div>
+						<ul class="d-flex flex-row languages">
+							<li>Java EE</li>
+							<li>Clojure</li>
+						</ul>
+						<div class="d-flex flex-row exp-bar">
+							<div class="true"></div>
+							<div class="true"></div>
+							<div class="true"></div>
+							<div class="false"></div>
+							<div class="false"></div>
+							<div class="false"></div>
+						</div>
+						<ul class="d-flex flex-row languages">
 							<li>C++</li>
 						</ul>
 						<div class="d-flex flex-row exp-bar">
 							<div class="true"></div>
 							<div class="true"></div>
-							<div class="true"></div>
-							<div class="true"></div>
+							<div class="false"></div>
+							<div class="false"></div>
 							<div class="false"></div>
 							<div class="false"></div>
 						</div>
 					</div>
 					<div class="d-flex flex-column experience">
-						<h3>Web-Technologien</h3>
+						<h3>{{ 'cv.skills.databases' | translate }}</h3>
 						<ul class="d-flex flex-row languages">
-							<li>JavaScript</li>
+							<li>Datenmodellierung</li>
+							<li>SQL</li>
+							<li>MongoDB</li>
+						</ul>
+						<div class="d-flex flex-row exp-bar">
+							<div class="true"></div>
+							<div class="true"></div>
+							<div class="true"></div>
+							<div class="true"></div>
+							<div class="false"></div>
+							<div class="false"></div>
+						</div>
+						<ul class="d-flex flex-row languages">
+							<li>PL/SQL</li>
+						</ul>
+						<div class="d-flex flex-row exp-bar">
+							<div class="true"></div>
+							<div class="true"></div>
+							<div class="true"></div>
+							<div class="false"></div>
+							<div class="false"></div>
+							<div class="false"></div>
+						</div>
+					</div>
+					<div class="d-flex flex-column experience">
+						<h3>{{ 'cv.skills.web_technologies' | translate }}</h3>
+						<ul class="d-flex flex-row languages">
+							<li>Node.js</li>
+							<li>Express.js</li>
 							<li>Angular</li>
-							<li>HTML</li>
-							<li>CSS</li>
 						</ul>
 						<div class="d-flex flex-row exp-bar">
 							<div class="true"></div>
@@ -289,12 +327,45 @@
 							<div class="true"></div>
 							<div class="false"></div>
 						</div>
+						<ul class="d-flex flex-row languages">
+							<li>HTML</li>
+							<li>CSS/SCSS</li>
+						</ul>
+						<div class="d-flex flex-row exp-bar">
+							<div class="true"></div>
+							<div class="true"></div>
+							<div class="true"></div>
+							<div class="true"></div>
+							<div class="false"></div>
+							<div class="false"></div>
+						</div>
+						<ul class="d-flex flex-row languages">
+							<li>Docker</li>
+						</ul>
+						<div class="d-flex flex-row exp-bar">
+							<div class="true"></div>
+							<div class="true"></div>
+							<div class="true"></div>
+							<div class="false"></div>
+							<div class="false"></div>
+							<div class="false"></div>
+						</div>
 					</div>
 					<div class="d-flex flex-column experience">
-						<h3>Mobile App-Entwicklung</h3>
+						<h3>{{ 'cv.skills.mobile_development' | translate }}</h3>
 						<ul class="d-flex flex-row languages">
 							<li>Android</li>
 							<li>Ionic</li>
+						</ul>
+						<div class="d-flex flex-row exp-bar">
+							<div class="true"></div>
+							<div class="true"></div>
+							<div class="true"></div>
+							<div class="true"></div>
+							<div class="true"></div>
+							<div class="false"></div>
+						</div>
+						<ul class="d-flex flex-row languages">
 							<li>Swift</li>
 						</ul>
 						<div class="d-flex flex-row exp-bar">
@@ -312,7 +383,7 @@
 			<div class="col-md-8 d-flex flex-column right-container">
 
 				<div class="right-box">
-					<h2>Projekte</h2>
+					<h2>{{ 'projects' | translate }}</h2>
 
 					<div class="d-flex flex-column content">
 						<div class="d-flex flex-row upper">
@@ -330,24 +401,11 @@
 							</div>
 							<div class="d-flex flex-column right-content">
 								<div class="large-text">
-									<p>Entwicklung einer Android-Bibliothek zur energieeffizienten und
-										präzisen
-										Standortüberwachung, durch die Verwendung von Smartphone-Sensoren,
-										Kontextinformationen und Erkennung von Bewegungsmerkmalen:</p>
+									<p>{{ 'cv.projects.thesis_bsc.description' | translate }}</p>
 									<ul>
-										<li>Datenerfassung und Analyse von Messwerten zur Erkennung
-											von
-											Bewegungsmerkmalen</li>
-										<li>Analyse und Optimierung des Stromverbrauchs und der
-											Qualität
-											der Genauigkeit
-											durch die Verwendung von Geofences, Bewegungsmerkmale, Netzwerk- und
-											Ladeinformationen</li>
-										<li>Entwurf und Entwicklung der Architektur zur simultanen
-											Verwendung der
-											Bibliothek in mehreren Applikationen</li>
+										<li class="large-text" *ngFor="let task of ('cv.projects.thesis_bsc.tasks' | translate)">{{task}}</li>
 									</ul>
-									<p>Technologien:</p>
+									<p>{{ 'cv.technologies' | translate }}</p>
 									<ul class="d-flex flex-row languages tech">
 										<li>Android</li>
 										<li>Geofencing API</li>
@@ -380,16 +438,11 @@
 							</div>
 							<div class="d-flex flex-column right-content">
 								<div class="large-text">
-									<p>Ausarbeitung eines Shuttle-Servces zur Beförderung von Personengruppen:</p>
+									<p>{{ 'cv.projects.autonomous_shuttle.description' | translate }}</p>
 									<ul>
-										<li>Konzeptionelles Arbeiten in interdisziplinären Teams</li>
-										<li>Interaktive Gestaltung der Fahrt durch ein Interessenmatching und Emotionserkennung der Fahrgäste</li>
-										<li>Entwicklung des Systems zur Buchung von Fahrten</li>
-										<li>Interessenmatching durch Verschlagwortung der öffentlichen Bilder auf dem sozialen Netzwerk Instagram</li>
-										<li>Entwicklung der Gesichtserkennung zur Authentifizierung vor Fahrten und zur Emotionserkennung der
-											Fahrgäste</li>
+										<li class="large-text" *ngFor="let task of ('cv.projects.autonomous_shuttle.tasks' | translate)">{{task}}</li>
 									</ul>
-									<p>Technologien:</p>
+									<p>{{ 'cv.technologies' | translate }}</p>
 									<ul class="d-flex flex-row languages tech">
 										<li>Node.js</li>
 										<li>Express.js</li>
@@ -432,16 +485,11 @@
 							</div>
 							<div class="d-flex flex-column right-content">
 								<div class="large-text">
-									<p>Entwicklung von nativen Applikationen in Android und iOS zur synchronisierten Speicherung von Belegen in
-										Firebase:</p>
+									<p>{{ 'cv.projects.billtracker.description' | translate }}</p>
 									<ul>
-										<li>Design und Implementierung der Firebase Datenbank und Storage</li>
-										<li>Design und Entwicklung der Android und iOS UIs</li>
-										<li>Anbindung der Firebase Datenbank und Storage zur Synchronisation der Daten und Belege</li>
-										<li>Verwendung der Android Camera API und AVFoundation zur Speicherung der Bilder</li>
-										<li>Verwaltung der lokalen Bilder im Dateisystem</li>
+										<li class="large-text" *ngFor="let task of ('cv.projects.billtracker.tasks' | translate)">{{task}}</li>
 									</ul>
-									<p>Technologien:</p>
+									<p>{{ 'cv.technologies' | translate }}</p>
 									<ul class="d-flex flex-row languages tech">
 										<li>Android</li>
 										<li>Swift</li>
@@ -466,7 +514,7 @@
 	<div size="A4" class="print-section skills">
 		<div class="d-flex flex-column header-container">
 			<h1>Kaan <span>Keskinsoy</span></h1>
-			<p>Medieninformatik B.Sc.</p>
+			<p>{{ 'degree' | translate }}</p>
 		</div>
 
 		<div class="row main-container">
@@ -478,7 +526,7 @@
 			<div class="col-md-8 d-flex flex-column right-container">
 
 				<div class="right-box">
-					<h2>Projekte</h2>
+					<h2>{{ 'projects' | translate }}</h2>
 
 					<div class="d-flex flex-column content">
 						<div class="d-flex flex-row upper">
@@ -496,15 +544,11 @@
 							</div>
 							<div class="d-flex flex-column right-content">
 								<div class="large-text">
-									<p>Entwicklung einer Web-Applikation zum Vergleich von Krypto-Währungskursen:</p>
+									<p>{{ 'cv.projects.crypto_currency_tracker.description' | translate }}</p>
 									<ul>
-										<li>Entwicklung durch funktionale Programmiersprache Clojure</li>
-										<li>HTML Generierung mittels der Clojure-Library Hiccup</li>
-										<li>Anbindung der “CryptoCompare” API für Kursinformationen</li>
-										<li>Aufbereitung der Kursinformationen druch Clojure</li>
-										<li>Visuelle Darstellung der Kursvergleiche in Diagrammen durch clj-xchart</li>
+										<li class="large-text" *ngFor="let task of ('cv.projects.crypto_currency_tracker.tasks' | translate)">{{task}}</li>
 									</ul>
-									<p>Technologien:</p>
+									<p>{{ 'cv.technologies' | translate }}</p>
 									<ul class="d-flex flex-row languages tech">
 										<li>Clojure</li>
 										<li>Leiningen</li>
@@ -536,15 +580,11 @@
 							</div>
 							<div class="d-flex flex-column right-content">
 								<div class="large-text">
-									<p>Entwicklung einer responsiven Web-Applikation für Film- und Serieninformationen:</p>
+									<p>{{ 'cv.projects.watchit.description' | translate }}</p>
 									<ul>
-										<li>Design und Implementierung der Webservice-Architektur</li>
-										<li>Design und Entwicklung einer interaktiven und responsiven Web-Oberfläche</li>
-										<li>Anbindung der “The Movie Database” API</li>
-										<li>Erweiterung des eigenen Webservices zur Erzeugung von Benutzerkonten und die Speicherung von Watch- und
-											Favoritenlisten</li>
+										<li class="large-text" *ngFor="let task of ('cv.projects.watchit.tasks' | translate)">{{task}}</li>
 									</ul>
-									<p>Technologien:</p>
+									<p>{{ 'cv.technologies' | translate }}</p>
 									<ul class="d-flex flex-row languages tech">
 										<li>Node.js</li>
 										<li>Express.js</li>
@@ -552,10 +592,10 @@
 										<li>Angular</li>
 										<li>TypeScript</li>
 										<li>RxJS</li>
-									</ul>
-									<ul class="d-flex flex-row languages tech">
 										<li>HTML</li>
 										<li>CSS/SCSS</li>
+									</ul>
+									<ul class="d-flex flex-row languages tech">
 										<li>Bootstrap</li>
 										<li>Docker</li>
 									</ul>
@@ -580,17 +620,11 @@
 							</div>
 							<div class="d-flex flex-column right-content">
 								<div class="large-text">
-									<p>Entwicklung eines Web-Shops:</p>
+									<p>{{ 'cv.projects.cnc_webshop.description' | translate }}</p>
 									<ul>
-										<li>Design und Implementierung der Webservice-Architektur</li>
-										<li>Design und Entwicklung einer interaktiven und responsiven Web-Oberfläche</li>
-										<li>Administrator-Ansicht zur Verwaltung von Produkten</li>
-										<li>Implementierung des Warenkorbs und des Bestellprozesses</li>
-										<li>Implementierung von Sitzungsverwaltungen</li>
-										<li>Vorbeugung von Sicherheitsbedrohungen wie XSS, XSRF und SQL-Injections</li>
-										<li>Verwendung von SSL/TLS-Verschlüsselung</li>
+										<li class="large-text" *ngFor="let task of ('cv.projects.cnc_webshop.tasks' | translate)">{{task}}</li>
 									</ul>
-									<p>Technologien:</p>
+									<p>{{ 'cv.technologies' | translate }}</p>
 									<ul class="d-flex flex-row languages tech">
 										<li>Node.js</li>
 										<li>Express.js</li>
@@ -599,9 +633,9 @@
 										<li>Angular</li>
 										<li>TypeScript</li>
 										<li>RxJS</li>
+										<li>HTML</li>
 									</ul>
 									<ul class="d-flex flex-row languages tech">
-										<li>HTML</li>
 										<li>CSS/SCSS</li>
 										<li>Bootstrap</li>
 										<li>Docker</li>
@@ -629,15 +663,11 @@
 							</div>
 							<div class="d-flex flex-column right-content">
 								<div class="large-text">
-									<p>Entwicklung mobiler Messstationen zur Messung und Visualisierung von
-										Umweltdaten:</p>
+									<p>{{ 'cv.projects.private_eye.description' | translate }}</p>
 									<ul>
-										<li>Design und Implementierung der Webservice-Architektur</li>
-										<li>Design und Entwicklung einer interaktiven und responsiven Web-Oberfläche</li>
-										<li>Datenaustausch zwischen Embedded Devices und Webservice</li>
-										<li>Visuelle Darstellung der Standorte und dazugehörige Messwerte</li>
+										<li class="large-text" *ngFor="let task of ('cv.projects.private_eye.tasks' | translate)">{{task}}</li>
 									</ul>
-									<p>Technologien:</p>
+									<p>{{ 'cv.technologies' | translate }}</p>
 									<ul class="d-flex flex-row languages tech">
 										<li>Node.js</li>
 										<li>Express.js</li>
@@ -646,9 +676,9 @@
 										<li>Angular</li>
 										<li>TypeScript</li>
 										<li>RxJS</li>
+										<li>HTML</li>
 									</ul>
 									<ul class="d-flex flex-row languages tech">
-										<li>HTML</li>
 										<li>CSS/SCSS</li>
 										<li>Bootstrap</li>
 										<li>Chart.js</li>

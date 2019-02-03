@@ -1,4 +1,4 @@
-import { Component, OnInit, ɵgetComponentViewDefinitionFactory } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import * as jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
