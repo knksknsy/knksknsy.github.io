@@ -72,7 +72,7 @@
                 ]
             },
             "autonomous_shuttle": {
-                "description": "Ausarbeitung eines Shuttle-Servces zur Beförderung von Personengruppen:",
+                "description": "Ausarbeitung eines Shuttle-Services zur Beförderung von Personengruppen:",
                 "tasks": [
                     "Konzeptionelles Arbeiten in interdisziplinären Teams",
                     "Design und Implementierung der Webservice-Architektur",
@@ -98,7 +98,7 @@
                     "Entwicklung durch funktionale Programmiersprache Clojure",
                     "HTML-Generierung mittels der Clojure-Library Hiccup",
                     "Anbindung der “CryptoCompare” API für Kursinformationen",
-                    "Aufbereitung der Kursinformationen druch Clojure",
+                    "Aufbereitung der Kursinformationen durch Clojure",
                     "Visuelle Darstellung der Kursvergleiche in Diagrammen durch clj-xchart"
                 ]
             },

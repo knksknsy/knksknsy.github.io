@@ -68,13 +68,13 @@
                 "tasks": [
                     "Data capturing and analysis of measurements for recognizing of motion patterns",
                     "Analysis and optimization of power usage and the quality of monitoring through Geofences, motion patterns, network and charging informations",
-                    "Design and development of the architecture for using the library in multiple applications simultaniously"
+                    "Design and development of the architecture for using the library in multiple applications simultaneously"
                 ]
             },
             "autonomous_shuttle": {
                 "description": "Drafting of an shuttle service for passenger transportation:",
                 "tasks": [
-                    "Conceptual working in interdisziplinary teams",
+                    "Conceptual working in interdisciplinary teams",
                     "Design and development of a web service architecture",
                     "Design of an interactive ride through interest matchings and emotion recognition of the passengers",
                     "Developing a booking system",
@@ -86,7 +86,7 @@
                 "description": "Development of native applications in Android and iOS for saving and synchronizing of receipts in firebase:",
                 "tasks": [
                     "Design and implementation of the firebase database and storage",
-                    "Desing and implementation ot the Android and iOS user interfaces",
+                    "Design and implementation of the Android and iOS user interfaces",
                     "Consuming of the firebase database and storage for the synchronization of the data and receipts",
                     "Using the Android Camera API and AVFoundation for retrieving pictures",
                     "Managing the locally saved documents in the file systems"
@@ -97,7 +97,7 @@
                 "tasks": [
                     "Using functional programming language Clojure",
                     "Generating HTML through Clojure library Hiccup",
-                    "Consumption of the 'CryptoCompate' API for retrieving currency rates",
+                    "Consumption of the 'CryptoCompare' API for retrieving currency rates",
                     "Processing of the currency rates through Clojure",
                     "Representing the currency rates visually through clj-xchart"
                 ]
@@ -108,7 +108,7 @@
                     "Design and development of a web service architecture",
                     "Design and implementation of an interactive and responsive web UI",
                     "Consumption of 'The Movie Database' API",
-                    "Extending the web service enabling users to create accounts, save and edit watch and favourite lists"
+                    "Extending the web service enabling users to create accounts, save and edit watch and favorite lists"
                 ]
             },
             "cnc_webshop": {
@@ -116,9 +116,9 @@
                 "tasks": [
                     "Design and development of a web service architecture",
                     "Design and implementation of an interactive and responsive web UI",
-                    "Administrative view for maintainance of the product line",
+                    "Administrative view for maintenance of the product line",
                     "Implementation of the shopping cart and the booking process",
-                    "Implementaion of sessions",
+                    "Implementation of sessions",
                     "Prevention of security threats as XSS, XSRF, and SQL injections",
                     "Using of SSL/TSL encryption"
                 ]
