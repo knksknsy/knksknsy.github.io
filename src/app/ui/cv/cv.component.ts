@@ -10,7 +10,7 @@ import html2canvas from 'html2canvas';
 })
 export class CVComponent implements OnInit {
 
-  private mimeType = 'image/svg+xml';
+  private mimeType = 'image/svg+xml;charset=utf-8';
   private dimension = { width: 210, height: 297 };
   private fileName = 'Lebenslauf_Kaan_Keskinsoy.pdf';
   private pdf: jsPDF;
@@ -29,7 +29,7 @@ export class CVComponent implements OnInit {
     this.printing = true;
     this.printSections = document.getElementsByClassName('print-section');
     let promises = [];
-    this.pdf = new jsPDF('p', 'mm', 'a4');
+    this.pdf = new jsPDF('p', 'mm', 'a4', true);
     this.contactIconsElement = document.getElementsByClassName('contact')[0];
     this.contactTextsElement = document.getElementsByClassName('contact-alt')[0];
 
@@ -47,8 +47,8 @@ export class CVComponent implements OnInit {
   }
 
   private appendToPDF(canvas: HTMLCanvasElement, index: number) {
-    const contentDataURL = canvas.toDataURL(this.mimeType, 1.0);
-    this.pdf.addImage(contentDataURL, 'PNG', 0, 0, this.dimension.width, this.dimension.height);
+    const contentDataURL = canvas.toDataURL(this.mimeType);
+    this.pdf.addImage(contentDataURL, 'JPEG', 0, 0, this.dimension.width, this.dimension.height, null, 'FAST');
     if (index < this.printSections.length - 1) {
       this.pdf.addPage('a4', 'p');
     } else {
