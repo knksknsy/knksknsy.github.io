@@ -1,28 +1,6 @@
 @import '~variables.scss';
 @import "~bootstrap/scss/bootstrap-grid.scss";
 
-@include media-breakpoint-down(sm) {
-    .info {
-        .name {
-            font-size: 3vw !important;
-            text-align: center;
-        }
-        .degree {
-            text-align: center;
-        }
-    }
-    .photo {
-        text-align: center;
-        .img-fluid {
-            width: 50%;
-            height: auto;
-        }
-    }
-    .social {
-        margin-top: $container-padding;
-    }
-}
-
 .container-fluid {
     display: flex;
     flex-direction: column;
@@ -77,9 +55,44 @@
         font-size: 5em;
         color: white !important;
     }
+    .fa:hover {
+        cursor: pointer;
+    }
     a {
         font-family: LatoWebLight;
         font-size: 2em;
         color: white !important;
+    }
+    .fa:active, .fa:focus {
+        outline: 0;
+        border: none;
+      }
+}
+
+@include media-breakpoint-down(sm) {
+    .info {
+        .name {
+            font-size: 3vw !important;
+            text-align: center;
+        }
+        .degree {
+            text-align: center;
+        }
+    }
+    .photo {
+        text-align: center;
+        .img-fluid {
+            width: 50%;
+            height: auto;
+        }
+    }
+    .social {
+        margin-top: $container-padding;
+    }
+    .discover .fa {
+        font-size: 3em;
+    }
+    .discover a {
+        font-size: 1.5em;
     }
 }

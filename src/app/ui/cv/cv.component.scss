@@ -11,11 +11,11 @@
 }
 
 @include media-breakpoint-down(sm) {
-    .skills {
-        // .main-container {
-        //     flex-direction: column-reverse;
-        // }
-    }
+    // .skills {
+    //     .main-container {
+    //         flex-direction: column-reverse;
+    //     }
+    // }
 }
 
 .btn-circle {
@@ -238,7 +238,12 @@ div[size="A4"] {
 }
 
 .large-text {
-    text-align: justify;
+    // text-align: justify;
+    text-align: left;
+}
+
+.text-left {
+    text-align: left;
 }
 
 .experience {
