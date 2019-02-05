@@ -26,6 +26,7 @@ export class CVComponent implements OnInit {
   }
 
   printCV() {
+    this.sendGAEvent('PDF', 'save', 'Curriculum Vitae');
     this.printing = true;
     this.printSections = document.getElementsByClassName('print-section');
     let promises = [];
@@ -67,6 +68,16 @@ export class CVComponent implements OnInit {
   private showElement(element: Element): Element {
     element.className = element.className.replace(' hide', '');
     return element;
+  }
+
+  sendGAEvent(category: string, action: string, label: string, value?: number) {
+    let event;
+    if (!value) {
+      event = { eventCategory: category, eventAction: action, eventLabel: label };
+    } else {
+      event = { eventCategory: category, eventAction: action, eventLabel: label, eventValue: value };
+    }
+    (<any>window).ga('send', 'event', event);
   }
 
 }

@@ -33,23 +33,23 @@ export class HeaderComponent implements OnInit {
   toggleNavbar() {
     this.navbarOpen = !this.navbarOpen;
     if (this.navbarOpen) {
-      this.sendEvent('Navbar', 'toggled', 'opened');  
+      this.sendGAEvent('Navbar', 'toggled', 'opened');  
     } else {
-      this.sendEvent('Navbar', 'toggled', 'closed');
+      this.sendGAEvent('Navbar', 'toggled', 'closed');
     }
   }
 
   translateDE() {
     this.translate.use('de');
-    this.sendEvent('I18N', 'changed', 'de');
+    this.sendGAEvent('I18N', 'changed', 'de');
   }
 
   translateEN() {
     this.translate.use('en');
-    this.sendEvent('I18N', 'changed', 'en');
+    this.sendGAEvent('I18N', 'changed', 'en');
   }
 
-  sendEvent(category: string, action: string, label: string, value?: number) {
+  sendGAEvent(category: string, action: string, label: string, value?: number) {
     let event;
     if (!value) {
       event = { eventCategory: category, eventAction: action, eventLabel: label };
