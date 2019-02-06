@@ -10,8 +10,8 @@ import { EventEmitter } from 'protractor';
 export class CVComponent implements OnInit {
 
   public isGerman: boolean;
-  public fileGerman = 'Lebenslauf_Kaan_Keskinsoy';
-  public fileEnglish = 'CV_Kaan_Keskinsoy';
+  public fileGerman = 'Lebenslauf_Kaan_Keskinsoy.pdf';
+  public fileEnglish = 'CV_Kaan_Keskinsoy.pdf';
 
   constructor(public translate: TranslateService) { }
 
