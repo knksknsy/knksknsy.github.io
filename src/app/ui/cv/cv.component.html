@@ -1,10 +1,10 @@
 <div class="container-fluid">
-	<div class="print-btn btn btn-circle spinner-grow" role="status" [ngClass]="{'hide': !printing}">
-		<span class="sr-only">Loading...</span>
-	</div>
-	<button class="print-btn btn btn-circle" (click)="printCV()" [ngClass]="{'hide': printing}">
-		<i class="fa fa-print"></i>
-	</button>
+	<a *ngIf="isGerman" class="print-btn btn btn-circle" download ="{{fileGerman}}" href="./assets/cv/Lebenslauf_Kaan_Keskinsoy.pdf" target="_blank">
+		<i class="fa fa-print" (click)="sendGAEvent('PDF', 'save', 'german')"></i>
+	</a>
+	<a *ngIf="!isGerman" class="print-btn btn btn-circle" download ="{{fileEnglish}}" href="./assets/cv/Curriculum_Vitae_Kaan_Keskinsoy.pdf" target="_blank">
+		<i class="fa fa-print" (click)="sendGAEvent('PDF', 'save', 'english')"></i>
+	</a>
 	<div size="A4" class="print-section">
 		<div class="d-flex flex-column header-container">
 			<h1>Kaan <span>Keskinsoy</span></h1>
@@ -34,12 +34,6 @@
 						<div>
 							<a class="fa fa-linkedin" href="https://www.linkedin.com/in/Kaan-Keskinsoy/" target="_blank"></a>
 						</div>
-					</div>
-					<div class="contact-alt d-flex flex-column hide">
-						<p>k.keskinsoy@googlemail.com</p>
-						<p>knksknsy.github.io/home</p>
-						<p>xing.com/profile/Kaan_Keskinsoy</p>
-						<p>linkedin.com/in/Kaan-Keskinsoy</p>
 					</div>
 				</div>
 
