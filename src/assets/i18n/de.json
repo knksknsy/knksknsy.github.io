@@ -106,7 +106,7 @@
                 "description": "Entwicklung einer responsiven Web-Applikation für Film- und Serieninformationen:",
                 "tasks": [
                     "Design und Implementierung der Webservice-Architektur",
-                    "Design und Entwicklung einer interaktiven und responsiven Web-Oberfläche",
+                    "Design und Entwicklung einer interaktiven und responsiven Web-UI",
                     "Anbindung der \"The Movie Database\" API",
                     "Erweiterung des eigenen Webservices zur Erzeugung von Benutzerkonten und die Speicherung von Watch- und Favoritenlisten"
                 ]
@@ -115,7 +115,7 @@
                 "description": "Entwicklung eines Web-Shops:",
                 "tasks": [
                     "Design und Implementierung der Webservice-Architektur",
-                    "Design und Entwicklung einer interaktiven und responsiven Web-Oberfläche",
+                    "Design und Entwicklung einer interaktiven und responsiven Web-UI",
                     "Administrator-Ansicht zur Verwaltung von Produkten",
                     "Implementierung des Warenkorbs und des Bestellprozesses",
                     "Implementierung von Sitzungsverwaltungen",
@@ -127,7 +127,7 @@
                 "description": "Entwicklung mobiler Messstationen zur Messung und Visualisierung von Umweltdaten:",
                 "tasks": [
                     "Design und Implementierung der Webservice-Architektur",
-                    "Design und Entwicklung einer interaktiven und responsiven Web-Oberfläche",
+                    "Design und Entwicklung einer interaktiven und responsiven Web-UI",
                     "Datenaustausch zwischen Embedded Devices und Webservice",
                     "Visuelle Darstellung der Standorte und dazugehörige Messwerte"
                 ]
