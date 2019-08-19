@@ -279,13 +279,13 @@ div[size="A4"] {
     li:last-of-type {
         margin-right: 0;
     }
-    li:first-of-type::before {
+    li:last-of-type::after {
         content: "";
     }
-    li::before {
+    li::after {
         position: relative;
         bottom: 3px;
-        right: 5px;
+        left: 5px;
         content: ".";
         display: inline-block;
     }
