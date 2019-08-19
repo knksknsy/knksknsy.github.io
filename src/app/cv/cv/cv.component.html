@@ -1,8 +1,10 @@
 <div class="container-fluid">
-	<a *ngIf="isGerman" class="print-btn btn btn-circle" download ="{{fileGerman}}" href="./assets/cv/Lebenslauf_Kaan_Keskinsoy.pdf" target="_blank">
+	<a *ngIf="isGerman" class="print-btn btn btn-circle" download="{{fileGerman}}"
+		href="./assets/cv/Lebenslauf_Kaan_Keskinsoy.pdf" target="_blank">
 		<i class="fa fa-print" (click)="sendGAEvent('PDF', 'save', 'german')"></i>
 	</a>
-	<a *ngIf="!isGerman" class="print-btn btn btn-circle" download ="{{fileEnglish}}" href="./assets/cv/Curriculum_Vitae_Kaan_Keskinsoy.pdf" target="_blank">
+	<a *ngIf="!isGerman" class="print-btn btn btn-circle" download="{{fileEnglish}}"
+		href="./assets/cv/Curriculum_Vitae_Kaan_Keskinsoy.pdf" target="_blank">
 		<i class="fa fa-print" (click)="sendGAEvent('PDF', 'save', 'english')"></i>
 	</a>
 	<div size="A4" class="print-section">
@@ -29,10 +31,12 @@
 							<a class="fa fa-github" href="https://github.com/knksknsy/" target="_blank"></a>
 						</div>
 						<div>
-							<a class="fa fa-xing" href="https://www.xing.com/profile/Kaan_Keskinsoy/" target="_blank"></a>
+							<a class="fa fa-xing" href="https://www.xing.com/profile/Kaan_Keskinsoy/"
+								target="_blank"></a>
 						</div>
 						<div>
-							<a class="fa fa-linkedin" href="https://www.linkedin.com/in/Kaan-Keskinsoy/" target="_blank"></a>
+							<a class="fa fa-linkedin" href="https://www.linkedin.com/in/Kaan-Keskinsoy/"
+								target="_blank"></a>
 						</div>
 					</div>
 				</div>
@@ -49,198 +53,13 @@
 					<p>{{ 'cv.hobbies.weight_training' | translate }}</p>
 					<p>{{ 'cv.hobbies.cooking' | translate }}</p>
 				</div>
-			</div>
 
-			<div class="col-md-8 pr-4 d-flex flex-column right-container">
-				<div class="right-box">
-					<h2>{{ 'cv.education.title' | translate }}</h2>
-					<div class="d-flex flex-column content">
-						<div class="d-flex flex-row upper">
-							<div class="d-flex flex-row icon">
-								<div class="hor-bar"></div>
-							</div>
-							<div class="d-flex flex-row location">
-								<h3>Hochschule der Medien<br /><span>Stuttgart</span></h3>
-								<div>03/2014 - 03/2019</div>
-							</div>
-						</div>
-						<div class="d-flex flex-row lower">
-							<div class="d-flex flex-row bar">
-								<div></div>
-							</div>
-							<div class="d-flex flex-column right-content">
-								<p>{{ 'cv.education.bsc' | translate }}</p>
-								<p>{{ 'cv.education.final_grade' | translate }} {{ 'cv.education.average_grade' | translate }}</p>
-								<p>{{ 'cv.education.thesis' | translate }} Android Mobility Detection Library (budo GmbH)</p>
-							</div>
-						</div>
-					</div>
-					<div class="d-flex flex-column content">
-						<div class="d-flex flex-row upper">
-							<div class="d-flex flex-row icon">
-								<div class="hor-bar"></div>
-							</div>
-							<div class="d-flex flex-row location">
-								<h3>Universität Stuttgart<br /><span>Stuttgart</span></h3>
-								<div>10/2013 - 02/2014</div>
-
-							</div>
-						</div>
-						<div class="d-flex flex-row lower">
-							<div class="d-flex flex-row bar">
-								<div></div>
-							</div>
-							<div class="d-flex flex-column right-content">
-								<p>{{ 'cv.education.computer_science' | translate }}</p>
-							</div>
-						</div>
-					</div>
-					<div class="d-flex flex-column content">
-						<div class="d-flex flex-row upper">
-							<div class="d-flex flex-row icon">
-								<div class="hor-bar"></div>
-							</div>
-							<div class="d-flex flex-row location">
-								<h3>Staatliche Feintechnikschule<br /><span>Villingen-Schwenningen</span></h3>
-								<div>09/2010 - 07/2013</div>
-
-							</div>
-						</div>
-						<div class="d-flex flex-row lower">
-							<div class="d-flex flex-row bar">
-								<div></div>
-							</div>
-							<div class="d-flex flex-column right-content">
-								<p>{{ 'cv.education.higher_education_qualification' | translate }}</p>
-								<p>{{ 'cv.education.major_subject' | translate }} {{ 'cv.education.information_technology' | translate }}</p>
-							</div>
-						</div>
-					</div>
-					<div class="d-flex flex-column content">
-						<div class="d-flex flex-row upper">
-							<div class="d-flex flex-row icon">
-								<div class="hor-bar"></div>
-							</div>
-							<div class="d-flex flex-row location">
-								<h3>Realschule Donaueschingen<br /><span>Donaueschingen</span></h3>
-								<div>09/2003 - 07/2010</div>
-							</div>
-						</div>
-						<div class="d-flex flex-row lower">
-							<div class="d-flex flex-row bar">
-								<div></div>
-							</div>
-							<div class="d-flex flex-column right-content">
-								<p>{{ 'cv.education.secondary_education' | translate }}</p>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="right-box">
-					<h2>{{ 'cv.work.title' | translate }}</h2>
-
-					<div class="d-flex flex-column content">
-						<div class="d-flex flex-row upper">
-							<div class="d-flex flex-row icon">
-								<div class="hor-bar"></div>
-							</div>
-							<div class="d-flex flex-row location">
-								<h3>M-Way Solutions GmbH<br /><span>{{ 'cv.work.student_trainee' | translate }}</span><br /><span>{{
-										'cv.work.full_stack_development' | translate }}</span></h3>
-								<div>03/2017 - 03/2018</div>
-							</div>
-						</div>
-						<div class="d-flex flex-row lower">
-							<div class="d-flex flex-row bar three-line">
-								<div></div>
-							</div>
-							<div class="d-flex flex-column right-content">
-								<p class="large-text">{{ 'cv.mway.description' | translate }}</p>
-								<ul>
-									<li class="text-left" *ngFor="let task of ('cv.mway.tasks_student_trainee' | translate)">{{task}}</li>
-								</ul>
-								<p>{{ 'cv.technologies' | translate }}</p>
-								<ul class="d-flex flex-row languages tech">
-									<li>Angular</li>
-									<li>Ionic</li>
-									<li>TypeScript</li>
-									<li>Node.js</li>
-									<li>RxJS</li>
-									<li>SQL</li>
-									<li>Protractor</li>
-									<li>Jasmine</li>
-									<li>Karma</li>
-									<li>Docker</li>
-									<li>HTML</li>
-									<li>CSS/SCSS</li>
-									<li>JIRA</li>
-									<li>Git</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-
-					<div class="d-flex flex-column content">
-						<div class="d-flex flex-row upper">
-							<div class="d-flex flex-row icon">
-								<div class="hor-bar"></div>
-							</div>
-							<div class="d-flex flex-row location">
-								<h3>M-Way Solutions GmbH<br /><span>{{ 'cv.work.practical_semester' | translate }}</span><br /><span>{{
-										'cv.work.web_app_development' | translate }}</span></h3>
-								<div>09/2016 - 03/2017</div>
-							</div>
-						</div>
-						<div class="d-flex flex-row lower">
-							<div class="d-flex flex-row bar three-line">
-								<div></div>
-							</div>
-							<div class="d-flex flex-column right-content">
-								<div class="large-text">
-									<p class="large-text">{{ 'cv.mway.description' | translate }}</p>
-									<ul>
-										<li class="text-left" *ngFor="let task of ('cv.mway.tasks_practical_semester' | translate)">{{task}}</li>
-									</ul>
-									<p>{{ 'cv.technologies' | translate }}</p>
-									<ul class="d-flex flex-row languages tech">
-										<li>Angular</li>
-										<li>Ionic</li>
-										<li>TypeScript</li>
-										<li>Node.js</li>
-										<li>RxJS</li>
-										<li>SQL</li>
-										<li>Protractor</li>
-										<li>Jasmine</li>
-										<li>Karma</li>
-										<li>Docker</li>
-										<li>HTML</li>
-										<li>CSS/SCSS</li>
-										<li>JIRA</li>
-										<li>Git</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div size="A4" class="print-section skills">
-		<div class="d-flex flex-column header-container">
-			<h1>Kaan <span>Keskinsoy</span></h1>
-			<p>{{ 'degree' | translate }}</p>
-		</div>
-
-		<div class="row main-container">
-			<div class="col-md-4 px-4 d-flex flex-column left-container">
 				<div class="left-box">
 					<h2>{{ 'cv.skills.title' | translate }}</h2>
 					<div class="d-flex flex-column experience">
 						<h3>{{ 'cv.skills.programming_languages' | translate }}</h3>
 						<ul class="d-flex flex-row languages">
-							<li>Java SE</li>
+							<li>Java</li>
 							<li>TypeScript</li>
 						</ul>
 						<div class="d-flex flex-row exp-bar">
@@ -253,6 +72,7 @@
 						</div>
 						<ul class="d-flex flex-row languages">
 							<li>Java EE</li>
+							<li>Spring Boot</li>
 							<li>Clojure</li>
 						</ul>
 						<div class="d-flex flex-row exp-bar">
@@ -264,6 +84,7 @@
 							<div class="false"></div>
 						</div>
 						<ul class="d-flex flex-row languages">
+							<li>C</li>
 							<li>C++</li>
 						</ul>
 						<div class="d-flex flex-row exp-bar">
@@ -278,26 +99,15 @@
 					<div class="d-flex flex-column experience">
 						<h3>{{ 'cv.skills.databases' | translate }}</h3>
 						<ul class="d-flex flex-row languages">
-							<li>Datenmodellierung</li>
 							<li>SQL</li>
 							<li>MongoDB</li>
+							<li>Redis</li>
 						</ul>
 						<div class="d-flex flex-row exp-bar">
 							<div class="true"></div>
 							<div class="true"></div>
 							<div class="true"></div>
 							<div class="true"></div>
-							<div class="false"></div>
-							<div class="false"></div>
-						</div>
-						<ul class="d-flex flex-row languages">
-							<li>PL/SQL</li>
-						</ul>
-						<div class="d-flex flex-row exp-bar">
-							<div class="true"></div>
-							<div class="true"></div>
-							<div class="true"></div>
-							<div class="false"></div>
 							<div class="false"></div>
 							<div class="false"></div>
 						</div>
@@ -371,6 +181,203 @@
 			</div>
 
 			<div class="col-md-8 pr-4 d-flex flex-column right-container">
+				<div class="right-box">
+					<h2>{{ 'cv.education.title' | translate }}</h2>
+					<div class="d-flex flex-column content">
+						<div class="d-flex flex-row upper">
+							<div class="d-flex flex-row icon">
+								<div class="hor-bar"></div>
+							</div>
+							<div class="d-flex flex-row location">
+								<h3>Hochschule der Medien<br /><span>Stuttgart</span></h3>
+								<div>03/2014 - 03/2019</div>
+							</div>
+						</div>
+						<div class="d-flex flex-row lower">
+							<div class="d-flex flex-row bar">
+								<div></div>
+							</div>
+							<div class="d-flex flex-column right-content">
+								<p>{{ 'cv.education.bsc' | translate }}</p>
+								<p>{{ 'cv.education.final_grade' | translate }}
+									{{ 'cv.education.average_grade' | translate }}</p>
+								<p>{{ 'cv.education.thesis' | translate }} Android Mobility Detection Library (budo
+									GmbH)</p>
+							</div>
+						</div>
+					</div>
+					<div class="d-flex flex-column content">
+						<div class="d-flex flex-row upper">
+							<div class="d-flex flex-row icon">
+								<div class="hor-bar"></div>
+							</div>
+							<div class="d-flex flex-row location">
+								<h3>Universität Stuttgart<br /><span>Stuttgart</span></h3>
+								<div>10/2013 - 02/2014</div>
+
+							</div>
+						</div>
+						<div class="d-flex flex-row lower">
+							<div class="d-flex flex-row bar">
+								<div></div>
+							</div>
+							<div class="d-flex flex-column right-content">
+								<p>{{ 'cv.education.computer_science' | translate }}</p>
+							</div>
+						</div>
+					</div>
+					<div class="d-flex flex-column content">
+						<div class="d-flex flex-row upper">
+							<div class="d-flex flex-row icon">
+								<div class="hor-bar"></div>
+							</div>
+							<div class="d-flex flex-row location">
+								<h3>Staatliche Feintechnikschule<br /><span>Villingen-Schwenningen</span></h3>
+								<div>09/2010 - 07/2013</div>
+
+							</div>
+						</div>
+						<div class="d-flex flex-row lower">
+							<div class="d-flex flex-row bar">
+								<div></div>
+							</div>
+							<div class="d-flex flex-column right-content">
+								<p>{{ 'cv.education.higher_education_qualification' | translate }}</p>
+								<p>{{ 'cv.education.major_subject' | translate }}
+									{{ 'cv.education.information_technology' | translate }}</p>
+							</div>
+						</div>
+					</div>
+					<div class="d-flex flex-column content">
+						<div class="d-flex flex-row upper">
+							<div class="d-flex flex-row icon">
+								<div class="hor-bar"></div>
+							</div>
+							<div class="d-flex flex-row location">
+								<h3>Realschule Donaueschingen<br /><span>Donaueschingen</span></h3>
+								<div>09/2003 - 07/2010</div>
+							</div>
+						</div>
+						<div class="d-flex flex-row lower">
+							<div class="d-flex flex-row bar">
+								<div></div>
+							</div>
+							<div class="d-flex flex-column right-content">
+								<p>{{ 'cv.education.secondary_education' | translate }}</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="right-box">
+					<h2>{{ 'cv.work.title' | translate }}</h2>
+
+					<div class="d-flex flex-column content">
+						<div class="d-flex flex-row upper">
+							<div class="d-flex flex-row icon">
+								<div class="hor-bar"></div>
+							</div>
+							<div class="d-flex flex-row location">
+								<h3>M-Way Solutions
+									GmbH<br /><span>{{ 'cv.work.student_trainee' | translate }}</span><br /><span>{{
+										'cv.work.full_stack_development' | translate }}</span></h3>
+								<div>03/2017 - 03/2018</div>
+							</div>
+						</div>
+						<div class="d-flex flex-row lower">
+							<div class="d-flex flex-row bar three-line">
+								<div></div>
+							</div>
+							<div class="d-flex flex-column right-content">
+								<p class="large-text">{{ 'cv.mway.description' | translate }}</p>
+								<ul>
+									<li class="text-left"
+										*ngFor="let task of ('cv.mway.tasks_student_trainee' | translate)">{{task}}</li>
+								</ul>
+								<p>{{ 'cv.technologies' | translate }}</p>
+								<ul class="d-flex flex-row languages tech">
+									<li>Angular</li>
+									<li>Ionic</li>
+									<li>TypeScript</li>
+									<li>Node.js</li>
+									<li>RxJS</li>
+									<li>SQL</li>
+									<li>Protractor</li>
+									<li>Jasmine</li>
+									<li>Karma</li>
+									<li>Docker</li>
+									<li>HTML</li>
+									<li>CSS/SCSS</li>
+									<li>JIRA</li>
+									<li>Git</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+
+					<div class="d-flex flex-column content">
+						<div class="d-flex flex-row upper">
+							<div class="d-flex flex-row icon">
+								<div class="hor-bar"></div>
+							</div>
+							<div class="d-flex flex-row location">
+								<h3>M-Way Solutions
+									GmbH<br /><span>{{ 'cv.work.practical_semester' | translate }}</span><br /><span>{{
+										'cv.work.web_app_development' | translate }}</span></h3>
+								<div>09/2016 - 03/2017</div>
+							</div>
+						</div>
+						<div class="d-flex flex-row lower">
+							<div class="d-flex flex-row bar three-line">
+								<div></div>
+							</div>
+							<div class="d-flex flex-column right-content">
+								<div class="large-text">
+									<p class="large-text">{{ 'cv.mway.description' | translate }}</p>
+									<ul>
+										<li class="text-left"
+											*ngFor="let task of ('cv.mway.tasks_practical_semester' | translate)">
+											{{task}}</li>
+									</ul>
+									<p>{{ 'cv.technologies' | translate }}</p>
+									<ul class="d-flex flex-row languages tech">
+										<li>Angular</li>
+										<li>Ionic</li>
+										<li>TypeScript</li>
+										<li>Node.js</li>
+										<li>RxJS</li>
+										<li>SQL</li>
+										<li>Protractor</li>
+										<li>Jasmine</li>
+										<li>Karma</li>
+										<li>Docker</li>
+										<li>HTML</li>
+										<li>CSS/SCSS</li>
+										<li>JIRA</li>
+										<li>Git</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div size="A4" class="print-section skills">
+		<div class="d-flex flex-column header-container">
+			<h1>Kaan <span>Keskinsoy</span></h1>
+			<p>{{ 'degree' | translate }}</p>
+		</div>
+
+		<div class="row main-container">
+			<div class="col-md-4 px-4 d-flex flex-column left-container">
+				<div class="left-box">
+
+				</div>
+			</div>
+
+			<div class="col-md-8 pr-4 d-flex flex-column right-container">
 
 				<div class="right-box">
 					<h2>{{ 'projects' | translate }}</h2>
@@ -393,7 +400,9 @@
 								<div class="large-text">
 									<p class="large-text">{{ 'cv.projects.thesis_bsc.description' | translate }}</p>
 									<ul>
-										<li class="text-left" *ngFor="let task of ('cv.projects.thesis_bsc.tasks' | translate)">{{task}}</li>
+										<li class="text-left"
+											*ngFor="let task of ('cv.projects.thesis_bsc.tasks' | translate)">{{task}}
+										</li>
 									</ul>
 									<p>{{ 'cv.technologies' | translate }}</p>
 									<ul class="d-flex flex-row languages tech">
@@ -426,9 +435,12 @@
 							</div>
 							<div class="d-flex flex-column right-content">
 								<div class="large-text">
-									<p class="large-text">{{ 'cv.projects.autonomous_shuttle.description' | translate }}</p>
+									<p class="large-text">{{ 'cv.projects.autonomous_shuttle.description' | translate }}
+									</p>
 									<ul>
-										<li class="text-left" *ngFor="let task of ('cv.projects.autonomous_shuttle.tasks' | translate)">{{task}}</li>
+										<li class="text-left"
+											*ngFor="let task of ('cv.projects.autonomous_shuttle.tasks' | translate)">
+											{{task}}</li>
 									</ul>
 									<p>{{ 'cv.technologies' | translate }}</p>
 									<ul class="d-flex flex-row languages tech">
@@ -471,7 +483,9 @@
 								<div class="large-text">
 									<p class="large-text">{{ 'cv.projects.billtracker.description' | translate }}</p>
 									<ul>
-										<li class="text-left" *ngFor="let task of ('cv.projects.billtracker.tasks' | translate)">{{task}}</li>
+										<li class="text-left"
+											*ngFor="let task of ('cv.projects.billtracker.tasks' | translate)">{{task}}
+										</li>
 									</ul>
 									<p>{{ 'cv.technologies' | translate }}</p>
 									<ul class="d-flex flex-row languages tech">
@@ -526,9 +540,12 @@
 							</div>
 							<div class="d-flex flex-column right-content">
 								<div class="large-text">
-									<p class="large-text">{{ 'cv.projects.crypto_currency_tracker.description' | translate }}</p>
+									<p class="large-text">
+										{{ 'cv.projects.crypto_currency_tracker.description' | translate }}</p>
 									<ul>
-										<li class="text-left" *ngFor="let task of ('cv.projects.crypto_currency_tracker.tasks' | translate)">{{task}}</li>
+										<li class="text-left"
+											*ngFor="let task of ('cv.projects.crypto_currency_tracker.tasks' | translate)">
+											{{task}}</li>
 									</ul>
 									<p>{{ 'cv.technologies' | translate }}</p>
 									<ul class="d-flex flex-row languages tech">
@@ -564,7 +581,8 @@
 								<div class="large-text">
 									<p class="large-text">{{ 'cv.projects.watchit.description' | translate }}</p>
 									<ul>
-										<li class="text-left" *ngFor="let task of ('cv.projects.watchit.tasks' | translate)">{{task}}</li>
+										<li class="text-left"
+											*ngFor="let task of ('cv.projects.watchit.tasks' | translate)">{{task}}</li>
 									</ul>
 									<p>{{ 'cv.technologies' | translate }}</p>
 									<ul class="d-flex flex-row languages tech">
@@ -602,7 +620,9 @@
 								<div class="large-text">
 									<p class="large-text">{{ 'cv.projects.cnc_webshop.description' | translate }}</p>
 									<ul>
-										<li class="text-left" *ngFor="let task of ('cv.projects.cnc_webshop.tasks' | translate)">{{task}}</li>
+										<li class="text-left"
+											*ngFor="let task of ('cv.projects.cnc_webshop.tasks' | translate)">{{task}}
+										</li>
 									</ul>
 									<p>{{ 'cv.technologies' | translate }}</p>
 									<ul class="d-flex flex-row languages tech">
@@ -643,7 +663,9 @@
 								<div class="large-text">
 									<p class="large-text">{{ 'cv.projects.private_eye.description' | translate }}</p>
 									<ul>
-										<li class="text-left" *ngFor="let task of ('cv.projects.private_eye.tasks' | translate)">{{task}}</li>
+										<li class="text-left"
+											*ngFor="let task of ('cv.projects.private_eye.tasks' | translate)">{{task}}
+										</li>
 									</ul>
 									<p>{{ 'cv.technologies' | translate }}</p>
 									<ul class="d-flex flex-row languages tech">
