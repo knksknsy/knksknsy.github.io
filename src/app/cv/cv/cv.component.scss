@@ -3,8 +3,8 @@
 
 @include media-breakpoint-down(md) {
     div[size="A4"] {
-        width: 100% !important;
-        height: 100% !important;
+        min-width: 100% !important;
+        max-height: 100% !important;
     }
 }
 
