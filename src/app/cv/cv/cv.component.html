@@ -1,11 +1,11 @@
 <div class="container-fluid">
 	<a *ngIf="isGerman" class="print-btn btn btn-circle" download="{{fileGerman}}"
 		href="./assets/cv/Lebenslauf_Kaan_Keskinsoy.pdf" target="_blank">
-		<i class="fa fa-print" (click)="sendGAEvent('PDF', 'save', 'german')"></i>
+		<i class="fa fa-save" (click)="sendGAEvent('PDF', 'save', 'german')"></i>
 	</a>
 	<a *ngIf="!isGerman" class="print-btn btn btn-circle" download="{{fileEnglish}}"
 		href="./assets/cv/Curriculum_Vitae_Kaan_Keskinsoy.pdf" target="_blank">
-		<i class="fa fa-print" (click)="sendGAEvent('PDF', 'save', 'english')"></i>
+		<i class="fa fa-save" (click)="sendGAEvent('PDF', 'save', 'english')"></i>
 	</a>
 	<div size="A4" class="print-section">
 		<div class="d-flex flex-column header-container">
