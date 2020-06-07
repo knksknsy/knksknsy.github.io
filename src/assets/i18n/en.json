@@ -1,10 +1,17 @@
 {
+    "name": "Kaan",
+    "surname": "Keskinsoy",
     "about_me": "About me",
     "cv_short": "CV",
     "cv_long": "Curriculum Vitae",
     "projects": "Projects",
     "degree": "Computer Science and Media B.Sc.",
     "discover": "My Projects",
+    "letter": "Letters",
+    "email": "k.keskinsoy@googlemail.com",
+    "homepage": "knksknsy.github.io/home",
+    "xing": "xing.com/profile/Kaan_Keskinsoy",
+    "linkedin": "linkedin.com/in/Kaan-Keskinsoy",
     "cv": {
         "contact": "Contact",
         "technologies": "Technologies:",
@@ -15,6 +22,7 @@
             "english": "English (fluent)"
         },
         "hobbies": {
+            "title": "Hobbies",
             "weight_training": "Weight training",
             "cooking": "Cooking"
         },
@@ -43,6 +51,7 @@
             "title": "Skills",
             "programming_languages": "Programming Languages",
             "databases": "Databases",
+            "machine_learning": "Machine Learning",
             "web_technologies": "Web Technologies",
             "mobile_development": "Mobile App Development"
         },

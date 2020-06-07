@@ -1,15 +1,28 @@
 <div class="container-fluid">
-	<a *ngIf="isGerman" class="print-btn btn btn-circle" download="{{fileGerman}}"
-		href="./assets/cv/Lebenslauf_Kaan_Keskinsoy.pdf" target="_blank">
+
+	<div *ngIf="!production" class="print-btn btn btn-circle spinner-grow" role="status" [ngClass]="{'hide': !printing}">
+		<span class="sr-only">Loading...</span>
+	</div>
+	<button *ngIf="!production" class="print-btn btn btn-circle" (click)="printCV()" [ngClass]="{'hide': printing}">
+		<i class="fa fa-save"></i>
+	</button>
+	<button class="public-btn btn btn-circle" (click)="isPublic = !isPublic" [ngClass]="{'hide': production}">
+		<i class="fa fa-unlock" [ngClass]="{'hide': !isPublic}"></i>
+		<i class="fa fa-lock" [ngClass]="{'hide': isPublic}"></i>
+	</button>
+
+	<a *ngIf="isGerman && isPublic" class="print-btn btn btn-circle" download="{{fileGerman}}"
+		href="./assets/cv/Lebenslauf_Kaan_Keskinsoy.pdf" target="_blank" >
 		<i class="fa fa-save" (click)="sendGAEvent('PDF', 'save', 'german')"></i>
 	</a>
-	<a *ngIf="!isGerman" class="print-btn btn btn-circle" download="{{fileEnglish}}"
+	<a *ngIf="!isGerman && isPublic" class="print-btn btn btn-circle" download="{{fileEnglish}}"
 		href="./assets/cv/Curriculum_Vitae_Kaan_Keskinsoy.pdf" target="_blank">
 		<i class="fa fa-save" (click)="sendGAEvent('PDF', 'save', 'english')"></i>
 	</a>
+
 	<div size="A4" class="print-section">
 		<div class="d-flex flex-column header-container">
-			<h1>Kaan <span>Keskinsoy</span></h1>
+			<h1>{{ 'name' | translate }} <span>{{ 'surname' | translate }}</span></h1>
 			<p>{{ 'degree' | translate }}</p>
 		</div>
 
@@ -21,25 +34,66 @@
 					<img class="img-fluid" src="./assets/images/profile-image-original.jpg">
 				</div>
 
-				<div class="left-box">
-					<h2>{{ 'cv.contact' | translate }}</h2>
-					<div class="contact d-flex flex-row justify-content-around">
-						<div>
-							<a class="fa fa-envelope" href="mailto:k.keskinsoy@googlemail.com"></a>
-						</div>
-						<div>
-							<a class="fa fa-github" href="https://github.com/knksknsy/" target="_blank"></a>
-						</div>
-						<div>
-							<a class="fa fa-xing" href="https://www.xing.com/profile/Kaan_Keskinsoy/"
-								target="_blank"></a>
-						</div>
-						<div>
-							<a class="fa fa-linkedin" href="https://www.linkedin.com/in/Kaan-Keskinsoy/"
-								target="_blank"></a>
+				<ng-container *ngIf="!isPublic; then fullinfo; else publicinfo"></ng-container>
+				<ng-template #fullinfo>
+
+					<div class="left-box">
+						<h2>{{ 'cv.contact' | translate }}</h2>
+						<div *ngIf="data" class="d-flex flex-row justify-content-between">
+							<div>
+								<p>{{ data.street }}</p>
+								<p>{{ data.zip }} {{ data.city }}</p>
+								<p>{{ data.phone }}</p>
+								<p>{{ 'email' | translate }}</p>
+								<p>{{ 'homepage' | translate }}</p>
+							</div>
+							<div class="icons d-flex flex-column justify-content-around align-items-center">
+								<a class="fa fa-map-marker"></a>
+								<a class="fa fa-map-marker" style="visibility: hidden;"></a>
+								<a class="fa fa-mobile"></a>
+								<a class="fa fa-envelope" href="mailto:k.keskinsoy@googlemail.com"></a>
+								<a class="fa fa-globe" href="https://knksknsy.github.io/home"></a>
+							</div>
 						</div>
 					</div>
-				</div>
+				</ng-template>
+
+				<ng-template #publicinfo>
+					<div class="left-box">
+						<h2>{{ 'cv.contact' | translate }}</h2>
+						<div class="contact d-flex flex-row justify-content-around">
+							<div>
+								<a class="fa fa-envelope" href="mailto:k.keskinsoy@googlemail.com"></a>
+							</div>
+							<div>
+								<a class="fa fa-github" href="https://github.com/knksknsy/" target="_blank"></a>
+							</div>
+							<div>
+								<a class="fa fa-xing" href="https://www.xing.com/profile/Kaan_Keskinsoy/"
+									target="_blank"></a>
+							</div>
+							<div>
+								<a class="fa fa-linkedin" href="https://www.linkedin.com/in/Kaan-Keskinsoy/"
+									target="_blank"></a>
+							</div>
+						</div>
+
+						<div class="contact-alt d-flex flex-row justify-content-between hide">
+							<div>
+								<p>{{ 'email' | translate }}</p>
+								<p>{{ 'homepage' | translate }}</p>
+								<p>{{ 'xing' | translate }}</p>
+								<p>{{ 'linkedin' | translate }}</p>
+							</div>
+							<div class="icons d-flex flex-column justify-content-around align-items-center">
+								<a class="fa fa-envelope"></a>
+								<a class="fa fa-github"></a>
+								<a class="fa fa-xing"></a>
+								<a class="fa fa-linkedin"></a>
+							</div>
+						</div>
+					</div>
+				</ng-template>
 
 				<div class="left-box">
 					<h2>{{ 'cv.languages.title' | translate }}</h2>
@@ -49,7 +103,7 @@
 				</div>
 
 				<div class="left-box">
-					<h2>Hobbies</h2>
+					<h2>{{ 'cv.hobbies.title' | translate }}</h2>
 					<p>{{ 'cv.hobbies.weight_training' | translate }}</p>
 					<p>{{ 'cv.hobbies.cooking' | translate }}</p>
 				</div>
@@ -71,26 +125,14 @@
 							<div class="false"></div>
 						</div>
 						<ul class="d-flex flex-row languages">
-							<li>Java EE</li>
-							<li>Spring Boot</li>
+							<li>C</li>
+							<li>C++</li>
 							<li>Clojure</li>
 						</ul>
 						<div class="d-flex flex-row exp-bar">
 							<div class="true"></div>
 							<div class="true"></div>
 							<div class="true"></div>
-							<div class="false"></div>
-							<div class="false"></div>
-							<div class="false"></div>
-						</div>
-						<ul class="d-flex flex-row languages">
-							<li>C</li>
-							<li>C++</li>
-						</ul>
-						<div class="d-flex flex-row exp-bar">
-							<div class="true"></div>
-							<div class="true"></div>
-							<div class="false"></div>
 							<div class="false"></div>
 							<div class="false"></div>
 							<div class="false"></div>
@@ -140,6 +182,7 @@
 							<div class="false"></div>
 						</div>
 						<ul class="d-flex flex-row languages">
+							<li>Spring Boot</li>
 							<li>Docker</li>
 						</ul>
 						<div class="d-flex flex-row exp-bar">
@@ -165,14 +208,21 @@
 							<div class="true"></div>
 							<div class="false"></div>
 						</div>
+					</div>
+					<div class="d-flex flex-column experience">
+						<h3>{{ 'cv.skills.machine_learning' | translate }}</h3>
 						<ul class="d-flex flex-row languages">
-							<li>Swift</li>
+							<li>Scikit-Learn</li>
+							<li>Pandas</li>
+							<li>Gensim</li>
+							<li>Tensorflow</li>
+							<li>Keras</li>
 						</ul>
 						<div class="d-flex flex-row exp-bar">
 							<div class="true"></div>
 							<div class="true"></div>
 							<div class="true"></div>
-							<div class="false"></div>
+							<div class="true"></div>
 							<div class="false"></div>
 							<div class="false"></div>
 						</div>
@@ -366,7 +416,7 @@
 	</div>
 	<div size="A4" class="print-section skills">
 		<div class="d-flex flex-column header-container">
-			<h1>Kaan <span>Keskinsoy</span></h1>
+			<h1>{{ 'name' | translate }} <span>{{ 'surname' | translate }}</span></h1>
 			<p>{{ 'degree' | translate }}</p>
 		</div>
 
@@ -509,14 +559,22 @@
 
 	<div size="A4" class="print-section skills">
 		<div class="d-flex flex-column header-container">
-			<h1>Kaan <span>Keskinsoy</span></h1>
+			<h1>{{ 'name' | translate }} <span>{{ 'surname' | translate }}</span></h1>
 			<p>{{ 'degree' | translate }}</p>
 		</div>
 
 		<div class="row main-container">
-			<div class="col-md-4 px-4 d-flex flex-column left-container">
-				<div class="left-box">
-				</div>
+			<div class="col-md-4 px-4 d-flex flex-column left-container justify-content-end">
+				<ng-container *ngIf="!isPublic; then signature; else nosignature"></ng-container>
+				<ng-template #signature>
+					<div class="d-flex mb-4 flex-column left-box">
+						<p class="mb-3">{{ 'city' | translate }}, <span>{{ today | date: 'dd.MM.yyyy'}}</span></p>
+						<img class="img-fluid" src="./assets/images/signature.png" width="155px">
+					</div>
+				</ng-template>
+				<ng-template #nosignature>
+					<div class="d-flex mb-4 flex-column left-box"></div>
+				</ng-template>
 			</div>
 
 			<div class="col-md-8 pr-4 d-flex flex-column right-container">

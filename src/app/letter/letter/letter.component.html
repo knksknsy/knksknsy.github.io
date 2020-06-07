@@ -1,0 +1,94 @@
+<div class="container-fluid">
+
+	<div *ngIf="!production" class="print-btn btn btn-circle spinner-grow" role="status" [ngClass]="{'hide': !printing}">
+		<span class="sr-only">Loading...</span>
+	</div>
+
+	<!-- TODO: implement save pdf functionality -->
+	<button *ngIf="!production" class="print-btn btn btn-circle" (click)="printCV()" [ngClass]="{'hide': printing}">
+		<i class="fa fa-save"></i>
+	</button>
+
+	<select *ngIf="company" class="companies" [(ngModel)]="company">
+		<option *ngFor="let c of companies" [ngValue]="c" [selected]="c.name == company.name">{{c.name}}</option>
+	</select>
+
+	<div *ngIf="company" size="A4" class="print-section">
+
+		<div class="d-flex flex-column header-container">
+			<h1>{{ 'name' | translate }} <span>{{ 'surname' | translate }}</span></h1>
+			<p>{{ 'degree' | translate }}</p>
+		</div>
+
+		<div class="information d-flex flex-row justify-content-between">
+			<div class="address d-flex flex-column">
+				<p>{{company.name}}</p>
+				<p>{{company.counterpart.name}} {{company.counterpart.surname}}</p>
+				<ng-template [ngIf]="company.department">
+					<p>{{company.department}}</p>
+				</ng-template>
+				<p>{{company.address.street}}</p>
+				<p>{{company.address.zip}} {{company.address.city}}</p>
+			</div>
+
+			<div *ngIf="data" class="d-flex flex-column justify-content-end align-items-end">
+				<p class="m-0">{{data.city}}, <span>{{ today | date: 'dd.MM.yyyy'}}</span></p>
+			</div>
+		</div>
+
+		<div class="row pt-4 main-container">
+
+			<div *ngIf="data" class="col-md-4 px-4 d-flex flex-column left-container">
+				<div class="contact left-box">
+					<h2>{{ 'cv.contact' | translate }}</h2>
+					<div class="d-flex align-items-baseline">
+						<i class="fa fa-map-marker"></i>
+						<h3>Adresse</h3>
+					</div>
+					<p>{{data.street}}</p>
+					<p class="mb-2">{{ data.zip }} {{ data.city }}</p>
+					<div class="d-flex align-items-start">
+						<i class="fa fa-mobile"></i>
+						<h3>Telefon</h3>
+					</div>
+					<p class="mb-2">{{ data.phone }}</p>
+					<div class="d-flex align-items-baseline">
+						<i class="fa fa-envelope"></i>
+						<h3>Email</h3>
+					</div>
+					<p class="mb-2">{{ 'email' | translate }}</p>
+					<div class="d-flex align-items-baseline">
+						<i class="fa fa-globe"></i>
+						<h3>Website</h3>
+					</div>
+					<p>{{ 'homepage' | translate }}</p>
+				</div>
+			</div>
+
+			<div class="col-md-8 px-4 d-flex flex-column right-container">
+				<div class="right-box">
+
+					<h2>{{company.heading}}</h2>
+
+					<div class="d-flex flex-column">
+						<ng-container *ngIf="company.counterpart.gender === 'm'; then male; else female"></ng-container>
+						<ng-template #male>
+							<p>Sehr geehrter Herr {{company.counterpart.surname}},</p>
+						</ng-template>
+						<ng-template #female>
+							<p>Sehr geehrte Frau {{company.counterpart.surname}},</p>
+						</ng-template>
+						<p class="large-text" *ngFor="let p of company.letter">{{p}}</p>
+					</div>
+
+					<div class="d-flex flex-column">
+						<p>Mit freundlichen Grüßen</p>
+						<img class="img-fluid" src="./assets/images/signature.png" width="155px">
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>

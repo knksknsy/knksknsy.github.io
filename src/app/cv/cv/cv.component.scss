@@ -6,11 +6,15 @@
         min-width: 100% !important;
         max-height: 100% !important;
     }
+
+    .print-btn {
+        display: none !important;
+    }
 }
 
 div[size="A4"] {
     background-color: white;
-    box-shadow: 0 0 0.5cm rgba(0, 0, 0, 0.5);
+    // box-shadow: 0 0 0.5cm rgba(0, 0, 0, 0.5);
     margin: 0 auto;
     margin-bottom: $container-padding;
     min-width: 21cm;
@@ -23,13 +27,98 @@ div[size="A4"] {
     body,
     div[size="A4"] {
         margin: 0;
-        box-shadow: 0;
+        // box-shadow: none !important;
     }
+}
+
+.btn-circle {
+    margin-left: 10px;
+    border-radius: 50%;
+    height: 35px;
+    width: 35px;
+    border: 2px solid white;
+}
+
+.print-btn {
+    z-index: 999;
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    bottom: $footer-height + 20px;
+    right: 20px;
+    display: flex;
+    background-color: #505050;
+    color: white;
+    font-size: 2em;
+    justify-content: center;
+}
+
+.public-btn {
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    top: calc(#{$header-height} + 20px);
+    right: 20px;
+    display: flex;
+    background-color: #505050;
+    color: white;
+    font-size: 2em;
+    justify-content: center;
 }
 
 .container-fluid {
     margin: 0;
+    margin-top: $container-padding;
     padding: 0;
+}
+
+.contact {
+    font-size: 1.5em;
+    padding-top: 0.5em;
+    a {
+        color: #0066CC !important;
+    }
+    a:hover {
+        text-decoration: none;
+        color: #0066CC;
+    }
+}
+
+.icons .fa {
+    color: #0066CC !important;
+}
+
+.icons .fa-mobile {
+    font-size: 20px;
+}
+
+.icons .fa-map-marker {
+    font-size: 17px;
+}
+
+.icons .fa-envelope {
+    font-size: 14px;
+    &:hover {
+        text-decoration: none;
+        color: #0066CC !important;
+    }
+}
+
+.icons .fa-globe {
+    &:hover {
+        text-decoration: none;
+        color: #0066CC !important;
+    }
+}
+
+.contact-alt p {
+    font-family: LatoWeb;
+    font-size: 10pt;
+    margin: 0 !important;
+}
+
+.hide {
+    display: none !important;
 }
 
 .header-container {
@@ -73,40 +162,6 @@ div[size="A4"] {
     justify-content: flex-start;
 }
 
-.contact {
-    font-size: 1.5em;
-    padding-top: 0.5em;
-    a {
-        color: #0066CC !important;
-    }
-    a:hover {
-        text-decoration: none;
-        color: #0066CC;
-    }
-}
-
-.btn-circle {
-    margin-left: 10px;
-    border-radius: 50%;
-    height: 35px;
-    width: 35px;
-    border: 2px solid white;
-}
-
-.print-btn {
-    z-index: 999;
-    position: fixed;
-    width: 50px;
-    height: 50px;
-    bottom: $footer-height + 20px;
-    right: 20px;
-    display: flex;
-    background-color: #505050;
-    color: white;
-    font-size: 2em;
-    justify-content: center;
-}
-
 .image-container {
     margin-bottom: 1em;
     box-shadow: 10px 10px 35px -10px rgba(0, 0, 0, 0.25);
@@ -123,8 +178,9 @@ div[size="A4"] {
     margin-bottom: 1em;
     h2 {
         font-family: LatoWeb;
-        font-size: 16pt;
+        font-size: 14pt;
         margin: 0;
+        //text-transform: uppercase;
     }
     p {
         font-family: LatoWeb;
@@ -139,6 +195,7 @@ div[size="A4"] {
         font-family: LatoWeb;
         font-size: 16pt;
         margin: 0;
+        //text-transform: uppercase;
     }
     .content {
         &:last-of-type {
@@ -231,7 +288,7 @@ div[size="A4"] {
 
 .experience {
     justify-content: flex-start;
-    margin-bottom: 1em;
+    margin-bottom: 0.25em;
     &:last-of-type {
         margin-bottom: 0;
     }
@@ -239,6 +296,7 @@ div[size="A4"] {
         font-family: LatoWeb;
         font-size: 12pt;
         color: #0066CC;
+        margin-bottom: 0.25em;
     }
     .exp-bar {
         justify-content: space-evenly;
@@ -247,14 +305,14 @@ div[size="A4"] {
             height: 10px;
             background-color: #0066CC;
             margin: 2px 2px 2px 0;
-            box-shadow: inset 2px 2px 10px 0px rgba(0, 0, 0, 0.25);
+            // box-shadow: inset 2px 2px 10px 0px rgba(0, 0, 0, 0.25);
         }
         .false {
             width: 16.67%;
             height: 10px;
             background-color: lightgray;
             margin: 2px 2px 2px 0;
-            box-shadow: inset 2px 2px 10px 0px rgba(0, 0, 0, 0.25);
+            // box-shadow: inset 2px 2px 10px 0px rgba(0, 0, 0, 0.25);
         }
     }
     .exp-bar :last-child {

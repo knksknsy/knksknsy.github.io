@@ -8,6 +8,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { UiModule } from './ui/ui.module';
 import { CVModule } from './cv/cv.module';
 import { ProjectsModule } from './projects/projects.module';
+import { LetterModule } from './letter/letter.module'
 
 import { AppComponent } from './app.component';
 
@@ -25,6 +26,7 @@ export function createTranslateLoader(http: HttpClient) {
         UiModule,
         CVModule,
         ProjectsModule,
+        LetterModule,
         TranslateModule.forRoot({
             loader: {
                 provide: TranslateLoader,

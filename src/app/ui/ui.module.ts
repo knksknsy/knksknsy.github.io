@@ -12,12 +12,14 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { AboutComponent } from './about/about.component';
 
-import { ProjectsComponent } from '../projects/projects/projects.component';
 import { CVComponent } from '../cv/cv/cv.component';
+import { ProjectsComponent } from '../projects/projects/projects.component';
+import { LetterComponent } from '../letter/letter/letter.component';
 
 export const appRoutes: Routes = [
     { path: 'cv', component: CVComponent },
     { path: 'projects', component: ProjectsComponent },
+    { path: 'letter', component: LetterComponent },
     { path: '', component: AboutComponent, pathMatch: 'full' },
     { path: '**', component: AboutComponent }
 ];

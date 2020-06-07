@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-header',
@@ -9,10 +10,12 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class HeaderComponent implements OnInit {
   navbarOpen = false;
+  production = false;
 
   constructor(public translate: TranslateService, private router: Router) { }
 
   ngOnInit() {
+    this.production = environment.production
   }
 
   navigateRoute(url: string) {

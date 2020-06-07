@@ -42,3 +42,8 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+# Assets
+src/assets/images/signature.png
+src/assets/data/companies.json
+src/assets/data/private.json
