@@ -1,0 +1,178 @@
+{
+    "name": "Kaan",
+    "surname": "Keskinsoy",
+    "about_me": "About me",
+    "cv_short": "CV",
+    "cv_long": "Lebenslauf",
+    "projects": "Projekte",
+    "degree": "Medieninformatik B.Sc.",
+    "discover": "Meine Projekte",
+    "letter": "Anschreiben",
+    "email": "k.keskinsoy@googlemail.com",
+    "homepage": "knksknsy.github.io/home",
+    "xing": "xing.com/profile/Kaan_Keskinsoy",
+    "linkedin": "linkedin.com/in/Kaan-Keskinsoy",
+    "github": "github.com/knksknsy/",
+    "cv": {
+        "contact": "Kontakt",
+        "technologies": "Technologien:",
+        "languages": {
+            "title": "Sprachen",
+            "german": "Deutsch (Muttersprache)",
+            "turkish": "Türkisch (Muttersprache)",
+            "english": "Englisch (fließend)"
+        },
+        "hobbies": {
+            "title": "Hobbies",
+            "weight_training": "Kraftsport",
+            "cooking": "Kochen"
+        },
+        "education": {
+            "title": "Bildungsweg",
+            "today": "Heute",
+            "bsc": "Medieninformatik (Bachelor of Science)",
+            "msc": "Computer Science and Media (Master of Science)",
+            "final_grade": "Abschlussnote: 1,3",
+            "average_grade": "(Gesamtdurchschnitt: 1,9)",
+            "thesis": "Abschlussarbeit:",
+            "computer_science": "Informatik (Bachelor of Science)",
+            "higher_education_qualification": "Allgemeine Hochschulreife",
+            "information_technology": "Informationstechnik",
+            "major_subject": "Profilfach:",
+            "secondary_education": "Mittlere Reife"
+        },
+        "work": {
+            "title": "Berufserfahrung",
+            "student_trainee": "Werkstudent",
+            "full_stack_development": "Full-Stack Entwicklung",
+            "practical_semester": "Praxissemester",
+            "web_app_development": "Web App Entwicklung"
+        },
+        "skills": {
+            "title": "Fähigkeiten",
+            "programming_languages": "Programmiersprachen",
+            "databases": "Datenbanken",
+            "machine_learning": "Machine Learning",
+            "web_technologies": "Web-Technologien",
+            "mobile_development": "Mobile App-Entwicklung"
+        },
+        "mway": {
+            "description": "Entwicklung von Web Applications im Bereich B2E:",
+            "tasks_student_trainee": [
+                "Frameworkgestützte Entwicklung (client- und serverseitig)",
+                "Entwurf und Umsetzung von responsiven User-Interfaces",
+                "Entwicklung und Anbindung von REST-Interfaces",
+                "Entwicklung von Unit- und E2E-Tests",
+                "Entwicklung von CLIs in Node.js",
+                "Deployment, Betrieb und Wartung von Web-Anwendungen"
+            ],
+            "tasks_practical_semester": [
+                "Frameworkgestützte clientseitige Entwicklung",
+                "Entwurf und Umsetzung von responsiven User-Interfaces",
+                "Anbindung von REST-Interfaces",
+                "Entwicklung von Unit- und E2E-Tests",
+                "Deployment, Betrieb und Wartung von Web-Anwendungen"
+            ]
+        },
+        "projects": {
+            "smart_penguins" : {
+                "description": "Entwicklung eines Car2x Systems zur Prävention von Verkehrsunfällen auf Basis eines Bluetooth LE Mesh Netzwerks:",
+                "tasks": [
+                    "Implementierung einer Android App zum Austausch von BLE-Messages mit dem Mesh Netzwerk",
+                    "Implementierung des Mesh Netzwerks zur Übertragung von BLE-Messages",
+                    "Implementierung des Frühwarnsystems zum aktuellen Verkehrsgeschehen",
+                    "Dockerization der Softwareumgebung für konsistente Arbeitsumgebung und Continuous Integration"
+                ]
+            },
+            "next_search": {
+                "description": "Cloud basierte Entwicklung einer skalierbaren Suchanwendung für komprimierte Inhaltswiedergabe von Webseiten:",
+                "tasks": [
+                    "Design und Implementierung der Cloud Architektur",
+                    "Design und Implementierung der Web-Applikation",
+                    "Verarbeiten und Zusammenfassen von Website-Inhalten durch Cloud Functions",
+                    "Caching von komprimierten Inhalten",
+                    "Access Management unterschiedlicher Cloud Provider"
+                ]
+            },
+            "easy_grow": {
+                "description": "Entwicklung eines automatischen Bewässerungssystem für Pflanzen auf Basis des Wi-Fi Mikrochips ESP8266:",
+                "tasks": [
+                    "Design der Schaltung und Implementierung der Logik",
+                    "Entwicklung der Web-Applikation zur Fernsteuerung",
+                    "Interaktionsmöglichkeiten über das Hardware-Interface oder der Web-Applikation über das Heimnetzwerk",
+                    "Implementierung WiFi-spezifischer Funktionen mittels Espressif IoT Development Frameworks",
+                    "Dockerization der Softwareumgebung für konsistente Arbeitsumgebung und Continuous Integration"
+                ]
+            },
+            "thesis_bsc": {
+                "description": "Entwicklung einer Android-Bibliothek zur energieeffizienten und präzisen Standortüberwachung, durch die Verwendung von Smartphone-Sensoren, Kontextinformationen und Erkennung von Bewegungsmerkmalen:",
+                "tasks": [
+                    "Datenerfassung und Analyse von Messwerten zur Erkennung von Bewegungsmerkmalen",
+                    "Analyse und Optimierung des Stromverbrauchs und der Qualität der Genauigkeit durch die Verwendung von Geofences, Bewegungsmerkmale, Netzwerk- und Ladeinformationen",
+                    "Entwurf und Entwicklung der Architektur zur simultanen Verwendung der Bibliothek in mehreren Applikationen"
+                ]
+            },
+            "autonomous_shuttle": {
+                "description": "Ausarbeitung eines Shuttle-Services zur Beförderung von Personengruppen:",
+                "tasks": [
+                    "Konzeptionelles Arbeiten in interdisziplinären Teams",
+                    "Design und Implementierung der Webservice-Architektur",
+                    "Interaktive Gestaltung der Fahrt durch ein Interessenmatching und Emotionserkennung der Fahrgäste",
+                    "Entwicklung des Systems zur Buchung von Fahrten",
+                    "Interessenmatching durch Verschlagwortung der öffentlichen Bilder auf dem sozialen Netzwerk Instagram",
+                    "Entwicklung der Gesichtserkennung zur Authentifizierung vor Fahrten und zur Emotionserkennung der Fahrgäste"
+                ]
+            },
+            "billtracker": {
+                "description": "Entwicklung von nativen Applikationen in Android und iOS zur synchronisierten Speicherung von Belegen in Firebase:",
+                "tasks": [
+                    "Design und Implementierung der Firebase Datenbank und Storage",
+                    "Design und Entwicklung der Android und iOS UIs",
+                    "Anbindung der Firebase Datenbank und Storage zur Synchronisation der Daten und Belege",
+                    "Verwendung der Android Camera API und AVFoundation zur Speicherung der Bilder",
+                    "Verwaltung der lokalen Bilder im Dateisystem"
+                ]
+            },
+            "crypto_currency_tracker": {
+                "description": "Entwicklung einer Web-Applikation zum Vergleich von Krypto-Währungskursen:",
+                "tasks": [
+                    "Entwicklung durch funktionale Programmiersprache Clojure",
+                    "HTML-Generierung mittels der Clojure-Library Hiccup",
+                    "Anbindung der “CryptoCompare” API für Kursinformationen",
+                    "Aufbereitung der Kursinformationen durch Clojure",
+                    "Visuelle Darstellung der Kursvergleiche in Diagrammen durch clj-xchart"
+                ]
+            },
+            "watchit": {
+                "description": "Entwicklung einer responsiven Web-Applikation für Film- und Serieninformationen:",
+                "tasks": [
+                    "Design und Implementierung der Webservice-Architektur",
+                    "Design und Entwicklung einer interaktiven und responsiven Web-UI",
+                    "Anbindung der \"The Movie Database\" API",
+                    "Erweiterung des eigenen Webservices zur Erzeugung von Benutzerkonten und die Speicherung von Watch- und Favoritenlisten"
+                ]
+            },
+            "cnc_webshop": {
+                "description": "Entwicklung eines Web-Shops:",
+                "tasks": [
+                    "Design und Implementierung der Webservice-Architektur",
+                    "Design und Entwicklung einer interaktiven und responsiven Web-UI",
+                    "Administrator-Ansicht zur Verwaltung von Produkten",
+                    "Implementierung des Warenkorbs und des Bestellprozesses",
+                    "Implementierung von Sitzungsverwaltungen",
+                    "Vorbeugung von Sicherheitsbedrohungen wie XSS, XSRF und SQL-Injections",
+                    "Verwendung von SSL/TLS-Verschlüsselung"
+                ]
+            },
+            "private_eye": {
+                "description": "Entwicklung mobiler Messstationen zur Messung und Visualisierung von Umweltdaten:",
+                "tasks": [
+                    "Design und Implementierung der Webservice-Architektur",
+                    "Design und Entwicklung einer interaktiven und responsiven Web-UI",
+                    "Datenaustausch zwischen Embedded Devices und Webservice",
+                    "Visuelle Darstellung der Standorte und dazugehörige Messwerte"
+                ]
+            }
+        }
+    }
+}

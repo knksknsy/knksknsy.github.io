@@ -11,7 +11,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist",
+            "outputPath": "docs/",
             "index": "src/index.html",
             "main": "src/main.ts",
             "tsConfig": "src/tsconfig.app.json",
@@ -26,7 +26,7 @@
               "src/assets/css/latostyle.css",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": []            
           },
           "configurations": {
             "production": {
@@ -43,6 +43,17 @@
                 {
                   "replace": "src/environments/environment.ts",
                   "with": "src/environments/environment.prod.ts"
+                }
+              ],
+              "assets": [
+                {
+                  "glob": "**/*",
+                  "input": "src/assets/",
+                  "ignore": [
+                    "**/data/**",
+                    "**/images/signature.png"
+                  ],
+                  "output": "/assets/"
                 }
               ]
             }
