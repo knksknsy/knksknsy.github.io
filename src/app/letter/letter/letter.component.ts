@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Company } from '../../interfaces/company';
 import { environment } from '../../../environments/environment';
-import { HttpClient } from '@angular/common/http';
+import { GlobalsService } from '../../globals/globals.service';
 
 @Component({
   selector: 'app-letter',
@@ -11,28 +11,18 @@ import { HttpClient } from '@angular/common/http';
 export class LetterComponent implements OnInit {
 
   public today: Date;
-  public production = false;
   public companies: Array<Company> = [];
   public company: Company = null;
-  public data;
 
   public printing = false;
 
-  constructor(private http: HttpClient) {
+  constructor(public globals: GlobalsService) {
   }
 
   ngOnInit() {
-    this.production = environment.production
     this.today = new Date();
-    if (!this.production) {
-      this.http.get('../../../assets/data/companies.json').subscribe(data => {
-        this.companies = <Company[]>data;
-        this.company = this.companies[0];
-        this.http.get('../../../assets/data/private.json').subscribe(data => {
-          this.data = data;
-        });
-      });
-    }
+    this.companies = this.globals.companies
+    this.company = this.companies[0];
   }
 
   printCV() {

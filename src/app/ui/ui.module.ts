@@ -16,6 +16,8 @@ import { CVComponent } from '../cv/cv/cv.component';
 import { ProjectsComponent } from '../projects/projects/projects.component';
 import { LetterComponent } from '../letter/letter/letter.component';
 
+import { GlobalsService } from '../globals/globals.service';
+
 export const appRoutes: Routes = [
     { path: 'cv', component: CVComponent },
     { path: 'projects', component: ProjectsComponent },
@@ -50,6 +52,9 @@ export function HttpLoaderFactory(http: HttpClient) {
     ],
     exports: [
         LayoutComponent
+    ],
+    providers: [
+        GlobalsService
     ]
 })
 export class UiModule { }

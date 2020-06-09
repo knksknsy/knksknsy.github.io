@@ -1,12 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
-import { environment } from '../../../environments/environment';
-import { HttpClient } from '@angular/common/http';
+import { GlobalsService } from '../../globals/globals.service';
 
 import * as jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
-
-// TODO: save pdf assets/cv (german, english)
 
 @Component({
   selector: 'app-cv',
@@ -16,10 +13,9 @@ import html2canvas from 'html2canvas';
 export class CVComponent implements OnInit {
 
   public isGerman: boolean;
+  public path = './assets/cv/';
   public fileGerman = 'Lebenslauf_Kaan_Keskinsoy.pdf';
   public fileEnglish = 'CV_Kaan_Keskinsoy.pdf';
-  public production;
-  public data;
 
   private mimeType = 'image/svg+xml;charset=utf-8';
   private dimension = { width: 210, height: 297 };
@@ -33,24 +29,16 @@ export class CVComponent implements OnInit {
   printing: boolean = false;
   public today: Date;
 
-  constructor(public translate: TranslateService, private http: HttpClient) { }
+  constructor(public translate: TranslateService, public globals: GlobalsService) { }
 
   ngOnInit() {
     this.today = new Date();
-    this.isPublic = environment.production;
-    this.production = environment.production;
+    this.isPublic = this.globals.production;
 
-    if (!this.production) {
-      this.http.get('../../../assets/data/private.json').subscribe(data => {
-        this.data = data;
-      });
-
-      this.setLanguage(this.translate.currentLang);
-      this.translate.onLangChange
-        .subscribe((event: LangChangeEvent) => {
-          this.setLanguage(event.lang);
-        });
-    }
+    this.setLanguage(this.translate.currentLang);
+    this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
+      this.setLanguage(event.lang);
+    });
   }
 
   setLanguage(lang: string) {

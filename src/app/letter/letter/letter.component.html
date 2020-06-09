@@ -1,11 +1,10 @@
 <div class="container-fluid">
 
-	<div *ngIf="!production" class="print-btn btn btn-circle spinner-grow" role="status" [ngClass]="{'hide': !printing}">
+	<div *ngIf="!globals.production" class="print-btn btn btn-circle spinner-grow" role="status" [ngClass]="{'hide': !printing}">
 		<span class="sr-only">Loading...</span>
 	</div>
 
-	<!-- TODO: implement save pdf functionality -->
-	<button *ngIf="!production" class="print-btn btn btn-circle" (click)="printCV()" [ngClass]="{'hide': printing}">
+	<button *ngIf="!globals.production" class="print-btn btn btn-circle" (click)="printCV()" [ngClass]="{'hide': printing}">
 		<i class="fa fa-save"></i>
 	</button>
 
@@ -31,27 +30,27 @@
 				<p>{{company.address.zip}} {{company.address.city}}</p>
 			</div>
 
-			<div *ngIf="data" class="d-flex flex-column justify-content-end align-items-end">
-				<p class="m-0">{{data.city}}, <span>{{ today | date: 'dd.MM.yyyy'}}</span></p>
+			<div *ngIf="globals.privateData" class="d-flex flex-column justify-content-end align-items-end">
+				<p class="m-0">{{globals.privateData.city}}, <span>{{ today | date: 'dd.MM.yyyy'}}</span></p>
 			</div>
 		</div>
 
 		<div class="row pt-4 main-container">
 
-			<div *ngIf="data" class="col-md-4 px-4 d-flex flex-column left-container">
+			<div *ngIf="globals.privateData" class="col-md-4 px-4 d-flex flex-column left-container">
 				<div class="contact left-box">
 					<h2>{{ 'cv.contact' | translate }}</h2>
 					<div class="d-flex align-items-baseline">
 						<i class="fa fa-map-marker"></i>
 						<h3>Adresse</h3>
 					</div>
-					<p>{{data.street}}</p>
-					<p class="mb-2">{{ data.zip }} {{ data.city }}</p>
+					<p>{{globals.privateData.street}}</p>
+					<p class="mb-2">{{ globals.privateData.zip }} {{ globals.privateData.city }}</p>
 					<div class="d-flex align-items-start">
 						<i class="fa fa-mobile"></i>
 						<h3>Telefon</h3>
 					</div>
-					<p class="mb-2">{{ data.phone }}</p>
+					<p class="mb-2">{{ globals.privateData.phone }}</p>
 					<div class="d-flex align-items-baseline">
 						<i class="fa fa-envelope"></i>
 						<h3>Email</h3>

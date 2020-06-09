@@ -10,6 +10,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { UiModule } from '../ui/ui.module';
 
 import { LetterComponent } from './letter/letter.component';
+import { GlobalsService } from '../globals/globals.service';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -37,6 +38,8 @@ export function HttpLoaderFactory(http: HttpClient) {
   exports: [
       LetterComponent
   ],
-  providers: []
+  providers: [
+    GlobalsService
+  ]
 })
 export class LetterModule { }

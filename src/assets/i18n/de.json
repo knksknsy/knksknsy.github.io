@@ -12,6 +12,7 @@
     "homepage": "knksknsy.github.io/home",
     "xing": "xing.com/profile/Kaan_Keskinsoy",
     "linkedin": "linkedin.com/in/Kaan-Keskinsoy",
+    "github": "github.com/knksknsy/",
     "cv": {
         "contact": "Kontakt",
         "technologies": "Technologien:",
@@ -74,6 +75,35 @@
             ]
         },
         "projects": {
+            "smart_penguins" : {
+                "description": "Entwicklung eines Car2x Systems zur Prävention von Verkehrsunfällen auf Basis eines Bluetooth LE Mesh Netzwerks:",
+                "tasks": [
+                    "Implementierung einer Android App zum Austausch von BLE-Messages mit dem Mesh Netzwerk",
+                    "Implementierung des Mesh Netzwerks zur Übertragung von BLE-Messages",
+                    "Implementierung des Frühwarnsystems zum aktuellen Verkehrsgeschehen",
+                    "Dockerization der Softwareumgebung für konsistente Arbeitsumgebung und Continuous Integration"
+                ]
+            },
+            "next_search": {
+                "description": "Cloud basierte Entwicklung einer skalierbaren Suchanwendung für komprimierte Inhaltswiedergabe von Webseiten:",
+                "tasks": [
+                    "Design und Implementierung der Cloud Architektur",
+                    "Design und Implementierung der Web-Applikation",
+                    "Verarbeiten und Zusammenfassen von Website-Inhalten durch Cloud Functions",
+                    "Caching von komprimierten Inhalten",
+                    "Access Management unterschiedlicher Cloud Provider"
+                ]
+            },
+            "easy_grow": {
+                "description": "Entwicklung eines automatischen Bewässerungssystem für Pflanzen auf Basis des Wi-Fi Mikrochips ESP8266:",
+                "tasks": [
+                    "Design der Schaltung und Implementierung der Logik",
+                    "Entwicklung der Web-Applikation zur Fernsteuerung",
+                    "Interaktionsmöglichkeiten über das Hardware-Interface oder der Web-Applikation über das Heimnetzwerk",
+                    "Implementierung WiFi-spezifischer Funktionen mittels Espressif IoT Development Frameworks",
+                    "Dockerization der Softwareumgebung für konsistente Arbeitsumgebung und Continuous Integration"
+                ]
+            },
             "thesis_bsc": {
                 "description": "Entwicklung einer Android-Bibliothek zur energieeffizienten und präzisen Standortüberwachung, durch die Verwendung von Smartphone-Sensoren, Kontextinformationen und Erkennung von Bewegungsmerkmalen:",
                 "tasks": [

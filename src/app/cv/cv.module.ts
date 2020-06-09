@@ -10,6 +10,7 @@ import { UiModule } from '../ui/ui.module';
 
 import { CVComponent } from './cv/cv.component';
 import { CVDataService } from './cvdata.service';
+import { GlobalsService } from '../globals/globals.service';
 
 export function HttpLoaderFactory(http: HttpClient) {
     return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -36,7 +37,8 @@ export function HttpLoaderFactory(http: HttpClient) {
         CVComponent
     ],
     providers: [
-        CVDataService
+        CVDataService,
+        GlobalsService
     ]
 })
 export class CVModule { }
