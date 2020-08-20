@@ -115,6 +115,7 @@
 						<ul class="d-flex flex-row languages">
 							<li>Java</li>
 							<li>TypeScript</li>
+							<li>Python</li>
 						</ul>
 						<div class="d-flex flex-row exp-bar">
 							<div class="true"></div>
@@ -127,7 +128,6 @@
 						<ul class="d-flex flex-row languages">
 							<li>C</li>
 							<li>C++</li>
-							<li>Clojure</li>
 						</ul>
 						<div class="d-flex flex-row exp-bar">
 							<div class="true"></div>
@@ -143,7 +143,6 @@
 						<ul class="d-flex flex-row languages">
 							<li>SQL</li>
 							<li>MongoDB</li>
-							<li>Redis</li>
 						</ul>
 						<div class="d-flex flex-row exp-bar">
 							<div class="true"></div>
@@ -182,7 +181,6 @@
 							<div class="false"></div>
 						</div>
 						<ul class="d-flex flex-row languages">
-							<li>Spring Boot</li>
 							<li>Docker</li>
 						</ul>
 						<div class="d-flex flex-row exp-bar">
@@ -212,11 +210,11 @@
 					<div class="d-flex flex-column experience">
 						<h3>{{ 'cv.skills.machine_learning' | translate }}</h3>
 						<ul class="d-flex flex-row languages">
+							<li>Tensorflow</li>
+							<li>Keras</li>
 							<li>Scikit-Learn</li>
 							<li>Pandas</li>
 							<li>Gensim</li>
-							<li>Tensorflow</li>
-							<li>Keras</li>
 						</ul>
 						<div class="d-flex flex-row exp-bar">
 							<div class="true"></div>
@@ -350,16 +348,10 @@
 									<li>Ionic</li>
 									<li>TypeScript</li>
 									<li>Node.js</li>
-									<li>RxJS</li>
 									<li>SQL</li>
-									<li>Protractor</li>
-									<li>Jasmine</li>
-									<li>Karma</li>
 									<li>Docker</li>
 									<li>HTML</li>
 									<li>CSS/SCSS</li>
-									<li>JIRA</li>
-									<li>Git</li>
 								</ul>
 							</div>
 						</div>
@@ -395,16 +387,10 @@
 										<li>Ionic</li>
 										<li>TypeScript</li>
 										<li>Node.js</li>
-										<li>RxJS</li>
 										<li>SQL</li>
-										<li>Protractor</li>
-										<li>Jasmine</li>
-										<li>Karma</li>
 										<li>Docker</li>
 										<li>HTML</li>
 										<li>CSS/SCSS</li>
-										<li>JIRA</li>
-										<li>Git</li>
 									</ul>
 								</div>
 							</div>
@@ -432,6 +418,76 @@
 
 				<div class="right-box">
 					<h2>{{ 'projects' | translate }}</h2>
+					
+					<div class="d-flex flex-column content">
+						<div class="d-flex flex-row upper">
+							<div class="d-flex flex-row icon">
+								<div class="hor-bar"></div>
+							</div>
+							<div class="d-flex flex-row location">
+								<h3>Lab Work: Programming Intelligent Applications</h3>
+								<div>2020</div>
+							</div>
+						</div>
+						<div class="d-flex flex-row lower">
+							<div class="d-flex flex-row bar double-line">
+								<div></div>
+							</div>
+							<div class="d-flex flex-column right-content">
+								<div class="large-text">
+									<p class="large-text">{{ 'cv.projects.lab_pia.description' | translate }}</p>
+									<ul>
+										<li class="text-left"
+											*ngFor="let task of ('cv.projects.lab_pia.tasks' | translate)">{{task}}
+										</li>
+									</ul>
+									<p>{{ 'cv.technologies' | translate }}</p>
+									<ul class="d-flex flex-row languages tech">
+										<li>Python</li>
+										<li>Tensorflow</li>
+										<li>Keras</li>
+										<li>Scikit-Learn</li>
+										<li>Pandas</li>
+										<li>Gensim</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="d-flex flex-column content">
+						<div class="d-flex flex-row upper">
+							<div class="d-flex flex-row icon">
+								<div class="hor-bar"></div>
+							</div>
+							<div class="d-flex flex-row location">
+								<h3>3D Ken Burns Effect from a Single Image</h3>
+								<div>2020</div>
+							</div>
+						</div>
+						<div class="d-flex flex-row lower">
+							<div class="d-flex flex-row bar double-line">
+								<div></div>
+							</div>
+							<div class="d-flex flex-column right-content">
+								<div class="large-text">
+									<p class="large-text">{{ 'cv.projects.stdl.description' | translate }}</p>
+									<ul>
+										<li class="text-left"
+											*ngFor="let task of ('cv.projects.stdl.tasks' | translate)">{{task}}
+										</li>
+									</ul>
+									<p>{{ 'cv.technologies' | translate }}</p>
+									<ul class="d-flex flex-row languages tech">
+										<li>Python</li>
+										<li>PyTorch</li>
+										<li>OpenCV</li>
+										<li>Pandas</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
 
 					<div class="d-flex flex-column content">
 						<div class="d-flex flex-row upper">
@@ -458,10 +514,11 @@
 									<p>{{ 'cv.technologies' | translate }}</p>
 									<ul class="d-flex flex-row languages tech">
 										<li>C++</li>
-										<li>nRF52 Development Kit</li>
+										<li>FruityMesh</li>
 										<li>Android</li>
-										<li>NordicSemiconductor Android-BLE-Library</li>
 										<li>Docker</li>
+										<li>nRF52 Development Kit</li>
+										<li>NordicSemiconductor Android-BLE-Library</li>
 									</ul>
 								</div>
 							</div>
@@ -507,43 +564,6 @@
 						</div>
 					</div>
 
-					<div class="d-flex flex-column content">
-						<div class="d-flex flex-row upper">
-							<div class="d-flex flex-row icon">
-								<div class="hor-bar"></div>
-							</div>
-							<div class="d-flex flex-row location">
-								<h3>Easy Grow</h3>
-								<div>2019</div>
-							</div>
-						</div>
-						<div class="d-flex flex-row lower">
-							<div class="d-flex flex-row bar double-line">
-								<div></div>
-							</div>
-							<div class="d-flex flex-column right-content">
-								<div class="large-text">
-									<p class="large-text">{{ 'cv.projects.easy_grow.description' | translate }}</p>
-									<ul>
-										<li class="text-left"
-											*ngFor="let task of ('cv.projects.easy_grow.tasks' | translate)">{{task}}
-										</li>
-									</ul>
-									<p>{{ 'cv.technologies' | translate }}</p>
-									<ul class="d-flex flex-row languages tech">
-										<li>C</li>
-										<li>ESP8266 RTOS SDK</li>
-										<li>Espressiv IoT Development Framework</li>
-										<li>lwIP Netconn API</li>
-										<li>HTML</li>
-										<li>CSS</li>
-										<li>Docker</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-
 				</div>
 			</div>
 		</div>
@@ -573,6 +593,43 @@
 								<div class="hor-bar"></div>
 							</div>
 							<div class="d-flex flex-row location">
+								<h3>Easy Grow</h3>
+								<div>2019</div>
+							</div>
+						</div>
+						<div class="d-flex flex-row lower">
+							<div class="d-flex flex-row bar double-line">
+								<div></div>
+							</div>
+							<div class="d-flex flex-column right-content">
+								<div class="large-text">
+									<p class="large-text">{{ 'cv.projects.easy_grow.description' | translate }}</p>
+									<ul>
+										<li class="text-left"
+											*ngFor="let task of ('cv.projects.easy_grow.tasks' | translate)">{{task}}
+										</li>
+									</ul>
+									<p>{{ 'cv.technologies' | translate }}</p>
+									<ul class="d-flex flex-row languages tech">
+										<li>C</li>
+										<li>HTML</li>
+										<li>CSS</li>
+										<li>Docker</li>
+										<li>lwIP Netconn API</li>
+										<li>ESP8266 RTOS SDK</li>
+										<li>Espressiv IoT Platform</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="d-flex flex-column content">
+						<div class="d-flex flex-row upper">
+							<div class="d-flex flex-row icon">
+								<div class="hor-bar"></div>
+							</div>
+							<div class="d-flex flex-row location">
 								<h3>Android Mobility Detection Library</h3>
 								<div>2018</div>
 							</div>
@@ -592,12 +649,11 @@
 									<p>{{ 'cv.technologies' | translate }}</p>
 									<ul class="d-flex flex-row languages tech">
 										<li>Android</li>
-										<li>Geofencing API</li>
-										<li>Fused Location Provider API</li>
-										<li>Batterystats</li>
 										<li>JavaScript</li>
 										<li>Angular</li>
 										<li>Chart.js</li>
+										<li>Geofencing API</li>
+										<li>Fused Location Provider API</li>
 									</ul>
 								</div>
 							</div>
@@ -635,14 +691,11 @@
 										<li>Mongoose</li>
 										<li>Angular</li>
 										<li>TypeScript</li>
-										<li>RxJS</li>
 										<li>HTML</li>
 										<li>CSS/SCSS</li>
-										<li>Bootstrap</li>
 										<li>Docker</li>
 										<li>Watson Text to Speech</li>
 										<li>Kairos Face Recognition API</li>
-										<li>Instagram API</li>
 										<li>Google Cloud Vision API</li>
 									</ul>
 								</div>
@@ -676,9 +729,7 @@
 									<ul class="d-flex flex-row languages tech">
 										<li>Android</li>
 										<li>Swift</li>
-										<li>Firebase Realtime Database</li>
-										<li>Firebase Storage</li>
-										<li>Firebase Authentication</li>
+										<li>Firebase</li>
 										<li>Android Camera API</li>
 										<li>AVFoundation</li>
 									</ul>
@@ -716,7 +767,7 @@
 
 				<div class="right-box">
 					<h2>{{ 'projects' | translate }}</h2>
-
+					
 					<div class="d-flex flex-column content">
 						<div class="d-flex flex-row upper">
 							<div class="d-flex flex-row icon">
@@ -748,7 +799,6 @@
 										<li>Compojure</li>
 										<li>Hiccup</li>
 										<li>clj-xchart</li>
-										<li>Bootstrap</li>
 										<li>CSS</li>
 									</ul>
 								</div>
@@ -784,10 +834,8 @@
 										<li>MongoDB</li>
 										<li>Angular</li>
 										<li>TypeScript</li>
-										<li>RxJS</li>
 										<li>HTML</li>
 										<li>CSS/SCSS</li>
-										<li>Bootstrap</li>
 										<li>Docker</li>
 									</ul>
 								</div>
@@ -825,13 +873,9 @@
 										<li>Mongoose</li>
 										<li>Angular</li>
 										<li>TypeScript</li>
-										<li>RxJS</li>
 										<li>HTML</li>
 										<li>CSS/SCSS</li>
-										<li>Bootstrap</li>
 										<li>Docker</li>
-										<li>Karma</li>
-										<li>Jasmine</li>
 									</ul>
 								</div>
 							</div>
@@ -868,13 +912,10 @@
 										<li>Mongoose</li>
 										<li>Angular</li>
 										<li>TypeScript</li>
-										<li>RxJS</li>
 										<li>HTML</li>
 										<li>CSS/SCSS</li>
-										<li>Bootstrap</li>
 										<li>Chart.js</li>
 										<li>Leaflet</li>
-										<li>OpenMapTiles</li>
 									</ul>
 								</div>
 							</div>

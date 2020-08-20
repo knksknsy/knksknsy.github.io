@@ -8,7 +8,7 @@
     "degree": "Medieninformatik B.Sc.",
     "discover": "Meine Projekte",
     "letter": "Anschreiben",
-    "email": "k.keskinsoy@googlemail.com",
+    "email": "k.keskinsoy@gmail.com",
     "homepage": "knksknsy.github.io/home",
     "xing": "xing.com/profile/Kaan_Keskinsoy",
     "linkedin": "linkedin.com/in/Kaan-Keskinsoy",
@@ -75,10 +75,31 @@
             ]
         },
         "projects": {
+            "lab_pia" : {
+                "description": "Implementierung von Anwendungen mit Hilfe von Künstlicher Intelligenz und Machine Learning:",
+                "tasks": [
+                    "Data Mining",
+                    "Ziffernerkennung mittels Objekterkennung",
+                    "Generierung von Ziffern mittels Generative Adversarial Networks",
+                    "Word Embeddings und Tiefe Neurale Netze für Dokumenklassifizierung",
+                    "Deep Reinforcement Learning",
+                    "Vohersagen von Zeitreihen mittels Recurrent Neural Networks"
+                ]
+            },
+            "stdl" : {
+                "description": "Implementierung des Papers '3D Ken Burns Effect from a Single Image':",
+                "tasks": [
+                    "Modelltraining für das Schätzen und Verfeinern von Tiefenwerten",
+                    "Erzeugung einer Punktwolke aus dem Eingabebild und ihrer geschätzen Tiefenwerte",
+                    "Projezierung von Bildern aus der Punktwolke und Inpainting von Farb- und Tiefenwerte",
+                    "Erweiterung der Punktwolke mittels der Inpainting-Bilder",
+                    "Erzeugung des 3d Effekts aus gewonnenen Bildern aus der Punktwolke"
+                ]
+            },
             "smart_penguins" : {
                 "description": "Entwicklung eines Car2x Systems zur Prävention von Verkehrsunfällen auf Basis eines Bluetooth LE Mesh Netzwerks:",
                 "tasks": [
-                    "Implementierung einer Android App zum Austausch von BLE-Messages mit dem Mesh Netzwerk",
+                    "Implementierung einer Android App zum Austausch von BLE-Messages",
                     "Implementierung des Mesh Netzwerks zur Übertragung von BLE-Messages",
                     "Implementierung des Frühwarnsystems zum aktuellen Verkehrsgeschehen",
                     "Dockerization der Softwareumgebung für konsistente Arbeitsumgebung und Continuous Integration"
@@ -87,8 +108,7 @@
             "next_search": {
                 "description": "Cloud basierte Entwicklung einer skalierbaren Suchanwendung für komprimierte Inhaltswiedergabe von Webseiten:",
                 "tasks": [
-                    "Design und Implementierung der Cloud Architektur",
-                    "Design und Implementierung der Web-Applikation",
+                    "Design und Implementierung der Cloud Architektur und Web-App",
                     "Verarbeiten und Zusammenfassen von Website-Inhalten durch Cloud Functions",
                     "Caching von komprimierten Inhalten",
                     "Access Management unterschiedlicher Cloud Provider"
@@ -107,29 +127,27 @@
             "thesis_bsc": {
                 "description": "Entwicklung einer Android-Bibliothek zur energieeffizienten und präzisen Standortüberwachung, durch die Verwendung von Smartphone-Sensoren, Kontextinformationen und Erkennung von Bewegungsmerkmalen:",
                 "tasks": [
-                    "Datenerfassung und Analyse von Messwerten zur Erkennung von Bewegungsmerkmalen",
+                    "Datenanalyse von Messwerten zur Erkennung von Bewegungsmerkmalen",
                     "Analyse und Optimierung des Stromverbrauchs und der Qualität der Genauigkeit durch die Verwendung von Geofences, Bewegungsmerkmale, Netzwerk- und Ladeinformationen",
-                    "Entwurf und Entwicklung der Architektur zur simultanen Verwendung der Bibliothek in mehreren Applikationen"
+                    "Entwicklung der Architektur zur simultanen Verwendung der Bibliothek in mehreren Apps"
                 ]
             },
             "autonomous_shuttle": {
                 "description": "Ausarbeitung eines Shuttle-Services zur Beförderung von Personengruppen:",
                 "tasks": [
-                    "Konzeptionelles Arbeiten in interdisziplinären Teams",
                     "Design und Implementierung der Webservice-Architektur",
-                    "Interaktive Gestaltung der Fahrt durch ein Interessenmatching und Emotionserkennung der Fahrgäste",
+                    "Interaktive Fahrtgestaltung durch Interessenmatching und Emotionserkennung der Fahrgäste",
                     "Entwicklung des Systems zur Buchung von Fahrten",
-                    "Interessenmatching durch Verschlagwortung der öffentlichen Bilder auf dem sozialen Netzwerk Instagram",
-                    "Entwicklung der Gesichtserkennung zur Authentifizierung vor Fahrten und zur Emotionserkennung der Fahrgäste"
+                    "Interessenmatching durch Analysieren vom Instagram-Feed der Fahrgäste",
+                    "Authentifizierung vor Fahrten mittels Gesichtserkennung"
                 ]
             },
             "billtracker": {
-                "description": "Entwicklung von nativen Applikationen in Android und iOS zur synchronisierten Speicherung von Belegen in Firebase:",
+                "description": "Entwicklung von nativen Apps in Android und iOS zur Synchronisierung von Belegen in Firebase:",
                 "tasks": [
                     "Design und Implementierung der Firebase Datenbank und Storage",
                     "Design und Entwicklung der Android und iOS UIs",
-                    "Anbindung der Firebase Datenbank und Storage zur Synchronisation der Daten und Belege",
-                    "Verwendung der Android Camera API und AVFoundation zur Speicherung der Bilder",
+                    "Synchronisation der Daten und Belege aus Firebase",
                     "Verwaltung der lokalen Bilder im Dateisystem"
                 ]
             },

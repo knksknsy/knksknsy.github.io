@@ -4,12 +4,12 @@
 		<span class="sr-only">Loading...</span>
 	</div>
 
-	<button *ngIf="!globals.production" class="print-btn btn btn-circle" (click)="printCV()" [ngClass]="{'hide': printing}">
+	<button *ngIf="!globals.production" class="print-btn btn btn-circle" (click)="printLetter()" [ngClass]="{'hide': printing}">
 		<i class="fa fa-save"></i>
 	</button>
 
 	<select *ngIf="company" class="companies" [(ngModel)]="company">
-		<option *ngFor="let c of companies" [ngValue]="c" [selected]="c.name == company.name">{{c.name}}</option>
+		<option *ngFor="let c of companies" [ngValue]="c" [selected]="c.title == company.title">{{c.title}}</option>
 	</select>
 
 	<div *ngIf="company" size="A4" class="print-section">
@@ -22,10 +22,10 @@
 		<div class="information d-flex flex-row justify-content-between">
 			<div class="address d-flex flex-column">
 				<p>{{company.name}}</p>
-				<p>{{company.counterpart.name}} {{company.counterpart.surname}}</p>
 				<ng-template [ngIf]="company.department">
 					<p>{{company.department}}</p>
 				</ng-template>
+				<p>{{company.counterpart.name}} {{company.counterpart.surname}}</p>
 				<p>{{company.address.street}}</p>
 				<p>{{company.address.zip}} {{company.address.city}}</p>
 			</div>
@@ -37,7 +37,7 @@
 
 		<div class="row pt-4 main-container">
 
-			<div *ngIf="globals.privateData" class="col-md-4 px-4 d-flex flex-column left-container">
+			<div *ngIf="globals.privateData" class="col-md-3 px-4 d-flex flex-column left-container">
 				<div class="contact left-box">
 					<h2>{{ 'cv.contact' | translate }}</h2>
 					<div class="d-flex align-items-baseline">
@@ -64,10 +64,17 @@
 				</div>
 			</div>
 
-			<div class="col-md-8 px-4 d-flex flex-column right-container">
+			<div class="col-md-9 px-4 d-flex flex-column right-container">
 				<div class="right-box">
 
-					<h2>{{company.heading}}</h2>
+					<ng-container *ngIf="!company.subheading; then heading; else subheading"></ng-container> 
+					<ng-template #heading>
+						<h2>{{company.heading}}</h2>
+					</ng-template>
+					<ng-template #subheading>
+						<h2>{{company.heading}}</h2>
+						<h3>{{company.subheading}}</h3>
+					</ng-template>
 
 					<div class="d-flex flex-column">
 						<ng-container *ngIf="company.counterpart.gender === 'm'; then male; else female"></ng-container>
@@ -83,6 +90,7 @@
 					<div class="d-flex flex-column">
 						<p>Mit freundlichen Grüßen</p>
 						<img class="img-fluid" src="./assets/images/signature.png" width="155px">
+						<p>Kaan Keskinsoy</p>
 					</div>
 
 				</div>
