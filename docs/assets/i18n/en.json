@@ -75,20 +75,40 @@
             ]
         },
         "projects": {
+            "lab_pia" : {
+                "description": "Implementation of selected applications from Artificial Intelligence and Machine Learning including:",
+                "tasks": [
+                    "Data Mining",
+                    "Digit Recognition using Object Recognition",
+                    "Digit Generation using Generative Adversarial Networks",
+                    "Word Embeddings and Deep Neural Networks for Document Classification",
+                    "Deep Reinforcement Learning",
+                    "Time-Series Prediction using Recurrent Neural Networks"
+                ]
+            },
+            "stdl" : {
+                "description": "Implementation of the paper '3D Ken Burns Effect from a Single Image':",
+                "tasks": [
+                    "Train models for estimating and refining depth maps from an still image",
+                    "Creating a point cloud of the input image and its estimated depth map",
+                    "Projecting images from the point cloud and inpainting color and depth",
+                    "Extending the point cloud by adding the inpainted values to the point cloud",
+                    "Creating the 3d effect from multiple images captured from the point cloud"
+                ]
+            },
             "smart_penguins" : {
                 "description": "Development of a Car2x system for the prevention of traffic accidents based on a Bluetooth LE mesh network:",
                 "tasks": [
-                    "Implementation of an Android app for exchanging BLE messages with the mesh network",
-                    "Implementation of the mesh network for the transmission of BLE messages",
-                    "Implementation of the early warning system on current traffic events",
-                    "Dockerization of the software environment for consistent working environment and continuous integration"
+                    "Implementation of an Android app for exchanging BLE messages",
+                    "Transmitting BLE messages through the mesh network (FruityMesh)",
+                    "Implementation of an early warning system on current traffic events",
+                    "Dockerization of the software environment enabling a consistent working environment and continuous integration"
                 ]
             },
             "next_search": {
                 "description": "Cloud based development of a scalable search application for compressed content rendering of web pages:",
                 "tasks": [
-                    "Design and implementation of the cloud architecture",
-                    "Design and implementation of the web application",
+                    "Design and implementation of the cloud architecture and the web app",
                     "Processing and aggregation of website content through Cloud Functions",
                     "Caching of compressed contents",
                     "Access Management of different Cloud Providers"
@@ -107,20 +127,19 @@
             "thesis_bsc": {
                 "description": "Development of an Android library for monitoring locations precisely and energy-efficiently, using smartphones' sensors, context information, and recognition of motion patterns:",
                 "tasks": [
-                    "Data capturing and analysis of measurements for recognizing of motion patterns",
-                    "Analysis and optimization of power usage and the quality of monitoring through Geofences, motion patterns, network and charging informations",
-                    "Design and development of the architecture for using the library in multiple applications simultaneously"
+                    "Data analysis for recognizing different motion patterns",
+                    "Analysis and optimization the power usage and the quality of monitoring, motion patterns, network, and charging informations",
+                    "Development of the architecture for using the library in multiple applications simultaneously"
                 ]
             },
             "autonomous_shuttle": {
                 "description": "Drafting of an shuttle service for passenger transportation:",
                 "tasks": [
-                    "Conceptual working in interdisciplinary teams",
                     "Design and development of a web service architecture",
-                    "Design of an interactive ride through interest matchings and emotion recognition of the passengers",
+                    "Design of an interactive ride through matching interests and recognizing emotions of the passengers",
                     "Developing a booking system",
-                    "Interest matching through tagging publicly available pictures of the passengers' Instagram accounts",
-                    "Developing a facial recognition feature for authentication of rides and recognizing emotions of the passengers"
+                    "Interest matching through analyzing passengers' Instagram pictures",
+                    "Using facial recognition for authentication"
                 ]
             },
             "billtracker": {
@@ -128,8 +147,7 @@
                 "tasks": [
                     "Design and implementation of the firebase database and storage",
                     "Design and implementation of the Android and iOS user interfaces",
-                    "Consuming of the firebase database and storage for the synchronization of the data and receipts",
-                    "Using the Android Camera API and AVFoundation for retrieving pictures",
+                    "Synchronizing data and receipts from Firebase",
                     "Managing the locally saved documents in the file systems"
                 ]
             },
@@ -153,7 +171,7 @@
                 ]
             },
             "cnc_webshop": {
-                "description": "Development of a web shop",
+                "description": "Development of a web shop:",
                 "tasks": [
                     "Design and development of a web service architecture",
                     "Design and implementation of an interactive and responsive web UI",
