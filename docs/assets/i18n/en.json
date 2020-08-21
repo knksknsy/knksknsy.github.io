@@ -7,12 +7,18 @@
     "projects": "Projects",
     "degree": "Computer Science and Media B.Sc.",
     "discover": "My Projects",
-    "letter": "Letters",
     "email": "k.keskinsoy@gmail.com",
     "homepage": "knksknsy.github.io/home",
     "xing": "xing.com/profile/Kaan_Keskinsoy",
     "linkedin": "linkedin.com/in/Kaan-Keskinsoy",
     "github": "github.com/knksknsy/",
+    "letter": {
+        "title": "Letters",
+        "address": "Address",
+        "telephone": "Telephone",
+        "email": "Email",
+        "website": "Website"
+    },
     "cv": {
         "contact": "Contact",
         "technologies": "Technologies:",
@@ -118,10 +124,10 @@
                 "description": "Development of an automatic irrigation system for plants based on the Wi-Fi microchip ESP8266:",
                 "tasks": [
                     "Design of the circuit and implementation of the logic",
-                    "Development of the web application for remote control",
-                    "Interaction possibilities via the hardware interface or the web application via a home network",
-                    "Implementation of WiFi specific functions using Espressif IoT Development Frameworks",
-                    "Dockerization of the software environment for consistent working environment and continuous integration"
+                    "Development of a web application for controlling the system remotely",
+                    "Interactions via a hardware interface and a web application",
+                    "Implementation of WiFi functions using Espressif IoT Platform",
+                    "Dockerization of the software environment for a consistent working environment and continuous integration"
                 ]
             },
             "thesis_bsc": {

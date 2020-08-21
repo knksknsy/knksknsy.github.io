@@ -7,12 +7,18 @@
     "projects": "Projekte",
     "degree": "Medieninformatik B.Sc.",
     "discover": "Meine Projekte",
-    "letter": "Anschreiben",
     "email": "k.keskinsoy@gmail.com",
     "homepage": "knksknsy.github.io/home",
     "xing": "xing.com/profile/Kaan_Keskinsoy",
     "linkedin": "linkedin.com/in/Kaan-Keskinsoy",
     "github": "github.com/knksknsy/",
+    "letter": {
+        "title": "Anschreiben",
+        "address": "Adresse",
+        "telephone": "Telefon",
+        "email": "Email",
+        "website": "Webseite"
+    },
     "cv": {
         "contact": "Kontakt",
         "technologies": "Technologien:",
@@ -118,10 +124,10 @@
                 "description": "Entwicklung eines automatischen Bewässerungssystem für Pflanzen auf Basis des Wi-Fi Mikrochips ESP8266:",
                 "tasks": [
                     "Design der Schaltung und Implementierung der Logik",
-                    "Entwicklung der Web-Applikation zur Fernsteuerung",
-                    "Interaktionsmöglichkeiten über das Hardware-Interface oder der Web-Applikation über das Heimnetzwerk",
-                    "Implementierung WiFi-spezifischer Funktionen mittels Espressif IoT Development Frameworks",
-                    "Dockerization der Softwareumgebung für konsistente Arbeitsumgebung und Continuous Integration"
+                    "Entwicklung der Web-Applikation zur Fernsteuerung des Systems",
+                    "Interaktionen über ein Hardware-Interface und einer Web-Applikation",
+                    "Implementierung von WiFi-Funktionen mittels Espressif IoT Platform",
+                    "Dockerization der Softwareumgebung für eine konsistente Arbeitsumgebung und Continuous Integration"
                 ]
             },
             "thesis_bsc": {
