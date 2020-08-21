@@ -42,23 +42,23 @@
 					<h2>{{ 'cv.contact' | translate }}</h2>
 					<div class="d-flex align-items-baseline">
 						<i class="fa fa-map-marker"></i>
-						<h3>Adresse</h3>
+						<h3>{{ 'letter.address' | translate }}</h3>
 					</div>
 					<p>{{globals.privateData.street}}</p>
 					<p class="mb-2">{{ globals.privateData.zip }} {{ globals.privateData.city }}</p>
 					<div class="d-flex align-items-start">
 						<i class="fa fa-mobile"></i>
-						<h3>Telefon</h3>
+						<h3>{{ 'letter.telephone' | translate }}</h3>
 					</div>
 					<p class="mb-2">{{ globals.privateData.phone }}</p>
 					<div class="d-flex align-items-baseline">
 						<i class="fa fa-envelope"></i>
-						<h3>Email</h3>
+						<h3>{{ 'letter.email' | translate }}</h3>
 					</div>
 					<p class="mb-2">{{ 'email' | translate }}</p>
 					<div class="d-flex align-items-baseline">
 						<i class="fa fa-globe"></i>
-						<h3>Website</h3>
+						<h3>{{ 'letter.website' | translate }}</h3>
 					</div>
 					<p>{{ 'homepage' | translate }}</p>
 				</div>
@@ -72,7 +72,7 @@
 						<h2>{{company.heading}}</h2>
 					</ng-template>
 					<ng-template #subheading>
-						<h2>{{company.heading}}</h2>
+						<h2 style="margin-bottom: 0.5em;">{{company.heading}}</h2>
 						<h3>{{company.subheading}}</h3>
 					</ng-template>
 

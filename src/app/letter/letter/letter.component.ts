@@ -56,7 +56,7 @@ export class LetterComponent implements OnInit {
     if (index < this.printSections.length - 1) {
       this.pdf.addPage('a4', 'p');
     } else {
-      this.pdf.save(`Anschreiben_Kaan_Keskinsoy_${this.company.name.replace(' ', '_')}.pdf`);
+      this.pdf.save(`Anschreiben_Kaan_Keskinsoy_${this.company.name.split(' ').join('_')}.pdf`);
       this.printing = false;
     }
   }

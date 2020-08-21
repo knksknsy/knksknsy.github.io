@@ -89,10 +89,18 @@ div[size="A4"] {
 
 .icons .fa-mobile {
     font-size: 20px;
+    &:hover {
+        text-decoration: none;
+        color: #0066CC !important;
+    }
 }
 
 .icons .fa-map-marker {
     font-size: 17px;
+    &:hover {
+        text-decoration: none;
+        color: #0066CC !important;
+    }
 }
 
 .icons .fa-envelope {
