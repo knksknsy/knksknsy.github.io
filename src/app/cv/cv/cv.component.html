@@ -102,11 +102,12 @@
 					<p>{{ 'cv.languages.english' | translate }}</p>
 				</div>
 
-				<div class="left-box">
+				<!-- TODO -->
+				<!-- <div class="left-box">
 					<h2>{{ 'cv.hobbies.title' | translate }}</h2>
 					<p>{{ 'cv.hobbies.weight_training' | translate }}</p>
 					<p>{{ 'cv.hobbies.cooking' | translate }}</p>
-				</div>
+				</div> -->
 
 				<div class="left-box">
 					<h2>{{ 'cv.skills.title' | translate }}</h2>
@@ -210,11 +211,11 @@
 					<div class="d-flex flex-column experience">
 						<h3>{{ 'cv.skills.machine_learning' | translate }}</h3>
 						<ul class="d-flex flex-row languages">
+							<li>PyTorch</li>
 							<li>Tensorflow</li>
 							<li>Keras</li>
 							<li>Scikit-Learn</li>
 							<li>Pandas</li>
-							<li>Gensim</li>
 						</ul>
 						<div class="d-flex flex-row exp-bar">
 							<div class="true"></div>
@@ -238,7 +239,7 @@
 							</div>
 							<div class="d-flex flex-row location">
 								<h3>Hochschule der Medien<br /><span>Stuttgart</span></h3>
-								<div>03/2019 - {{ 'cv.education.today' | translate }}</div>
+								<div>03/2019 - 09/2021</div>
 							</div>
 						</div>
 						<div class="d-flex flex-row lower">
@@ -246,7 +247,9 @@
 								<div></div>
 							</div>
 							<div class="d-flex flex-column right-content">
-								<p>{{ 'cv.education.msc' | translate }}</p>
+								<p>{{ 'cv.education.msc.title' | translate }}</p>
+								<p>{{ 'cv.education.msc.final_grade' | translate }}</p>
+								<p>{{ 'cv.education.msc.thesis' | translate }}</p>
 							</div>
 						</div>
 					</div>
@@ -265,11 +268,9 @@
 								<div></div>
 							</div>
 							<div class="d-flex flex-column right-content">
-								<p>{{ 'cv.education.bsc' | translate }}</p>
-								<p>{{ 'cv.education.final_grade' | translate }}
-									{{ 'cv.education.average_grade' | translate }}</p>
-								<p>{{ 'cv.education.thesis' | translate }} Android Mobility Detection Library (budo
-									GmbH)</p>
+								<p>{{ 'cv.education.bsc.title' | translate }}</p>
+								<p>{{ 'cv.education.bsc.final_grade' | translate }}</p>
+								<p>{{ 'cv.education.bsc.thesis' | translate }}</p>
 							</div>
 						</div>
 					</div>
@@ -329,7 +330,7 @@
 								<h3>M-Way Solutions
 									GmbH<br /><span>{{ 'cv.work.student_trainee' | translate }}</span><br /><span>{{
 										'cv.work.full_stack_development' | translate }}</span></h3>
-								<div>03/2017 - 03/2018</div>
+								<div>09/2016 - 03/2018</div>
 							</div>
 						</div>
 						<div class="d-flex flex-row lower">
@@ -353,46 +354,6 @@
 									<li>HTML</li>
 									<li>CSS/SCSS</li>
 								</ul>
-							</div>
-						</div>
-					</div>
-
-					<div class="d-flex flex-column content">
-						<div class="d-flex flex-row upper">
-							<div class="d-flex flex-row icon">
-								<div class="hor-bar"></div>
-							</div>
-							<div class="d-flex flex-row location">
-								<h3>M-Way Solutions
-									GmbH<br /><span>{{ 'cv.work.practical_semester' | translate }}</span><br /><span>{{
-										'cv.work.web_app_development' | translate }}</span></h3>
-								<div>09/2016 - 03/2017</div>
-							</div>
-						</div>
-						<div class="d-flex flex-row lower">
-							<div class="d-flex flex-row bar three-line">
-								<div></div>
-							</div>
-							<div class="d-flex flex-column right-content">
-								<div class="large-text">
-									<p class="large-text">{{ 'cv.mway.description' | translate }}</p>
-									<ul>
-										<li class="text-left"
-											*ngFor="let task of ('cv.mway.tasks_practical_semester' | translate)">
-											{{task}}</li>
-									</ul>
-									<p>{{ 'cv.technologies' | translate }}</p>
-									<ul class="d-flex flex-row languages tech">
-										<li>Angular</li>
-										<li>Ionic</li>
-										<li>TypeScript</li>
-										<li>Node.js</li>
-										<li>SQL</li>
-										<li>Docker</li>
-										<li>HTML</li>
-										<li>CSS/SCSS</li>
-									</ul>
-								</div>
 							</div>
 						</div>
 					</div>
@@ -425,7 +386,7 @@
 								<div class="hor-bar"></div>
 							</div>
 							<div class="d-flex flex-row location">
-								<h3>Lab Work: Programming Intelligent Applications</h3>
+								<h3>{{ 'cv.projects.lab_pia.title' | translate }}: Programming Intelligent Applications</h3>
 								<div>2020</div>
 							</div>
 						</div>

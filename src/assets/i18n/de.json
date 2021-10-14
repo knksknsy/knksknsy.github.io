@@ -5,10 +5,10 @@
     "cv_short": "CV",
     "cv_long": "Lebenslauf",
     "projects": "Projekte",
-    "degree": "Medieninformatik B.Sc.",
+    "degree": "Computer Science and Media M.Sc.",
     "discover": "Meine Projekte",
     "email": "k.keskinsoy@gmail.com",
-    "homepage": "knksknsy.github.io/home",
+    "homepage": "knksknsy.github.io",
     "xing": "xing.com/profile/Kaan_Keskinsoy",
     "linkedin": "linkedin.com/in/Kaan-Keskinsoy",
     "github": "github.com/knksknsy/",
@@ -36,11 +36,16 @@
         "education": {
             "title": "Bildungsweg",
             "today": "Heute",
-            "bsc": "Medieninformatik (Bachelor of Science)",
-            "msc": "Computer Science and Media (Master of Science)",
-            "final_grade": "Abschlussnote: 1,3",
-            "average_grade": "(Gesamtdurchschnitt: 1,9)",
-            "thesis": "Abschlussarbeit:",
+            "bsc": {
+                "title": "Medieninformatik (Bachelor of Science)",
+                "final_grade": "Abschlussnote: 1,9",
+                "thesis": "Abschlussarbeit: Android Mobility Detection Library"
+                },
+            "msc": {
+                    "title": "Computer Science and Media (Master of Science)",
+                    "final_grade": "Abschlussnote: 1,2",
+                    "thesis": "Abschlussarbeit: Machine Learning Methods for Facial Reenactment Creation and Detection"
+                    },
             "computer_science": "Informatik (Bachelor of Science)",
             "higher_education_qualification": "Allgemeine Hochschulreife",
             "information_technology": "Informationstechnik",
@@ -82,6 +87,7 @@
         },
         "projects": {
             "lab_pia" : {
+                "title": "Laborarbeit",
                 "description": "Implementierung von Anwendungen mit Hilfe von Künstlicher Intelligenz und Machine Learning:",
                 "tasks": [
                     "Data Mining",

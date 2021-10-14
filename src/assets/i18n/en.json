@@ -5,10 +5,10 @@
     "cv_short": "CV",
     "cv_long": "Curriculum Vitae",
     "projects": "Projects",
-    "degree": "Computer Science and Media B.Sc.",
+    "degree": "Computer Science and Media M.Sc.",
     "discover": "My Projects",
     "email": "k.keskinsoy@gmail.com",
-    "homepage": "knksknsy.github.io/home",
+    "homepage": "knksknsy.github.io",
     "xing": "xing.com/profile/Kaan_Keskinsoy",
     "linkedin": "linkedin.com/in/Kaan-Keskinsoy",
     "github": "github.com/knksknsy/",
@@ -36,11 +36,16 @@
         "education": {
             "title": "Education",
             "today": "Today",
-            "bsc": "Computer Science and Media (Bachelor of Science)",
-            "msc": "Computer Science and Media (Master of Science)",
-            "final_grade": "Final grade: 1.3",
-            "average_grade": "(Total average grade: 1.9)",
-            "thesis": "Thesis:",
+            "bsc": {
+                "title": "Computer Science and Media (Bachelor of Science)",
+                "final_grade": "Final grade: 1.9",
+                "thesis": "Thesis: Android Mobility Detection Library"
+            },
+            "msc": {
+                "title": "Computer Science and Media (Master of Science)",
+                "final_grade": "Final grade: 1.2",
+                "thesis": "Thesis: Machine Learning Methods for Facial Reenactment Creation and Detection"
+            },
             "computer_science": "Computer Science (Bachelor of Science)",
             "higher_education_qualification": "General higher education entrance qualification",
             "information_technology": "Information technology",
@@ -82,6 +87,7 @@
         },
         "projects": {
             "lab_pia" : {
+                "title": "Lab Work",
                 "description": "Implementation of selected applications from Artificial Intelligence and Machine Learning including:",
                 "tasks": [
                     "Data Mining",
@@ -185,7 +191,7 @@
                     "Implementation of the shopping cart and the booking process",
                     "Implementation of sessions",
                     "Prevention of security threats as XSS, XSRF, and SQL injections",
-                    "Using of SSL/TSL encryption"
+                    "Using of SSL/TLS encryption"
                 ]
             },
             "private_eye": {

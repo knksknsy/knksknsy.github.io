@@ -3,7 +3,7 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.4.
 
 ## Deploy to Github pages
-`ng build --prod --baseHref="https://knksknsy.github.io/home/"`
+`ng build --prod --baseHref="https://knksknsy.github.io/"`
 
 ## Development server
 

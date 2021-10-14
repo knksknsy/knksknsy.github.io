@@ -23,8 +23,7 @@ export class LetterComponent implements OnInit {
 
   public printing: boolean = false;
 
-  constructor(public globals: GlobalsService) {
-  }
+  constructor(public globals: GlobalsService) { }
 
   ngOnInit() {
     this.today = new Date();

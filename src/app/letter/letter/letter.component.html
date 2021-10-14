@@ -25,7 +25,7 @@
 				<ng-template [ngIf]="company.department">
 					<p>{{company.department}}</p>
 				</ng-template>
-				<p>{{company.counterpart.name}} {{company.counterpart.surname}}</p>
+				<p *ngIf="company.counterpart">{{company.counterpart.title ? company.counterpart.title + ' ' : ''}}{{company.counterpart.name}} {{company.counterpart.surname}}</p>
 				<p>{{company.address.street}}</p>
 				<p>{{company.address.zip}} {{company.address.city}}</p>
 			</div>
@@ -76,19 +76,24 @@
 						<h3>{{company.subheading}}</h3>
 					</ng-template>
 
-					<div class="d-flex flex-column">
+					<div *ngIf="company.counterpart" class="d-flex flex-column">
 						<ng-container *ngIf="company.counterpart.gender === 'm'; then male; else female"></ng-container>
 						<ng-template #male>
-							<p>Sehr geehrter Herr {{company.counterpart.surname}},</p>
+							<p>Sehr geehrter Herr {{company.counterpart.title ? company.counterpart.title + ' ' + company.counterpart.surname : company.counterpart.surname}},</p>
 						</ng-template>
 						<ng-template #female>
-							<p>Sehr geehrte Frau {{company.counterpart.surname}},</p>
+							<p>Sehr geehrte Frau {{company.counterpart.title ? company.counterpart.title + ' ' + company.counterpart.surname : company.counterpart.surname}},</p>
 						</ng-template>
+						<p class="large-text" *ngFor="let p of company.letter">{{p}}</p>
+					</div>
+					<div *ngIf="!company.counterpart" class="d-flex flex-column">
+						<p>Dear Hiring Manager,</p>
 						<p class="large-text" *ngFor="let p of company.letter">{{p}}</p>
 					</div>
 
 					<div class="d-flex flex-column">
-						<p>Mit freundlichen Grüßen</p>
+						<!-- <p>Mit freundlichen Grüßen</p> -->
+						<p>Sincerely,</p>
 						<img class="img-fluid" src="./assets/images/signature.png" width="155px">
 						<p>Kaan Keskinsoy</p>
 					</div>
