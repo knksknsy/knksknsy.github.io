@@ -181,7 +181,7 @@ div[size="A4"] {
     }
 }
 
-.left-box {
+.right-box {
     margin-bottom: 1em;
     h2 {
         font-family: LatoWeb;
@@ -196,7 +196,7 @@ div[size="A4"] {
     }
 }
 
-.right-box {
+.left-box {
     margin-bottom: 1.5em;
     h2 {
         font-family: LatoWeb;
@@ -230,7 +230,7 @@ div[size="A4"] {
                 align-content: center;
                 align-items: flex-start;
                 width: 98%;
-                h3 {
+                h3, h3>a {
                     font-family: LatoWeb;
                     font-size: 12pt;
                     color: #0066CC;

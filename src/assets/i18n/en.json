@@ -86,6 +86,16 @@
             ]
         },
         "projects": {
+            "thesis_msc": {
+                "title": "Machine Learning Methods for Facial Reenactment Creation and Detection",
+                "description": "Development and optimization of machine learning models for generating and detecting DeepFakes:",
+                "tasks": [
+                    "Development of an ETL pipeline for video-based datasets",
+                    "Development and optimization of a generative and a discriminative machine learning model",
+                    "Development of logging and monitoring procedures",
+                    "Data visualization and analysis of results"
+                ]
+            },
             "lab_pia" : {
                 "title": "Lab Work",
                 "description": "Implementation of selected applications from Artificial Intelligence and Machine Learning including:",
@@ -109,12 +119,12 @@
                 ]
             },
             "smart_penguins" : {
-                "description": "Development of a Car2x system for the prevention of traffic accidents based on a Bluetooth LE mesh network:",
+                "description": "Development of a Car2x system for the prevention of traffic accidents based on a mesh network:",
                 "tasks": [
                     "Implementation of an Android app for exchanging BLE messages",
                     "Transmitting BLE messages through the mesh network (FruityMesh)",
                     "Implementation of an early warning system on current traffic events",
-                    "Dockerization of the software environment enabling a consistent working environment and continuous integration"
+                    "Dockerization of the software environment"
                 ]
             },
             "next_search": {
@@ -129,11 +139,10 @@
             "easy_grow": {
                 "description": "Development of an automatic irrigation system for plants based on the Wi-Fi microchip ESP8266:",
                 "tasks": [
-                    "Design of the circuit and implementation of the logic",
                     "Development of a web application for controlling the system remotely",
                     "Interactions via a hardware interface and a web application",
                     "Implementation of WiFi functions using Espressif IoT Platform",
-                    "Dockerization of the software environment for a consistent working environment and continuous integration"
+                    "Dockerization of the software environment"
                 ]
             },
             "thesis_bsc": {
@@ -179,7 +188,7 @@
                     "Design and development of a web service architecture",
                     "Design and implementation of an interactive and responsive web UI",
                     "Consumption of 'The Movie Database' API",
-                    "Extending the web service enabling users to create accounts, save and edit watch and favorite lists"
+                    "Extending the web service enabling users to create accounts, watch, and favorite lists"
                 ]
             },
             "cnc_webshop": {
@@ -195,12 +204,12 @@
                 ]
             },
             "private_eye": {
-                "description": "Development of mobile measuring stations for capturing environmental data und visualizing those in a Web App:",
+                "description": "Development of mobile weather stations for capturing environmental data und visualizing those in a Web App:",
                 "tasks": [
                     "Design and development of a web service architecture",
                     "Design and implementation of an interactive and responsive web UI",
                     "Implementation of data exchange between embedded devices and web service",
-                    "Implementation of visual representation of the measuring stations' locations and environmental data"
+                    "Implementation of visual representation of the weather stations' locations"
                 ]
             }
         }

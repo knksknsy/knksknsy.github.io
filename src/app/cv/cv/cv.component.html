@@ -28,7 +28,7 @@
 
 		<div class="row pt-4 main-container">
 
-			<div class="col-md-4 px-4 d-flex flex-column left-container">
+			<div class="col-md-4 px-4 d-flex flex-column right-container">
 
 				<div class="image-container">
 					<img class="img-fluid" src="./assets/images/profile-image-original.jpg">
@@ -37,7 +37,7 @@
 				<ng-container *ngIf="!isPublic; then fullinfo; else publicinfo"></ng-container>
 				<ng-template #fullinfo>
 
-					<div class="left-box">
+					<div class="right-box">
 						<h2>{{ 'cv.contact' | translate }}</h2>
 						<div *ngIf="globals.privateData" class="d-flex flex-row justify-content-between">
 							<div>
@@ -51,7 +51,7 @@
 								<a class="fa fa-map-marker"></a>
 								<a class="fa fa-map-marker" style="visibility: hidden;"></a>
 								<a class="fa fa-mobile"></a>
-								<a class="fa fa-envelope" href="mailto:{{ 'email' | translate }}"></a>
+								<a class="fa fa-envelope" href="mailto:{{ 'email' | translate }}" target="_blank"></a>
 								<a class="fa fa-globe" href="https://{{ 'homepage' | translate}}"></a>
 							</div>
 						</div>
@@ -59,22 +59,20 @@
 				</ng-template>
 
 				<ng-template #publicinfo>
-					<div class="left-box">
+					<div class="right-box">
 						<h2>{{ 'cv.contact' | translate }}</h2>
 						<div class="contact d-flex flex-row justify-content-around">
 							<div>
-								<a class="fa fa-envelope" href="mailto:{{ 'email' | translate }}"></a>
+								<a class="fa fa-envelope" href="mailto:{{ 'email' | translate }}" target="_blank"></a>
 							</div>
 							<div>
 								<a class="fa fa-github" href="https://{{ 'github' | translate }}" target="_blank"></a>
 							</div>
 							<div>
-								<a class="fa fa-xing" href="https://{{ 'xing' | translate }}"
-									target="_blank"></a>
+								<a class="fa fa-linkedin" href="https://{{ 'linkedin' | translate }}" target="_blank"></a>
 							</div>
 							<div>
-								<a class="fa fa-linkedin" href="https://{{ 'linkedin' | translate }}"
-									target="_blank"></a>
+								<a class="fa fa-xing" href="https://{{ 'xing' | translate }}" target="_blank"></a>
 							</div>
 						</div>
 
@@ -88,14 +86,14 @@
 							<div class="icons d-flex flex-column justify-content-around align-items-center">
 								<a class="fa fa-envelope"></a>
 								<a class="fa fa-github"></a>
-								<a class="fa fa-xing"></a>
 								<a class="fa fa-linkedin"></a>
+								<a class="fa fa-xing"></a>
 							</div>
 						</div>
 					</div>
 				</ng-template>
 
-				<div class="left-box">
+				<div class="right-box">
 					<h2>{{ 'cv.languages.title' | translate }}</h2>
 					<p>{{ 'cv.languages.german' | translate }}</p>
 					<p>{{ 'cv.languages.turkish' | translate }}</p>
@@ -103,13 +101,13 @@
 				</div>
 
 				<!-- TODO -->
-				<!-- <div class="left-box">
+				<!-- <div class="right-box">
 					<h2>{{ 'cv.hobbies.title' | translate }}</h2>
 					<p>{{ 'cv.hobbies.weight_training' | translate }}</p>
 					<p>{{ 'cv.hobbies.cooking' | translate }}</p>
 				</div> -->
 
-				<div class="left-box">
+				<div class="right-box">
 					<h2>{{ 'cv.skills.title' | translate }}</h2>
 					<div class="d-flex flex-column experience">
 						<h3>{{ 'cv.skills.programming_languages' | translate }}</h3>
@@ -212,10 +210,22 @@
 						<h3>{{ 'cv.skills.machine_learning' | translate }}</h3>
 						<ul class="d-flex flex-row languages">
 							<li>PyTorch</li>
+							<li>Keras</li>
+							<li>Pandas</li>
+						</ul>
+						<div class="d-flex flex-row exp-bar">
+							<div class="true"></div>
+							<div class="true"></div>
+							<div class="true"></div>
+							<div class="true"></div>
+							<div class="true"></div>
+							<div class="false"></div>
+						</div>
+						<ul class="d-flex flex-row languages">
 							<li>Tensorflow</li>
 							<li>Keras</li>
 							<li>Scikit-Learn</li>
-							<li>Pandas</li>
+							<li>OpenCV</li>
 						</ul>
 						<div class="d-flex flex-row exp-bar">
 							<div class="true"></div>
@@ -229,8 +239,8 @@
 				</div>
 			</div>
 
-			<div class="col-md-8 pr-4 d-flex flex-column right-container">
-				<div class="right-box">
+			<div class="col-md-8 pr-4 d-flex flex-column left-container">
+				<div class="left-box">
 					<h2>{{ 'cv.education.title' | translate }}</h2>
 					<div class="d-flex flex-column content">
 						<div class="d-flex flex-row upper">
@@ -318,7 +328,7 @@
 					</div>
 				</div>
 
-				<div class="right-box">
+				<div class="left-box">
 					<h2>{{ 'cv.work.title' | translate }}</h2>
 
 					<div class="d-flex flex-column content">
@@ -328,7 +338,7 @@
 							</div>
 							<div class="d-flex flex-row location">
 								<h3>M-Way Solutions
-									GmbH<br /><span>{{ 'cv.work.student_trainee' | translate }}</span><br /><span>{{
+									GmbH<br /><span>{{ 'cv.work.practical_semester' | translate }} and {{ 'cv.work.student_trainee' | translate }}</span><br /><span>{{
 										'cv.work.full_stack_development' | translate }}</span></h3>
 								<div>09/2016 - 03/2018</div>
 							</div>
@@ -369,16 +379,44 @@
 		</div>
 
 		<div class="row main-container">
-			<div class="col-md-4 px-4 d-flex flex-column left-container">
+			<div class="col-md-11 px-4 d-flex flex-column left-container">
 				<div class="left-box">
-
-				</div>
-			</div>
-
-			<div class="col-md-8 pr-4 d-flex flex-column right-container">
-
-				<div class="right-box">
 					<h2>{{ 'projects' | translate }}</h2>
+
+					<div class="d-flex flex-column content">
+						<div class="d-flex flex-row upper">
+							<div class="d-flex flex-row icon">
+								<div class="hor-bar"></div>
+							</div>
+							<div class="d-flex flex-row location">
+								<h3><a href="https://github.com/knksknsy/facial-reenactment" target="_blank">{{ 'cv.projects.thesis_msc.title' | translate }}</a></h3>
+								<div>2020/2021</div>
+							</div>
+						</div>
+						<div class="d-flex flex-row lower">
+							<div class="d-flex flex-row bar double-line">
+								<div></div>
+							</div>
+							<div class="d-flex flex-column right-content">
+								<div class="large-text">
+									<p class="large-text">{{ 'cv.projects.thesis_msc.description' | translate }}</p>
+									<ul>
+										<li class="text-left"
+											*ngFor="let task of ('cv.projects.thesis_msc.tasks' | translate)">{{task}}
+										</li>
+									</ul>
+									<p>{{ 'cv.technologies' | translate }}</p>
+									<ul class="d-flex flex-row languages tech">
+										<li>Python</li>
+										<li>PyTorch</li>
+										<li>Pandas</li>
+										<li>OpenCV</li>
+										<li>Matplotlib</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
 					
 					<div class="d-flex flex-column content">
 						<div class="d-flex flex-row upper">
@@ -522,8 +560,11 @@
 							</div>
 						</div>
 					</div>
-
 				</div>
+			</div>
+
+			<div class="col-md-1 pr-4 d-flex flex-column right-container">
+				<div class="right-box"></div>
 			</div>
 		</div>
 	</div>
@@ -535,15 +576,8 @@
 		</div>
 
 		<div class="row main-container">
-			<div class="col-md-4 px-4 d-flex flex-column left-container">
+			<div class="col-md-11 px-4 d-flex flex-column left-container">
 				<div class="left-box">
-
-				</div>
-			</div>
-
-			<div class="col-md-8 pr-4 d-flex flex-column right-container">
-
-				<div class="right-box">
 					<h2>{{ 'projects' | translate }}</h2>
 
 					<div class="d-flex flex-column content">
@@ -591,7 +625,7 @@
 								<div class="hor-bar"></div>
 							</div>
 							<div class="d-flex flex-row location">
-								<h3>Android Mobility Detection Library</h3>
+								<h3><a href="https://github.com/knksknsy/mobility-detection-library" target="_blank">Mobility Detection Library</a></h3>
 								<div>2018</div>
 							</div>
 						</div>
@@ -627,7 +661,7 @@
 								<div class="hor-bar"></div>
 							</div>
 							<div class="d-flex flex-row location">
-								<h3>Autonomous Shuttle</h3>
+								<h3><a href="https://github.com/knksknsy/autonomous-shuttle" target="_blank">Autonomous Shuttle</a></h3>
 								<div>2018</div>
 							</div>
 						</div>
@@ -670,7 +704,7 @@
 								<div class="hor-bar"></div>
 							</div>
 							<div class="d-flex flex-row location">
-								<h3>Billtracker</h3>
+								<h3><a href="https://github.com/knksknsy/billtracker" target="_blank">Billtracker</a></h3>
 								<div>2018</div>
 							</div>
 						</div>
@@ -698,6 +732,12 @@
 							</div>
 						</div>
 					</div>
+				</div>
+			</div>
+
+			<div class="col-md-1 pr-4 d-flex flex-column right-container">
+
+				<div class="right-box">
 
 				</div>
 			</div>
@@ -711,7 +751,7 @@
 		</div>
 
 		<div class="row main-container">
-			<div class="col-md-4 px-4 d-flex flex-column left-container justify-content-end">
+			<!-- <div class="col-md-4 px-4 d-flex flex-column left-container justify-content-end">
 				<ng-container *ngIf="!isPublic; then signature; else nosignature"></ng-container>
 				<ng-template #signature>
 					<div *ngIf="globals.privateData" class="d-flex mb-4 flex-column left-box">
@@ -722,11 +762,11 @@
 				<ng-template #nosignature>
 					<div class="d-flex mb-4 flex-column left-box"></div>
 				</ng-template>
-			</div>
+			</div> -->
 
-			<div class="col-md-8 pr-4 d-flex flex-column right-container">
+			<div class="col-md-11 pr-4 d-flex flex-column left-container">
 
-				<div class="right-box">
+				<div class="left-box">
 					<h2>{{ 'projects' | translate }}</h2>
 					
 					<div class="d-flex flex-column content">
@@ -735,7 +775,7 @@
 								<div class="hor-bar"></div>
 							</div>
 							<div class="d-flex flex-row location">
-								<h3>Crypto Currency Tracker</h3>
+								<h3><a href="https://github.com/knksknsy/crypto-tracker" target="_blank">Crypto Currency Tracker</a></h3>
 								<div>2018</div>
 							</div>
 						</div>
@@ -773,7 +813,7 @@
 								<div class="hor-bar"></div>
 							</div>
 							<div class="d-flex flex-row location">
-								<h3>WatchIt</h3>
+								<h3><a href="https://github.com/knksknsy/watchit" target="_blank">WatchIt</a></h3>
 								<div>2017</div>
 							</div>
 						</div>
@@ -810,7 +850,7 @@
 								<div class="hor-bar"></div>
 							</div>
 							<div class="d-flex flex-row location">
-								<h3>Cap'n Can Webshop</h3>
+								<h3><a href="https://github.com/knksknsy/cnc-shop" target="_blank">Cap'n Can Webshop</a></h3>
 								<div>2017</div>
 							</div>
 						</div>
@@ -849,7 +889,7 @@
 								<div class="hor-bar"></div>
 							</div>
 							<div class="d-flex flex-row location">
-								<h3>PrivateEye</h3>
+								<h3><a href="https://github.com/knksknsy/private-eye" target="_blank">PrivateEye</a></h3>
 								<div>2017</div>
 							</div>
 						</div>
@@ -883,7 +923,24 @@
 						</div>
 					</div>
 
+					<div class="d-flex flex-column content">
+						<ng-container *ngIf="!isPublic; then signature; else nosignature"></ng-container>
+						<ng-template #signature>
+							<div *ngIf="globals.privateData" class="d-flex mb-4 flex-column left-box" style="margin-bottom: 0 !important; margin-top:1em">
+								<p class="mb-3">{{ globals.privateData.city }}, <span>{{ today | date: 'dd.MM.yyyy'}}</span></p>
+								<img class="img-fluid" src="./assets/images/signature.png" width="155px">
+							</div>
+						</ng-template>
+						<ng-template #nosignature>
+							<div class="d-flex mb-4 flex-column left-box"></div>
+						</ng-template>
+					</div>
+
 				</div>
+			</div>
+
+			<div class="col-md-1 pr-4 d-flex flex-column right-container">
+				<div class="right-box"></div>
 			</div>
 		</div>
 	</div>
