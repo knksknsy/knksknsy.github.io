@@ -34,7 +34,7 @@
             "cooking": "Kochen"
         },
         "education": {
-            "title": "Bildungsweg",
+            "title": "Ausbildung",
             "today": "Heute",
             "bsc": {
                 "title": "Medieninformatik (Bachelor of Science)",
@@ -60,7 +60,7 @@
             "web_app_development": "Web App Entwicklung"
         },
         "skills": {
-            "title": "Fähigkeiten",
+            "title": "Kenntnisse",
             "programming_languages": "Programmiersprachen",
             "databases": "Datenbanken",
             "machine_learning": "Machine Learning",
@@ -86,6 +86,16 @@
             ]
         },
         "projects": {
+            "thesis_msc": {
+                "title": "Machine Learning Methods for Facial Reenactment Creation and Detection",
+                "description": "Entwicklung und Optimierung von Machine Learning Modellen zur Erzeugung und Erkennung von DeepFakes:",
+                "tasks": [
+                    "Entwicklung der ETL-Pipeline für Video-Datensätze",
+                    "Entwicklung und Optimierung eines generativen und diskriminativen Machine Learning Modells",
+                    "Programmierung von Logging und Monitoring Prozeduren",
+                    "Datenvisualisierung und Auswertung der Ergebnisse"
+                ]
+            },
             "lab_pia" : {
                 "title": "Laborarbeit",
                 "description": "Implementierung von Anwendungen mit Hilfe von Künstlicher Intelligenz und Machine Learning:",
@@ -109,12 +119,12 @@
                 ]
             },
             "smart_penguins" : {
-                "description": "Entwicklung eines Car2x Systems zur Prävention von Verkehrsunfällen auf Basis eines Bluetooth LE Mesh Netzwerks:",
+                "description": "Entwicklung eines Car2x Systems zur Prävention von Verkehrsunfällen auf Basis eines Mesh Netzwerks:",
                 "tasks": [
                     "Implementierung einer Android App zum Austausch von BLE-Messages",
                     "Implementierung des Mesh Netzwerks zur Übertragung von BLE-Messages",
                     "Implementierung des Frühwarnsystems zum aktuellen Verkehrsgeschehen",
-                    "Dockerization der Softwareumgebung für konsistente Arbeitsumgebung und Continuous Integration"
+                    "Dockerization der Softwareumgebung"
                 ]
             },
             "next_search": {
@@ -129,11 +139,10 @@
             "easy_grow": {
                 "description": "Entwicklung eines automatischen Bewässerungssystem für Pflanzen auf Basis des Wi-Fi Mikrochips ESP8266:",
                 "tasks": [
-                    "Design der Schaltung und Implementierung der Logik",
                     "Entwicklung der Web-Applikation zur Fernsteuerung des Systems",
                     "Interaktionen über ein Hardware-Interface und einer Web-Applikation",
                     "Implementierung von WiFi-Funktionen mittels Espressif IoT Platform",
-                    "Dockerization der Softwareumgebung für eine konsistente Arbeitsumgebung und Continuous Integration"
+                    "Dockerization der Softwareumgebung"
                 ]
             },
             "thesis_bsc": {
@@ -179,7 +188,7 @@
                     "Design und Implementierung der Webservice-Architektur",
                     "Design und Entwicklung einer interaktiven und responsiven Web-UI",
                     "Anbindung der \"The Movie Database\" API",
-                    "Erweiterung des eigenen Webservices zur Erzeugung von Benutzerkonten und die Speicherung von Watch- und Favoritenlisten"
+                    "Erweiterung des eigenen Webservices zur Erzeugung von Benutzerkonten, Watch- und Favoritenlisten"
                 ]
             },
             "cnc_webshop": {
@@ -195,7 +204,7 @@
                 ]
             },
             "private_eye": {
-                "description": "Entwicklung mobiler Messstationen zur Messung und Visualisierung von Umweltdaten:",
+                "description": "Entwicklung mobiler Wetterstationen zur Messung und Visualisierung von Umweltdaten:",
                 "tasks": [
                     "Design und Implementierung der Webservice-Architektur",
                     "Design und Entwicklung einer interaktiven und responsiven Web-UI",
