@@ -4,6 +4,7 @@ import { GlobalsService } from '../../globals/globals.service';
 
 import * as jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
+import { NavigationEnd, Router } from '@angular/router';
 
 @Component({
   selector: 'app-cv',
@@ -19,7 +20,7 @@ export class CVComponent implements OnInit {
 
   private mimeType = 'image/svg+xml;charset=utf-8';
   private dimension = { width: 210, height: 297 };
-  private fileName = this.isGerman ? this.fileGerman : this.fileEnglish;
+  private fileName: string;
   private pdf: jsPDF;
   private printSections: HTMLCollectionOf<HTMLElement>;
   private contactIconsElement: Element;
@@ -29,7 +30,7 @@ export class CVComponent implements OnInit {
   printing: boolean = false;
   public today: Date;
 
-  constructor(public translate: TranslateService, public globals: GlobalsService) { }
+  constructor(public translate: TranslateService, public globals: GlobalsService, public router: Router) { }
 
   ngOnInit() {
     this.today = new Date();
@@ -39,6 +40,13 @@ export class CVComponent implements OnInit {
     this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
       this.setLanguage(event.lang);
     });
+
+    this.router.events.subscribe((event) => {
+      if (!(event instanceof NavigationEnd)) {
+        return;
+      }
+      window.scrollTo(0,0);
+    });
   }
 
   setLanguage(lang: string) {
@@ -47,6 +55,7 @@ export class CVComponent implements OnInit {
     } else {
       this.isGerman = false;
     }
+    this.fileName = this.isGerman ? this.fileGerman : this.fileEnglish;
   }
 
   sendGAEvent(category: string, action: string, label: string, value?: number) {
