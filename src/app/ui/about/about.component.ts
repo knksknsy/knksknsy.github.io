@@ -9,8 +9,7 @@ export class AboutComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
   imageClicked() {
     let imageElement = document.getElementById('profile-picture');

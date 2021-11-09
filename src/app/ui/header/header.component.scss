@@ -9,6 +9,9 @@
         border-bottom: 1px solid white;
         font-family: LatoWeb;
         font-size: 1em;
+        background-color: #000000bb;
+        backdrop-filter: blur(3px);
+        -webkit-backdrop-filter: blur(3px);
     }
     .navbar-nav {
         a {
@@ -36,38 +39,5 @@
             background-position: center;
         }
 
-    }
-    .frosting {
-        width: 100%;
-        height: $header-height;
-        position: fixed;
-        top: 0;
-        left: 0;
-        background-image: url(/assets/images/alpen.jpeg);
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-position: center;
-        background-size: cover;
-        overflow: hidden;
-        z-index: 1;
-    }
-    .frosting:after {
-        content: '';
-        width: calc(100% + 50px);
-        height: $header-height + 50px;
-        background: inherit;
-        position: absolute;
-        left: -25px;
-        right: 0;
-        top: -25px;
-        bottom: 0;
-        box-shadow: inset 0 0 0 200px rgba(0,0,0,0.5);
-        filter: blur(10px);
-    }
-    .frosting.show {
-        height: $header-expanded-height;   
-    }
-    .frosting.show:after {
-        height: $header-expanded-height + 50px;
     }
 }
