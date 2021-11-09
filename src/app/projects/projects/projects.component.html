@@ -1,1 +1,37 @@
-<div class="loading">Upcoming</div>
+<div class="container-fluid">
+    <div class="container" *ngFor="let project of ('cv.projects' | translate)">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-sm-8 mb-5">
+                        <h5 class="card-title">{{project.title}}</h5>
+                        <h6 class="card-subtitle text-muted mb-4">{{project.year}}</h6>
+                        <p class="card-text mb-1">{{project.description}}</p>
+                        <ul class="mb-4">
+                            <li *ngFor="let task of project.tasks">{{task}}</li>
+                        </ul>
+                        <p class="mb-1">{{ 'cv.technologies' | translate }}</p>
+                        <ul class="mb-3 d-flex flex-row languages tech">
+                            <li *ngFor="let tech of project.technologies">{{tech}}</li>
+                        </ul>
+                        <div>
+                            <a class="fa fa-github" [href]="project.github" target="_blank"></a>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <ngb-carousel class="h-100" *ngIf="isArray(project.assets)" #carousel="ngbCarousel">
+                            <ng-template *ngFor="let asset of project.assets" ngbSlide>
+                                <div class="img-wrapper">
+                                    <img class="img-fluid" [src]="asset" *ngIf="asset | assetType:'png'">
+                                    <video class="img-fluid" *ngIf="asset | assetType:'mp4'" controls>
+                                        <source [src]="asset" type="video/mp4">
+                                    </video>
+                                </div>
+                            </ng-template>
+                        </ngb-carousel>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

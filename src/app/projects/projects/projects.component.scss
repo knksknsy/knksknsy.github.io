@@ -1,3 +1,79 @@
+@import '~variables.scss';
+@import '~bootstrap/scss/bootstrap';
+
+.container {
+    margin-bottom: calc((#{$footer-height}) * 2);
+}
+
+// .row {
+//     height: calc(100vh - #{$header-height} - (#{$footer-height}) * 2 - (#{$container-padding}) * 2) !important;
+// }
+
+.card {
+    color: white;
+    font-family: LatoWeb;
+    background-color: #00000077;
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    border: none;
+    height: 100%;
+    .card-title {
+        font-family: LatoWebLight;
+    }
+    .card-subtitle.text-muted {
+        font-family: LatoWebLight;
+        color: #bbbbbb !important;
+    }
+}
+
+.img-wrapper {
+    display: flex;
+    height: 400px;
+    img {
+        max-height: 400px;
+        // height: calc(100vh - #{$header-height} - (#{$footer-height}) * 2 - (#{$container-padding}) * 2);
+        margin: auto;
+    }
+}
+
+.fa.fa-github {
+    font-size: 24pt;
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+.languages {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding: 0;
+    margin: auto 0;
+    li {
+        list-style-type: none;
+        font-family: LatoWeb;
+        font-size: 8pt;
+        list-style-position: inside;
+        margin-right: 10px;
+    }
+    li:first-of-type {
+        list-style-type: none;
+        margin-left: 0;
+    }
+    li:last-of-type {
+        margin-right: 0;
+    }
+    li:last-of-type::after {
+        content: "";
+    }
+    li::after {
+        position: relative;
+        bottom: 3px;
+        left: 5px;
+        content: ".";
+        display: inline-block;
+    }
+}
+
 .loading {
     font-family: LatoWebLight;
     font-size: 2em;
