@@ -21,11 +21,11 @@ export class CVComponent implements OnInit {
   // private pdf: jsPDF;
   // private mimeType = 'image/svg+xml;charset=utf-8';
   // private dimension = { width: 210, height: 297 };
-  // private fileName: string;
   // private printSections: HTMLCollectionOf<HTMLElement>;
   // private contactIconsElement: Element;
   // private contactTextsElement: Element;
   
+  public fileName: string;
   public isPublic: boolean = false;
   public printing: boolean = false;
   public today: Date;
