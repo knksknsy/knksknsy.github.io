@@ -12,6 +12,9 @@
         background-color: #000000bb;
         backdrop-filter: blur(3px);
         -webkit-backdrop-filter: blur(3px);
+        .navbar-brand:hover {
+            cursor: pointer;
+        }
     }
     .navbar-nav {
         a {

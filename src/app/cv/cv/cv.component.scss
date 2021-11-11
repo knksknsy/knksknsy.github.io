@@ -27,7 +27,28 @@ div[size="A4"] {
     body,
     div[size="A4"] {
         margin: 0;
-        // box-shadow: none !important;
+        page-break-after: always;
+        page-break-inside: avoid;
+        h3 a, .contact a, .icons a {
+            text-decoration: none;
+        }
+        .header-container {
+            max-width: 88%;
+        }
+        .left-box .content {
+            max-width: 80%;
+        }
+        .col-3 {
+            flex: 0 0 11%;
+            max-width: 11%;
+        }
+        .col-9 {
+            flex: 0 0 30%;
+            max-width: 30%;
+        }
+    }
+    .btn.btn-circle {
+        display: none;
     }
 }
 

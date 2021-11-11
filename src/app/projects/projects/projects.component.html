@@ -23,7 +23,7 @@
                             <ng-template *ngFor="let asset of project.assets" ngbSlide>
                                 <div class="img-wrapper">
                                     <img class="img-fluid" [src]="asset" *ngIf="asset | assetType:'png'">
-                                    <video class="img-fluid" *ngIf="asset | assetType:'mp4'" controls>
+                                    <video class="img-fluid" *ngIf="asset | assetType:'mp4'" autoplay>
                                         <source [src]="asset" type="video/mp4">
                                     </video>
                                 </div>
