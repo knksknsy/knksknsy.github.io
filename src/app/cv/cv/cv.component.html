@@ -5,21 +5,19 @@
 		<span class="sr-only">Loading...</span>
 	</div>
 
-	<button *ngIf="!globals.production" class="print-btn btn btn-circle" (click)="printCV()"
-		[ngClass]="{'hide': printing}">
+	<!-- <button *ngIf="!globals.production" class="print-btn btn btn-circle" (click)="printCV()" [ngClass]="{'hide': printing}">
 		<i class="fa fa-save"></i>
-	</button>
+	</button> -->
+
 	<button class="public-btn btn btn-circle" (click)="isPublic = !isPublic" [ngClass]="{'hide': globals.production}">
 		<i class="fa fa-unlock" [ngClass]="{'hide': !isPublic}"></i>
 		<i class="fa fa-lock" [ngClass]="{'hide': isPublic}"></i>
 	</button>
 
-	<a *ngIf="globals.production && isPublic && isGerman" class="print-btn btn btn-circle" download="{{fileGerman}}"
-		href="{{path}}{{fileGerman}}" target="_blank">
+	<a *ngIf="globals.production && isPublic && isGerman" class="print-btn btn btn-circle" download="{{fileGerman}}" href="{{path}}{{fileGerman}}" target="_blank">
 		<i class="fa fa-save" (click)="sendGAEvent('PDF', 'save', 'german')"></i>
 	</a>
-	<a *ngIf="globals.production && isPublic && !isGerman " class="print-btn btn btn-circle" download="{{fileEnglish}}"
-		href="{{path}}{{fileEnglish}}" target="_blank">
+	<a *ngIf="globals.production && isPublic && !isGerman " class="print-btn btn btn-circle" download="{{fileEnglish}}" href="{{path}}{{fileEnglish}}" target="_blank">
 		<i class="fa fa-save" (click)="sendGAEvent('PDF', 'save', 'english')"></i>
 	</a>
 
@@ -146,12 +144,12 @@
 								<p>{{ ed.major }}</p>
 								<div class="container m-0" style="max-width: 85%;" *ngIf="ed.grade || ed.thesis">
 									<div class="row">
-										<div class="col-3 p-0">{{ed.grade.title}}</div>
-										<div class="col-9 p-0">{{ed.grade.value}}</div>
+										<div class="col-sm-3 p-0">{{ed.grade.title}}</div>
+										<div class="col-sm-9 p-0">{{ed.grade.value}}</div>
 									</div>
 									<div class="row">
-										<div class="col-3 p-0">{{ed.thesis.title}}</div>
-										<div class="col-9 p-0">{{ed.thesis.value}}</div>
+										<div class="col-sm-3 p-0">{{ed.thesis.title}}</div>
+										<div class="col-sm-9 p-0">{{ed.thesis.value}}</div>
 									</div>
 								</div>
 							</div>

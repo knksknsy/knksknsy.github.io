@@ -7,9 +7,9 @@
         max-height: 100% !important;
     }
 
-    .print-btn {
-        display: none !important;
-    }
+    // .print-btn {
+    //     display: none !important;
+    // }
 }
 
 div[size="A4"] {
@@ -38,11 +38,11 @@ div[size="A4"] {
         .left-box .content {
             max-width: 80%;
         }
-        .col-3 {
+        .col-sm-3 {
             flex: 0 0 11%;
             max-width: 11%;
         }
-        .col-9 {
+        .col-sm-9 {
             flex: 0 0 30%;
             max-width: 30%;
         }
@@ -71,6 +71,7 @@ div[size="A4"] {
     color: white;
     font-size: 2em;
     justify-content: center;
+    z-index: 99;
 }
 
 .public-btn {

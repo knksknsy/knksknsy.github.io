@@ -4,9 +4,9 @@
 		<span class="sr-only">Loading...</span>
 	</div>
 
-	<button *ngIf="!globals.production" class="print-btn btn btn-circle" (click)="printLetter()" [ngClass]="{'hide': printing}">
+	<!-- <button *ngIf="!globals.production" class="print-btn btn btn-circle" (click)="printLetter()" [ngClass]="{'hide': printing}">
 		<i class="fa fa-save"></i>
-	</button>
+	</button> -->
 
 	<select *ngIf="company" class="companies" [(ngModel)]="company">
 		<option *ngFor="let c of companies" [ngValue]="c" [selected]="c.title == company.title">{{c.title}}</option>

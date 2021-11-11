@@ -1,22 +1,19 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
-import { NgbCarousel, NgbCarouselConfig } from "@ng-bootstrap/ng-bootstrap";
+import { Component, OnInit } from "@angular/core";
 import { NavigationEnd, Router } from "@angular/router";
 import { TranslateService } from "@ngx-translate/core";
+import { CarouselConfig } from "ngx-bootstrap";
 
 @Component({
   selector: 'app-projects',
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.scss'],
-  providers: [NgbCarouselConfig]
+  providers: [
+    { provide: CarouselConfig, useValue: { interval: 0, noPause: false, pauseOnFocus: true, showIndicators: true } }
+  ]
 })
 export class ProjectsComponent implements OnInit {
 
-  @ViewChild('carousel') carousel: NgbCarousel;
-
-  constructor(private config: NgbCarouselConfig, public translate: TranslateService, public router: Router) {
-    this.config.interval = 0;
-    this.config.keyboard = false;
-  }
+  constructor(public translate: TranslateService, public router: Router) {}
 
   ngOnInit() {
     this.router.events.subscribe((event) => {

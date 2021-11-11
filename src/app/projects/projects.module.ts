@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { NgbModule, NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
+import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 
@@ -26,7 +26,6 @@ export function HttpLoaderFactory(http: HttpClient) {
     imports: [
         CommonModule,
         BrowserModule,
-        NgbModule,
         HttpClientModule,
         UiModule,
         TranslateModule.forRoot({
@@ -35,14 +34,14 @@ export function HttpLoaderFactory(http: HttpClient) {
                 useFactory: HttpLoaderFactory,
                 deps: [HttpClient]
             }
-        })
+        }),
+        CarouselModule.forRoot()
     ],
     exports: [
         ProjectsComponent
     ],
     providers: [
-        ProjectsDataService,
-        NgbCarouselConfig
+        ProjectsDataService
     ]
 })
 export class ProjectsModule { }

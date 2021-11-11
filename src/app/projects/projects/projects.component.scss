@@ -1,13 +1,35 @@
 @import '~variables.scss';
 @import '~bootstrap/scss/bootstrap';
 
-.container {
-    margin-bottom: calc((#{$footer-height}) * 2);
+.container-fluid, .row {
+    min-height: calc(100vh - #{$header-height} - #{$footer-height} - (#{$container-padding}) * 4);
 }
 
-// .row {
-//     height: calc(100vh - #{$header-height} - (#{$footer-height}) * 2 - (#{$container-padding}) * 2) !important;
+:host ::ng-deep .carousel.slide {
+    .carousel-indicators {
+        li {
+            padding: 2px;
+        }
+    }
+    .carousel-inner {
+        margin: auto;
+    }
+    .carousel-control-prev, .carousel-control-next {
+        display: none;
+    }
+}
+
+// :host ::ng-deep .project-carousel {
+//     .row {
+//         align-items: center;
+//     }
 // }
+
+:host ::ng-deep .image-carousel {
+    .carousel-indicators {
+        position: initial;
+    }
+}
 
 .card {
     color: white;
@@ -28,10 +50,9 @@
 
 .img-wrapper {
     display: flex;
-    height: 400px;
+    height: 350px;
     img {
-        max-height: 400px;
-        // height: calc(100vh - #{$header-height} - (#{$footer-height}) * 2 - (#{$container-padding}) * 2);
+        max-height: 350px;
         margin: auto;
     }
 }
