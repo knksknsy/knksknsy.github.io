@@ -17,7 +17,11 @@
         "address": "Adresse",
         "telephone": "Telefon",
         "email": "Email",
-        "website": "Webseite"
+        "website": "Webseite",
+        "greeting_m": "Sehr geehrter Herr",
+        "greeting_f": "Sehr geehrte Frau",
+        "greeting_n": "Sehr geehrte Damen und Herren",
+        "sign_off": "Mit freundlichen Grüßen"
     },
     "cv": {
         "contact": "Kontakt",

@@ -7,7 +7,11 @@
         "address": "Address",
         "telephone": "Telephone",
         "email": "Email",
-        "website": "Website"
+        "website": "Website",
+        "greeting_m": "Dear Mr.",
+        "greeting_f": "Dear Ms.",
+        "greeting_n": "Dear Hiring Manager",
+        "sign_off": "Sincerely"
     },
     "cv": {
         "contact": "Contact",

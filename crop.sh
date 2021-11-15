@@ -34,6 +34,12 @@ echo "FILE TYPE     = ${TYPE}"
 echo "INPUT PDF     = ${FILE}"
 echo "OUTPUT PDF    = ${OUTPUT}"
 
+if [[ "${FILE}" = "${OUTPUT}" ]]
+then
+    echo "Arguments --file and --output must be different."
+    exit
+fi
+
 if [[ "${TYPE}" = "cv" ]]
 then
     gs -o ${OUTPUT} -sDEVICE=pdfwrite -c "[/CropBox [0 491 544 1200]" -c " /PAGES pdfmark" -f ${FILE}
