@@ -17,17 +17,26 @@
     .carousel-control-prev, .carousel-control-next {
         display: none;
     }
+    .col-sm-4 {
+        margin-bottom: 6rem;
+    }
 }
 
-// :host ::ng-deep .project-carousel {
-//     .row {
-//         align-items: center;
-//     }
-// }
+:host ::ng-deep .project-carousel {
+    .carousel-indicators {
+        flex-wrap: wrap;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+    // .row {
+    //     align-items: center;
+    // }
+}
 
 :host ::ng-deep .image-carousel {
     .carousel-indicators {
         position: initial;
+        flex-wrap: nowrap;
     }
 }
 
