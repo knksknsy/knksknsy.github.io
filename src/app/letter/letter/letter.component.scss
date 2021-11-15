@@ -1,12 +1,32 @@
 @import '~variables.scss';
 @import "~bootstrap/scss/bootstrap-grid.scss";
-@include media-breakpoint-down(md) {
-    div[size="A4"] {
-        width: 100% !important;
-        height: 100% !important;
-    }
-    .print-btn {
-        display: none !important;
+
+@media print {
+    body, div[size="A4"] {
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin: 0;
+        page-break-after: always;
+        page-break-inside: avoid;
+        h3 a, .contact a, .icons a {
+            text-decoration: none;
+        }
+        // .header-container, .information, .main-container {
+        //     max-width: 88%;
+        // }
+        .information {
+            padding: 2rem 2rem 0 2rem !important;
+        }
+        .main-container {
+            padding: 2rem !important;
+        }
+        .right-container {
+            padding-left: 1.5rem !important;
+        }
+        a {
+            text-decoration: none;
+        }
     }
 }
 
@@ -46,16 +66,10 @@ div[size="A4"] {
     //box-shadow: 0 0 0.5cm rgba(0, 0, 0, 0.5);
     margin: 0 auto;
     margin-bottom: $container-padding;
-    width: 21cm;
-    height: 29.7cm;
-}
-
-@media print {
-    body,
-    div[size="A4"] {
-        margin: 0;
-        //box-shadow: none !important;
-    }
+    min-width: 21cm;
+    max-width: 21cm;
+    min-height: 29.7cm;
+    max-height: 29.7cm;
 }
 
 .header-container {
@@ -80,28 +94,36 @@ div[size="A4"] {
         margin: 0;
         font-family: LatoWebHairline;
         font-size: 1.5em;
-    } // justify-content: center;
-    // align-items: center;
-    // align-content: center;
-    // text-align: center;
-    // width: 100%;
-    // height: 15%;
-    // padding: 1.5em 0 1.75em 0;
-    // background-color: #505050;
-    // color: #FFFFFF;
-    // font-family: LatoWebLight;
-    // h1 {
-    //     margin: 0.5em 0 0.15em 0;
-    //     font-size: 3em;
-    //     span {
-    //         font-family: LatoWebBold;
-    //     }
-    // }
-    // p {
-    //     margin: 0;
-    //     font-family: LatoWebHairline;
-    //     font-size: 1em;
-    // }
+    }
+}
+
+.w100 {
+    width: 100px;
+    margin: 0;
+}
+
+.flex {
+    display: flex;
+}
+
+.dir-col {
+    flex-direction: column;
+}
+
+.grow {
+    flex-grow: 1;
+}
+
+.grow-05 {
+    flex-grow: 0.5;
+}
+
+.grow-04 {
+    flex-grow: 0.4;
+}
+
+.grow-02 {
+    flex-grow: 0.2;
 }
 
 .information {
@@ -109,12 +131,10 @@ div[size="A4"] {
     font-size: 10pt;
 }
 
-.companies {
-    width: 200px;
-    height: 30px;
-    position: fixed;
-    top: calc(55px + 20px);
-    left: 20px;
+.options {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
 }
 
 .main-container {
@@ -123,8 +143,11 @@ div[size="A4"] {
     height: calc(90% - 3em);
     margin: 0;
     padding: 1.32cm 1.32cm 3.67cm 1.32cm !important;
-    // padding-top: 1cm !important;
     font-size: 10pt;
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
 }
 
 .left-container,
@@ -252,10 +275,14 @@ div[size="A4"] {
     text-align: justify;
 }
 
+.justify {
+    text-align: justify;
+}
+
 .right-box {
     h3 {
-    font-family: LatoWeb;
-    font-size: 12pt;
-    margin-bottom: 1.5em;
-}
+        font-family: LatoWeb;
+        font-size: 12pt;
+        margin-bottom: 1.5em;
+    }
 }

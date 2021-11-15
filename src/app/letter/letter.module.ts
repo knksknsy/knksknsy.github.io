@@ -7,8 +7,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
+import { TextareaAutoresizeDirective } from './textarea-directive/textarea-autoresize';
 import { UiModule } from '../ui/ui.module';
-
 import { LetterComponent } from './letter/letter.component';
 import { GlobalsService } from '../globals/globals.service';
 
@@ -18,7 +18,8 @@ export function HttpLoaderFactory(http: HttpClient) {
 
 @NgModule({
   declarations: [
-    LetterComponent
+    LetterComponent,
+    TextareaAutoresizeDirective
   ],
   imports: [
     CommonModule,

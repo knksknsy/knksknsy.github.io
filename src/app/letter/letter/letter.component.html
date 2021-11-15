@@ -1,16 +1,34 @@
 <div class="container-fluid">
 
-	<div *ngIf="!globals.production" class="print-btn btn btn-circle spinner-grow" role="status" [ngClass]="{'hide': !printing}">
-		<span class="sr-only">Loading...</span>
+	<div class="options" *ngIf="company">
+		<select [(ngModel)]="company" (change)="loadLetter($event.target.value)">
+			<option value="new">New Cover</option>
+			<option *ngFor="let c of companies" [ngValue]="c" [selected]="c.title == company.title">{{c.title}}</option>
+		</select>
+
+		<a *ngIf="uri" download="companies.json" [href]="uri">Save & overwrite companies.json</a>
+	
+		<form [formGroup]="companyForm">
+			<label for="title">Title: </label>
+			<input id="title" type="text" formControlName="title">
+		</form>
 	</div>
+
+	<button *ngIf="!globals.production && editEnabled" class="print-btn btn btn-circle" (click)="saveLetter()">
+		<i class="fa fa-save"></i>
+	</button>
+
+	<button *ngIf="!globals.production && !editEnabled" class="print-btn btn btn-circle" (click)="updateEditEnabled(!editEnabled)">
+		<i class="fa fa-pen"></i>
+	</button>
+
+	<!-- <div *ngIf="!globals.production" class="print-btn btn btn-circle spinner-grow" role="status" [ngClass]="{'hide': !printing}">
+		<span class="sr-only">Loading...</span>
+	</div> -->
 
 	<!-- <button *ngIf="!globals.production" class="print-btn btn btn-circle" (click)="printLetter()" [ngClass]="{'hide': printing}">
 		<i class="fa fa-save"></i>
 	</button> -->
-
-	<select *ngIf="company" class="companies" [(ngModel)]="company">
-		<option *ngFor="let c of companies" [ngValue]="c" [selected]="c.title == company.title">{{c.title}}</option>
-	</select>
 
 	<div *ngIf="company" size="A4" class="print-section">
 
@@ -21,13 +39,59 @@
 
 		<div class="information d-flex flex-row justify-content-between">
 			<div class="address d-flex flex-column">
-				<p>{{company.name}}</p>
-				<ng-template [ngIf]="company.department">
-					<p>{{company.department}}</p>
+				<ng-container *ngIf="editEnabled; then addressFormView; else addressPrintView"></ng-container>
+				<ng-template #addressFormView>
+					<form [formGroup]="companyForm">
+						<div class="flex">
+							<label class="w100" for="company">Company: </label>
+							<input class="grow" id="company" type="text" formControlName="company">
+						</div>
+						<div class="flex">
+							<label class="w100" for="department">Department: </label>
+							<input class="grow" id="department" type="text" formControlName="department">
+						</div>
+						<div>
+							<form formGroupName="recipient">
+								<div class="flex">
+									<label class="w100" for="name">Surname, name: </label>
+									<input class="grow-04" id="surname" type="text" formControlName="surname">
+									<input class="grow-04" id="name" type="text" formControlName="name">
+									<select class="grow-02" formControlName="gender">
+										<option value="f">f</option>
+										<option value="m">m</option>
+										<option value="">none</option>
+									</select>
+								</div>
+							</form>
+						</div>
+						<div>
+							<form formGroupName="address">
+								<div class="flex">
+									<label class="w100" for="street">Street: </label>
+									<input class="grow" id="street" type="text" formControlName="street">
+								</div>
+			
+								<div class="flex">
+									<label class="w100" for="zip">Zip & City: </label>
+									<input class="grow-05" id="zip" type="text" formControlName="zip">
+									<input class="grow-05" id="city" type="text" formControlName="city">
+								</div>
+							</form>
+						</div>
+					</form>
 				</ng-template>
-				<p *ngIf="company.counterpart">{{company.counterpart.title ? company.counterpart.title + ' ' : ''}}{{company.counterpart.name}} {{company.counterpart.surname}}</p>
-				<p>{{company.address.street}}</p>
-				<p>{{company.address.zip}} {{company.address.city}}</p>
+				<ng-template #addressPrintView>
+					<p>{{company.company}}</p>
+					<ng-template [ngIf]="company.department">
+						<p>{{company.department}}</p>
+					</ng-template>
+					<p *ngIf="company.recipient">{{company.recipient.surname}} {{company.recipient.name}}</p>
+					<ng-template [ngIf]="company.address">
+						<p>{{company.address.street}}</p>
+						<p>{{company.address.zip}} {{company.address.city}}</p>
+					</ng-template>
+				</ng-template>
+
 			</div>
 
 			<div *ngIf="globals.privateData" class="d-flex flex-column justify-content-end align-items-end">
@@ -55,45 +119,77 @@
 						<i class="fa fa-envelope"></i>
 						<h3>{{ 'letter.email' | translate }}</h3>
 					</div>
-					<p class="mb-2">{{ 'email' | translate }}</p>
+					<p class="mb-2"><a href="mailto:{{ 'email' | translate }}" target="_blank">{{ 'email' | translate }}</a></p>
 					<div class="d-flex align-items-baseline">
 						<i class="fa fa-globe"></i>
 						<h3>{{ 'letter.website' | translate }}</h3>
 					</div>
-					<p>{{ 'homepage' | translate }}</p>
+					<p><a href="https://{{ 'homepage' | translate}}">{{ 'homepage' | translate }}</a></p>
 				</div>
 			</div>
 
 			<div class="col-md-9 px-4 d-flex flex-column right-container">
 				<div class="right-box">
 
-					<ng-container *ngIf="!company.subheading; then heading; else subheading"></ng-container> 
-					<ng-template #heading>
-						<h2>{{company.heading}}</h2>
+					<ng-container *ngIf="editEnabled; then HeadingFormView; else HeadingPrintView"></ng-container>
+					<ng-template #HeadingFormView>
+						<form [formGroup]="companyForm" class="flex dir-col">
+							<div class="flex">
+								<label class="w100" for="heading">Heading: </label>
+								<input class="grow" id="heading" type="text" formControlName="heading">
+							</div>
+							<div class="flex">
+								<label class="w100" for="subheading">Subheading: </label>
+								<input class="grow" id="subheading" type="text" formControlName="subheading">
+							</div>
+						</form>
 					</ng-template>
-					<ng-template #subheading>
-						<h2 style="margin-bottom: 0.5em;">{{company.heading}}</h2>
-						<h3>{{company.subheading}}</h3>
+					<ng-template #HeadingPrintView>
+						<ng-container *ngIf="!company.subheading; then heading; else subheading"></ng-container> 
+						<ng-template #heading>
+							<h2>{{company.heading}}</h2>
+						</ng-template>
+						<ng-template #subheading>
+							<h2 style="margin-bottom: 0.5em;">{{company.heading}}</h2>
+							<h3>{{company.subheading}}</h3>
+						</ng-template>
 					</ng-template>
 
-					<div *ngIf="company.counterpart" class="d-flex flex-column">
-						<ng-container *ngIf="company.counterpart.gender === 'm'; then male; else female"></ng-container>
-						<ng-template #male>
-							<p>Sehr geehrter Herr {{company.counterpart.title ? company.counterpart.title + ' ' + company.counterpart.surname : company.counterpart.surname}},</p>
+					<div *ngIf="company.recipient" class="d-flex flex-column">
+						<div [ngSwitch]="company.recipient.gender">
+							<div *ngSwitchCase="'m'">
+								<p>{{ 'letter.greeting_m' | translate }} {{company.recipient.surname}},</p>
+							</div>
+							<div *ngSwitchCase="'f'">
+								<p>{{ 'letter.greeting_f' | translate }} {{company.recipient.surname}},</p>
+							</div>
+							<div *ngSwitchDefault>
+								<p>{{ 'letter.greeting_n' | translate }},</p>
+							</div>
+						</div>
+						<ng-container *ngIf="editEnabled; then LetterFormView; else LetterPrintView"></ng-container>
+						<ng-template #LetterFormView>
+							<form [formGroup]="companyForm">
+								<div class="flex" formArrayName="letter" *ngFor="let l of companyForm.get('letter')['controls']; let i = index;">
+									<textarea class="grow mb-1 justify" [formControlName]="i" id="letter" textareaAutoresize></textarea>
+								</div>
+								<div>
+									<button class="btn-sm" (click)="addParagraph()">
+										<i class="fa fa-plus"></i>
+									</button>
+									<button class="btn-sm" (click)="removeParagraph()">
+										<i class="fa fa-minus"></i>
+									</button>
+								</div>
+							</form>
 						</ng-template>
-						<ng-template #female>
-							<p>Sehr geehrte Frau {{company.counterpart.title ? company.counterpart.title + ' ' + company.counterpart.surname : company.counterpart.surname}},</p>
+						<ng-template #LetterPrintView>
+							<p class="large-text" *ngFor="let p of company.letter">{{p}}</p>
 						</ng-template>
-						<p class="large-text" *ngFor="let p of company.letter">{{p}}</p>
-					</div>
-					<div *ngIf="!company.counterpart" class="d-flex flex-column">
-						<p>Dear Hiring Manager,</p>
-						<p class="large-text" *ngFor="let p of company.letter">{{p}}</p>
 					</div>
 
 					<div class="d-flex flex-column">
-						<!-- <p>Mit freundlichen Grüßen</p> -->
-						<p>Sincerely,</p>
+						<p>{{ 'letter.sign_off' | translate}},</p>
 						<img class="img-fluid" src="./assets/images/signature.png" width="155px">
 						<p>Kaan Keskinsoy</p>
 					</div>
@@ -102,5 +198,4 @@
 			</div>
 		</div>
 	</div>
-
 </div>

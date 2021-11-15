@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
@@ -23,6 +24,7 @@ export function createTranslateLoader(http: HttpClient) {
     imports: [
         BrowserModule,
         HttpClientModule,
+        ReactiveFormsModule,
         UiModule,
         CVModule,
         ProjectsModule,

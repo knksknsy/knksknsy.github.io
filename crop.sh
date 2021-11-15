@@ -6,6 +6,11 @@ while [[ $# -gt 0 ]]; do
     key="$1"
 
     case $key in
+        -t|--type)
+            TYPE="$2"
+            shift
+            shift
+            ;;
         -f|--file)
             FILE="$2"
             shift
@@ -25,6 +30,16 @@ done
 
 set -- "${POSITIONAL[@]}"
 
+echo "FILE TYPE     = ${TYPE}"
 echo "INPUT PDF     = ${FILE}"
 echo "OUTPUT PDF    = ${OUTPUT}"
-gs -o ${OUTPUT} -sDEVICE=pdfwrite -c "[/CropBox [0 491 544 1200]" -c " /PAGES pdfmark" -f ${FILE}
+
+if [[ "${TYPE}" = "cv" ]]
+then
+    gs -o ${OUTPUT} -sDEVICE=pdfwrite -c "[/CropBox [0 491 544 1200]" -c " /PAGES pdfmark" -f ${FILE}
+elif [[ "${TYPE}" = "cover" ]]
+then
+    gs -o ${OUTPUT} -sDEVICE=pdfwrite -c "[/CropBox [0 348 596 1200]" -c " /PAGES pdfmark" -f ${FILE}
+else
+    echo "Valid --type options: TYPE=[cv|cover]"
+fi
