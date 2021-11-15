@@ -6,15 +6,10 @@
         min-width: 100% !important;
         max-height: 100% !important;
     }
-
-    // .print-btn {
-    //     display: none !important;
-    // }
 }
 
 div[size="A4"] {
     background-color: white;
-    // box-shadow: 0 0 0.5cm rgba(0, 0, 0, 0.5);
     margin: 0 auto;
     margin-bottom: $container-padding;
     min-width: 21cm;
