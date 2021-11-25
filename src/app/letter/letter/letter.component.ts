@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, FormArray } from '@angular/forms';
 import { Company } from '../../interfaces/company';
 import { GlobalsService } from '../../globals/globals.service';
 import { DomSanitizer } from '@angular/platform-browser';
+import { faSave, faPen, faMapMarkerAlt, faMobileAlt, faEnvelope, faGlobe, faPlus, faMinus } from '@fortawesome/free-solid-svg-icons';
 
 // import * as jsPDF from 'jspdf';
 // import html2canvas from 'html2canvas';
@@ -13,6 +14,14 @@ import { DomSanitizer } from '@angular/platform-browser';
   styleUrls: ['./letter.component.scss']
 })
 export class LetterComponent implements OnInit {
+  faSave = faSave;
+  faPen = faPen;
+  faMapMarkerAlt = faMapMarkerAlt;
+  faMobileAlt = faMobileAlt;
+  faEnvelope = faEnvelope;
+  faGlobe = faGlobe;
+  faPlus = faPlus;
+  faMinus = faMinus;
 
   public today: Date;
   public companies: Array<Company> = [];

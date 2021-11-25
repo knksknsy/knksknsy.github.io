@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { GlobalsService } from '../../globals/globals.service';
+import { faGithub, faLinkedin, faXing } from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope, faMapMarkerAlt, faMobileAlt, faGlobe, faSave, faLock, faUnlock } from '@fortawesome/free-solid-svg-icons';
 
 // import * as jsPDF from 'jspdf';
 // import html2canvas from 'html2canvas';
@@ -12,6 +14,16 @@ import { GlobalsService } from '../../globals/globals.service';
   styleUrls: ['./cv.component.scss']
 })
 export class CVComponent implements OnInit {
+  faGithub = faGithub;
+  faLinkedin = faLinkedin;
+  faXing = faXing;
+  faEnvelope = faEnvelope;
+  faMapMarkerAlt = faMapMarkerAlt;
+  faMobileAlt = faMobileAlt;
+  faGlobe = faGlobe;
+  faSave = faSave;
+  faLock = faLock;
+  faUnlock = faUnlock;
 
   public isGerman: boolean;
   public path = './assets/cv/';

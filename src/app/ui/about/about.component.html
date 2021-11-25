@@ -13,23 +13,29 @@
         </div>
         <div class="social col-md-2 d-flex flex-md-column flex-xs-row justify-content-around">
             <div>
-                <a class="fa fa-github" href="https://{{ 'github' | translate }}" target="_blank"></a>
+                <a  href="https://{{ 'github' | translate }}" target="_blank">
+                    <fa-icon [icon]="faGithub"></fa-icon>
+                </a>
             </div>
             <div>
-                <a class="fa fa-linkedin" href="https://{{ 'linkedin' | translate }}" target="_blank"></a>
+                <a href="https://{{ 'linkedin' | translate }}" target="_blank">
+                    <fa-icon [icon]="faLinkedin"></fa-icon>
+                </a>
             </div>
             <div>
-                <a class="fa fa-xing" href="https://{{ 'xing' | translate }}" target="_blank"></a>
+                <a href="https://{{ 'xing' | translate }}" target="_blank">
+                    <fa-icon [icon]="faXing"></fa-icon>
+                </a>
             </div>
         </div>
     </div>
 
     <div class="discover row mb-5 d-flex flex-row align-items-center justify-content-start">
-        <div class="col-3 d-flex mr-4 fa fa-angle-right justify-content-end" routerLink="/cv/"></div>
+        <fa-icon class="col-3 d-flex mr-4 justify-content-end fa" [icon]="faAngleRight" routerLink="/cv/"></fa-icon>
         <a class="m-0" routerLink="/cv/">{{ 'cv_long' | translate }}</a>
     </div>
     <div class="discover row mb-5 d-flex flex-row-reverse align-items-center justify-content-start">
-        <div class="col-3 d-flex ml-4 fa fa-angle-left" routerLink="/projects/"></div>
+        <fa-icon class="col-3 d-flex ml-4 fa" [icon]="faAngleLeft" routerLink="/projects/"></fa-icon>
         <a class="m-0" routerLink="/projects/">{{ 'discover' | translate }}</a>
     </div>
 </div>

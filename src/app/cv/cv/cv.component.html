@@ -6,19 +6,19 @@
 	</div> -->
 
 	<!-- <button *ngIf="!globals.production" class="print-btn btn btn-circle" (click)="printCV()" [ngClass]="{'hide': printing}">
-		<i class="fa fa-save"></i>
+		<fa-icon class="fa fa-save" [icon]="faSave"></fa-icon>
 	</button> -->
 
 	<button class="public-btn btn btn-circle" (click)="isPublic = !isPublic" [ngClass]="{'hide': globals.production}">
-		<i class="fa fa-unlock" [ngClass]="{'hide': !isPublic}"></i>
-		<i class="fa fa-lock" [ngClass]="{'hide': isPublic}"></i>
+		<fa-icon class="fa fa-unlock" [icon]="faUnlock" [ngClass]="{'hide': !isPublic}"></fa-icon>
+		<fa-icon class="fa fa-lock" [icon]="faLock" [ngClass]="{'hide': isPublic}"></fa-icon>
 	</button>
 
 	<a *ngIf="globals.production && isPublic && isGerman" class="print-btn btn btn-circle" download="{{fileGerman}}" href="{{path}}{{fileGerman}}" target="_blank">
-		<i class="fa fa-save" (click)="sendGAEvent('PDF', 'save', 'german')"></i>
+		<fa-icon class="fa fa-save" [icon]="faSave" (click)="sendGAEvent('PDF', 'save', 'german')"></fa-icon>
 	</a>
 	<a *ngIf="globals.production && isPublic && !isGerman " class="print-btn btn btn-circle" download="{{fileEnglish}}" href="{{path}}{{fileEnglish}}" target="_blank">
-		<i class="fa fa-save" (click)="sendGAEvent('PDF', 'save', 'english')"></i>
+		<fa-icon class="fa fa-save" [icon]="faSave" (click)="sendGAEvent('PDF', 'save', 'english')"></fa-icon>
 	</a>
 
 	<div size="A4" class="print-section">
@@ -49,11 +49,11 @@
 								<p>{{ 'homepage' | translate }}</p>
 							</div>
 							<div class="icons d-flex flex-column justify-content-around align-items-center">
-								<a class="fa fa-map-marker"></a>
-								<a class="fa fa-map-marker" style="visibility: hidden;"></a>
-								<a class="fa fa-mobile"></a>
-								<a class="fa fa-envelope" href="mailto:{{ 'email' | translate }}" target="_blank"></a>
-								<a class="fa fa-globe" href="https://{{ 'homepage' | translate}}"></a>
+								<a class="fa fa-map-marker"><fa-icon [icon]="faMapMarkerAlt" [fixedWidth]="true"></fa-icon></a>
+								<a class="fa fa-map-marker" style="visibility: hidden; height: 0.6rem;"><fa-icon [icon]="faGlobe" [fixedWidth]="true"></fa-icon></a>
+								<a class="fa fa-mobile"><fa-icon [icon]="faMobileAlt" [fixedWidth]="true"></fa-icon></a>
+								<a class="fa fa-envelope" href="mailto:{{ 'email' | translate }}" target="_blank"><fa-icon [icon]="faEnvelope" [fixedWidth]="true"></fa-icon></a>
+								<a class="fa fa-globe" href="https://{{ 'homepage' | translate}}"><fa-icon [icon]="faGlobe" [fixedWidth]="true"></fa-icon></a>
 							</div>
 						</div>
 					</div>
@@ -64,17 +64,17 @@
 						<h2>{{ 'cv.contact' | translate }}</h2>
 						<div class="contact d-flex flex-row justify-content-around">
 							<div>
-								<a class="fa fa-envelope" href="mailto:{{ 'email' | translate }}" target="_blank"></a>
+								<a class="fa fa-envelope" href="mailto:{{ 'email' | translate }}" target="_blank"><fa-icon [icon]="faEnvelope"></fa-icon></a>
 							</div>
 							<div>
-								<a class="fa fa-github" href="https://{{ 'github' | translate }}" target="_blank"></a>
+								<a class="fa fa-github" href="https://{{ 'github' | translate }}" target="_blank"><fa-icon [icon]="faGithub"></fa-icon></a>
 							</div>
 							<div>
 								<a class="fa fa-linkedin" href="https://{{ 'linkedin' | translate }}"
-									target="_blank"></a>
+									target="_blank"><fa-icon [icon]="faLinkedin"></fa-icon></a>
 							</div>
 							<div>
-								<a class="fa fa-xing" href="https://{{ 'xing' | translate }}" target="_blank"></a>
+								<a class="fa fa-xing" href="https://{{ 'xing' | translate }}" target="_blank"><fa-icon [icon]="faXing"></fa-icon></a>
 							</div>
 						</div>
 
@@ -86,10 +86,10 @@
 								<p>{{ 'linkedin' | translate }}</p>
 							</div>
 							<div class="icons d-flex flex-column justify-content-around align-items-center">
-								<a class="fa fa-envelope"></a>
-								<a class="fa fa-github"></a>
-								<a class="fa fa-linkedin"></a>
-								<a class="fa fa-xing"></a>
+								<a class="fa fa-envelope"><fa-icon [icon]="faEnvelope"></fa-icon></a>
+								<a class="fa fa-github"><fa-icon [icon]="faGithub"></fa-icon></a>
+								<a class="fa fa-linkedin"><fa-icon [icon]="faLinkedin"></fa-icon></a>
+								<a class="fa fa-xing"><fa-icon [icon]="faXing"></fa-icon></a>
 							</div>
 						</div>
 					</div>

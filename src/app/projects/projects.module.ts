@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
@@ -13,6 +14,9 @@ import { ProjectsComponent } from './projects/projects.component';
 import { ProjectsDataService } from './projects-data.service';
 
 import { AssetTypePipe } from './asset-pipe/asset-type.pipe';
+
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
 export function HttpLoaderFactory(http: HttpClient) {
     return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -27,6 +31,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         CommonModule,
         BrowserModule,
         HttpClientModule,
+        FontAwesomeModule,
         UiModule,
         TranslateModule.forRoot({
             loader: {
@@ -44,4 +49,9 @@ export function HttpLoaderFactory(http: HttpClient) {
         ProjectsDataService
     ]
 })
-export class ProjectsModule { }
+export class ProjectsModule {
+
+    constructor() {
+        library.add(faGithub);
+    }
+}

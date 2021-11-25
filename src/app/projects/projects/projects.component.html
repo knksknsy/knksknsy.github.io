@@ -17,7 +17,7 @@
                                     <li *ngFor="let tech of project.technologies">{{tech}}</li>
                                 </ul>
                                 <div>
-                                    <a class="fa fa-github" [href]="project.github" target="_blank"></a>
+                                    <a class="fa fa-github" [href]="project.github" target="_blank"><fa-icon [icon]="faGithub"></fa-icon></a>
                                 </div>
                             </div>
                             <div class="col-sm-4">
@@ -25,7 +25,7 @@
                                     <slide *ngFor="let asset of project.assets">
                                         <div class="img-wrapper">
                                             <img class="img-fluid" [src]="asset" *ngIf="asset | assetType:'png'">
-                                            <video class="img-fluid" *ngIf="asset | assetType:'mp4'" autoplay>
+                                            <video class="img-fluid" *ngIf="asset | assetType:'mp4'" controls>
                                                 <source [src]="asset" type="video/mp4">
                                             </video>
                                         </div>

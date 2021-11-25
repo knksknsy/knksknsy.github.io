@@ -78,8 +78,9 @@ div[size="A4"] {
     display: flex;
     background-color: #505050;
     color: white;
-    font-size: 2em;
+    font-size: 1.75em;
     justify-content: center;
+    align-items: center;
 }
 
 .container-fluid {
@@ -100,35 +101,8 @@ div[size="A4"] {
     }
 }
 
-.icons .fa {
+.icons fa-icon {
     color: #0066CC !important;
-}
-
-.icons .fa-mobile {
-    font-size: 20px;
-    &:hover {
-        text-decoration: none;
-        color: #0066CC !important;
-    }
-}
-
-.icons .fa-map-marker {
-    font-size: 17px;
-    &:hover {
-        text-decoration: none;
-        color: #0066CC !important;
-    }
-}
-
-.icons .fa-envelope {
-    font-size: 14px;
-    &:hover {
-        text-decoration: none;
-        color: #0066CC !important;
-    }
-}
-
-.icons .fa-globe {
     &:hover {
         text-decoration: none;
         color: #0066CC !important;
@@ -228,7 +202,7 @@ div[size="A4"] {
         width: 100%;
         font-family: LatoWeb;
         font-size: 10pt;
-        margin-bottom: 1em;
+        margin-bottom: 0.7em;
         .upper {
             width: 100%;
             .icon {

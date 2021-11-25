@@ -47,8 +47,9 @@
     display: flex;
     background-color: #505050;
     color: white;
-    font-size: 2em;
+    font-size: 1.75em;
     justify-content: center;
+    align-items: center;
 }
 
 .container-fluid {
@@ -245,20 +246,16 @@ div[size="A4"] {
         font-family: LatoWeb;
         font-size: 12pt;
         color: #0066CC;
-        margin-left: 0.5em;
+        // margin-left: 0.5em;
     }
-    div i {
+    div fa-icon {
         color: #0066cc;
-        font-size: 12pt;
-    }
-    div .fa-mobile {
-        font-size: 16pt;
-    }
-    div .fa-envelope {
-        font-size: 10pt;
     }
     p {
         margin: 0;
+    }
+    .w60 {
+        width: 56%;
     }
 }
 

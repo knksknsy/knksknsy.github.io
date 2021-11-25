@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { NavigationEnd, Router } from "@angular/router";
 import { TranslateService } from "@ngx-translate/core";
 import { CarouselConfig } from "ngx-bootstrap";
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
 @Component({
   selector: 'app-projects',
@@ -12,6 +13,7 @@ import { CarouselConfig } from "ngx-bootstrap";
   ]
 })
 export class ProjectsComponent implements OnInit {
+  faGithub = faGithub;
 
   constructor(public translate: TranslateService, public router: Router) {}
 

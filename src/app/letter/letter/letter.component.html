@@ -15,11 +15,11 @@
 	</div>
 
 	<button *ngIf="!globals.production && editEnabled" class="print-btn btn btn-circle" (click)="saveLetter()">
-		<i class="fa fa-save"></i>
+		<fa-icon class="fa fa-save" [icon]="faSave" [fixedWidth]="true"></fa-icon>
 	</button>
 
 	<button *ngIf="!globals.production && !editEnabled" class="print-btn btn btn-circle" (click)="updateEditEnabled(!editEnabled)">
-		<i class="fa fa-pen"></i>
+		<fa-icon class="fa fa-pen" [icon]="faPen" [fixedWidth]="true"></fa-icon>
 	</button>
 
 	<!-- <div *ngIf="!globals.production" class="print-btn btn btn-circle spinner-grow" role="status" [ngClass]="{'hide': !printing}">
@@ -27,7 +27,7 @@
 	</div> -->
 
 	<!-- <button *ngIf="!globals.production" class="print-btn btn btn-circle" (click)="printLetter()" [ngClass]="{'hide': printing}">
-		<i class="fa fa-save"></i>
+		<fa-icon class="fa fa-save" [icon]="faSave" [fixedWidth]="true"></fa-icon>
 	</button> -->
 
 	<div *ngIf="company" size="A4" class="print-section">
@@ -104,25 +104,25 @@
 			<div *ngIf="globals.privateData" class="col-md-3 px-4 d-flex flex-column left-container">
 				<div class="contact left-box">
 					<h2>{{ 'cv.contact' | translate }}</h2>
-					<div class="d-flex align-items-baseline">
-						<i class="fa fa-map-marker"></i>
+					<div class="d-flex align-items-baseline justify-content-between w60">
 						<h3>{{ 'letter.address' | translate }}</h3>
+						<fa-icon class="fa fa-map-marker" [icon]="faMapMarkerAlt" [fixedWidth]="true"></fa-icon>
 					</div>
 					<p>{{globals.privateData.street}}</p>
 					<p class="mb-2">{{ globals.privateData.zip }} {{ globals.privateData.city }}</p>
-					<div class="d-flex align-items-start">
-						<i class="fa fa-mobile"></i>
+					<div class="d-flex align-items-start justify-content-between w60">
 						<h3>{{ 'letter.telephone' | translate }}</h3>
+						<fa-icon class="fa fa-mobile" [icon]="faMobileAlt" [fixedWidth]="true"></fa-icon>
 					</div>
 					<p class="mb-2">{{ globals.privateData.phone }}</p>
-					<div class="d-flex align-items-baseline">
-						<i class="fa fa-envelope"></i>
+					<div class="d-flex align-items-baseline justify-content-between w60">
 						<h3>{{ 'letter.email' | translate }}</h3>
+						<fa-icon class="fa fa-envelope" [icon]="faEnvelope" [fixedWidth]="true"></fa-icon>
 					</div>
 					<p class="mb-2"><a href="mailto:{{ 'email' | translate }}" target="_blank">{{ 'email' | translate }}</a></p>
-					<div class="d-flex align-items-baseline">
-						<i class="fa fa-globe"></i>
+					<div class="d-flex align-items-baseline justify-content-between w60">
 						<h3>{{ 'letter.website' | translate }}</h3>
+						<fa-icon class="fa fa-globe" [icon]="faGlobe" [fixedWidth]="true"></fa-icon>
 					</div>
 					<p><a href="https://{{ 'homepage' | translate}}">{{ 'homepage' | translate }}</a></p>
 				</div>
@@ -175,10 +175,10 @@
 								</div>
 								<div>
 									<button class="btn-sm" (click)="addParagraph()">
-										<i class="fa fa-plus"></i>
+										<fa-icon class="fa fa-plus" [icon]="faPlus" [fixedWidth]="true"></fa-icon>
 									</button>
 									<button class="btn-sm" (click)="removeParagraph()">
-										<i class="fa fa-minus"></i>
+										<fa-icon class="fa fa-minus" [icon]="faMinus" [fixedWidth]="true"></fa-icon>
 									</button>
 								</div>
 							</form>
