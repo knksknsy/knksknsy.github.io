@@ -42,10 +42,10 @@ fi
 
 if [[ "${TYPE}" = "cv" ]]
 then
-    gs -o ${OUTPUT} -sDEVICE=pdfwrite -c "[/CropBox [0 491 544 1200]" -c " /PAGES pdfmark" -f ${FILE}
+    gs -o "${OUTPUT}" -sDEVICE=pdfwrite -c "[/CropBox [0 491 544 1200]" -c " /PAGES pdfmark" -f "${FILE}"
 elif [[ "${TYPE}" = "cover" ]]
 then
-    gs -o ${OUTPUT} -sDEVICE=pdfwrite -c "[/CropBox [0 348 596 1200]" -c " /PAGES pdfmark" -f ${FILE}
+    gs -o "${OUTPUT}" -sDEVICE=pdfwrite -c "[/CropBox [0 348 596 1200]" -c " /PAGES pdfmark" -f "${FILE}"
 else
     echo "Valid --type options: TYPE=[cv|cover]"
 fi
