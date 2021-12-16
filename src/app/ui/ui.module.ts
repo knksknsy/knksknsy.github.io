@@ -17,7 +17,7 @@ import { CVComponent } from '../cv/cv/cv.component';
 import { ProjectsComponent } from '../projects/projects/projects.component';
 import { LetterComponent } from '../letter/letter/letter.component';
 
-import { GlobalsService } from '../globals/globals.service';
+import { GlobalsService } from '../services/globals/globals.service';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faSave, faUnlock, faLock, faMapMarker, faMobile, faMapMarkerAlt, faMobileAlt, faEnvelope, faGlobe, faPen, faPlus, faMinus, faAngleRight, faAngleLeft } from '@fortawesome/free-solid-svg-icons';

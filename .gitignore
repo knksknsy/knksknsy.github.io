@@ -45,5 +45,4 @@ Thumbs.db
 
 # Assets
 src/assets/images/signature.png
-src/assets/data/companies.json
-src/assets/data/private.json
+src/assets/data/

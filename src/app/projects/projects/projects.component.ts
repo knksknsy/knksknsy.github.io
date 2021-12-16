@@ -17,7 +17,7 @@ export class ProjectsComponent implements OnInit {
 
   constructor(public translate: TranslateService, public router: Router) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.router.events.subscribe((event) => {
       if (!(event instanceof NavigationEnd)) {
         return;
@@ -26,7 +26,7 @@ export class ProjectsComponent implements OnInit {
     });
   }
 
-  isArray(obj: any) {
+  isArray(obj: any): boolean {
     return Array.isArray(obj);
   }
 

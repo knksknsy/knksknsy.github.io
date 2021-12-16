@@ -10,8 +10,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { UiModule } from '../ui/ui.module';
 
 import { CVComponent } from './cv/cv.component';
-import { CVDataService } from './cvdata.service';
-import { GlobalsService } from '../globals/globals.service';
+import { GlobalsService } from '../services/globals/globals.service';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faSave, faUnlock, faLock, faMapMarkerAlt, faMobileAlt, faEnvelope, faGlobe, faPen, faPlus, faMinus, faAngleRight, faAngleLeft } from '@fortawesome/free-solid-svg-icons';
@@ -43,7 +42,6 @@ export function HttpLoaderFactory(http: HttpClient) {
         CVComponent
     ],
     providers: [
-        CVDataService,
         GlobalsService
     ]
 })

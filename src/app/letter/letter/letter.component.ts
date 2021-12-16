@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, FormArray } from '@angular/forms';
-import { Company } from '../../interfaces/company';
-import { GlobalsService } from '../../globals/globals.service';
 import { DomSanitizer } from '@angular/platform-browser';
+import { FormGroup, FormBuilder, FormArray } from '@angular/forms';
 import { faSave, faPen, faMapMarkerAlt, faMobileAlt, faEnvelope, faGlobe, faPlus, faMinus } from '@fortawesome/free-solid-svg-icons';
+import { Company } from '../../interfaces/company';
+import { GlobalsService } from '../../services/globals/globals.service';
+import { StorageService } from '../../services/storage/storage.service';
 
 // import * as jsPDF from 'jspdf';
 // import html2canvas from 'html2canvas';
@@ -23,6 +24,7 @@ export class LetterComponent implements OnInit {
   faPlus = faPlus;
   faMinus = faMinus;
 
+  public fileUpload: File;
   public today: Date;
   public companies: Array<Company> = [];
   public company: Company;
@@ -38,105 +40,89 @@ export class LetterComponent implements OnInit {
   public printing: boolean = false;
   public uri;
 
+  constructor(public globals: GlobalsService, public storage: StorageService, private builder: FormBuilder, private sanitizer: DomSanitizer) { }
 
-  constructor(public globals: GlobalsService, private builder: FormBuilder, private sanitizer: DomSanitizer) { }
-
-  ngOnInit() {
+  ngOnInit(): void {
     this.today = new Date();
-    this.companies = this.globals.companies
-    this.companies.sort((a,b) => {
-      if (a.title < b.title) return -1;
-      if (a.title > b.title) return 1;
-      return 0;
-    });
-    this.company = this.companies[0];
-
-    this.loadLetter('');
+    this.companies = this.storage.getItems();
+    this.company = this.companies.length ? this.companies[0] : new Company();
+    this.loadLetter();
   }
 
-  saveLetter() {
+  saveLetter(): void {
     this.updateEditEnabled(!this.editEnabled);
     this.companyForm.patchValue(this.companyForm.value);
     this.company = this.companyForm.value;
 
-    let companyIndex = this.companies.map(el => el.title).indexOf(this.companyForm.get('title').value)
-    if (companyIndex >= 0) {
-      this.companies[companyIndex] = this.company
-    } else {
-      this.companies.push(this.company);
-    }
-    let json = JSON.stringify(this.companies);
+    this.storage.setItem(this.company.title, this.company);
+
+    // export
+    let json: string = JSON.stringify(this.storage.getItems);
     this.uri = "data:application/json;charset=UTF-8," + encodeURIComponent(json);
     this.uri = this.sanitizer.bypassSecurityTrustUrl(this.uri);
   }
 
-  newLetter() {
+  initForm(c: Company = new Company()): void {
     this.companyForm = this.builder.group({
-      title: [''],
-      heading: [''],
-      subheading: [''],
-      company: [''],
-      department: [''],
+      title: [c.title ? c.title : ''],
+      heading: [c.heading ? c.heading : ''],
+      subheading: [c.subheading ? c.subheading : ''],
+      company: [c.company ? c.company : ''],
+      department: [c.department ? c.department : ''],
       recipient: this.builder.group({
-        gender: [''],
-        name: [''],
-        surname: [''],
+        gender: [c.recipient && c.recipient.gender ? c.recipient.gender : ''],
+        name: [c.recipient && c.recipient.name ? c.recipient.name : ''],
+        surname: [c.recipient && c.recipient.surname ? c.recipient.surname : ''],
       }),
       address: this.builder.group({
-        street: [''],
-        zip: [''],
-        city: ['']
+        street: [c.address && c.address.street ? c.address.street : ''],
+        zip: [c.address && c.address.zip ? c.address.zip : ''],
+        city: [c.address && c.address.city ? c.address.city : '']
       }),
-      letter: this.builder.array([''])
+      letter: this.builder.array(c.letter ? c.letter : [''])
     });
   }
 
-
-  loadLetter(target) {
+  loadLetter(target=''): void {
     if (target === 'new') {
       this.company = new Company();
+      this.company.title = 'UNTITLED';
     }
+    this.initForm(this.company);
     
-    this.companyForm = this.builder.group({
-      title: [this.company.title ? this.company.title : ''],
-      heading: [this.company.heading ? this.company.heading : ''],
-      subheading: [this.company.subheading ? this.company.subheading : ''],
-      company: [this.company.company ? this.company.company : ''],
-      department: [this.company.department ? this.company.department : ''],
-      recipient: this.builder.group({
-        gender: [this.company.recipient && this.company.recipient.gender ? this.company.recipient.gender : ''],
-        name: [this.company.recipient && this.company.recipient.name ? this.company.recipient.name : ''],
-        surname: [this.company.recipient && this.company.recipient.surname ? this.company.recipient.surname : ''],
-      }),
-      address: this.builder.group({
-        street: [this.company.address && this.company.address.street ? this.company.address.street : ''],
-        zip: [this.company.address && this.company.address.zip ? this.company.address.zip : ''],
-        city: [this.company.address && this.company.address.city ? this.company.address.city : '']
-      }),
-      letter: this.builder.array(this.company.letter ? this.company.letter : [''])
-    });
-
     this.uri = undefined;
     this.updateEditEnabled(true);
   }
 
-  updateEditEnabled(value: boolean) {
+  importStorage(files: FileList): void {
+    this.fileUpload = files.item(0);
+    let fileReader: FileReader = new FileReader();
+    fileReader.onload = (e) => {
+      let companies: Array<Company> = JSON.parse(<string>fileReader.result);
+      this.storage.setItems(companies);
+      this.companies = this.storage.getItems();
+      this.loadLetter();
+    };
+    fileReader.readAsText(this.fileUpload);
+  }
+
+  updateEditEnabled(value: boolean): void {
     this.editEnabled = value;
   }
 
-  get letterArray() {
+  get letterArray(): FormArray {
     return this.companyForm.get('letter') as FormArray;
   }
 
-  addParagraph() {
+  addParagraph(): void {
     this.letterArray.push(this.builder.control("Type..."));
   }
 
-  removeParagraph() {
+  removeParagraph(): void {
     this.letterArray.removeAt(this.letterArray.length - 1);
   }
 
-  // printLetter() {
+  // printLetter(): void {
   //   this.printing = true;
   //   this.printSections = <HTMLCollectionOf<HTMLElement>>(document.getElementsByClassName('print-section'));
   //   let promises = [];

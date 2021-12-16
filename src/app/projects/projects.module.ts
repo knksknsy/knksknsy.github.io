@@ -11,7 +11,6 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { UiModule } from '../ui/ui.module';
 
 import { ProjectsComponent } from './projects/projects.component';
-import { ProjectsDataService } from './projects-data.service';
 
 import { AssetTypePipe } from './asset-pipe/asset-type.pipe';
 
@@ -45,9 +44,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     exports: [
         ProjectsComponent
     ],
-    providers: [
-        ProjectsDataService
-    ]
+    providers: []
 })
 export class ProjectsModule {
 

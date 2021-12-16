@@ -11,7 +11,8 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TextareaAutoresizeDirective } from './textarea-directive/textarea-autoresize';
 import { UiModule } from '../ui/ui.module';
 import { LetterComponent } from './letter/letter.component';
-import { GlobalsService } from '../globals/globals.service';
+import { GlobalsService } from '../services/globals/globals.service';
+import { StorageService } from '../services/storage/storage.service';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faSave, faUnlock, faLock, faMapMarkerAlt, faMobileAlt, faEnvelope, faGlobe, faPen, faPlus, faMinus, faAngleRight, faAngleLeft } from '@fortawesome/free-solid-svg-icons';
@@ -46,7 +47,8 @@ export function HttpLoaderFactory(http: HttpClient) {
 		LetterComponent
 	],
 	providers: [
-		GlobalsService
+		GlobalsService,
+		StorageService
 	]
 })
 export class LetterModule {

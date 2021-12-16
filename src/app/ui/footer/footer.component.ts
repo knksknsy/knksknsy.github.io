@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { faGithub, faLinkedin, faXing } from '@fortawesome/free-brands-svg-icons';
 
 @Component({
@@ -6,14 +6,11 @@ import { faGithub, faLinkedin, faXing } from '@fortawesome/free-brands-svg-icons
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.scss']
 })
-export class FooterComponent implements OnInit {
+export class FooterComponent {
   faGithub = faGithub;
   faLinkedin = faLinkedin;
   faXing = faXing;
 
   constructor() { }
-
-  ngOnInit() {
-  }
 
 }

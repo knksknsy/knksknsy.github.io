@@ -16,17 +16,17 @@ export class AboutComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() { }
+  ngOnInit(): void { }
 
-  imageClicked() {
-    let imageElement = document.getElementById('profile-picture');
+  imageClicked(): void {
+    let imageElement: HTMLElement = document.getElementById('profile-picture');
     imageElement.className = imageElement.className.replace(' animated flipInY', '');
     imageElement.className += ' animated hinge';
     setTimeout(this.appendImage, 3000);
   }
 
-  appendImage() {
-    let imageElement = document.getElementById('profile-picture');
+  appendImage(): void {
+    let imageElement: HTMLElement = document.getElementById('profile-picture');
     imageElement.className = imageElement.className.replace(' hinge', ' flipInY');
   }
 

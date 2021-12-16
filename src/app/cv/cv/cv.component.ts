@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
-import { GlobalsService } from '../../globals/globals.service';
+import { GlobalsService } from '../../services/globals/globals.service';
 import { faGithub, faLinkedin, faXing } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope, faMapMarkerAlt, faMobileAlt, faGlobe, faSave, faLock, faUnlock } from '@fortawesome/free-solid-svg-icons';
 
@@ -26,9 +26,9 @@ export class CVComponent implements OnInit {
   faUnlock = faUnlock;
 
   public isGerman: boolean;
-  public path = './assets/cv/';
-  public fileGerman = 'Lebenslauf_Kaan_Keskinsoy.pdf';
-  public fileEnglish = 'CV_Kaan_Keskinsoy.pdf';
+  public path: string = './assets/cv/';
+  public fileGerman: string = 'Lebenslauf_Kaan_Keskinsoy.pdf';
+  public fileEnglish: string = 'CV_Kaan_Keskinsoy.pdf';
 
   // private pdf: jsPDF;
   // private mimeType = 'image/svg+xml;charset=utf-8';
@@ -44,7 +44,7 @@ export class CVComponent implements OnInit {
 
   constructor(public translate: TranslateService, public globals: GlobalsService, public router: Router) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.today = new Date();
     this.isPublic = this.globals.production;
 
@@ -54,14 +54,14 @@ export class CVComponent implements OnInit {
     });
 
     this.router.events.subscribe((event) => {
-      if (!(event instanceof NavigationEnd)) {
+      if (!(event instanceof NavigationEnd)) {
         return;
       }
       window.scrollTo(0,0);
     });
   }
 
-  setLanguage(lang: string) {
+  setLanguage(lang: string): void {
     if (lang === 'de') {
       this.isGerman = true;
     } else {
@@ -70,7 +70,7 @@ export class CVComponent implements OnInit {
     this.fileName = this.isGerman ? this.fileGerman : this.fileEnglish;
   }
 
-  sendGAEvent(category: string, action: string, label: string, value?: number) {
+  sendGAEvent(category: string, action: string, label: string, value?: number): void {
     let event;
     if (!value) {
       event = { eventCategory: category, eventAction: action, eventLabel: label };
@@ -80,7 +80,7 @@ export class CVComponent implements OnInit {
     (<any>window).ga('send', 'event', event);
   }
 
-  // printCV() {
+  // printCV(): void {
   //   this.printing = true;
   //   this.printSections = <HTMLCollectionOf<HTMLElement>>(document.getElementsByClassName('print-section'));
   //   let promises = [];
@@ -104,7 +104,7 @@ export class CVComponent implements OnInit {
   //     });
   // }
 
-  // private appendToPDF(canvas: HTMLCanvasElement, index: number) {
+  // private appendToPDF(canvas: HTMLCanvasElement, index: number): void {
   //   const contentDataURL = canvas.toDataURL(this.mimeType);
   //   this.pdf.addImage(contentDataURL, 'JPEG', 0, 0, this.dimension.width, this.dimension.height, null, 'MEDIUM');
   //   if (index < this.printSections.length - 1) {

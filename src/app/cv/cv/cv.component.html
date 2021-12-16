@@ -102,8 +102,7 @@
 
 				<!-- <div class="right-box">
 					<h2>{{ 'cv.hobbies.title' | translate }}</h2>
-					<p>{{ 'cv.hobbies.weight_training' | translate }}</p>
-					<p>{{ 'cv.hobbies.cooking' | translate }}</p>
+					<p *ngFor="let hobby of ('cv.hobbies.values' | translate)">{{hobby}}</p>
 				</div> -->
 
 				<div class="right-box">
