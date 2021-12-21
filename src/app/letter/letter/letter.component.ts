@@ -56,10 +56,7 @@ export class LetterComponent implements OnInit {
 
     this.storage.setItem(this.company.title, this.company);
 
-    // export
-    let json: string = JSON.stringify(this.storage.getItems);
-    this.uri = "data:application/json;charset=UTF-8," + encodeURIComponent(json);
-    this.uri = this.sanitizer.bypassSecurityTrustUrl(this.uri);
+    this.exportStorage();
   }
 
   initForm(c: Company = new Company()): void {
@@ -90,7 +87,7 @@ export class LetterComponent implements OnInit {
     }
     this.initForm(this.company);
     
-    this.uri = undefined;
+    this.exportStorage();
     this.updateEditEnabled(true);
   }
 
@@ -104,6 +101,12 @@ export class LetterComponent implements OnInit {
       this.loadLetter();
     };
     fileReader.readAsText(this.fileUpload);
+  }
+
+  exportStorage(): void {
+    let json: string = JSON.stringify(this.storage.getItems());
+    this.uri = "data:application/json;charset=UTF-8," + encodeURIComponent(json);
+    this.uri = this.sanitizer.bypassSecurityTrustUrl(this.uri);
   }
 
   updateEditEnabled(value: boolean): void {
