@@ -7,7 +7,7 @@
     "projects": "Projekte",
     "degree": "Computer Science and Media M.Sc.",
     "discover": "Meine Projekte",
-    "email": "k.keskinsoy@gmail.com",
+    "email": "kaan@kesknsoy.com",
     "homepage": "knksknsy.github.io",
     "xing": "xing.com/profile/Kaan_Keskinsoy",
     "linkedin": "linkedin.com/in/Kaan-Keskinsoy",
@@ -78,10 +78,24 @@
             "title": "Berufserfahrung",
             "values": [
                 {
+                    "company": "Groz-Beckert KG",
+                    "role": [
+                        "Fullstack Entwickler"
+                    ],
+                    "duration": "03/2022 - heute",
+                    "tasks": [
+                        "Entwicklung und Umsetzung der eCommerce-Plattform",
+                        "Entwicklung und Umsetzung von Microservices durch Verwendung moderner Technologien, wie z. B. Docker, Kubernetes",
+                        "Entwicklung von Web-Apps mittels Angular, JavaScript und TypeScript",
+                        "Entwicklung im SAP Hybris-Umfeld auf Basis von Java und Spring mit Schnittstellen zu ERP, BW und FirstSpirit",
+                        "Einführung, Beratung, Schulung und 3rd Level Support der Lösungen"
+                    ]
+                },
+                {
                     "company": "M-Way Solutions GmbH",
                     "role": [
                         "Praxissemester und Werkstudent",
-                        "Full-Stack Entwickler"
+                        "Fullstack Entwickler"
                     ],
                     "duration": "09/2016 - 03/2018",
                     "description": "Entwicklung von Web Applications im Bereich B2E:",

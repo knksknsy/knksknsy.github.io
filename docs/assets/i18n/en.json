@@ -68,10 +68,24 @@
             "title": "Work Experience",
             "values": [
                 {
+                    "company": "Groz-Beckert KG",
+                    "role": [
+                        "Fullstack Developer"
+                    ],
+                    "duration": "03/2022 - today",
+                    "tasks": [
+                        "Development and implementation of eCommerce platform",
+                        "Development and implementation of microservices using modern technologies, including Docker, Kubernetes",
+                        "Development of web apps using Angular, JavaScript and TypeScript",
+                        "Development in the SAP Hybris environment based on Java and Spring with interfaces to ERP, BW and FirstSpirit",
+                        "Introduction, consulting, training and 3rd level support of the solutions"
+                    ]
+                },
+                {
                     "company": "M-Way Solutions GmbH",
                     "role": [
                         "Practical semester and student trainee",
-                        "Full Stack Developer"
+                        "Fullstack Developer"
                     ],
                     "duration": "09/2016 - 03/2018",
                     "description": "Development of B2E Web Apps:",
