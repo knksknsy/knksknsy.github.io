@@ -30,9 +30,9 @@ done
 
 set -- "${POSITIONAL[@]}"
 
-echo "FILE TYPE     = ${TYPE}"
-echo "INPUT PDF     = ${FILE}"
-echo "OUTPUT PDF    = ${OUTPUT}"
+echo "FILE TYPE  (-t) = ${TYPE}"
+echo "INPUT PDF  (-f) = ${FILE}"
+echo "OUTPUT PDF (-o) = ${OUTPUT}"
 
 if [[ "${FILE}" = "${OUTPUT}" ]]
 then

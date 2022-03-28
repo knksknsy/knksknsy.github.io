@@ -46,14 +46,14 @@
 								<p>{{ globals.privateData.zip }} {{ globals.privateData.city }}</p>
 								<p>{{ globals.privateData.phone }}</p>
 								<p>{{ 'email' | translate }}</p>
-								<p>{{ 'homepage' | translate }}</p>
+								<p *ngIf="homepage">{{ 'homepage' | translate }}</p>
 							</div>
 							<div class="icons d-flex flex-column justify-content-around align-items-center">
 								<a class="fa fa-map-marker"><fa-icon [icon]="faMapMarkerAlt" [fixedWidth]="true"></fa-icon></a>
 								<a class="fa fa-map-marker" style="visibility: hidden; height: 0.6rem;"><fa-icon [icon]="faGlobe" [fixedWidth]="true"></fa-icon></a>
 								<a class="fa fa-mobile"><fa-icon [icon]="faMobileAlt" [fixedWidth]="true"></fa-icon></a>
 								<a class="fa fa-envelope" href="mailto:{{ 'email' | translate }}" target="_blank"><fa-icon [icon]="faEnvelope" [fixedWidth]="true"></fa-icon></a>
-								<a class="fa fa-globe" href="https://{{ 'homepage' | translate}}"><fa-icon [icon]="faGlobe" [fixedWidth]="true"></fa-icon></a>
+								<a *ngIf="homepage" class="fa fa-globe" href="https://{{ 'homepage' | translate}}"><fa-icon [icon]="faGlobe" [fixedWidth]="true"></fa-icon></a>
 							</div>
 						</div>
 					</div>
@@ -81,7 +81,7 @@
 						<div class="contact-alt d-flex flex-row justify-content-between hide">
 							<div>
 								<p>{{ 'email' | translate }}</p>
-								<p>{{ 'homepage' | translate }}</p>
+								<p *ngIf="homepage">{{ 'homepage' | translate }}</p>
 								<p>{{ 'xing' | translate }}</p>
 								<p>{{ 'linkedin' | translate }}</p>
 							</div>
@@ -169,7 +169,7 @@
 							</div>
 						</div>
 						<div class="d-flex flex-row lower">
-							<div class="d-flex flex-row bar three-line">
+							<div class="d-flex flex-row bar" [ngClass]="{'three-line': comp.role?.length > 1}">
 								<div></div>
 							</div>
 							<div class="d-flex flex-column right-content">
@@ -178,7 +178,7 @@
 									<li class="text-left"
 										*ngFor="let task of comp.tasks">{{task}}</li>
 								</ul>
-								<p>{{ 'cv.technologies' | translate }}</p>
+								<p *ngIf="comp.technologies">{{ 'cv.technologies' | translate }}</p>
 								<ul class="d-flex flex-row languages tech">
 									<li *ngFor="let tech of comp.technologies">{{tech}}</li>
 								</ul>
