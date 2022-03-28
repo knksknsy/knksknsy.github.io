@@ -169,7 +169,7 @@
 							</div>
 						</div>
 						<div class="d-flex flex-row lower">
-							<div class="d-flex flex-row bar" [ngClass]="{'three-line': comp.role?.length > 1}">
+							<div class="d-flex flex-row bar" [class.three-line]="comp.role && comp.role.length > 1">
 								<div></div>
 							</div>
 							<div class="d-flex flex-column right-content">
