@@ -7,7 +7,7 @@
     "projects": "Projekte",
     "degree": "Computer Science and Media M.Sc.",
     "discover": "Meine Projekte",
-    "email": "kaan@kesknsoy.com",
+    "email": "kaan@keskinsoy.com",
     "homepage": "knksknsy.github.io",
     "xing": "xing.com/profile/Kaan_Keskinsoy",
     "linkedin": "linkedin.com/in/Kaan-Keskinsoy",
@@ -17,7 +17,7 @@
         "address": "Adresse",
         "telephone": "Telefon",
         "email": "Email",
-        "website": "Webseite",
+        "website": "Website",
         "greeting_m": "Sehr geehrter Herr",
         "greeting_f": "Sehr geehrte Frau",
         "greeting_n": "Sehr geehrte Damen und Herren",
@@ -29,9 +29,9 @@
         "languages": {
             "title": "Sprachen",
             "values": [
-                "Deutsch (Muttersprache)",
-                "Türkisch (Muttersprache)",
-                "Englisch (fließend)"
+                "Deutsch",
+                "Türkisch",
+                "Englisch"
             ]
         },
         "hobbies": {

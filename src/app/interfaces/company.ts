@@ -22,6 +22,7 @@ export interface Address {
 }
 
 export class Company implements ICompany {
+    
     title: string;
     company: string;
     department?: string;

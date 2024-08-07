@@ -2,6 +2,7 @@
     "cv_long": "Curriculum Vitae",
     "projects": "Projects",
     "discover": "My Projects",
+    "email": "kaan@keskinsoy.com",
     "letter": {
         "title": "Letters",
         "address": "Address",
@@ -19,9 +20,9 @@
         "languages": {
             "title": "Languages",
             "values": [
-                "German (mother tongue)",
-                "Turkish (mother tongue)",
-                "English (fluent)"
+                "German",
+                "Turkish",
+                "English"
             ]
         },
         "hobbies": {
