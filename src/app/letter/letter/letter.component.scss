@@ -2,7 +2,15 @@
 @import "bootstrap/scss/bootstrap-grid";
 
 @media print {
+    body * {
+        visibility: hidden;
+    }
+    .settings {
+        visibility: hidden;
+    }
     body, div[size="A4"] {
+        border: 1px solid lightgray;
+        visibility: visible;
         position: absolute;
         top: 0;
         left: 0;
@@ -12,9 +20,6 @@
         h3 a, .contact a, .icons a {
             text-decoration: none;
         }
-        // .header-container, .information, .main-container {
-        //     max-width: 88%;
-        // }
         .information {
             padding: 2rem 2rem 0 2rem !important;
         }

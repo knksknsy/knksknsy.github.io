@@ -119,7 +119,7 @@ export class LetterComponent implements OnInit {
     }
 
     addParagraph(): void {
-        this.letterArray.push(this.builder.control('Type...'));
+        this.letterArray.push(this.builder.control(''));
     }
 
     removeParagraph(): void {

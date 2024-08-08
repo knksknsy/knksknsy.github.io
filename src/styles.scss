@@ -2,6 +2,12 @@
 @import "bootstrap/dist/css/bootstrap";
 @import "styles/variables";
 
+@media print {
+    body {
+        background-image: none !important;
+    }
+}
+
 html, body {
     height: 100%;
 }

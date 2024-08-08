@@ -1,40 +1,42 @@
 <div class="container-fluid">
 
-	<div class="row justify-content-between">
-		<select [(ngModel)]="company" (change)="loadLetter($event)">
-			<option value="new">New Letter</option>
-			<option *ngFor="let c of companies" [ngValue]="c" [selected]="c.title == company.title">{{c.title}}</option>
-		</select>
-
-		<form *ngIf="company" [formGroup]="companyForm">
-			<label for="title">Title: </label>
-			<input id="title" type="text" formControlName="title">
-		</form>
-	</div>
-
-	<div class="row justify-content-between">
-		<div>
-			<label for="importStorage">Import</label>
-			<input type="file" id="importStorage" name="importStorage" accept="application/JSON" (change)="importStorage($event)">
+	<div class="settings">
+		<div class="row justify-content-between">
+			<select [(ngModel)]="company" (change)="loadLetter($event)">
+				<option value="new">New Letter</option>
+				<option *ngFor="let c of companies" [ngValue]="c" [selected]="c.title == company.title">{{c.title}}</option>
+			</select>
+	
+			<form *ngIf="company" [formGroup]="companyForm">
+				<label for="title">Title: </label>
+				<input id="title" type="text" formControlName="title">
+			</form>
 		</div>
-		<a *ngIf="uri" download="companies.json" [href]="uri">Export</a>
+	
+		<div class="row justify-content-between">
+			<div>
+				<label for="importStorage">Import</label>
+				<input type="file" id="importStorage" name="importStorage" accept="application/JSON" (change)="importStorage($event)">
+			</div>
+			<a *ngIf="uri" download="companies.json" [href]="uri">Export</a>
+		</div>
+	
+		<button *ngIf="!globals.production && editEnabled" class="print-btn btn btn-circle" (click)="saveLetter()">
+			<fa-icon class="fa fa-save" [icon]="faSave" [fixedWidth]="true"></fa-icon>
+		</button>
+	
+		<button *ngIf="!globals.production && !editEnabled" class="print-btn btn btn-circle" (click)="updateEditEnabled(!editEnabled)">
+			<fa-icon class="fa fa-pen" [icon]="faPen" [fixedWidth]="true"></fa-icon>
+		</button>
+	
+		<!-- <div *ngIf="!globals.production" class="print-btn btn btn-circle spinner-grow" role="status" [ngClass]="{'hide': !printing}">
+			<span class="sr-only">Loading...</span>
+		</div> -->
+	
+		<!-- <button *ngIf="!globals.production" class="print-btn btn btn-circle" (click)="printLetter()" [ngClass]="{'hide': printing}">
+			<fa-icon class="fa fa-save" [icon]="faSave" [fixedWidth]="true"></fa-icon>
+		</button> -->
 	</div>
-
-	<button *ngIf="!globals.production && editEnabled" class="print-btn btn btn-circle" (click)="saveLetter()">
-		<fa-icon class="fa fa-save" [icon]="faSave" [fixedWidth]="true"></fa-icon>
-	</button>
-
-	<button *ngIf="!globals.production && !editEnabled" class="print-btn btn btn-circle" (click)="updateEditEnabled(!editEnabled)">
-		<fa-icon class="fa fa-pen" [icon]="faPen" [fixedWidth]="true"></fa-icon>
-	</button>
-
-	<!-- <div *ngIf="!globals.production" class="print-btn btn btn-circle spinner-grow" role="status" [ngClass]="{'hide': !printing}">
-		<span class="sr-only">Loading...</span>
-	</div> -->
-
-	<!-- <button *ngIf="!globals.production" class="print-btn btn btn-circle" (click)="printLetter()" [ngClass]="{'hide': printing}">
-		<fa-icon class="fa fa-save" [icon]="faSave" [fixedWidth]="true"></fa-icon>
-	</button> -->
 
 	<div *ngIf="company" size="A4" class="print-section">
 
@@ -177,7 +179,7 @@
 						<ng-template #LetterFormView>
 							<form [formGroup]="companyForm">
 								<div class="flex" formArrayName="letter" *ngFor="let l of letterArray['controls']; let i = index;">
-									<textarea class="grow mb-1 justify" [formControlName]="i" id="letter" textareaAutoresize></textarea>
+									<textarea class="grow mb-1 justify" [formControlName]="i" placeholder="Type..." id="letter" textareaAutoresize></textarea>
 								</div>
 								<div>
 									<button class="btn-sm" (click)="addParagraph()">

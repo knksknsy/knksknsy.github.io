@@ -140,14 +140,14 @@
 							</div>
 							<div class="d-flex flex-column right-content">
 								<p>{{ ed.major }}</p>
-								<div class="container m-0" style="max-width: 85%;" *ngIf="ed.grade || ed.thesis">
+								<div class="container m-0" *ngIf="ed.grade || ed.thesis">
 									<div class="row">
 										<div class="col-sm-3 p-0">{{ed.grade.title}}</div>
 										<div class="col-sm-9 p-0">{{ed.grade.value}}</div>
 									</div>
 									<div class="row">
 										<div class="col-sm-3 p-0">{{ed.thesis.title}}</div>
-										<div class="col-sm-9 p-0">{{ed.thesis.value}}</div>
+										<div class="col-sm-9 p-0 thesis-title">{{ed.thesis.value}}</div>
 									</div>
 								</div>
 							</div>
