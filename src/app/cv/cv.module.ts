@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { HttpClient, provideHttpClient } from '@angular/common/http';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
@@ -27,7 +27,6 @@ export function HttpLoaderFactory(http: HttpClient) {
     imports: [
         CommonModule,
         BrowserModule,
-        HttpClientModule,
         FontAwesomeModule,
         UiModule,
         TranslateModule.forRoot({
@@ -42,7 +41,8 @@ export function HttpLoaderFactory(http: HttpClient) {
         CVComponent
     ],
     providers: [
-        GlobalsService
+        GlobalsService,
+        provideHttpClient()
     ]
 })
 export class CVModule {

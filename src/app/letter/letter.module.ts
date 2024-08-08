@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { HttpClient, provideHttpClient } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
@@ -30,7 +30,6 @@ export function HttpLoaderFactory(http: HttpClient) {
 	imports: [
 		CommonModule,
 		BrowserModule,
-		HttpClientModule,
 		FormsModule,
 		ReactiveFormsModule,
 		FontAwesomeModule,
@@ -48,7 +47,8 @@ export function HttpLoaderFactory(http: HttpClient) {
 	],
 	providers: [
 		GlobalsService,
-		StorageService
+		StorageService,
+		provideHttpClient()
 	]
 })
 export class LetterModule {

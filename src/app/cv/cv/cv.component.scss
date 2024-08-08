@@ -1,5 +1,5 @@
-@import '~variables.scss';
-@import "~bootstrap/scss/bootstrap-grid.scss";
+@import '../../../styles/variables';
+@import "bootstrap/scss/bootstrap-grid";
 
 @include media-breakpoint-down(md) {
     div[size="A4"] {

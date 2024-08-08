@@ -1,16 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
-
+import { HttpClient, provideHttpClient } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-
 import { UiModule } from './ui/ui.module';
 import { CVModule } from './cv/cv.module';
 import { ProjectsModule } from './projects/projects.module';
 import { LetterModule } from './letter/letter.module'
-
 import { AppComponent } from './app.component';
 
 export function createTranslateLoader(http: HttpClient) {
@@ -23,7 +20,6 @@ export function createTranslateLoader(http: HttpClient) {
     ],
     imports: [
         BrowserModule,
-        HttpClientModule,
         ReactiveFormsModule,
         UiModule,
         CVModule,
@@ -38,7 +34,7 @@ export function createTranslateLoader(http: HttpClient) {
         })
     ],
     providers: [
-
+        provideHttpClient()
     ],
     bootstrap: [
         AppComponent

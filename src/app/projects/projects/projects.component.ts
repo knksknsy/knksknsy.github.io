@@ -1,8 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import { NavigationEnd, Router } from "@angular/router";
 import { TranslateService } from "@ngx-translate/core";
-import { CarouselConfig } from "ngx-bootstrap";
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { CarouselConfig } from "ngx-bootstrap/carousel";
 
 @Component({
   selector: 'app-projects',

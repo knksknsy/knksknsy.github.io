@@ -1,5 +1,5 @@
-@import '~variables.scss';
-@import '~bootstrap/scss/bootstrap';
+@import '../../../styles/variables';
+@import 'bootstrap/scss/bootstrap';
 
 .container-fluid, .row {
     min-height: calc(100vh - #{$header-height} - #{$footer-height} - (#{$container-padding}) * 4);
