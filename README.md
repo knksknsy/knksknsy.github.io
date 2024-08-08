@@ -5,7 +5,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## Github Pages Deployment
 
 - [Deployment Guide](https://angular.io/guide/deployment#deploy-to-github-pages)
-- `ng build --prod --output-path docs --base-href "https://knksknsy.github.io/"`
+- `ng build --configuration "production" --output-path docs --base-href "https://knksknsy.github.io/"`
 - When the build is complete, make a copy of `docs/index.html` and name it `docs/404.html`
 
 

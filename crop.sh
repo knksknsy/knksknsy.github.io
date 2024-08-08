@@ -6,13 +6,8 @@ while [[ $# -gt 0 ]]; do
     key="$1"
 
     case $key in
-        -t|--type)
-            TYPE="$2"
-            shift
-            shift
-            ;;
-        -f|--file)
-            FILE="$2"
+        -i|--input)
+            INPUT="$2"
             shift
             shift
             ;;
@@ -30,22 +25,13 @@ done
 
 set -- "${POSITIONAL[@]}"
 
-echo "FILE TYPE  (-t) = ${TYPE}"
-echo "INPUT PDF  (-f) = ${FILE}"
+echo "INPUT PDF  (-f) = ${INPUT}"
 echo "OUTPUT PDF (-o) = ${OUTPUT}"
 
-if [[ "${FILE}" = "${OUTPUT}" ]]
+if [[ "${INPUT}" = "${OUTPUT}" ]]
 then
-    echo "Arguments --file and --output must be different."
+    echo "Arguments --input and --output must be different."
     exit
 fi
 
-if [[ "${TYPE}" = "cv" ]]
-then
-    gs -o "${OUTPUT}" -sDEVICE=pdfwrite -c "[/CropBox [0 491 544 1200]" -c " /PAGES pdfmark" -f "${FILE}"
-elif [[ "${TYPE}" = "cover" ]]
-then
-    gs -o "${OUTPUT}" -sDEVICE=pdfwrite -c "[/CropBox [0 348 596 1200]" -c " /PAGES pdfmark" -f "${FILE}"
-else
-    echo "Valid --type options: TYPE=[cv|cover]"
-fi
+pdfcrop --margins 0 "${INPUT}" "${OUTPUT}"

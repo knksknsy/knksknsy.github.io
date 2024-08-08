@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --prod --output-path docs --base-href \"https://knksknsy.github.io/\"",
+    "build": "ng build --configuration \"production\" --output-path docs --base-href \"https://knksknsy.github.io/\"",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
