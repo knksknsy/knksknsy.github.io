@@ -37,7 +37,6 @@
 
 				<ng-container *ngIf="!isPublic; then fullinfo; else publicinfo"></ng-container>
 				<ng-template #fullinfo>
-
 					<div class="right-box">
 						<h2>{{ 'cv.contact' | translate }}</h2>
 						<div *ngIf="globals.privateData" class="d-flex flex-row justify-content-between">
@@ -46,14 +45,14 @@
 								<p>{{ globals.privateData.zip }} {{ globals.privateData.city }}</p>
 								<p>{{ globals.privateData.phone }}</p>
 								<p>{{ 'email' | translate }}</p>
-								<p *ngIf="homepage">{{ 'homepage' | translate }}</p>
+								<p>{{ 'homepage' | translate }}</p>
 							</div>
 							<div class="icons d-flex flex-column justify-content-around align-items-center">
 								<a class="fa fa-map-marker"><fa-icon [icon]="faMapMarkerAlt" [fixedWidth]="true"></fa-icon></a>
 								<a class="fa fa-map-marker" style="visibility: hidden; height: 0.6rem;"><fa-icon [icon]="faGlobe" [fixedWidth]="true"></fa-icon></a>
-								<a class="fa fa-mobile"><fa-icon [icon]="faMobileAlt" [fixedWidth]="true"></fa-icon></a>
+								<a class="fa fa-mobile" href="tel:{{ globals.privateData.phone }}"><fa-icon [icon]="faMobileAlt" [fixedWidth]="true"></fa-icon></a>
 								<a class="fa fa-envelope" href="mailto:{{ 'email' | translate }}" target="_blank"><fa-icon [icon]="faEnvelope" [fixedWidth]="true"></fa-icon></a>
-								<a *ngIf="homepage" class="fa fa-globe" href="https://{{ 'homepage' | translate}}"><fa-icon [icon]="faGlobe" [fixedWidth]="true"></fa-icon></a>
+								<a class="fa fa-globe" href="https://{{ 'homepage' | translate}}"><fa-icon [icon]="faGlobe" [fixedWidth]="true"></fa-icon></a>
 							</div>
 						</div>
 					</div>
@@ -81,7 +80,7 @@
 						<div class="contact-alt d-flex flex-row justify-content-between hide">
 							<div>
 								<p>{{ 'email' | translate }}</p>
-								<p *ngIf="homepage">{{ 'homepage' | translate }}</p>
+								<p>{{ 'homepage' | translate }}</p>
 								<p>{{ 'xing' | translate }}</p>
 								<p>{{ 'linkedin' | translate }}</p>
 							</div>
@@ -201,7 +200,7 @@
 				<div class="left-box">
 					<h2>{{ 'projects' | translate }}</h2>
 
-					<div class="d-flex flex-column content" *ngFor="let project of ('cv.projects' | translate) | slice:0:5">
+					<div class="d-flex flex-column content" *ngFor="let project of getProjects(0,5) | async">
 						<div class="d-flex flex-row upper">
 							<div class="d-flex flex-row icon">
 								<div class="hor-bar"></div>
@@ -249,7 +248,7 @@
 				<div class="left-box">
 					<h2>{{ 'projects' | translate }}</h2>
 
-					<div class="d-flex flex-column content" *ngFor="let project of ('cv.projects' | translate) | slice:5:9">
+					<div class="d-flex flex-column content" *ngFor="let project of getProjects(5,9) | async">
 						<div class="d-flex flex-row upper">
 							<div class="d-flex flex-row icon">
 								<div class="hor-bar"></div>
@@ -299,7 +298,7 @@
 				<div class="left-box">
 					<h2>{{ 'projects' | translate }}</h2>
 
-					<div class="d-flex flex-column content" *ngFor="let project of ('cv.projects' | translate) | slice:9:13">
+					<div class="d-flex flex-column content" *ngFor="let project of getProjects(9,13) | async">
 						<div class="d-flex flex-row upper">
 							<div class="d-flex flex-row icon">
 								<div class="hor-bar"></div>

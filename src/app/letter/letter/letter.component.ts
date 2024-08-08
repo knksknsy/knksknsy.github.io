@@ -24,7 +24,7 @@ export class LetterComponent implements OnInit {
     faPlus = faPlus;
     faMinus = faMinus;
 
-    public fileUpload: File;
+    public fileUpload: File | null; 
     public today: Date;
     public companies: Array<Company> = [];
     public company: Company;
@@ -38,7 +38,7 @@ export class LetterComponent implements OnInit {
     public paragraphItems: string[];
     public editEnabled: boolean = true;
     public printing: boolean = false;
-    public uri;
+    public uri: any;
 
     constructor(public globals: GlobalsService,
                 public storage: StorageService,
@@ -83,8 +83,9 @@ export class LetterComponent implements OnInit {
         });
     }
 
-    loadLetter(target = ''): void {
-        if (target === 'new') {
+    loadLetter(event?: Event): void {
+        const target: string = (event?.target as HTMLSelectElement)?.value;
+        if (target && target === 'new') {
             this.company = new Company();
             this.company.title = 'UNTITLED';
         }
@@ -94,16 +95,17 @@ export class LetterComponent implements OnInit {
         this.updateEditEnabled(true);
     }
 
-    importStorage(files: FileList): void {
+    importStorage(event: Event): void {
+        const files: FileList  = (event.target as HTMLInputElement)?.files!;
         this.fileUpload = files.item(0);
         let fileReader: FileReader = new FileReader();
         fileReader.onload = (e) => {
-            let companies: Array<Company> = JSON.parse(<string>fileReader.result);
-            this.storage.setItems(companies);
-            this.companies = this.storage.getItems();
-            this.loadLetter();
+        let companies: Array<Company> = JSON.parse(<string>fileReader.result);
+        this.storage.setItems(companies);
+        this.companies = this.storage.getItems();
+        this.loadLetter();
         };
-        fileReader.readAsText(this.fileUpload);
+        fileReader.readAsText(this.fileUpload!);
     }
 
     exportStorage(): void {

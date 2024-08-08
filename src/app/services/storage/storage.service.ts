@@ -14,7 +14,7 @@ export class StorageService implements OnInit {
   ngOnInit(): void { }
 
   getItem(key: string): Company {
-    return <Company>JSON.parse(this.storage.getItem(key));
+    return <Company>JSON.parse(this.storage.getItem(key)!);
   }
 
   getItems(): Array<Company> {

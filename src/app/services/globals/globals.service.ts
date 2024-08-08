@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
 @Injectable()
 export class GlobalsService {
     readonly production: boolean = environment.production;
-    public privateData;
+    public privateData: any;
 
     constructor(private http: HttpClient) {
         if (!this.production) {
