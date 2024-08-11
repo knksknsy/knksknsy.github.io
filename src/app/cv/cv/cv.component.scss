@@ -9,6 +9,7 @@
 }
 
 div[size="A4"] {
+    border-radius: 10px;
     background-color: white;
     margin: 0 auto;
     margin-bottom: $container-padding;
@@ -29,7 +30,7 @@ div[size="A4"] {
         margin: 0;
         page-break-after: always;
         page-break-inside: avoid;
-        h3 a, .contact a, .icons a {
+        h3 a, .public-contact a, .icons a {
             text-decoration: none;
         }
     }
@@ -39,10 +40,20 @@ div[size="A4"] {
     .thesis-title {
         max-width: 30%;
     }
+    .private-contact a {
+        text-decoration: none;
+    }
+}
+
+.photo.flex-column .right-box {
+    width: 100%;
+    margin-bottom: 0;
+    font-size: 10pt;
 }
 
 .thesis-title {
     text-wrap: balance;
+    line-height: normal;
 }
 
 .btn-circle {
@@ -88,27 +99,42 @@ div[size="A4"] {
     padding: 0;
 }
 
-.contact {
+.public-contact {
     font-size: 1.5em;
     padding-top: 0.5em;
+    justify-content: space-evenly;
     a {
-        color: #0066CC !important;
+        // color: #0066CC !important;
+        color: white !important;
     }
     a:hover {
         text-decoration: none;
-        color: #0066CC;
+        // color: #0066CC;
+        color: white !important;
     }
 }
 
-.icons fa-icon {
-    color: #0066CC !important;
-    &:hover {
-        text-decoration: none;
-        color: #0066CC !important;
+.private-contact {
+    .link a {
+        color: inherit !important;
+    }
+    .link p {
+        font-family: LatoWebHairline;
+        font-size: 10pt;
+    }
+    .icon a {
+        // color: #0066CC !important;
+        color: white !important;
+        font-size: 10pt;
+        &:hover {
+            text-decoration: none;
+            // color: #0066CC !important;
+            color: white !important;
+        }
     }
 }
 
-.contact-alt p {
+.public-contact-alt p {
     font-family: LatoWeb;
     font-size: 10pt;
     margin: 0 !important;
@@ -122,24 +148,61 @@ div[size="A4"] {
     justify-content: center;
     align-items: center;
     align-content: center;
-    text-align: center;
+    text-align: left;
     width: 100%;
     height: 10%;
-    padding: 1.5em 0 1.5em 0;
+    padding: 0.75rem 0 0.25rem 0;
     background-color: #505050;
     color: #FFFFFF;
     font-family: LatoWebLight;
-    h1 {
-        margin: 0;
-        font-size: 3em;
-        span {
-            font-family: LatoWebBold;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    .name {
+        h1 {
+            margin: 0;
+            font-size: 2em;
+            span {
+                font-family: LatoWebBold;
+            }
+            
+        }
+        p.degree {
+            margin: 0;
+            font-family: LatoWebHairline;
+            font-size: 1em;
+        }
+        p.job-title {
+            margin: 0;
+            font-family: LatoWebLight;
+            font-size: 1.25em;
+            >span {
+                font-family: 'LatoWebHairline'; 
+            }
+            .degree {
+                margin: 0;
+                font-family: LatoWebHairline;
+                font-size: 0.75em;
+            }
         }
     }
-    p {
-        margin: 0;
-        font-family: LatoWebHairline;
-        font-size: 1.5em;
+    .summary {
+        p {
+            font-family: LatoWebLight;
+            font-size: 10pt;
+            margin: 0;
+            text-align: justify;
+            display: block;
+            -webkit-hyphens: auto;
+            hyphens: auto;
+            .uppercase {
+                text-transform: uppercase;
+                font-family: 'LatoWebHairline';
+                font-size: 9pt;
+            }
+        }
+        p.mobile {
+            text-align: left;
+        }
     }
 }
 
@@ -159,6 +222,18 @@ div[size="A4"] {
     justify-content: flex-start;
 }
 
+.photo {
+    .img-fluid {
+        width: 70%;
+        border-radius: 50%;
+        border: 5px solid white;
+        box-shadow: 10px 10px 35px -10px rgba(0, 0, 0, 0.25);
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+
 .image-container {
     margin-bottom: 1em;
     box-shadow: 10px 10px 35px -10px rgba(0, 0, 0, 0.25);
@@ -172,7 +247,7 @@ div[size="A4"] {
 }
 
 .right-box {
-    margin-bottom: 1em;
+    margin-bottom: 0.5em;
     h2 {
         font-family: LatoWeb;
         font-size: 14pt;
@@ -187,7 +262,7 @@ div[size="A4"] {
 }
 
 .left-box {
-    margin-bottom: 1.5em;
+    margin-bottom: 0.75em;
     h2 {
         font-family: LatoWeb;
         font-size: 16pt;
@@ -233,6 +308,9 @@ div[size="A4"] {
                     font-family: LatoWeb;
                     font-size: 10pt;
                 }
+                div {
+                    text-wrap: nowrap;
+                }
             }
         }
         .lower {
@@ -250,9 +328,6 @@ div[size="A4"] {
                     background-color: #0066CC;
                 }
             }
-            .three-line {
-                margin-top: -30px;
-            }
             .double-line {
                 margin-top: -10px;
             }
@@ -261,7 +336,7 @@ div[size="A4"] {
                 width: 98%;
                 p {
                     margin-bottom: 0;
-                    margin-top: 0.5em;
+                    margin-top: 0.25em;
                 }
                 ul {
                     margin: 0.5em 0 0.5em 0;
@@ -281,6 +356,15 @@ div[size="A4"] {
 
 .text-left {
     text-align: left;
+}
+
+li.text-left {
+    line-height: normal;
+    margin-bottom: 0.3em;
+}
+
+ul {
+    padding-left: 3%;
 }
 
 .experience {

@@ -12,6 +12,7 @@
     "xing": "xing.com/profile/Kaan_Keskinsoy",
     "linkedin": "linkedin.com/in/Kaan-Keskinsoy",
     "github": "github.com/knksknsy/",
+    "job_title": "Fullstack-Developer",
     "letter": {
         "title": "Anschreiben",
         "address": "Adresse",
@@ -24,6 +25,13 @@
         "sign_off": "Mit freundlichen Grüßen"
     },
     "cv": {
+        "summary": {
+            "title": "Profil",
+            "text": [
+                "Fullstack-Developer mit 3 Jahren Erfahrung in der Entwicklung von Enterprise-Software mittels Angular, Java und Spring. Kompetent in Front- und Backend-Entwicklung, sowie in der Testautomatisierung mittels Selenium, Java und Groovy, mit dem Schwerpunkt auf End-to-End- und API-Tests.",
+                "Expertise in agiler Methodologie sowie in der Zusammenarbeit mit funktionsübergreifenden Teams, um Projekte erfolgreich abzuschließen und kontinuierliche Verbesserung und Lieferung von Software sicherzustellen."
+            ]
+        },
         "contact": "Kontakt",
         "technologies": "Technologien:",
         "languages": {
@@ -59,18 +67,10 @@
                     "thesis": { "title": "Abschlussarbeit:", "value": "Android Mobility Detection Library" }
                 },
                 {
-                    "institution": "Universität Stuttgart",
-                    "location": "Stuttgart",
-                    "duration": "10/2013 - 03/2014",
-                    "major": "Informatik"
-                },
-                {
                     "institution": "Staatliche Feintechnikschule",
                     "location": "Villingen-Schwenningen",
                     "duration": "09/2010 - 07/2013",
-                    "major": "Allgemeine Hochschulreife",
-                    "grade": { "title": "Abschlussnote:", "value": "1,9" },
-                    "thesis": { "title": "Profilfach:", "value": "Informationstechnik" }
+                    "major": "Allgemeine Hochschulreife"
                 }
             ]
         },
@@ -79,9 +79,7 @@
             "values": [
                 {
                     "company": "Groz-Beckert KG",
-                    "role": [
-                        "Fullstack Entwickler"
-                    ],
+                    "role": "Fullstack Entwickler",
                     "duration": "03/2022 - heute",
                     "tasks": [
                         "Entwicklung und Umsetzung der eCommerce-Plattform",
@@ -93,10 +91,7 @@
                 },
                 {
                     "company": "M-Way Solutions GmbH",
-                    "role": [
-                        "Praxissemester und Werkstudent",
-                        "Fullstack Entwickler"
-                    ],
+                    "role": "Fullstack Entwickler (Werkstudent)",
                     "duration": "09/2016 - 03/2018",
                     "description": "Entwicklung von Web Applications im Bereich B2E:",
                     "tasks": [

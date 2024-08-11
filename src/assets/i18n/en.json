@@ -15,6 +15,13 @@
         "sign_off": "Sincerely"
     },
     "cv": {
+        "summary": {
+            "title": "Summary",
+            "text": [
+                "Fullstack Developer with 3 years experience in enterprise software development using Angular, Java, and Spring. Proficient in front- and backend development, including test automation with Selenium, Java, and Groovy, with a focus on end-to-end and API testing.",
+                "Adept in agile methodologies and ability to collaborate in cross-functional teams, ensuring efficient project management and continuous improvement and delivery of software and delivery."
+            ]
+        },
         "contact": "Contact",
         "technologies": "Technologies:",
         "languages": {
@@ -50,29 +57,19 @@
                     "thesis": { "title": "Thesis:", "value": "Android Mobility Detection Library" }
                 },
                 {
-                    "institution": "Universität Stuttgart",
-                    "location": "Stuttgart",
-                    "duration": "10/2013 - 03/2014",
-                    "major": "Computer Science"
-                },
-                {
                     "institution": "Staatliche Feintechnikschule",
                     "location": "Villingen-Schwenningen",
                     "duration": "09/2010 - 07/2013",
-                    "major": "General higher education entrance qualification",
-                    "grade": { "title": "Final grade:", "value": "1.9" },
-                    "thesis": { "title": "Major subject:", "value": "Information technology" }
+                    "major": "General higher education entrance qualification"
                 }
             ]
         },
         "work": {
-            "title": "Work Experience",
+            "title": "Experience",
             "values": [
                 {
                     "company": "Groz-Beckert KG",
-                    "role": [
-                        "Fullstack Developer"
-                    ],
+                    "role": "Fullstack Developer",
                     "duration": "03/2022 - today",
                     "tasks": [
                         "Development and implementation of eCommerce platform",
@@ -84,10 +81,7 @@
                 },
                 {
                     "company": "M-Way Solutions GmbH",
-                    "role": [
-                        "Practical semester and student trainee",
-                        "Fullstack Developer"
-                    ],
+                    "role": "Fullstack Developer (student employee)",
                     "duration": "09/2016 - 03/2018",
                     "description": "Development of B2E Web Apps:",
                     "tasks": [

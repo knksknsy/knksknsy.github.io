@@ -1,14 +1,5 @@
 <div class="container-fluid">
 
-	<!-- <div *ngIf="!globals.production" class="print-btn btn btn-circle spinner-grow" role="status"
-		[ngClass]="{'hide': !printing}">
-		<span class="sr-only">Loading...</span>
-	</div> -->
-
-	<!-- <button *ngIf="!globals.production" class="print-btn btn btn-circle" (click)="printCV()" [ngClass]="{'hide': printing}">
-		<fa-icon class="fa fa-save" [icon]="faSave"></fa-icon>
-	</button> -->
-
 	<button class="public-btn btn btn-circle" (click)="isPublic = !isPublic" [ngClass]="{'hide': globals.production}">
 		<fa-icon class="fa fa-unlock" [icon]="faUnlock" [ngClass]="{'hide': !isPublic}"></fa-icon>
 		<fa-icon class="fa fa-lock" [icon]="faLock" [ngClass]="{'hide': isPublic}"></fa-icon>
@@ -23,81 +14,36 @@
 
 	<div size="A4" class="print-section">
 		<div class="d-flex flex-column header-container">
-			<h1>{{ 'name' | translate }} <span>{{ 'surname' | translate }}</span></h1>
-			<p>{{ 'degree' | translate }}</p>
+			<div class="row m-0">
+				<div class="photo col-lg-4 col-sm p-0 d-flex justify-content-center align-items-center" [ngClass]="{'flex-column': !isMobile && isPublic}">
+					<img id="profile-picture" class="img-fluid" src="./assets/images/profile-image.jpg" (dblclick)="imageClicked()">
+					<ng-container *ngIf="!isMobile && isPublic; then publicContact"></ng-container>
+				</div>
+				<div class="col-lg-8 col-sm p-lg-0 pr-lg-4">
+					<div class="name col p-0" [ngClass]="{'my-2': isMobile && !isPublic, 'mb-2': !isMobile, 'mt-2': isMobile && isPublic}">
+						<h1>{{ 'name' | translate }} <span class="bold">{{ 'surname' | translate }}</span></h1>
+						<p *ngIf="isMobile" class="degree">{{ 'degree' | translate }}</p>
+						<p class="job-title">{{ 'job_title' | translate }}
+							<ng-container *ngIf="!isMobile">
+								<span class="mx-2">|</span>
+								<span class="degree">{{ 'degree' | translate }}</span>
+							</ng-container>
+						</p>
+					</div>
+					<ng-container *ngIf="isMobile && isPublic; then publicContact"></ng-container>
+					<div class="summary col p-0 mb-2">
+							<p *ngFor="let sumText of ('cv.summary.text' | translate); let first = first" [ngClass]="{'mobile': isMobile}">
+								<span *ngIf="first" class="uppercase mr-1">{{ 'cv.summary.title' | translate }}</span>
+								{{sumText}}
+							</p>
+					</div>
+					<ng-container *ngIf="!isPublic; then privateContact"></ng-container>
+				</div>
+			</div>
 		</div>
 
-		<div class="row pt-4 main-container">
-
+		<div class="row main-container">
 			<div class="col-md-4 px-4 d-flex flex-column right-container">
-
-				<div class="image-container">
-					<img class="img-fluid" src="./assets/images/profile-image-original.jpg">
-				</div>
-
-				<ng-container *ngIf="!isPublic; then fullinfo; else publicinfo"></ng-container>
-				<ng-template #fullinfo>
-					<div class="right-box">
-						<h2>{{ 'cv.contact' | translate }}</h2>
-						<div *ngIf="globals.privateData" class="d-flex flex-row justify-content-between">
-							<div>
-								<p>{{ globals.privateData.street }}</p>
-								<p>{{ globals.privateData.zip }} {{ globals.privateData.city }}</p>
-								<p>{{ globals.privateData.phone }}</p>
-								<p>{{ 'email' | translate }}</p>
-								<p>{{ 'homepage' | translate }}</p>
-							</div>
-							<div class="icons d-flex flex-column justify-content-around align-items-center">
-								<a class="fa fa-map-marker"><fa-icon [icon]="faMapMarkerAlt" [fixedWidth]="true"></fa-icon></a>
-								<a class="fa fa-map-marker" style="visibility: hidden; height: 0.6rem;"><fa-icon [icon]="faGlobe" [fixedWidth]="true"></fa-icon></a>
-								<a class="fa fa-mobile" href="tel:{{ globals.privateData.phone }}"><fa-icon [icon]="faMobileAlt" [fixedWidth]="true"></fa-icon></a>
-								<a class="fa fa-envelope" href="mailto:{{ 'email' | translate }}" target="_blank"><fa-icon [icon]="faEnvelope" [fixedWidth]="true"></fa-icon></a>
-								<a class="fa fa-globe" href="https://{{ 'homepage' | translate}}"><fa-icon [icon]="faGlobe" [fixedWidth]="true"></fa-icon></a>
-							</div>
-						</div>
-					</div>
-				</ng-template>
-
-				<ng-template #publicinfo>
-					<div class="right-box">
-						<h2>{{ 'cv.contact' | translate }}</h2>
-						<div class="contact d-flex flex-row justify-content-around">
-							<div>
-								<a class="fa fa-envelope" href="mailto:{{ 'email' | translate }}" target="_blank"><fa-icon [icon]="faEnvelope"></fa-icon></a>
-							</div>
-							<div>
-								<a class="fa fa-github" href="https://{{ 'github' | translate }}" target="_blank"><fa-icon [icon]="faGithub"></fa-icon></a>
-							</div>
-							<div>
-								<a class="fa fa-linkedin" href="https://{{ 'linkedin' | translate }}"
-									target="_blank"><fa-icon [icon]="faLinkedin"></fa-icon></a>
-							</div>
-							<div>
-								<a class="fa fa-xing" href="https://{{ 'xing' | translate }}" target="_blank"><fa-icon [icon]="faXing"></fa-icon></a>
-							</div>
-						</div>
-
-						<div class="contact-alt d-flex flex-row justify-content-between hide">
-							<div>
-								<p>{{ 'email' | translate }}</p>
-								<p>{{ 'homepage' | translate }}</p>
-								<p>{{ 'xing' | translate }}</p>
-								<p>{{ 'linkedin' | translate }}</p>
-							</div>
-							<div class="icons d-flex flex-column justify-content-around align-items-center">
-								<a class="fa fa-envelope"><fa-icon [icon]="faEnvelope"></fa-icon></a>
-								<a class="fa fa-github"><fa-icon [icon]="faGithub"></fa-icon></a>
-								<a class="fa fa-linkedin"><fa-icon [icon]="faLinkedin"></fa-icon></a>
-								<a class="fa fa-xing"><fa-icon [icon]="faXing"></fa-icon></a>
-							</div>
-						</div>
-					</div>
-				</ng-template>
-
-				<div class="right-box">
-					<h2>{{ 'cv.languages.title' | translate }}</h2>
-					<p *ngFor="let lang of ('cv.languages.values' | translate)">{{lang}}</p>
-				</div>
 
 				<!-- <div class="right-box">
 					<h2>{{ 'cv.hobbies.title' | translate }}</h2>
@@ -118,10 +64,46 @@
 						</div>
 					</div>
 				</div>
+
+				<div class="right-box">
+					<h2>{{ 'cv.languages.title' | translate }}</h2>
+					<p *ngFor="let lang of ('cv.languages.values' | translate)">{{lang}}</p>
+				</div>
 			</div>
 
 
-			<div class="col-md-8 pr-4 d-flex flex-column left-container">
+			<div class="col-md-8 pl-lg-0 pr-lg-4 d-flex flex-column left-container" [ngClass]="{'px-4': isMobile}">
+				<div class="left-box">
+					<h2>{{ 'cv.work.title' | translate }}</h2>
+					<div class="d-flex flex-column content" *ngFor="let comp of ('cv.work.values' | translate)">
+						<div class="d-flex flex-row upper">
+							<div class="d-flex flex-row icon">
+								<div class="hor-bar"></div>
+							</div>
+							<div class="d-flex flex-row location">
+								<h3>{{comp.company}}<br/><span>{{comp.role}}</span></h3>
+								<div>{{comp.duration}}</div>
+							</div>
+						</div>
+						<div class="d-flex flex-row lower">
+							<div class="d-flex flex-row bar">
+								<div></div>
+							</div>
+							<div class="d-flex flex-column right-content">
+								<p class="large-text">{{ comp.description }}</p>
+								<ul>
+									<li class="text-left"
+										*ngFor="let task of comp.tasks">{{task}}</li>
+								</ul>
+								<p *ngIf="comp.technologies">{{ 'cv.technologies' | translate }}</p>
+								<ul class="d-flex flex-row languages tech">
+									<li *ngFor="let tech of comp.technologies">{{tech}}</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+
 				<div class="left-box">
 					<h2>{{ 'cv.education.title' | translate }}</h2>
 					<div class="d-flex flex-column content" *ngFor="let ed of ('cv.education.values' | translate)">
@@ -141,11 +123,11 @@
 							<div class="d-flex flex-column right-content">
 								<p>{{ ed.major }}</p>
 								<div class="container m-0" *ngIf="ed.grade || ed.thesis">
-									<div class="row">
+									<div *ngIf="ed.grade" class="row">
 										<div class="col-sm-3 p-0">{{ed.grade.title}}</div>
 										<div class="col-sm-9 p-0">{{ed.grade.value}}</div>
 									</div>
-									<div class="row">
+									<div *ngIf="ed.thesis" class="row">
 										<div class="col-sm-3 p-0">{{ed.thesis.title}}</div>
 										<div class="col-sm-9 p-0 thesis-title">{{ed.thesis.value}}</div>
 									</div>
@@ -155,200 +137,90 @@
 					</div>
 				</div>
 
-				<div class="left-box">
-					<h2>{{ 'cv.work.title' | translate }}</h2>
-					<div class="d-flex flex-column content" *ngFor="let comp of ('cv.work.values' | translate)">
-						<div class="d-flex flex-row upper">
-							<div class="d-flex flex-row icon">
-								<div class="hor-bar"></div>
-							</div>
-							<div class="d-flex flex-row location">
-								<h3>{{comp.company}}<br /><span *ngFor="let role of comp.role">{{role}}<br *ngIf="comp.role.length > 1"/></span></h3>
-								<div>{{comp.duration}}</div>
-							</div>
-						</div>
-						<div class="d-flex flex-row lower">
-							<div class="d-flex flex-row bar" [class.three-line]="comp.role && comp.role.length > 1">
-								<div></div>
-							</div>
-							<div class="d-flex flex-column right-content">
-								<p class="large-text">{{ comp.description }}</p>
-								<ul>
-									<li class="text-left"
-										*ngFor="let task of comp.tasks">{{task}}</li>
-								</ul>
-								<p *ngIf="comp.technologies">{{ 'cv.technologies' | translate }}</p>
-								<ul class="d-flex flex-row languages tech">
-									<li *ngFor="let tech of comp.technologies">{{tech}}</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<div size="A4" class="print-section skills">
-		<div class="d-flex flex-column header-container">
-			<h1>{{ 'name' | translate }} <span>{{ 'surname' | translate }}</span></h1>
-			<p>{{ 'degree' | translate }}</p>
-		</div>
-
-		<div class="row main-container">
-			<div class="col-md-11 px-4 d-flex flex-column left-container">
-				<div class="left-box">
-					<h2>{{ 'projects' | translate }}</h2>
-
-					<div class="d-flex flex-column content" *ngFor="let project of getProjects(0,5) | async">
-						<div class="d-flex flex-row upper">
-							<div class="d-flex flex-row icon">
-								<div class="hor-bar"></div>
-							</div>
-							<div class="d-flex flex-row location">
-								<h3><a href="{{project.github}}" target="_blank">{{project.title}}</a></h3>
-								<div>{{project.year}}</div>
-							</div>
-						</div>
-						<div class="d-flex flex-row lower">
-							<div class="d-flex flex-row bar double-line">
-								<div></div>
-							</div>
-							<div class="d-flex flex-column right-content">
-								<div class="large-text">
-									<p class="large-text">{{project.description}}</p>
-									<ul>
-										<li class="text-left" *ngFor="let task of project.tasks">{{task}}</li>
-									</ul>
-									<p>{{ 'cv.technologies' | translate }}</p>
-									<ul class="d-flex flex-row languages tech">
-										<li *ngFor="let tech of project.technologies">{{tech}}</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<div class="col-md-1 pr-4 d-flex flex-column right-container">
-				<div class="right-box"></div>
-			</div>
-		</div>
-	</div>
-
-	<div size="A4" class="print-section skills">
-		<div class="d-flex flex-column header-container">
-			<h1>{{ 'name' | translate }} <span>{{ 'surname' | translate }}</span></h1>
-			<p>{{ 'degree' | translate }}</p>
-		</div>
-
-		<div class="row main-container">
-			<div class="col-md-11 px-4 d-flex flex-column left-container">
-				<div class="left-box">
-					<h2>{{ 'projects' | translate }}</h2>
-
-					<div class="d-flex flex-column content" *ngFor="let project of getProjects(5,9) | async">
-						<div class="d-flex flex-row upper">
-							<div class="d-flex flex-row icon">
-								<div class="hor-bar"></div>
-							</div>
-							<div class="d-flex flex-row location">
-								<h3><a href="{{project.github}}" target="_blank">{{project.title}}</a></h3>
-								<div>{{project.year}}</div>
-							</div>
-						</div>
-						<div class="d-flex flex-row lower">
-							<div class="d-flex flex-row bar double-line">
-								<div></div>
-							</div>
-							<div class="d-flex flex-column right-content">
-								<div class="large-text">
-									<p class="large-text">{{project.description}}</p>
-									<ul>
-										<li class="text-left" *ngFor="let task of project.tasks">{{task}}</li>
-									</ul>
-									<p>{{ 'cv.technologies' | translate }}</p>
-									<ul class="d-flex flex-row languages tech">
-										<li *ngFor="let tech of project.technologies">{{tech}}</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<div class="col-md-1 pr-4 d-flex flex-column right-container">
-				<div class="right-box"></div>
-			</div>
-		</div>
-	</div>
-
-	<div size="A4" class="print-section skills">
-		<div class="d-flex flex-column header-container">
-			<h1>{{ 'name' | translate }} <span>{{ 'surname' | translate }}</span></h1>
-			<p>{{ 'degree' | translate }}</p>
-		</div>
-
-		<div class="row main-container">
-
-			<div class="col-md-11 pr-4 d-flex flex-column left-container">
-
-				<div class="left-box">
-					<h2>{{ 'projects' | translate }}</h2>
-
-					<div class="d-flex flex-column content" *ngFor="let project of getProjects(9,13) | async">
-						<div class="d-flex flex-row upper">
-							<div class="d-flex flex-row icon">
-								<div class="hor-bar"></div>
-							</div>
-							<div class="d-flex flex-row location">
-								<h3><a href="{{project.github}}" target="_blank">{{project.title}}</a></h3>
-								<div>{{project.year}}</div>
-							</div>
-						</div>
-						<div class="d-flex flex-row lower">
-							<div class="d-flex flex-row bar double-line">
-								<div></div>
-							</div>
-							<div class="d-flex flex-column right-content">
-								<div class="large-text">
-									<p class="large-text">{{project.description}}</p>
-									<ul>
-										<li class="text-left" *ngFor="let task of project.tasks">{{task}}</li>
-									</ul>
-									<p>{{ 'cv.technologies' | translate }}</p>
-									<ul class="d-flex flex-row languages tech">
-										<li *ngFor="let tech of project.technologies">{{tech}}</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="d-flex flex-column content">
-						<ng-container *ngIf="!isPublic; then signature; else nosignature"></ng-container>
-						<ng-template #signature>
-							<div *ngIf="globals.privateData" class="d-flex mb-4 flex-column left-box"
-								style="margin-bottom: 0 !important; margin-top:1em">
-								<p class="mb-3">{{ globals.privateData.city }}, <span>{{ today | date:
-										'dd.MM.yyyy'}}</span></p>
-								<img class="img-fluid" src="./assets/images/signature.png" width="155px">
-							</div>
-						</ng-template>
-						<ng-template #nosignature>
-							<div class="d-flex mb-4 flex-column left-box"></div>
-						</ng-template>
-					</div>
-
-				</div>
-			</div>
-
-			<div class="col-md-1 pr-4 d-flex flex-column right-container">
-				<div class="right-box"></div>
 			</div>
 		</div>
 	</div>
 
 </div>
+
+<ng-template #publicContact>
+	<div class="right-box">
+		<div class="public-contact d-flex flex-row">
+			<div>
+				<a class="fa fa-envelope" href="mailto:{{ 'email' | translate }}" target="_blank"><fa-icon [icon]="faEnvelope"></fa-icon></a>
+			</div>
+			<div>
+				<a class="fa fa-github" href="https://{{ 'github' | translate }}" target="_blank"><fa-icon [icon]="faGithub"></fa-icon></a>
+			</div>
+			<div>
+				<a class="fa fa-xing" href="https://{{ 'xing' | translate }}" target="_blank"><fa-icon [icon]="faXing"></fa-icon></a>
+			</div>
+			<div>
+				<a class="fa fa-linkedin" href="https://{{ 'linkedin' | translate }}"
+					target="_blank"><fa-icon [icon]="faLinkedin"></fa-icon></a>
+			</div>
+		</div>
+
+		<div class="contact-alt d-flex flex-row justify-content-between hide">
+			<div>
+				<p>{{ 'email' | translate }}</p>
+				<p>{{ 'homepage' | translate }}</p>
+				<p>{{ 'xing' | translate }}</p>
+				<p>{{ 'linkedin' | translate }}</p>
+			</div>
+			<div class="icons d-flex flex-column justify-content-around align-items-center">
+				<a class="fa fa-envelope"><fa-icon [icon]="faEnvelope"></fa-icon></a>
+				<a class="fa fa-github"><fa-icon [icon]="faGithub"></fa-icon></a>
+				<a class="fa fa-linkedin"><fa-icon [icon]="faLinkedin"></fa-icon></a>
+				<a class="fa fa-xing"><fa-icon [icon]="faXing"></fa-icon></a>
+			</div>
+		</div>
+	</div>
+</ng-template>
+
+<ng-template #privateContact>
+	<div *ngIf="globals.privateData" class="private-contact col">
+		<div class="col p-0">
+			<div class="row align-items-center">
+				<div class="col-auto p-0 icon">
+					<a class="fa fa-map-marker"><fa-icon [icon]="faMapMarkerAlt" [fixedWidth]="true"></fa-icon></a>
+				</div>
+				<div class="col px-1 link">
+					<p class="m-0">{{ globals.privateData.street }} <span class="mx-2">|</span> {{ globals.privateData.zip }} {{ globals.privateData.city }}</p>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm col-lg-auto mr-2">
+				<div class="row align-items-center">
+					<div class="col-auto p-0 icon">
+						<a class="fa fa-envelope" href="mailto:{{ 'email' | translate }}" target="_blank"><fa-icon [icon]="faEnvelope" [fixedWidth]="true"></fa-icon></a>
+					</div>
+					<div class="col px-1 link">
+						<a href="mailto:{{ 'email' | translate }}" target="_blank"><p class="m-0">{{ 'email' | translate }}</p></a>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm col-lg-auto mr-2">
+				<div class="row align-items-center">
+					<div class="col-auto p-0 icon">
+						<a class="fa fa-mobile" href="tel:{{ globals.privateData.phone }}"><fa-icon [icon]="faMobileAlt" [fixedWidth]="true"></fa-icon></a>
+					</div>
+					<div class="col px-1 link">
+						<a href="tel:{{ globals.privateData.phone }}"><p class="m-0">{{ globals.privateData.phone }}</p></a>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm col-lg-auto mr-2">
+				<div class="row align-items-center">
+					<div class="col-auto p-0 icon">
+						<a class="fa fa-globe" href="https://{{ 'homepage' | translate}}"><fa-icon [icon]="faGlobe" [fixedWidth]="true"></fa-icon></a>
+					</div>
+					<div class="col px-1 link">
+						<a href="https://{{ 'homepage' | translate}}"><p class="m-0">{{ 'homepage' | translate }}</p></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</ng-template>

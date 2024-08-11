@@ -22,6 +22,7 @@ import { GlobalsService } from '../services/globals/globals.service';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faSave, faUnlock, faLock, faMapMarker, faMobile, faMapMarkerAlt, faMobileAlt, faEnvelope, faGlobe, faPen, faPlus, faMinus, faAngleRight, faAngleLeft } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faLinkedin, faXing } from '@fortawesome/free-brands-svg-icons';
+import { BreakpointObserver } from '@angular/cdk/layout';
 
 export const appRoutes: Routes = [
     { path: 'cv', component: CVComponent },
@@ -60,6 +61,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     ],
     providers: [
         GlobalsService,
+        BreakpointObserver,
         provideHttpClient()
     ]
 })

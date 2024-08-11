@@ -24,6 +24,14 @@
     }
 }
 
+.job-title {
+    color: white !important;
+    font-family: LatoWebLight;
+    &.mobile {
+        text-align: center;
+    }
+}
+
 .degree {
     color: white !important;
     font-family: LatoWebHairline;
@@ -52,7 +60,7 @@
 
 .discover {
     .fa {
-        font-size: 5em;
+        font-size: 3.25em;
         color: white !important;
     }
     .fa:hover {

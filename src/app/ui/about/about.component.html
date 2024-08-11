@@ -1,10 +1,13 @@
 <div class="container-fluid">
     <div class="info row mb-5">
         <div class="col-md-7 px-5 d-flex flex-column justify-content-center align-items-sm-start align-items-lg-end">
-            <div class="name row">
+            <div class="name">
                 <h1><span>Kaan</span> Keskinsoy</h1>
             </div>
-            <div class="degree row">
+            <div class="job-title" [ngClass]="{'mobile': isMobile}">
+                <h2>{{ 'job_title' | translate }}</h2>
+            </div>
+            <div class="degree">
                 <h2>{{ 'degree' | translate }}</h2>
             </div>
         </div>
@@ -31,11 +34,11 @@
     </div>
 
     <div class="discover row mb-5 d-flex flex-row align-items-center justify-content-start">
-        <fa-icon class="col-3 d-flex mr-4 justify-content-end fa" [icon]="faAngleRight" routerLink="/cv/"></fa-icon>
+        <fa-icon class="col-3 d-flex mr-2 justify-content-end fa" [icon]="faFileLines" routerLink="/cv/"></fa-icon>
         <a class="m-0" routerLink="/cv/">{{ 'cv_long' | translate }}</a>
     </div>
     <div class="discover row mb-5 d-flex flex-row-reverse align-items-center justify-content-start">
-        <fa-icon class="col-3 d-flex ml-4 fa" [icon]="faAngleLeft" routerLink="/projects/"></fa-icon>
+        <fa-icon class="col-3 d-flex ml-2 fa" [icon]="faCode" routerLink="/projects/"></fa-icon>
         <a class="m-0" routerLink="/projects/">{{ 'discover' | translate }}</a>
     </div>
 </div>

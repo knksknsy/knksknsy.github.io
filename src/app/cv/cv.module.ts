@@ -8,9 +8,9 @@ import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 import { UiModule } from '../ui/ui.module';
-
 import { CVComponent } from './cv/cv.component';
 import { GlobalsService } from '../services/globals/globals.service';
+import { BreakpointService } from '../services/breakpoint/breakpoint.service';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faSave, faUnlock, faLock, faMapMarkerAlt, faMobileAlt, faEnvelope, faGlobe, faPen, faPlus, faMinus, faAngleRight, faAngleLeft } from '@fortawesome/free-solid-svg-icons';
@@ -42,6 +42,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     ],
     providers: [
         GlobalsService,
+        BreakpointService,
         provideHttpClient()
     ]
 })

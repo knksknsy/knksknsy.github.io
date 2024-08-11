@@ -24,23 +24,16 @@
         a:hover {
             cursor: pointer;
         }
-        .btn-circle {
-            margin-left: 10px;
-            border-radius: 50%;
-            height: 35px;
-            width: 35px;
-            border: 2px solid white;
+    }
+    .language {
+        color: rgba(255, 255, 255, .5) !important;
+        font-family: LatoWebLight;
+        font-size: 0.75em;
+    }
+    .navbar-nav.ml-auto {
+        align-items: baseline;
+        &.mobile {
+            align-items: flex-end;
         }
-        .german {
-            background-image: url(/assets/images/german.png);
-            background-size: cover;
-            background-position: center;
-        }
-        .anglais {
-            background-image: url(/assets/images/anglais.png);
-            background-size: cover;
-            background-position: center;
-        }
-
     }
 }
