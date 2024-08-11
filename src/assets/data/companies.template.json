@@ -1,0 +1,24 @@
+[
+    {
+        "title": "Test title",
+        "heading": "Heading <replace value in src/assets/data/companies.json>",
+        "subheading": "Subheading",
+        "company": "Company name",
+        "department": "Department",
+        "recipient": {
+            "gender": "m",
+            "name": "Recipient name",
+            "surname": "Recipient surname"
+        },
+        "address": {
+            "street": "Street 1",
+            "zip": "12345",
+            "city": "City"
+        },
+        "letter": [
+            "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum enim hic dolor, maiores a eaque voluptatem doloremque qui nulla quam illum maxime eveniet soluta? Beatae reiciendis quas cupiditate ex natus!",
+            "Lorem ipsum dolor sit amet consectetur, adipisicing elit. ",
+            "Beatae reiciendis quas cupiditate ex natus!"
+        ]
+    }
+]

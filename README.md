@@ -8,6 +8,14 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 - `ng build --configuration "production" --output-path docs --base-href "https://knksknsy.github.io/"`
 - When the build is complete, make a copy of `docs/index.html` and name it `docs/404.html`
 
+## Include private data
+Copy and rename the files in 
+- `src/assets/data/company.template.json`
+- `src/assets/data/private.template.json`
+to
+- `src/assets/data/company.json`
+- `src/assets/data/private.json`
+respectively, and populate with your private data.
 
 ## Development server
 

@@ -1,0 +1,6 @@
+{
+    "street": "Street 1",
+    "city": "City",
+    "zip": "12345",
+    "phone": "0123 4567890 <replace value in src/assets/data/companies.json>"
+}
