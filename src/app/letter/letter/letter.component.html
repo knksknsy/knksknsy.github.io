@@ -8,14 +8,12 @@
 			</select>
 	
 			<form *ngIf="company" [formGroup]="companyForm">
-				<label for="title">Title: </label>
-				<input id="title" type="text" formControlName="title">
+				<input placeholder="Title" id="title" type="text" formControlName="title">
 			</form>
 		</div>
 	
 		<div class="row justify-content-between">
-			<div>
-				<label for="importStorage">Import</label>
+			<div class="import-storage">
 				<input type="file" id="importStorage" name="importStorage" accept="application/JSON" (change)="importStorage($event)">
 			</div>
 			<a *ngIf="uri" download="companies.json" [href]="uri">Export</a>
@@ -28,14 +26,6 @@
 		<button *ngIf="!globals.production && !editEnabled" class="print-btn btn btn-circle" (click)="updateEditEnabled(!editEnabled)">
 			<fa-icon class="fa fa-pen" [icon]="faPen" [fixedWidth]="true"></fa-icon>
 		</button>
-	
-		<!-- <div *ngIf="!globals.production" class="print-btn btn btn-circle spinner-grow" role="status" [ngClass]="{'hide': !printing}">
-			<span class="sr-only">Loading...</span>
-		</div> -->
-	
-		<!-- <button *ngIf="!globals.production" class="print-btn btn btn-circle" (click)="printLetter()" [ngClass]="{'hide': printing}">
-			<fa-icon class="fa fa-save" [icon]="faSave" [fixedWidth]="true"></fa-icon>
-		</button> -->
 	</div>
 
 	<div *ngIf="company" size="A4" class="print-section">
@@ -51,19 +41,16 @@
 				<ng-template #addressFormView>
 					<form [formGroup]="companyForm">
 						<div class="flex">
-							<label class="w100" for="company">Company: </label>
-							<input class="grow" id="company" type="text" formControlName="company">
+							<input placeholder="Company" class="grow" id="company" type="text" formControlName="company">
 						</div>
 						<div class="flex">
-							<label class="w100" for="department">Department: </label>
-							<input class="grow" id="department" type="text" formControlName="department">
+							<input placeholder="Department" class="grow" id="department" type="text" formControlName="department">
 						</div>
 						<div>
 							<form formGroupName="recipient">
 								<div class="flex">
-									<label class="w100" for="name">Surname, name: </label>
-									<input class="grow-04" id="surname" type="text" formControlName="surname">
-									<input class="grow-04" id="name" type="text" formControlName="name">
+									<input placeholder="Surname" class="grow-04" id="surname" type="text" formControlName="surname">
+									<input placeholder="Name" class="grow-04" id="name" type="text" formControlName="name">
 									<select class="grow-02" formControlName="gender">
 										<option value="f">f</option>
 										<option value="m">m</option>
@@ -75,14 +62,12 @@
 						<div>
 							<form formGroupName="address">
 								<div class="flex">
-									<label class="w100" for="street">Street: </label>
-									<input class="grow" id="street" type="text" formControlName="street">
+									<input placeholder="Street" class="grow" id="street" type="text" formControlName="street">
 								</div>
 			
 								<div class="flex">
-									<label class="w100" for="zip">Zip & City: </label>
-									<input class="grow-05" id="zip" type="text" formControlName="zip">
-									<input class="grow-05" id="city" type="text" formControlName="city">
+									<input placeholder="Zip" class="grow-02" id="zip" type="text" formControlName="zip">
+									<input placeholder="City" class="grow-08" id="city" type="text" formControlName="city">
 								</div>
 							</form>
 						</div>
@@ -112,25 +97,25 @@
 			<div *ngIf="globals.privateData" class="col-md-3 px-4 d-flex flex-column left-container">
 				<div class="contact left-box">
 					<h2>{{ 'cv.contact' | translate }}</h2>
-					<div class="d-flex align-items-baseline justify-content-between w60">
-						<h3>{{ 'letter.address' | translate }}</h3>
+					<div class="row align-items-start w60">
 						<fa-icon class="fa fa-map-marker" [icon]="faMapMarkerAlt" [fixedWidth]="true"></fa-icon>
+						<h3>{{ 'letter.address' | translate }}</h3>
 					</div>
 					<p>{{globals.privateData.street}}</p>
 					<p class="mb-2">{{ globals.privateData.zip }} {{ globals.privateData.city }}</p>
-					<div class="d-flex align-items-start justify-content-between w60">
-						<h3>{{ 'letter.telephone' | translate }}</h3>
+					<div class="row align-items-start w60">
 						<fa-icon class="fa fa-mobile" [icon]="faMobileAlt" [fixedWidth]="true"></fa-icon>
+						<h3>{{ 'letter.telephone' | translate }}</h3>
 					</div>
 					<p class="mb-2">{{ globals.privateData.phone }}</p>
-					<div class="d-flex align-items-baseline justify-content-between w60">
-						<h3>{{ 'letter.email' | translate }}</h3>
+					<div class="row align-items-start w60">
 						<fa-icon class="fa fa-envelope" [icon]="faEnvelope" [fixedWidth]="true"></fa-icon>
+						<h3>{{ 'letter.email' | translate }}</h3>
 					</div>
 					<p class="mb-2"><a href="mailto:{{ 'email' | translate }}" target="_blank">{{ 'email' | translate }}</a></p>
-					<div class="d-flex align-items-baseline justify-content-between w60">
-						<h3>{{ 'letter.website' | translate }}</h3>
+					<div class="row align-items-start w60">
 						<fa-icon class="fa fa-globe" [icon]="faGlobe" [fixedWidth]="true"></fa-icon>
+						<h3>{{ 'letter.website' | translate }}</h3>
 					</div>
 					<p><a href="https://{{ 'homepage' | translate}}">{{ 'homepage' | translate }}</a></p>
 				</div>
@@ -143,12 +128,10 @@
 					<ng-template #HeadingFormView>
 						<form [formGroup]="companyForm" class="flex dir-col">
 							<div class="flex">
-								<label class="w100" for="heading">Heading: </label>
-								<input class="grow" id="heading" type="text" formControlName="heading">
+								<input placeholder="Heading" class="grow" id="heading" type="text" formControlName="heading">
 							</div>
 							<div class="flex">
-								<label class="w100" for="subheading">Subheading: </label>
-								<input class="grow" id="subheading" type="text" formControlName="subheading">
+								<input placeholder="Subheading" class="grow" id="subheading" type="text" formControlName="subheading">
 							</div>
 						</form>
 					</ng-template>
@@ -158,8 +141,8 @@
 							<h2>{{company.heading}}</h2>
 						</ng-template>
 						<ng-template #subheading>
-							<h2 style="margin-bottom: 0.5em;">{{company.heading}}</h2>
-							<h3>{{company.subheading}}</h3>
+							<h3 style="margin-bottom: 0.5em;">{{company.heading}}</h3>
+							<h2>{{company.subheading}}</h2>
 						</ng-template>
 					</ng-template>
 
@@ -182,10 +165,10 @@
 									<textarea class="grow mb-1 justify" [formControlName]="i" placeholder="Type..." id="letter" textareaAutoresize></textarea>
 								</div>
 								<div>
-									<button class="btn-sm" (click)="addParagraph()">
+									<button class="btn btn-link p-0" (click)="addParagraph()">
 										<fa-icon class="fa fa-plus" [icon]="faPlus" [fixedWidth]="true"></fa-icon>
 									</button>
-									<button class="btn-sm" (click)="removeParagraph()">
+									<button class="btn btn-link p-0" (click)="removeParagraph()">
 										<fa-icon class="fa fa-minus" [icon]="faMinus" [fixedWidth]="true"></fa-icon>
 									</button>
 								</div>
