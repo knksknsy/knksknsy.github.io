@@ -221,7 +221,7 @@ div.print-section {
     justify-content: center;
     height: calc(90% - 3em);
     margin: 0;
-    padding-top: 1rem !important;
+    padding-top: 0.75rem !important;
 }
 
 
@@ -265,6 +265,9 @@ div.print-section {
 
 .left-box {
     margin-bottom: 0.75em;
+    &:last-child {
+        margin-bottom: 0;
+    }
     h2 {
         font-family: LatoWebBold;
         font-size: 12pt;
@@ -349,8 +352,8 @@ div.print-section {
 .comp-tasks {
     margin: 0;
     li {
-        line-height: normal;
-        margin-bottom: 0.25em;
+        line-height: 10pt;
+        margin-bottom: 0.5em;
     }
 }
 
