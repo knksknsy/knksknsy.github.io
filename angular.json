@@ -21,7 +21,6 @@
               "base": "docs/",
               "browser": ""
             },
-            "baseHref": "/knksknsy.github.io/",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
