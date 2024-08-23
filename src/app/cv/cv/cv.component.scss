@@ -2,44 +2,56 @@
 @import "bootstrap/scss/bootstrap-grid";
 
 @include media-breakpoint-down(md) {
-    div[size="A4"] {
+    div.print-section {
         min-width: 100% !important;
         max-height: 100% !important;
     }
 }
 
-div[size="A4"] {
+div.print-section {
     border-radius: 10px;
     background-color: white;
     margin: 0 auto;
     margin-bottom: $container-padding;
-    min-width: 21cm;
-    max-width: 21cm;
-    min-height: 29.7cm;
-    max-height: 29.7cm;
+    min-width: 210mm;
+    max-width: 210mm;
+    min-height: 297mm;
+    max-height: 297mm;
+    &.mobile {
+        min-height: fit-content;
+        max-height: fit-content;
+    }
+}
+
+@page {
+    size: 140mm 198mm;
+    margin: 0;
 }
 
 @media print {
     body * {
         visibility: hidden;
     }
-    body,
-    div[size="A4"] {
-        background-color: white;
-        border: 1px solid lightgray;
+    .container-fluid {
+        width: fit-content;
+    }
+    div.print-section {
         visibility: visible;
+        border-radius: 0;
+        background-color: white;
+        // border: 1px solid lightgray;
         margin: 0;
         page-break-after: always;
         page-break-inside: avoid;
         h3 a, .public-contact a, .icons a {
             text-decoration: none;
         }
+        .header-container {
+            border-radius: 0;
+        }
     }
     .btn.btn-circle {
         display: none;
-    }
-    .thesis-title {
-        max-width: 30%;
     }
     .private-contact a {
         text-decoration: none;
@@ -49,7 +61,6 @@ div[size="A4"] {
 .photo.flex-column .right-box {
     width: 100%;
     margin-bottom: 0;
-    font-size: 10pt;
 }
 
 .thesis-title {
@@ -105,31 +116,32 @@ div[size="A4"] {
     padding-top: 0.5em;
     justify-content: space-evenly;
     a {
-        // color: #0066CC !important;
         color: white !important;
     }
     a:hover {
         text-decoration: none;
-        // color: #0066CC;
         color: white !important;
     }
 }
 
 .private-contact {
+    div.row {
+        .col-sm {
+            display: inline-flex;
+        }
+    }
     .link a {
         color: inherit !important;
     }
     .link p {
         font-family: LatoWebHairline;
-        font-size: 10pt;
+        font-size: 9pt;
     }
     .icon a {
-        // color: #0066CC !important;
         color: white !important;
-        font-size: 10pt;
+        font-size: 9pt;
         &:hover {
             text-decoration: none;
-            // color: #0066CC !important;
             color: white !important;
         }
     }
@@ -137,7 +149,7 @@ div[size="A4"] {
 
 .public-contact-alt p {
     font-family: LatoWeb;
-    font-size: 10pt;
+    font-size: 9pt;
     margin: 0 !important;
 }
 
@@ -150,9 +162,7 @@ div[size="A4"] {
     align-items: center;
     align-content: center;
     text-align: left;
-    width: 100%;
-    height: 10%;
-    padding: 0.75rem 0 0.25rem 0;
+    padding: 0.75rem 0;
     background-color: #505050;
     color: #FFFFFF;
     font-family: LatoWebLight;
@@ -189,9 +199,8 @@ div[size="A4"] {
     .summary {
         p {
             font-family: LatoWebLight;
-            font-size: 10pt;
+            font-size: 9pt;
             margin: 0;
-            text-align: justify;
             display: block;
             -webkit-hyphens: auto;
             hyphens: auto;
@@ -209,23 +218,15 @@ div[size="A4"] {
 
 .main-container {
     justify-content: center;
-    width: 100%;
     height: calc(90% - 3em);
     margin: 0;
-    padding-top: 1.5rem !important;
+    padding-top: 1rem !important;
 }
 
-.left-container {
-    justify-content: flex-start;
-}
 
-.right-container {
-    justify-content: flex-start;
-}
 
 .photo {
     .img-fluid {
-        width: 70%;
         border-radius: 50%;
         border: 5px solid white;
         box-shadow: 10px 10px 35px -10px rgba(0, 0, 0, 0.25);
@@ -250,10 +251,9 @@ div[size="A4"] {
 .right-box {
     margin-bottom: 0.5em;
     h2 {
-        font-family: LatoWeb;
-        font-size: 14pt;
+        font-family: LatoWebBold;
+        font-size: 12pt;
         margin: 0;
-        //text-transform: uppercase;
     }
     p {
         font-family: LatoWeb;
@@ -265,10 +265,9 @@ div[size="A4"] {
 .left-box {
     margin-bottom: 0.75em;
     h2 {
-        font-family: LatoWeb;
-        font-size: 16pt;
+        font-family: LatoWebBold;
+        font-size: 12pt;
         margin: 0;
-        //text-transform: uppercase;
     }
     .content {
         &:last-of-type {
@@ -276,7 +275,7 @@ div[size="A4"] {
         }
         width: 100%;
         font-family: LatoWeb;
-        font-size: 10pt;
+        font-size: 9pt;
         margin-bottom: 0.7em;
         .upper {
             width: 100%;
@@ -289,6 +288,8 @@ div[size="A4"] {
                     height: 3px;
                     background-color: #0066CC;
                     margin-right: -5px;
+                    border-top-right-radius: 5rem;
+                    border-bottom-right-radius: 5rem;
                 }
             }
             .location {
@@ -298,16 +299,17 @@ div[size="A4"] {
                 width: 98%;
                 h3, h3>a {
                     font-family: LatoWeb;
-                    font-size: 12pt;
+                    font-size: 10pt;
                     color: #0066CC;
                     margin: 0;
                     span {
                         font-family: LatoWebLight;
+                        text-wrap: nowrap;
                     }
                 }
                 p {
                     font-family: LatoWeb;
-                    font-size: 10pt;
+                    font-size: 9pt;
                 }
                 div {
                     text-wrap: nowrap;
@@ -321,16 +323,15 @@ div[size="A4"] {
                 justify-content: flex-start;
                 align-items: center;
                 width: 3%;
-                margin-top: -20px;
+                margin-top: -15px;
                 padding-right: 5px;
                 div {
                     width: 3px;
                     height: 100%;
                     background-color: #0066CC;
+                    border-bottom-left-radius: 5rem;
+                    border-bottom-right-radius: 5rem;
                 }
-            }
-            .double-line {
-                margin-top: -10px;
             }
             .right-content {
                 justify-content: flex-start;
@@ -339,66 +340,63 @@ div[size="A4"] {
                     margin-bottom: 0;
                     margin-top: 0.25em;
                 }
-                ul {
-                    margin: 0.5em 0 0.5em 0;
-                }
-                .tech {
-                    margin: 0;
-                }
             }
         }
     }
 }
 
-.large-text {
-    // text-align: justify;
-    text-align: left;
-}
-
-.text-left {
-    text-align: left;
-}
-
-li.text-left {
-    line-height: normal;
-    margin-bottom: 0.3em;
+.comp-tasks {
+    margin: 0;
+    li {
+        line-height: normal;
+        margin-bottom: 0.25em;
+    }
 }
 
 ul {
-    padding-left: 3%;
+    padding-left: 1rem;
 }
 
 .experience {
     justify-content: flex-start;
-    margin-bottom: 0.25em;
     &:last-of-type {
         margin-bottom: 0;
     }
+    div {
+        margin-top: -0.275rem;
+        margin-left: 0.275rem;
+    }
     h3 {
         font-family: LatoWeb;
-        font-size: 12pt;
+        font-size: 10pt;
         color: #0066CC;
-        margin-bottom: 0.25em;
+        margin-bottom: 0.5em;
     }
     .exp-bar {
-        justify-content: space-evenly;
-        .true {
-            width: 16.67%;
-            height: 5px;
-            background-color: #0066CC;
+        justify-content: space-between;
+        div {
+            width: 18%;
+            height: 3px;
             margin: 2px 2px 2px 0;
+            border-radius: 5rem;
             // box-shadow: inset 2px 2px 10px 0px rgba(0, 0, 0, 0.25);
-        }
-        .false {
-            width: 16.67%;
-            height: 5px;
-            background-color: lightgray;
-            margin: 2px 2px 2px 0;
-            // box-shadow: inset 2px 2px 10px 0px rgba(0, 0, 0, 0.25);
+            &.true {
+                background-color: #0066CC;
+            }
+            &.false {
+                background-color: lightgray;    
+            }
         }
     }
     .exp-bar :last-child {
         margin-right: 0;
+    }
+    .proficiency {
+        font-family: 'LatoWebHairline';
+        font-size: 8pt;
+        text-align: right;
+        padding-right: 0.125rem;
+        margin-top: -0.15rem;
     }
 }
 
@@ -406,7 +404,9 @@ ul {
     flex-wrap: wrap;
     justify-content: flex-start;
     padding: 0;
-    margin: auto 0;
+    margin-left: 0.275rem;
+    margin-bottom: 0.125rem;
+    padding-left: 0.125rem;
     li {
         list-style-type: none;
         font-family: LatoWeb;

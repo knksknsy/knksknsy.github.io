@@ -94,6 +94,15 @@ export class CVComponent implements OnInit {
 		);
 	}
 
+	getProficiencyLevel(levels: number[], level: number): Observable<string> {
+		const i = levels.findIndex((l: number) => l === level);
+		return this.translate.get('cv.skills.proficiency_levels').pipe(
+			map((proficiencyLevels: string[]) => {
+				return proficiencyLevels[i];
+			})
+		);
+	}
+
 	imageClicked(): void {
 		let imageElement: HTMLElement = document.getElementById('profile-picture') as HTMLElement;
 		imageElement.className = imageElement.className.replace(' animated flipInY', '');

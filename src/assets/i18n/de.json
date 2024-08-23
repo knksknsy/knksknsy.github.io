@@ -28,20 +28,11 @@
         "summary": {
             "title": "Profil",
             "text": [
-                "Fullstack-Developer mit 3 Jahren Erfahrung in der Entwicklung von Enterprise-Software mittels Angular, Java und Spring. Kompetent in Front- und Backend-Entwicklung, sowie in der Testautomatisierung mittels Selenium, Java und Groovy, mit dem Schwerpunkt auf End-to-End- und API-Tests.",
-                "Expertise in agiler Methodologie sowie in der Zusammenarbeit mit funktionsübergreifenden Teams, um Projekte erfolgreich abzuschließen und kontinuierliche Verbesserung und Lieferung von Software sicherzustellen."
+                "Fullstack-Developer mit 3 Jahren Erfahrung in der Entwicklung von Enterprise-Software mit Angular, Java und Spring. Kompetent in Front- und Backend-Entwicklung, sowie in der Testautomatisierung mittels Selenium und Groovy, mit Fokus auf End-to-End- und API-Tests. Expertise in agiler Methodologie sowie in der Zusammenarbeit mit funktionsübergreifenden Teams, um Projekte erfolgreich abzuschließen und kontinuierliche Verbesserung und Lieferung von Software sicherzustellen."
             ]
         },
         "contact": "Kontakt",
         "technologies": "Technologien:",
-        "languages": {
-            "title": "Sprachen",
-            "values": [
-                "Deutsch",
-                "Türkisch",
-                "Englisch"
-            ]
-        },
         "hobbies": {
             "title": "Hobbies",
             "weight_training": "Kraftsport",
@@ -81,76 +72,106 @@
                     "company": "Groz-Beckert KG",
                     "role": "Fullstack Entwickler",
                     "duration": "03/2022 - heute",
-                    "tasks": [
+                    "tasks_old": [
                         "Entwicklung und Umsetzung der eCommerce-Plattform",
                         "Entwicklung und Umsetzung von Microservices durch Verwendung moderner Technologien, wie z. B. Docker, Kubernetes",
                         "Entwicklung von Web-Apps mittels Angular, JavaScript und TypeScript",
                         "Entwicklung im SAP Hybris-Umfeld auf Basis von Java und Spring mit Schnittstellen zu ERP, BW und FirstSpirit",
                         "Einführung, Beratung, Schulung und 3rd Level Support der Lösungen"
+                    ],
+                    "tasks": [
+                        "Entwicklung, Deployment und Wartung von B2B und B2E Software, einschließlich neuer Features und Anpassung bestehender Funktionalitäten.",
+                        "Enge Zusammenarbeit in interdisziplinären Teams bestehend aus Front-, Backend-Entwicklern, Testern, Product Ownern und Stakeholdern, was die Effizienz und Produktqualität erhöhte.",
+                        "Behebung technischer Schulden durch Refactoring und Abstraktion von Software-Modulen und -Komponenten, was die Code-Qualität und -Wartbarkeit erhöhte und zukünftige Entwicklungs- und Wartungskosten reduzierte.",
+                        "Führende Entwicklung und Automatisierung von Rücksendungs- und Erstattungsprozessen, was die Bearbeitungszeit und Kundenzufriedenheit erhöhte.",
+                        "Führende Entwicklung eines B2E Ressourcen- und Qualitätsmanagementsystems, das die Effizienz und Sicherheitsstandards in Produktionsstätten verbesserte.",
+                        "Entwicklung eines Berechtigungskonzepts für Benutzer mit verschiedenen Rollen, das die Sicherheit und Compliance steigerte.",
+                        "Einführung und Implementierung von Matomo zur Web-Analyse, was zu verbesserten User Insights und einer optimieren User Experience führte.",
+                        "Führende Entwicklung und Automatisierung der Test-Ergebnisübermittlung in JIRA, wodurch der Post-Release-Prozess beschleunigt wurde.",
+                        "Führende Entwicklung, Deployment und Hosting einer Software zur Integration des Test-Managements ins Monitoring-System und automatisierter Benachrichtigung des Bereitschaftsdienstes bei Systemausfällen, was Ausfallzeiten reduzierte, die Dauer der Problembehebungen verkürzte und die Systemverfügbarkeit erhöhte."
                     ]
                 },
                 {
                     "company": "M-Way Solutions GmbH",
                     "role": "Fullstack Entwickler (Werkstudent)",
                     "duration": "09/2016 - 03/2018",
-                    "description": "Entwicklung von Web Applications im Bereich B2E:",
                     "tasks": [
-                        "Frameworkgestützte Entwicklung (client- und serverseitig)",
-                        "Entwurf und Umsetzung von responsiven User-Interfaces",
-                        "Entwicklung und Anbindung von REST-Interfaces",
-                        "Entwicklung von Unit- und E2E-Tests",
+                        "Entwicklung, Deployment und Wartung von Web-Applikationen im Bereich B2B",
+                        "Entwicklung und Anbindung von REST-Schnittstellen",
                         "Entwicklung von CLIs in Node.js",
-                        "Deployment, Betrieb und Wartung von Web-Anwendungen"
-                    ],
-                    "technologies": [
-                        "Angular",
-                        "Ionic",
-                        "TypeScript",
-                        "Node.js",
-                        "SQL",
-                        "Docker",
-                        "HTML",
-                        "CSS/SCSS"
+                        "Entwicklung von Unit- und E2E-Tests",
+                        "Entwurf und Umsetzung von responsiven User-Interfaces"
                     ]
                 }
             ]
         },
         "skills": {
             "title": "Kenntnisse",
-            "levels": [1,2,3,4,5,6],
+            "levels": [1,2,3,4,5],
+            "proficiency_levels": [
+                "Grundkenntnisse",
+                "Kompetent",
+                "Fortgeschritten",
+                "sehr gute Kenntnisse",
+                "Experte"
+            ],
             "domains": [
                 {
                     "name": "Programmiersprachen",
                     "skills": [
-                        { "level": 5, "names": ["Java","TypeScript","Python"] },
-                        { "level": 3, "names": ["C","C++"] }
+                        { "level": 5, "names": ["JavsScript","TypeScript"] },
+                        { "level": 4, "names": ["Python","Java"] },
+                        { "level": 2, "names": ["C","C++"] }
                     ]
                 },
                 {
-                    "name": "Datenbanken",
+                    "name": "Frontend",
                     "skills": [
-                        { "level": 4, "names": ["SQL","MongoDB"] }
+                        { "level": 5, "names": ["Angular","HTML","Bootstrap"] },
+                        { "level": 4, "names": ["RxJS","CSS"] }
                     ]
                 },
                 {
-                    "name": "Web-Technologien",
+                    "name": "Backend",
                     "skills": [
-                        { "level": 5, "names": ["Node.js","Express.js","Angular"] },
-                        { "level": 4, "names": ["HTML","CSS/SCSS"] },
-                        { "level": 3, "names": ["Docker"] }
+                        { "level": 4, "names": ["RESTful APIs"] },
+                        { "level": 3, "names": ["SQL","NoSQL"] },
+                        { "level": 2, "names": ["Spring"] },
+                        { "level": 1, "names": ["SAP Commerce Cloud"] }
                     ]
                 },
                 {
-                    "name": "Mobile App-Entwicklung",
+                    "name": "DevOps & Tools",
                     "skills": [
-                        { "level": 5, "names": ["Android","Ionic"] }
+                        { "level": 5, "names": ["Git","SourceTree","IntelliJ IDEA"] },
+                        { "level": 3, "names": ["Bash","Bazel"] },
+                        { "level": 2, "names": ["CI/CD Pipelines","Docker","AWS (EC2, Route 53, Certificate Manager)"] }
                     ]
                 },
                 {
-                    "name": "Machine Learning",
+                    "name": "Testing",
                     "skills": [
-                        { "level": 5, "names": ["PyTorch","Keras","Pandas"] },
-                        { "level": 4, "names": ["Tensorflow","Scikit-Learn","OpenCV"] }
+                        { "level": 4, "names": ["Katalon Platform","Selenium","Zephyr Squad API","E2E & API Testing"] }
+                    ]
+                },
+                {
+                    "name": "Web Analytics",
+                    "skills": [
+                        { "level": 4, "names": ["Matomo (Tracking & Tag Manager APIs)"] }
+                    ]
+                },
+                {
+                    "name": "Agile Methodologien & Tools",
+                    "skills": [
+                        { "names": ["Scrum", "Change Management", "Daily Standups", "Backlog Refinement", "Retrospektive", "Code Reviews", "Jira", "Confluence", "Arc42 Dokumentation"] }
+                    ]
+                },
+                {
+                    "name": "Sprachen",
+                    "skills": [
+                        { "names": ["Deutsch (Muttersprache)"] },
+                        { "names": ["Englisch (Fließend)"] },
+                        { "names": ["Türkisch (Fließend)"] }
                     ]
                 }
             ]
@@ -285,7 +306,7 @@
                     "Angular",
                     "TypeScript",
                     "HTML",
-                    "CSS/SCSS",
+                    "CSS",
                     "Bing Search API",
                     "Google Cloud Functions",
                     "IBM Cloud Object Storage"
@@ -334,7 +355,7 @@
                     "Angular",
                     "TypeScript",
                     "HTML",
-                    "CSS/SCSS",
+                    "CSS",
                     "Docker",
                     "Watson Text to Speech",
                     "Kairos Face Recognition API",
@@ -414,7 +435,7 @@
                     "Angular",
                     "TypeScript",
                     "HTML",
-                    "CSS/SCSS",
+                    "CSS",
                     "Docker"
                 ],
                 "assets": [
@@ -445,7 +466,7 @@
                     "Angular",
                     "TypeScript",
                     "HTML",
-                    "CSS/SCSS",
+                    "CSS",
                     "Docker"
                 ],
                 "assets": [
@@ -473,7 +494,7 @@
                     "Angular",
                     "TypeScript",
                     "HTML",
-                    "CSS/SCSS",
+                    "CSS",
                     "Chart.js",
                     "Leaflet"
                 ],

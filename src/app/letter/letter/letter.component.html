@@ -28,63 +28,20 @@
 		</button>
 	</div>
 
-	<div *ngIf="company" size="A4" class="print-section">
+	<div *ngIf="company" class="print-section">
 
 		<div class="d-flex flex-column header-container">
 			<h1>{{ 'name' | translate }} <span>{{ 'surname' | translate }}</span></h1>
-			<p>{{ 'degree' | translate }}</p>
+			<p class="job-title">{{ 'job_title' | translate }}
+				<span class="unselectable mx-2">|</span>
+				<span class="degree">{{ 'degree' | translate }}</span>
+			</p>
+			<ng-container *ngTemplateOutlet="privateContact"></ng-container>
 		</div>
 
 		<div class="information d-flex flex-row justify-content-between">
 			<div class="address d-flex flex-column">
 				<ng-container *ngIf="editEnabled; then addressFormView; else addressPrintView"></ng-container>
-				<ng-template #addressFormView>
-					<form [formGroup]="companyForm">
-						<div class="flex">
-							<input placeholder="Company" class="grow" id="company" type="text" formControlName="company">
-						</div>
-						<div class="flex">
-							<input placeholder="Department" class="grow" id="department" type="text" formControlName="department">
-						</div>
-						<div>
-							<form formGroupName="recipient">
-								<div class="flex">
-									<input placeholder="Surname" class="grow-04" id="surname" type="text" formControlName="surname">
-									<input placeholder="Name" class="grow-04" id="name" type="text" formControlName="name">
-									<select class="grow-02" formControlName="gender">
-										<option value="f">f</option>
-										<option value="m">m</option>
-										<option value="">none</option>
-									</select>
-								</div>
-							</form>
-						</div>
-						<div>
-							<form formGroupName="address">
-								<div class="flex">
-									<input placeholder="Street" class="grow" id="street" type="text" formControlName="street">
-								</div>
-			
-								<div class="flex">
-									<input placeholder="Zip" class="grow-02" id="zip" type="text" formControlName="zip">
-									<input placeholder="City" class="grow-08" id="city" type="text" formControlName="city">
-								</div>
-							</form>
-						</div>
-					</form>
-				</ng-template>
-				<ng-template #addressPrintView>
-					<p>{{company.company}}</p>
-					<ng-template [ngIf]="company.department">
-						<p>{{company.department}}</p>
-					</ng-template>
-					<p *ngIf="company.recipient">{{company.recipient.surname}} {{company.recipient.name}}</p>
-					<ng-template [ngIf]="company.address">
-						<p>{{company.address.street}}</p>
-						<p>{{company.address.zip}} {{company.address.city}}</p>
-					</ng-template>
-				</ng-template>
-
 			</div>
 
 			<div *ngIf="globals.privateData" class="d-flex flex-column justify-content-end align-items-end">
@@ -94,9 +51,8 @@
 
 		<div class="row pt-4 main-container">
 
-			<div *ngIf="globals.privateData" class="col-md-3 px-4 d-flex flex-column left-container">
+			<!-- <div *ngIf="globals.privateData" class="col-md-3 px-4 d-flex flex-column left-container">
 				<div class="contact left-box">
-					<h2>{{ 'cv.contact' | translate }}</h2>
 					<div class="row align-items-start w60">
 						<fa-icon class="fa fa-map-marker" [icon]="faMapMarkerAlt" [fixedWidth]="true"></fa-icon>
 						<h3>{{ 'letter.address' | translate }}</h3>
@@ -119,11 +75,10 @@
 					</div>
 					<p><a href="https://{{ 'homepage' | translate}}">{{ 'homepage' | translate }}</a></p>
 				</div>
-			</div>
+			</div> -->
 
-			<div class="col-md-9 px-4 d-flex flex-column right-container">
+			<div class="col-md d-flex flex-column right-container">
 				<div class="right-box">
-
 					<ng-container *ngIf="editEnabled; then HeadingFormView; else HeadingPrintView"></ng-container>
 					<ng-template #HeadingFormView>
 						<form [formGroup]="companyForm" class="flex dir-col">
@@ -138,26 +93,28 @@
 					<ng-template #HeadingPrintView>
 						<ng-container *ngIf="!company.subheading; then heading; else subheading"></ng-container> 
 						<ng-template #heading>
-							<h2>{{company.heading}}</h2>
+							<h2 class="heading">{{company.heading}}</h2>
 						</ng-template>
 						<ng-template #subheading>
-							<h3 style="margin-bottom: 0.5em;">{{company.heading}}</h3>
-							<h2>{{company.subheading}}</h2>
+							<h2 class="heading">{{company.heading}}</h2>
+							<h3 class="subheading">{{company.subheading}}</h3>
 						</ng-template>
 					</ng-template>
 
-					<div *ngIf="company.recipient" class="d-flex flex-column">
-						<div [ngSwitch]="company.recipient.gender">
-							<div *ngSwitchCase="'m'">
-								<p>{{ 'letter.greeting_m' | translate }} {{company.recipient.surname}},</p>
+					<div class="d-flex flex-column mt-3">
+						<ng-container *ngIf="company.recipient">
+							<div [ngSwitch]="company.recipient.gender">
+								<div *ngSwitchCase="'m'">
+									<p>{{ 'letter.greeting_m' | translate }} {{company.recipient.surname}},</p>
+								</div>
+								<div *ngSwitchCase="'f'">
+									<p>{{ 'letter.greeting_f' | translate }} {{company.recipient.surname}},</p>
+								</div>
+								<div *ngSwitchDefault>
+									<p>{{ 'letter.greeting_n' | translate }},</p>
+								</div>
 							</div>
-							<div *ngSwitchCase="'f'">
-								<p>{{ 'letter.greeting_f' | translate }} {{company.recipient.surname}},</p>
-							</div>
-							<div *ngSwitchDefault>
-								<p>{{ 'letter.greeting_n' | translate }},</p>
-							</div>
-						</div>
+						</ng-container>
 						<ng-container *ngIf="editEnabled; then LetterFormView; else LetterPrintView"></ng-container>
 						<ng-template #LetterFormView>
 							<form [formGroup]="companyForm">
@@ -175,7 +132,7 @@
 							</form>
 						</ng-template>
 						<ng-template #LetterPrintView>
-							<p class="large-text" *ngFor="let p of company.letter">{{p}}</p>
+							<p class="justify" *ngFor="let p of company.letter">{{p}}</p>
 						</ng-template>
 					</div>
 
@@ -190,3 +147,98 @@
 		</div>
 	</div>
 </div>
+
+<ng-template #privateContact>
+	<div *ngIf="globals.privateData" class="private-contact pt-3">
+		<div class="row">
+			<div class="col-sm col-md-auto col-lg-auto mr-2">
+				<div class="row align-items-center">
+					<div class="col-auto p-0 icon">
+						<a class="fa fa-map-marker"><fa-icon [icon]="faMapMarkerAlt" [fixedWidth]="true"></fa-icon></a>
+					</div>
+					<div class="col px-1 link">
+						<p class="m-0">{{globals.privateData.street}} <span class="unselectable mx-2">|</span> {{globals.privateData.zip}} {{globals.privateData.city}}</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm col-md-auto col-lg-auto mr-2">
+				<div class="row align-items-center">
+					<div class="col-auto p-0 icon">
+						<a class="fa fa-envelope" href="mailto:{{ 'email' | translate }}" target="_blank"><fa-icon [icon]="faEnvelope" [fixedWidth]="true"></fa-icon></a>
+					</div>
+					<div class="col px-1 link">
+						<a href="mailto:{{ 'email' | translate }}" target="_blank"><p class="m-0">{{ 'email' | translate }}</p></a>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm col-md-auto col-lg-auto mr-2">
+				<div class="row align-items-center">
+					<div class="col-auto p-0 icon">
+						<a class="fa fa-mobile" href="tel:{{ globals.privateData.phone }}"><fa-icon [icon]="faMobileAlt" [fixedWidth]="true"></fa-icon></a>
+					</div>
+					<div class="col px-1 link">
+						<a href="tel:{{globals.privateData.phone}}"><p class="m-0">{{globals.privateData.phone}}</p></a>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm col-md-auto col-lg-auto mr-2">
+				<div class="row align-items-center">
+					<div class="col-auto p-0 icon">
+						<a class="fa fa-globe" href="https://{{ 'homepage' | translate}}"><fa-icon [icon]="faGlobe" [fixedWidth]="true"></fa-icon></a>
+					</div>
+					<div class="col px-1 link">
+						<a href="https://{{ 'homepage' | translate}}"><p class="m-0">{{ 'homepage' | translate }}</p></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</ng-template>
+
+<ng-template #addressFormView>
+	<form [formGroup]="companyForm">
+		<div class="flex">
+			<input placeholder="Company" class="grow" id="company" type="text" formControlName="company">
+		</div>
+		<div class="flex">
+			<input placeholder="Department" class="grow" id="department" type="text" formControlName="department">
+		</div>
+		<div>
+			<form formGroupName="recipient">
+				<div class="flex">
+					<input placeholder="Surname" class="grow-04" id="surname" type="text" formControlName="surname">
+					<input placeholder="Name" class="grow-04" id="name" type="text" formControlName="name">
+					<select class="grow-02" formControlName="gender">
+						<option value="f">f</option>
+						<option value="m">m</option>
+						<option value="">none</option>
+					</select>
+				</div>
+			</form>
+		</div>
+		<div>
+			<form formGroupName="address">
+				<div class="flex">
+					<input placeholder="Street" class="grow" id="street" type="text" formControlName="street">
+				</div>
+
+				<div class="flex">
+					<input placeholder="Zip" class="grow-02" id="zip" type="text" formControlName="zip">
+					<input placeholder="City" class="grow-08" id="city" type="text" formControlName="city">
+				</div>
+			</form>
+		</div>
+	</form>
+</ng-template>
+
+<ng-template #addressPrintView>
+	<p>{{company.company}}</p>
+	<ng-template [ngIf]="company.department">
+		<p>{{company.department}}</p>
+	</ng-template>
+	<p *ngIf="company.recipient">{{company.recipient.surname}} {{company.recipient.name}}</p>
+	<ng-template [ngIf]="company.address">
+		<p>{{company.address.street}}</p>
+		<p>{{company.address.zip}} {{company.address.city}}</p>
+	</ng-template>
+</ng-template>

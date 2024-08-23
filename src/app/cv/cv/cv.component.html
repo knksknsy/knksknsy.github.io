@@ -12,20 +12,20 @@
 		<fa-icon class="fa fa-save" [icon]="faSave" (click)="sendGAEvent('PDF', 'save', 'english')"></fa-icon>
 	</a>
 
-	<div size="A4" class="print-section">
+	<div class="print-section" [ngClass]="{'mobile': isMobile}">
 		<div class="d-flex flex-column header-container">
 			<div class="row m-0">
-				<div class="photo col-lg-4 col-sm p-0 d-flex justify-content-center align-items-center" [ngClass]="{'flex-column': !isMobile && isPublic}">
+				<div class="photo col-md-4 col-lg-4 p-0 px-5 d-flex justify-content-center align-items-center" [ngClass]="{'flex-column': !isMobile && isPublic}">
 					<img id="profile-picture" class="img-fluid" src="./assets/images/profile-image.jpg" (dblclick)="imageClicked()">
 					<ng-container *ngIf="!isMobile && isPublic; then publicContact"></ng-container>
 				</div>
-				<div class="col-lg-8 col-sm p-lg-0 pr-lg-4">
+				<div class="col-md-8 col-lg-8 p-lg-0 pr-lg-4">
 					<div class="name col p-0" [ngClass]="{'my-2': isMobile && !isPublic, 'mb-2': !isMobile, 'mt-2': isMobile && isPublic}">
 						<h1>{{ 'name' | translate }} <span class="bold">{{ 'surname' | translate }}</span></h1>
 						<p *ngIf="isMobile" class="degree">{{ 'degree' | translate }}</p>
 						<p class="job-title">{{ 'job_title' | translate }}
 							<ng-container *ngIf="!isMobile">
-								<span class="mx-2">|</span>
+								<span class="unselectable mx-2">|</span>
 								<span class="degree">{{ 'degree' | translate }}</span>
 							</ng-container>
 						</p>
@@ -37,13 +37,17 @@
 								{{sumText}}
 							</p>
 					</div>
+					<!-- <ng-container *ngIf="isMobile && !isPublic; then privateContact"></ng-container> -->
 					<ng-container *ngIf="!isPublic; then privateContact"></ng-container>
 				</div>
 			</div>
+			<!-- <div *ngIf="!isMobile" class="row m-0 pt-1">
+				<ng-container *ngIf="!isPublic; then privateContact"></ng-container>
+			</div> -->
 		</div>
 
 		<div class="row main-container">
-			<div class="col-md-4 px-4 d-flex flex-column right-container">
+			<div class="col-md-4 col-lg-4 px-4 d-flex flex-column">
 
 				<!-- <div class="right-box">
 					<h2>{{ 'cv.hobbies.title' | translate }}</h2>
@@ -53,26 +57,22 @@
 				<div class="right-box">
 					<h2>{{ 'cv.skills.title' | translate }}</h2>
 					<div class="d-flex flex-column experience" *ngFor="let domain of ('cv.skills.domains' | translate)">
-						<h3>{{ domain.name }}</h3>
-						<div *ngFor="let skill of domain.skills">
+						<h3>{{domain.name}}</h3>
+						<div *ngFor="let skill of domain.skills" [ngClass]="{'mb-1': !skill.level}">
 							<ul class="d-flex flex-row languages">
 								<li *ngFor="let name of skill.names">{{name}}</li>
 							</ul>
-							<div class="d-flex flex-row exp-bar">
+							<div *ngIf="skill.level" class="d-flex flex-row exp-bar">
 								<div *ngFor="let level of ('cv.skills.levels' | translate)" [ngClass]="[skill.level > level - 1 ? 'true' : 'false']"></div>
 							</div>
+							<div class="proficiency">{{ getProficiencyLevel(('cv.skills.levels' | translate), skill.level) | async }}</div>
 						</div>
 					</div>
-				</div>
-
-				<div class="right-box">
-					<h2>{{ 'cv.languages.title' | translate }}</h2>
-					<p *ngFor="let lang of ('cv.languages.values' | translate)">{{lang}}</p>
 				</div>
 			</div>
 
 
-			<div class="col-md-8 pl-lg-0 pr-lg-4 d-flex flex-column left-container" [ngClass]="{'px-4': isMobile}">
+			<div class="col-md-8 col-lg-8 pl-lg-0 pr-lg-4 d-flex flex-column" [ngClass]="{'px-4': isMobile}">
 				<div class="left-box">
 					<h2>{{ 'cv.work.title' | translate }}</h2>
 					<div class="d-flex flex-column content" *ngFor="let comp of ('cv.work.values' | translate)">
@@ -90,13 +90,12 @@
 								<div></div>
 							</div>
 							<div class="d-flex flex-column right-content">
-								<p class="large-text">{{ comp.description }}</p>
-								<ul>
-									<li class="text-left"
-										*ngFor="let task of comp.tasks">{{task}}</li>
+								<p>{{comp.description}}</p>
+								<ul class="comp-tasks">
+									<li *ngFor="let task of comp.tasks">{{task}}</li>
 								</ul>
 								<p *ngIf="comp.technologies">{{ 'cv.technologies' | translate }}</p>
-								<ul class="d-flex flex-row languages tech">
+								<ul class="d-flex flex-row m-0 languages">
 									<li *ngFor="let tech of comp.technologies">{{tech}}</li>
 								</ul>
 							</div>
@@ -122,14 +121,14 @@
 							</div>
 							<div class="d-flex flex-column right-content">
 								<p>{{ ed.major }}</p>
-								<div class="container m-0" *ngIf="ed.grade || ed.thesis">
-									<div *ngIf="ed.grade" class="row">
-										<div class="col-sm-3 p-0">{{ed.grade.title}}</div>
-										<div class="col-sm-9 p-0">{{ed.grade.value}}</div>
+								<div class="ed-container m-0" *ngIf="ed.grade || ed.thesis">
+									<div *ngIf="ed.grade" class="row align-items-baseline">
+										<div class="col-md-3">{{ed.grade.title}}</div>
+										<div class="col-md-9">{{ed.grade.value}}</div>
 									</div>
-									<div *ngIf="ed.thesis" class="row">
-										<div class="col-sm-3 p-0">{{ed.thesis.title}}</div>
-										<div class="col-sm-9 p-0 thesis-title">{{ed.thesis.value}}</div>
+									<div *ngIf="ed.thesis" class="row align-items-baseline">
+										<div class="col-md-3">{{ed.thesis.title}}</div>
+										<div class="col-md-9">{{ed.thesis.value}}</div>
 									</div>
 								</div>
 							</div>
@@ -180,18 +179,29 @@
 
 <ng-template #privateContact>
 	<div *ngIf="globals.privateData" class="private-contact col">
+		<!-- <div *ngIf="isMobile" class="col p-0"> -->
 		<div class="col p-0">
 			<div class="row align-items-center">
 				<div class="col-auto p-0 icon">
 					<a class="fa fa-map-marker"><fa-icon [icon]="faMapMarkerAlt" [fixedWidth]="true"></fa-icon></a>
 				</div>
 				<div class="col px-1 link">
-					<p class="m-0">{{ globals.privateData.street }} <span class="mx-2">|</span> {{ globals.privateData.zip }} {{ globals.privateData.city }}</p>
+					<p class="m-0">{{globals.privateData.street}} <span class="mx-2">|</span> {{globals.privateData.zip}} {{globals.privateData.city}}</p>
 				</div>
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-sm col-lg-auto mr-2">
+			<!-- <div *ngIf="!isMobile" class="col-sm col-md-auto col-lg-auto mr-2">
+				<div class="row align-items-center">
+					<div class="col-auto p-0 icon">
+						<a class="fa fa-map-marker"><fa-icon [icon]="faMapMarkerAlt" [fixedWidth]="true"></fa-icon></a>
+					</div>
+					<div class="col px-1 link">
+						<p class="m-0">{{globals.privateData.street}} <span class="unselectable mx-2">|</span> {{globals.privateData.zip}} {{globals.privateData.city}}</p>
+					</div>
+				</div>
+			</div> -->
+			<div class="col-sm col-md-auto col-lg-auto mr-2">
 				<div class="row align-items-center">
 					<div class="col-auto p-0 icon">
 						<a class="fa fa-envelope" href="mailto:{{ 'email' | translate }}" target="_blank"><fa-icon [icon]="faEnvelope" [fixedWidth]="true"></fa-icon></a>
@@ -201,17 +211,17 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-sm col-lg-auto mr-2">
+			<div class="col-sm col-md-auto col-lg-auto mr-2">
 				<div class="row align-items-center">
 					<div class="col-auto p-0 icon">
 						<a class="fa fa-mobile" href="tel:{{ globals.privateData.phone }}"><fa-icon [icon]="faMobileAlt" [fixedWidth]="true"></fa-icon></a>
 					</div>
 					<div class="col px-1 link">
-						<a href="tel:{{ globals.privateData.phone }}"><p class="m-0">{{ globals.privateData.phone }}</p></a>
+						<a href="tel:{{globals.privateData.phone}}"><p class="m-0">{{globals.privateData.phone}}</p></a>
 					</div>
 				</div>
 			</div>
-			<div class="col-sm col-lg-auto mr-2">
+			<div class="col-sm col-md-auto col-lg-auto mr-2">
 				<div class="row align-items-center">
 					<div class="col-auto p-0 icon">
 						<a class="fa fa-globe" href="https://{{ 'homepage' | translate}}"><fa-icon [icon]="faGlobe" [fixedWidth]="true"></fa-icon></a>
