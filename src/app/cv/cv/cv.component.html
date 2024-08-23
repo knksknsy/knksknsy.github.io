@@ -13,7 +13,7 @@
 	</a>
 
 	<div class="print-section" [ngClass]="{'mobile': isMobile}">
-		<div class="d-flex flex-column header-container">
+		<div class="d-flex flex-column header-container" [ngClass]="{'py-4': isMobile}">
 			<div class="row m-0">
 				<div class="photo col-md-4 col-lg-4 p-0 px-5 d-flex justify-content-center align-items-center" [ngClass]="{'flex-column': !isMobile && isPublic}">
 					<img id="profile-picture" class="img-fluid" src="./assets/images/profile-image.jpg" (dblclick)="imageClicked()">
@@ -46,7 +46,7 @@
 			</div> -->
 		</div>
 
-		<div class="row main-container">
+		<div class="row main-container" [ngClass]="{'py-4': isMobile}">
 			<div class="col-md-4 col-lg-4 px-4 d-flex flex-column">
 
 				<!-- <div class="right-box">

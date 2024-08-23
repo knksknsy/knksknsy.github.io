@@ -6,14 +6,14 @@
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" [ngClass]="{ 'show': navbarOpen }">
-            <div class="navbar-nav ml-auto" [ngClass]="{'mobile': isMobile}">
-                <div class="navbar-nav align-items-end">
+        <div class="navbar-collapse justify-content-end" [@toggleNavbar]="!isMobile ? 'open' : navbarOpen ? 'open' : 'closed'">
+            <div class="navbar-nav align-items-baseline">
+                <div class="navbar-nav">
                     <a class="nav-item nav-link" (click)="navigateRoute('/cv/')">{{ 'cv_short' | translate }}</a>
                     <a class="nav-item nav-link" (click)="navigateRoute('/projects/')">{{ 'projects' | translate}}</a>
                     <a *ngIf="!globals.production" class="nav-item nav-link" (click)="navigateRoute('/letter/')">{{ 'letter.title' | translate}}</a>
                 </div>
-                <div class="language navbar-nav d-flex justify-content-end align-items-center" [ngClass]="{'flex-row': !isMobile}">
+                <div class="language navbar-nav d-flex align-items-center" [ngClass]="{'flex-row': !isMobile}">
                     <a id="german" class="nav-item nav-link" (click)="translateDE()">DE</a>
                     <span *ngIf="!isMobile">|</span>
                     <a id="english" class="english nav-item nav-link" (click)="translateEN()">EN</a>

@@ -1,4 +1,4 @@
-@import '../../../styles/variables';
+@import "../../../styles/variables";
 
 .wrapper {
     display: flex;
@@ -18,7 +18,6 @@
     }
     .navbar-nav {
         a {
-            text-align: end;
             width: 100%;
         }
         a:hover {
@@ -26,14 +25,15 @@
         }
     }
     .language {
-        color: rgba(255, 255, 255, .5) !important;
+        color: rgba(255, 255, 255, 0.5) !important;
         font-family: LatoWebLight;
         font-size: 0.75em;
+        margin-left: auto;
     }
-    .navbar-nav.ml-auto {
-        align-items: baseline;
-        &.mobile {
-            align-items: flex-end;
-        }
+    .collapse {
+        overflow: hidden;
+    }
+    .navbar-toggler {
+        cursor: pointer;
     }
 }

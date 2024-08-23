@@ -4,11 +4,28 @@ import { TranslateService } from '@ngx-translate/core';
 import { GlobalsService } from '../../services/globals/globals.service';
 import { BreakpointService } from 'src/app/services/breakpoint/breakpoint.service';
 import { StorageService } from 'src/app/services/storage/storage.service';
+import { animate, state, style, transition, trigger } from '@angular/animations';
 
 @Component({
 	selector: 'app-header',
 	templateUrl: './header.component.html',
-	styleUrls: ['./header.component.scss']
+	styleUrls: ['./header.component.scss'],
+	animations: [
+		trigger('toggleNavbar', [
+		  state('closed', style({
+			height: '0px',
+			overflow: 'hidden',
+			opacity: 0
+		  })),
+		  state('open', style({
+			height: '*',
+			opacity: 1
+		  })),
+		  transition('closed <=> open', [
+			animate('300ms ease-in-out')
+		  ])
+		])
+	  ]
 })
 export class HeaderComponent implements OnInit {
 
@@ -24,6 +41,9 @@ export class HeaderComponent implements OnInit {
 	ngOnInit(): void {
 		this.breakpointService.isMobile$.subscribe(isMobile => {
 			this.isMobile = isMobile;
+			if (!this.isMobile) {
+				this.navbarOpen = true;
+			}
 		});
 		this.router.events.subscribe((event) => {
 			if (event instanceof NavigationEnd) {
@@ -33,18 +53,13 @@ export class HeaderComponent implements OnInit {
 	}
 
 	navigateRoute(url: string): void {
-		this.router.navigate([url])
-			.then((s) => {
-				if (!s) {
-					if (this.navbarOpen) {
-						this.navbarOpen = !this.navbarOpen
-					}
-				} else {
-					if (this.navbarOpen) {
-						this.navbarOpen = !this.navbarOpen;
-					}
-				}
-			});
+		this.router.navigate([url]).then((s) => {
+			if (!this.isMobile) {
+				this.navbarOpen = true;
+			} else if (this.navbarOpen && this.isMobile) {
+				this.navbarOpen = false;
+			}
+		});
 	}
 
 	toggleNavbar(): void {

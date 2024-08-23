@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClient, provideHttpClient } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
@@ -47,6 +48,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         BrowserModule,
         CommonModule,
         FontAwesomeModule,
+        BrowserAnimationsModule,
         RouterModule.forRoot(appRoutes),
         TranslateModule.forRoot({
             loader: {
