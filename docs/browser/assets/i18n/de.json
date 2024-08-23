@@ -1,0 +1,511 @@
+{
+    "name": "Kaan",
+    "surname": "Keskinsoy",
+    "about_me": "About me",
+    "cv_short": "CV",
+    "cv_long": "Lebenslauf",
+    "projects": "Projekte",
+    "degree": "Computer Science and Media M.Sc.",
+    "discover": "Meine Projekte",
+    "email": "kaan@keskinsoy.com",
+    "homepage": "knksknsy.github.io",
+    "xing": "xing.com/profile/Kaan_Keskinsoy",
+    "linkedin": "linkedin.com/in/Kaan-Keskinsoy",
+    "github": "github.com/knksknsy/",
+    "job_title": "Fullstack-Developer",
+    "letter": {
+        "title": "Anschreiben",
+        "address": "Adresse",
+        "telephone": "Telefon",
+        "email": "Email",
+        "website": "Website",
+        "greeting_m": "Sehr geehrter Herr",
+        "greeting_f": "Sehr geehrte Frau",
+        "greeting_n": "Sehr geehrte Damen und Herren",
+        "sign_off": "Mit freundlichen Grüßen"
+    },
+    "cv": {
+        "summary": {
+            "title": "Profil",
+            "text": [
+                "Fullstack-Developer mit 3 Jahren Erfahrung in der Entwicklung von Enterprise-Software mit Angular, Java und Spring. Kompetent in Front- und Backend-Entwicklung, sowie in der Testautomatisierung mittels Selenium und Groovy, mit Fokus auf End-to-End- und API-Tests. Expertise in agiler Methodologie sowie in der Zusammenarbeit mit funktionsübergreifenden Teams, um Projekte erfolgreich abzuschließen und kontinuierliche Verbesserung und Lieferung von Software sicherzustellen."
+            ]
+        },
+        "contact": "Kontakt",
+        "technologies": "Technologien:",
+        "hobbies": {
+            "title": "Hobbies",
+            "weight_training": "Kraftsport",
+            "cooking": "Kochen"
+        },
+        "education": {
+            "title": "Ausbildung",
+            "values": [
+                {
+                    "institution": "Hochschule der Medien",
+                    "location": "Stuttgart",
+                    "duration": "03/2019 - 09/2021",
+                    "major": "Computer Science and Media (Master of Science)",
+                    "grade": { "title": "Abschlussnote:", "value": "1,2" },
+                    "thesis": { "title": "Abschlussarbeit:", "value": "Machine Learning Methods for Facial Reenactment Creation and Detection" }
+                },
+                {
+                    "institution": "Hochschule der Medien",
+                    "location": "Stuttgart",
+                    "duration": "03/2014 - 03/2019",
+                    "major": "Medieninformatik (Bachelor of Science)",
+                    "grade": { "title": "Abschlussnote:", "value": "1,9" },
+                    "thesis": { "title": "Abschlussarbeit:", "value": "Android Mobility Detection Library" }
+                },
+                {
+                    "institution": "Staatliche Feintechnikschule",
+                    "location": "Villingen-Schwenningen",
+                    "duration": "09/2010 - 07/2013",
+                    "major": "Allgemeine Hochschulreife"
+                }
+            ]
+        },
+        "work": {
+            "title": "Berufserfahrung",
+            "values": [
+                {
+                    "company": "Groz-Beckert KG",
+                    "role": "Fullstack Entwickler",
+                    "duration": "03/2022 - heute",
+                    "tasks_old": [
+                        "Entwicklung und Umsetzung der eCommerce-Plattform",
+                        "Entwicklung und Umsetzung von Microservices durch Verwendung moderner Technologien, wie z. B. Docker, Kubernetes",
+                        "Entwicklung von Web-Apps mittels Angular, JavaScript und TypeScript",
+                        "Entwicklung im SAP Hybris-Umfeld auf Basis von Java und Spring mit Schnittstellen zu ERP, BW und FirstSpirit",
+                        "Einführung, Beratung, Schulung und 3rd Level Support der Lösungen"
+                    ],
+                    "tasks": [
+                        "Entwicklung, Deployment und Wartung von B2B und B2E Software, einschließlich neuer Features und Anpassung bestehender Funktionalitäten.",
+                        "Enge Zusammenarbeit in interdisziplinären Teams bestehend aus Front-, Backend-Entwicklern, Testern, Product Ownern und Stakeholdern, was die Effizienz und Produktqualität erhöhte.",
+                        "Behebung technischer Schulden durch Refactoring und Abstraktion von Software-Modulen und -Komponenten, was die Code-Qualität und -Wartbarkeit erhöhte und zukünftige Entwicklungs- und Wartungskosten reduzierte.",
+                        "Führende Entwicklung und Automatisierung von Rücksendungs- und Erstattungsprozessen, was die Bearbeitungszeit und Kundenzufriedenheit erhöhte.",
+                        "Führende Entwicklung eines B2E Ressourcen- und Qualitätsmanagementsystems, das die Effizienz und Sicherheitsstandards in Produktionsstätten verbesserte.",
+                        "Entwicklung eines Berechtigungskonzepts für Benutzer mit verschiedenen Rollen, das die Sicherheit und Compliance steigerte.",
+                        "Einführung und Implementierung von Matomo zur Web-Analyse, was zu verbesserten User Insights und einer optimieren User Experience führte.",
+                        "Führende Entwicklung und Automatisierung der Test-Ergebnisübermittlung in JIRA, wodurch der Post-Release-Prozess beschleunigt wurde.",
+                        "Führende Entwicklung, Deployment und Hosting einer Software zur Integration des Test-Managements ins Monitoring-System und automatisierter Benachrichtigung des Bereitschaftsdienstes bei Systemausfällen, was Ausfallzeiten reduzierte, die Dauer der Problembehebungen verkürzte und die Systemverfügbarkeit erhöhte."
+                    ]
+                },
+                {
+                    "company": "M-Way Solutions GmbH",
+                    "role": "Fullstack Entwickler (Werkstudent)",
+                    "duration": "09/2016 - 03/2018",
+                    "tasks": [
+                        "Entwicklung, Deployment und Wartung von Web-Applikationen im Bereich B2B",
+                        "Entwicklung und Anbindung von REST-Schnittstellen",
+                        "Entwicklung von CLIs in Node.js",
+                        "Entwicklung von Unit- und E2E-Tests",
+                        "Entwurf und Umsetzung von responsiven User-Interfaces"
+                    ]
+                }
+            ]
+        },
+        "skills": {
+            "title": "Kenntnisse",
+            "levels": [1,2,3,4,5],
+            "proficiency_levels": [
+                "Grundkenntnisse",
+                "Kompetent",
+                "Fortgeschritten",
+                "sehr gute Kenntnisse",
+                "Experte"
+            ],
+            "domains": [
+                {
+                    "name": "Programmiersprachen",
+                    "skills": [
+                        { "level": 5, "names": ["JavsScript","TypeScript"] },
+                        { "level": 4, "names": ["Python","Java"] },
+                        { "level": 2, "names": ["C","C++"] }
+                    ]
+                },
+                {
+                    "name": "Frontend",
+                    "skills": [
+                        { "level": 5, "names": ["Angular","HTML","Bootstrap"] },
+                        { "level": 4, "names": ["RxJS","CSS"] }
+                    ]
+                },
+                {
+                    "name": "Backend",
+                    "skills": [
+                        { "level": 4, "names": ["RESTful APIs"] },
+                        { "level": 3, "names": ["SQL","NoSQL"] },
+                        { "level": 2, "names": ["Spring"] },
+                        { "level": 1, "names": ["SAP Commerce Cloud"] }
+                    ]
+                },
+                {
+                    "name": "DevOps & Tools",
+                    "skills": [
+                        { "level": 5, "names": ["Git","SourceTree","IntelliJ IDEA"] },
+                        { "level": 3, "names": ["Bash","Bazel"] },
+                        { "level": 2, "names": ["CI/CD Pipelines","Docker","AWS (EC2, Route 53, Certificate Manager)"] }
+                    ]
+                },
+                {
+                    "name": "Testing",
+                    "skills": [
+                        { "level": 4, "names": ["Katalon Platform","Selenium","Zephyr Squad API","E2E & API Testing"] }
+                    ]
+                },
+                {
+                    "name": "Web Analytics",
+                    "skills": [
+                        { "level": 4, "names": ["Matomo (Tracking & Tag Manager APIs)"] }
+                    ]
+                },
+                {
+                    "name": "Agile Methodologien & Tools",
+                    "skills": [
+                        { "names": ["Scrum", "Change Management", "Daily Standups", "Backlog Refinement", "Retrospektive", "Code Reviews", "Jira", "Confluence", "Arc42 Dokumentation"] }
+                    ]
+                },
+                {
+                    "name": "Sprachen",
+                    "skills": [
+                        { "names": ["Deutsch (Muttersprache)"] },
+                        { "names": ["Englisch (Fließend)"] },
+                        { "names": ["Türkisch (Fließend)"] }
+                    ]
+                }
+            ]
+        },
+        "projects": [
+            {
+                "title": "Machine Learning Methods for Facial Reenactment Creation and Detection",
+                "description": "Entwicklung und Optimierung von Machine Learning Modellen zur Erzeugung und Erkennung von DeepFakes:",
+                "tasks": [
+                    "Entwicklung der ETL-Pipeline für Video-Datensätze",
+                    "Entwicklung und Optimierung eines generativen und diskriminativen Machine Learning Modells",
+                    "Programmierung von Logging und Monitoring Prozeduren",
+                    "Datenvisualisierung und Auswertung der Ergebnisse"
+                ],
+                "technologies": [
+                    "Python",
+                    "PyTorch",
+                    "Pandas",
+                    "OpenCV",
+                    "Matplotlib"
+                ],
+                "year": "2021",
+                "assets": "./assets/images/projects/thesis_msc",
+                "github": "https://github.com/knksknsy/facial-reenactment"
+            },
+            {
+                "title": "Laborarbeit: Programming Intelligent Applications",
+                "description": "Implementierung von Anwendungen mit Hilfe von Künstlicher Intelligenz und Machine Learning:",
+                "tasks": [
+                    "Data Mining",
+                    "Ziffernerkennung mittels Objekterkennung",
+                    "Generierung von Ziffern mittels Generative Adversarial Networks",
+                    "Word Embeddings und Tiefe Neurale Netze für Dokumenklassifizierung",
+                    "Deep Reinforcement Learning",
+                    "Vohersagen von Zeitreihen mittels Recurrent Neural Networks"
+                ],
+                "technologies": [
+                    "Python",
+                    "Tensorflow",
+                    "Keras",
+                    "Scikit-Learn",
+                    "Pandas",
+                    "Gensim"
+                ],
+                "year": "2020",
+                "assets": "./assets/images/projects/lab_pia",
+                "github": ""
+            },
+            {
+                "title": "3D Ken Burns Effect from a Single Image",
+                "description": "Implementierung des Papers '3D Ken Burns Effect from a Single Image':",
+                "tasks": [
+                    "Modelltraining für das Schätzen und Verfeinern von Tiefenwerten",
+                    "Erzeugung einer Punktwolke aus dem Eingabebild und ihrer geschätzen Tiefenwerte",
+                    "Projezierung von Bildern aus der Punktwolke und Inpainting von Farb- und Tiefenwerte",
+                    "Erweiterung der Punktwolke mittels der Inpainting-Bilder",
+                    "Erzeugung des 3d Effekts aus gewonnenen Bildern aus der Punktwolke"
+                ],
+                "technologies": [
+                    "Python",
+                    "PyTorch",
+                    "OpenCV",
+                    "Pandas"
+                ],
+                "year": "2020",
+                "assets": "./assets/images/projects/stdl",
+                "github": "https://github.com/knksknsy/3d-ken-burns-effect"
+            },
+            {
+                "title": "Smart Penguins",
+                "description": "Entwicklung eines Car2x Systems zur Prävention von Verkehrsunfällen auf Basis eines Mesh Netzwerks:",
+                "tasks": [
+                    "Implementierung einer Android App zum Austausch von BLE-Messages",
+                    "Implementierung des Mesh Netzwerks zur Übertragung von BLE-Messages",
+                    "Implementierung des Frühwarnsystems zum aktuellen Verkehrsgeschehen",
+                    "Dockerization der Softwareumgebung"
+                ],
+                "technologies": [
+                    "C++",
+                    "FruityMesh",
+                    "Android",
+                    "Docker",
+                    "nRF52 Development Kit",
+                    "NordicSemiconductor Android-BLE-Library"
+                ],
+                "assets": [
+                    "assets/images/projects/smart-penguins/smart-penguins-0.png",
+                    "assets/images/projects/smart-penguins/smart-penguins-1.png",
+                    "assets/images/projects/smart-penguins/smart-penguins-2.png",
+                    "assets/images/projects/smart-penguins/smart-penguins-3.png",
+                    "assets/videos/projects/smart-penguins/smart-penguins.mp4"
+                ],
+                "year": "2019",
+                "github": "https://github.com/knksknsy/smart-pinguins"
+            },
+            {
+                "title": "Easy Grow",
+                "description": "Entwicklung eines automatischen Bewässerungssystem für Pflanzen auf Basis des Wi-Fi Mikrochips ESP8266:",
+                "tasks": [
+                    "Entwicklung der Web-Applikation zur Fernsteuerung des Systems",
+                    "Interaktionen über ein Hardware-Interface und einer Web-Applikation",
+                    "Implementierung von WiFi-Funktionen mittels Espressif IoT Platform",
+                    "Dockerization der Softwareumgebung"
+                ],
+                "technologies": [
+                    "C",
+                    "HTML",
+                    "CSS",
+                    "Docker",
+                    "lwIP Netconn API",
+                    "ESP8266 RTOS SDK",
+                    "Espressiv IoT Platform"
+                ],
+                "assets": [
+                    "assets/images/projects/easy-grow/easy-grow-0.png",
+                    "assets/images/projects/easy-grow/easy-grow-1.png"
+                ],
+                "year": "2019",
+                "github": "https://github.com/knksknsy/easy-grow"
+            },
+            {
+                "title": "Next Search",
+                "description": "Cloud basierte Entwicklung einer skalierbaren Suchanwendung für komprimierte Inhaltswiedergabe von Webseiten:",
+                "tasks": [
+                    "Design und Implementierung der Cloud Architektur und Web-App",
+                    "Verarbeiten und Zusammenfassen von Website-Inhalten durch Cloud Functions",
+                    "Caching von komprimierten Inhalten",
+                    "Access Management unterschiedlicher Cloud Provider"
+                ],
+                "technologies": [
+                    "Node.js",
+                    "Angular",
+                    "TypeScript",
+                    "HTML",
+                    "CSS",
+                    "Bing Search API",
+                    "Google Cloud Functions",
+                    "IBM Cloud Object Storage"
+                ],
+                "assets": [
+                    "assets/images/projects/next-search/next-search-0.png",
+                    "assets/images/projects/next-search/next-search-1.png"
+                ],
+                "year": "2019",
+                "github": "https://github.com/knksknsy/next-search"
+            },
+            {
+                "title": "Mobility Detection Library",
+                "description": "Entwicklung einer Android-Bibliothek zur energieeffizienten und präzisen Standortüberwachung, durch die Verwendung von Smartphone-Sensoren, Kontextinformationen und Erkennung von Bewegungsmerkmalen:",
+                "tasks": [
+                    "Datenanalyse von Messwerten zur Erkennung von Bewegungsmerkmalen",
+                    "Analyse und Optimierung des Stromverbrauchs und der Qualität der Genauigkeit durch die Verwendung von Geofences, Bewegungsmerkmale, Netzwerk- und Ladeinformationen",
+                    "Entwicklung der Architektur zur simultanen Verwendung der Bibliothek in mehreren Apps"
+                ],
+                "technologies": [
+                    "Android",
+                    "JavaScript",
+                    "Angular",
+                    "Chart.js",
+                    "Geofencing API",
+                    "Fused Location Provider API"
+                ],
+                "year": "2018",
+                "github": "https://github.com/knksknsy/mobility-detection-library"
+            },
+            {
+                "title": "Autonomous Shuttle",
+                "description": "Ausarbeitung eines Shuttle-Services zur Beförderung von Personengruppen:",
+                "tasks": [
+                    "Design und Implementierung der Webservice-Architektur",
+                    "Interaktive Fahrtgestaltung durch Interessenmatching und Emotionserkennung der Fahrgäste",
+                    "Entwicklung des Systems zur Buchung von Fahrten",
+                    "Interessenmatching durch Analysieren vom Instagram-Feed der Fahrgäste",
+                    "Authentifizierung vor Fahrten mittels Gesichtserkennung"
+                ],
+                "technologies": [
+                    "Node.js",
+                    "Express.js",
+                    "MongoDB",
+                    "Mongoose",
+                    "Angular",
+                    "TypeScript",
+                    "HTML",
+                    "CSS",
+                    "Docker",
+                    "Watson Text to Speech",
+                    "Kairos Face Recognition API",
+                    "Google Cloud Vision API"
+                ],
+                "year": "2018",
+                "github": "https://github.com/knksknsy/autonomous-shuttle"
+            },
+            {
+                "title": "Billtracker",
+                "description": "Entwicklung von nativen Apps in Android und iOS zur Synchronisierung von Belegen in Firebase:",
+                "tasks": [
+                    "Design und Implementierung der Firebase Datenbank und Storage",
+                    "Design und Entwicklung der Android und iOS UIs",
+                    "Synchronisation der Daten und Belege aus Firebase",
+                    "Verwaltung der lokalen Bilder im Dateisystem"
+                ],
+                "technologies": [
+                    "Android",
+                    "Swift",
+                    "Firebase",
+                    "Android Camera API",
+                    "AVFoundation"
+                ],
+                "assets": [
+                    "assets/images/projects/billtracker/billtracker-0.png",
+                    "assets/images/projects/billtracker/billtracker-1.png",
+                    "assets/images/projects/billtracker/billtracker-2.png",
+                    "assets/images/projects/billtracker/billtracker-3.png",
+                    "assets/images/projects/billtracker/billtracker-4.png",
+                    "assets/images/projects/billtracker/billtracker-5.png",
+                    "assets/images/projects/billtracker/billtracker-6.png"
+                ],
+                "year": "2018",
+                "github": "https://github.com/knksknsy/billtracker"
+            },
+            {
+                "title": "Crypto Currency Tracker",
+                "description": "Entwicklung einer Web-Applikation zum Vergleich von Krypto-Währungskursen:",
+                "tasks": [
+                    "Entwicklung durch funktionale Programmiersprache Clojure",
+                    "HTML-Generierung mittels der Clojure-Library Hiccup",
+                    "Anbindung der “CryptoCompare” API für Kursinformationen",
+                    "Aufbereitung der Kursinformationen durch Clojure",
+                    "Visuelle Darstellung der Kursvergleiche in Diagrammen durch clj-xchart"
+                ],
+                "technologies": [
+                    "Clojure",
+                    "Leiningen",
+                    "Luminus",
+                    "Compojure",
+                    "Hiccup",
+                    "clj-xchart",
+                    "CSS"
+                ],
+                "assets": [
+                    "assets/images/projects/crypto-tracker/crypto-tracker-0.png",
+                    "assets/images/projects/crypto-tracker/crypto-tracker-1.png",
+                    "assets/images/projects/crypto-tracker/crypto-tracker-2.png"
+                ],
+                "year": "2018",
+                "github": "https://github.com/knksknsy/crypto-tracker"
+            },
+            {
+                "title": "WatchIt",
+                "description": "Entwicklung einer responsiven Web-Applikation für Film- und Serieninformationen:",
+                "tasks": [
+                    "Design und Implementierung der Webservice-Architektur",
+                    "Design und Entwicklung einer interaktiven und responsiven Web-UI",
+                    "Anbindung der \"The Movie Database\" API",
+                    "Erweiterung des eigenen Webservices zur Erzeugung von Benutzerkonten, Watch- und Favoritenlisten"
+                ],
+                "technologies": [
+                    "Node.js",
+                    "Express.js",
+                    "MongoDB",
+                    "Angular",
+                    "TypeScript",
+                    "HTML",
+                    "CSS",
+                    "Docker"
+                ],
+                "assets": [
+                    "assets/images/projects/watchit/watchit-0.png",
+                    "assets/images/projects/watchit/watchit-1.png",
+                    "assets/images/projects/watchit/watchit-2.png"
+                ],
+                "year": "2017",
+                "github": "https://github.com/knksknsy/watchit"
+            },
+            {
+                "title": "Cap'n Can Webshop",
+                "description": "Entwicklung eines Web-Shops:",
+                "tasks": [
+                    "Design und Implementierung der Webservice-Architektur",
+                    "Design und Entwicklung einer interaktiven und responsiven Web-UI",
+                    "Administrator-Ansicht zur Verwaltung von Produkten",
+                    "Implementierung des Warenkorbs und des Bestellprozesses",
+                    "Implementierung von Sitzungsverwaltungen",
+                    "Vorbeugung von Sicherheitsbedrohungen wie XSS, XSRF und SQL-Injections",
+                    "Verwendung von SSL/TLS-Verschlüsselung"
+                ],
+                "technologies": [
+                    "Node.js",
+                    "Express.js",
+                    "MongoDB",
+                    "Mongoose",
+                    "Angular",
+                    "TypeScript",
+                    "HTML",
+                    "CSS",
+                    "Docker"
+                ],
+                "assets": [
+                    "assets/images/projects/cnc-shop/cnc-shop-0.png",
+                    "assets/images/projects/cnc-shop/cnc-shop-1.png",
+                    "assets/images/projects/cnc-shop/cnc-shop-2.png"
+                ],
+                "year": "2017",
+                "github": "https://github.com/knksknsy/cnc-shop"
+            },
+            {
+                "title": "Private Eye",
+                "description": "Entwicklung mobiler Wetterstationen zur Messung und Visualisierung von Umweltdaten:",
+                "tasks": [
+                    "Design und Implementierung der Webservice-Architektur",
+                    "Design und Entwicklung einer interaktiven und responsiven Web-UI",
+                    "Datenaustausch zwischen Embedded Devices und Webservice",
+                    "Visuelle Darstellung der Standorte und dazugehörige Messwerte"
+                ],
+                "technologies": [
+                    "Node.js",
+                    "Express.js",
+                    "MongoDB",
+                    "Mongoose",
+                    "Angular",
+                    "TypeScript",
+                    "HTML",
+                    "CSS",
+                    "Chart.js",
+                    "Leaflet"
+                ],
+                "assets": [
+                    "assets/images/projects/private-eye/private-eye-0.png",
+                    "assets/images/projects/private-eye/private-eye-1.png",
+                    "assets/images/projects/private-eye/private-eye-2.png"
+                ],
+                "year": "2017",
+                "github": "https://github.com/knksknsy/private-eye"
+            }
+        ]
+    }
+}
