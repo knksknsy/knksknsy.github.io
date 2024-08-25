@@ -12,20 +12,20 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
 	styleUrls: ['./header.component.scss'],
 	animations: [
 		trigger('toggleNavbar', [
-		  state('closed', style({
-			height: '0px',
-			overflow: 'hidden',
-			opacity: 0
-		  })),
-		  state('open', style({
-			height: '*',
-			opacity: 1
-		  })),
-		  transition('closed <=> open', [
-			animate('300ms ease-in-out')
-		  ])
+			state('closed', style({
+				height: '0px',
+				overflow: 'hidden',
+				opacity: 0
+			})),
+			state('open', style({
+				height: '*',
+				opacity: 1
+			})),
+			transition('closed <=> open', [
+				animate('300ms ease-in-out')
+			])
 		])
-	  ]
+	]
 })
 export class HeaderComponent implements OnInit {
 

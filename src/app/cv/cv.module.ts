@@ -3,15 +3,13 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClient, provideHttpClient } from '@angular/common/http';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-
 import { UiModule } from '../ui/ui.module';
 import { CVComponent } from './cv/cv.component';
 import { GlobalsService } from '../services/globals/globals.service';
 import { BreakpointService } from '../services/breakpoint/breakpoint.service';
-
+import { PipesModule } from '../services/pipes/pipes.module';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faSave, faUnlock, faLock, faMapMarkerAlt, faMobileAlt, faEnvelope, faGlobe, faPen, faPlus, faMinus, faAngleRight, faAngleLeft } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faLinkedin, faXing } from '@fortawesome/free-brands-svg-icons';
@@ -29,6 +27,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         BrowserModule,
         FontAwesomeModule,
         UiModule,
+        PipesModule,
         TranslateModule.forRoot({
             loader: {
                 provide: TranslateLoader,

@@ -9,6 +9,11 @@
     text-shadow: 2px 2px 2px rgba(0,0,0,0.5);
 }
 
+fa-icon {
+    -webkit-filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .7));
+    filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .7));
+}
+
 .info {
     margin-bottom: 2em !important;
 }
@@ -16,8 +21,10 @@
 .name {
     text-align: right;
     h1 {
+        color: white !important;
         font-family: LatoWebBold;
         font-size: 4.5em !important;
+        text-shadow: black 3px 3px 10px;
     }
     span {
         font-family: LatoWebLight;
@@ -27,6 +34,7 @@
 .job-title {
     color: white !important;
     font-family: LatoWebLight;
+    text-shadow: black 3px 3px 10px;
     &.mobile {
         text-align: center;
     }
@@ -35,6 +43,7 @@
 .degree {
     color: white !important;
     font-family: LatoWebHairline;
+    text-shadow: black 3px 3px 10px;
     font-size: 2em !important;
 }
 
@@ -60,7 +69,7 @@
 
 .discover {
     .fa {
-        font-size: 3.25em;
+        font-size: 2em;
         color: white !important;
     }
     .fa:hover {
@@ -70,6 +79,7 @@
         font-family: LatoWebLight;
         font-size: 2em;
         color: white !important;
+        text-shadow: black 3px 3px 10px;
     }
     .fa:active, .fa:focus {
         outline: 0;
@@ -98,7 +108,7 @@
         margin-top: $container-padding;
     }
     .discover .fa {
-        font-size: 3em;
+        font-size: 2em;
     }
     .discover a {
         font-size: 1.5em;

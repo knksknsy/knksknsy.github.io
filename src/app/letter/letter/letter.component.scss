@@ -28,6 +28,8 @@
         margin: 0;
         page-break-after: always;
         page-break-inside: avoid;
+        -webkit-filter: none;
+        filter: none;
         h3 a, .contact a, .icons a {
             text-decoration: none;
         }
@@ -114,6 +116,8 @@ textarea {
     height: 35px;
     width: 35px;
     border: 2px solid white;
+    -webkit-filter: drop-shadow(8px 8px 5px rgba(0, 0, 0, .7));
+    filter: drop-shadow(8px 8px 5px rgba(0, 0, 0, .7));
 }
 
 .print-btn {
@@ -149,6 +153,8 @@ div.print-section {
     max-width: 21cm;
     min-height: 29.7cm;
     max-height: 29.7cm;
+    -webkit-filter: drop-shadow(8px 8px 5px rgba(0, 0, 0, .7));
+    filter: drop-shadow(8px 8px 5px rgba(0, 0, 0, .7));
 }
 
 .header-container {

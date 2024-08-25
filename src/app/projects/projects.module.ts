@@ -4,18 +4,14 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { CommonModule } from '@angular/common';
 import { HttpClient, provideHttpClient } from '@angular/common/http';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-
-import { UiModule } from '../ui/ui.module';
-
-import { ProjectsComponent } from './projects/projects.component';
-
-import { AssetTypePipe } from './asset-pipe/asset-type.pipe';
-
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { UiModule } from '../ui/ui.module';
+import { BreakpointService } from '../services/breakpoint/breakpoint.service';
+import { ProjectsComponent } from './projects/projects.component';
+import { PipesModule } from '../services/pipes/pipes.module';
 
 export function HttpLoaderFactory(http: HttpClient) {
     return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -23,14 +19,14 @@ export function HttpLoaderFactory(http: HttpClient) {
 
 @NgModule({
     declarations: [
-        ProjectsComponent,
-        AssetTypePipe
+        ProjectsComponent
     ],
     imports: [
         CommonModule,
         BrowserModule,
         FontAwesomeModule,
         UiModule,
+        PipesModule,
         TranslateModule.forRoot({
             loader: {
                 provide: TranslateLoader,
@@ -44,7 +40,8 @@ export function HttpLoaderFactory(http: HttpClient) {
         ProjectsComponent
     ],
     providers: [
-        provideHttpClient()
+        provideHttpClient(),
+        BreakpointService
     ]
 })
 export class ProjectsModule {

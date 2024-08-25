@@ -9,6 +9,13 @@
     .carousel-indicators {
         li {
             padding: 2px;
+            width: 15px;
+            height: 15px;
+            margin-right: 10px;
+            margin-left: 10px;
+            margin-bottom: 15px;
+            border: 0;
+            border-radius: 3px;
         }
     }
     .carousel-inner {
@@ -18,7 +25,9 @@
         display: none;
     }
     .col-sm-4 {
-        margin-bottom: 6rem;
+        &.mobile {
+            margin-bottom: 8rem;
+        }
     }
 }
 
@@ -68,6 +77,7 @@
 
 .fa.fa-github fa-icon {
     font-size: 24pt;
+    color: white;
     &:hover {
         text-decoration: none;
     }

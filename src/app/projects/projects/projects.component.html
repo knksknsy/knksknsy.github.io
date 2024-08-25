@@ -20,7 +20,7 @@
                                     <a class="fa fa-github" [href]="project.github" target="_blank"><fa-icon [icon]="faGithub"></fa-icon></a>
                                 </div>
                             </div>
-                            <div class="col-sm-4">
+                            <div class="col-sm-4" [ngClass]="{'mobile': isMobile}">
                                 <carousel class="image-carousel" *ngIf="isArray(project.assets)">
                                     <slide *ngFor="let asset of project.assets">
                                         <div class="img-wrapper">

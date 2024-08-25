@@ -28,7 +28,7 @@
         "summary": {
             "title": "Profil",
             "text": [
-                "Fullstack-Developer mit 3 Jahren Erfahrung in der Entwicklung von Enterprise-Software mit Angular, Java und Spring. Kompetent in Front- und Backend-Entwicklung, sowie in der Testautomatisierung mittels Selenium und Groovy, mit Fokus auf End-to-End- und API-Tests. Expertise in agiler Methodologie sowie in der Zusammenarbeit mit funktionsübergreifenden Teams, um Projekte erfolgreich abzuschließen und kontinuierliche Verbesserung und Lieferung von Software sicherzustellen."
+                "<span class='mr-1' style='text-transform: uppercase; font-family: \"LatoWebHairline\";'>Profil</span>Fullstack-Developer mit 3 Jahren Erfahrung in der Entwicklung von Enterprise-Software mit Angular, Java und Spring. Kompetent in Front- und Backend-Entwicklung, sowie in der Test&shy;automatisierung mittels Selenium und Groovy, mit Fokus auf E2E- und API-Tests. Expertise in agiler Metho&shy;dologie sowie in der Zusammenarbeit mit interdisziplinären Teams, um Projekte erfolgreich abzu&shy;schließen und kontinuierliche Verbesserung und Lieferung von Software sicherzustellen."
             ]
         },
         "contact": "Kontakt",
@@ -44,7 +44,7 @@
                 {
                     "institution": "Hochschule der Medien",
                     "location": "Stuttgart",
-                    "duration": "03/2019 - 09/2021",
+                    "duration": "03/2019 &mdash; 09/2021",
                     "major": "Computer Science and Media (Master of Science)",
                     "grade": { "title": "Abschlussnote:", "value": "1,2" },
                     "thesis": { "title": "Abschlussarbeit:", "value": "Machine Learning Methods for Facial Reenactment Creation and Detection" }
@@ -52,7 +52,7 @@
                 {
                     "institution": "Hochschule der Medien",
                     "location": "Stuttgart",
-                    "duration": "03/2014 - 03/2019",
+                    "duration": "03/2014 &mdash; 03/2019",
                     "major": "Medieninformatik (Bachelor of Science)",
                     "grade": { "title": "Abschlussnote:", "value": "1,9" },
                     "thesis": { "title": "Abschlussarbeit:", "value": "Android Mobility Detection Library" }
@@ -60,7 +60,7 @@
                 {
                     "institution": "Staatliche Feintechnikschule",
                     "location": "Villingen-Schwenningen",
-                    "duration": "09/2010 - 07/2013",
+                    "duration": "09/2010 &mdash; 07/2013",
                     "major": "Allgemeine Hochschulreife"
                 }
             ]
@@ -71,7 +71,7 @@
                 {
                     "company": "Groz-Beckert KG",
                     "role": "Fullstack Entwickler",
-                    "duration": "03/2022 - heute",
+                    "duration": "03/2022 &mdash; heute",
                     "tasks_old": [
                         "Entwicklung und Umsetzung der eCommerce-Plattform",
                         "Entwicklung und Umsetzung von Microservices durch Verwendung moderner Technologien, wie z. B. Docker, Kubernetes",
@@ -87,14 +87,14 @@
                         "Führende Entwicklung eines B2E Ressourcen- und Qualitätsmanagementsystems, das die Effizienz und Sicherheitsstandards in Produktionsstätten verbesserte.",
                         "Entwicklung eines Berechtigungskonzepts für Benutzer mit verschiedenen Rollen, das die Sicherheit und Compliance steigerte.",
                         "Einführung und Implementierung von Matomo zur Web-Analyse, was zu verbesserten User Insights und einer optimieren User Experience führte.",
-                        "Führende Entwicklung und Automatisierung der Test-Ergebnisübermittlung in JIRA, wodurch der Post-Release-Prozess beschleunigt wurde.",
+                        "Führende Entwicklung und Automatisierung der Test-Ergebnisübermittlung in Jira, wodurch der Post-Release-Prozess beschleunigt wurde.",
                         "Führende Entwicklung, Deployment und Hosting einer Software zur Integration des Test-Managements ins Monitoring-System und automatisierter Benachrichtigung des Bereitschaftsdienstes bei Systemausfällen, was Ausfallzeiten reduzierte, die Dauer der Problembehebungen verkürzte und die Systemverfügbarkeit erhöhte."
                     ]
                 },
                 {
                     "company": "M-Way Solutions GmbH",
                     "role": "Fullstack Entwickler (Werkstudent)",
-                    "duration": "09/2016 - 03/2018",
+                    "duration": "09/2016 &mdash; 03/2018",
                     "tasks": [
                         "Entwicklung, Deployment und Wartung von Web-Applikationen im Bereich B2B",
                         "Entwicklung und Anbindung von REST-Schnittstellen",
