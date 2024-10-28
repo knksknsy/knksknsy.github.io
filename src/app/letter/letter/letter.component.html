@@ -119,7 +119,7 @@
 						<ng-template #LetterFormView>
 							<form [formGroup]="companyForm">
 								<div class="flex" formArrayName="letter" *ngFor="let l of letterArray['controls']; let i = index;">
-									<textarea class="grow mb-1 justify" [formControlName]="i" placeholder="Type..." id="letter" textareaAutoresize></textarea>
+									<textarea class="grow mb-1" [formControlName]="i" placeholder="Type..." id="letter" textareaAutoresize></textarea>
 								</div>
 								<div>
 									<button class="btn btn-link p-0" (click)="addParagraph()">
@@ -132,7 +132,7 @@
 							</form>
 						</ng-template>
 						<ng-template #LetterPrintView>
-							<p class="justify" *ngFor="let p of company.letter">{{p}}</p>
+							<p *ngFor="let p of company.letter">{{p}}</p>
 						</ng-template>
 					</div>
 
