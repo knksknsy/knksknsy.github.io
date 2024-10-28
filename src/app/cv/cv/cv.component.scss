@@ -137,6 +137,8 @@ fa-icon {
 }
 
 .private-contact {
+    -webkit-filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, 0.7));
+    filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, 0.7));
     div.row {
         .col-sm {
             display: inline-flex;
@@ -146,7 +148,7 @@ fa-icon {
         color: inherit !important;
     }
     .link p {
-        font-family: LatoWebHairline;
+        font-family: LatoWebLight;
         font-size: 9pt;
     }
     .icon a {
@@ -184,11 +186,9 @@ fa-icon {
     font-family: LatoWebLight;
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
-    .header-right {
+    .name {
         -webkit-filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, 0.7));
         filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, 0.7));
-    }
-    .name {
         h1 {
             margin: 0;
             font-size: 2em;
@@ -331,6 +331,10 @@ fa-icon {
                     font-family: LatoWeb;
                     font-size: 9pt;
                     text-wrap: nowrap;
+                    // Disable functionalities for automatic telephone detection
+                    pointer-events: none;
+                    text-decoration: none;
+                    color:inherit;
                 }
                 div {
                     text-wrap: nowrap;
@@ -371,6 +375,8 @@ fa-icon {
     li {
         line-height: 10pt;
         margin-bottom: 0.5em;
+        -webkit-hyphens: auto;
+        hyphens: auto;
     }
 }
 

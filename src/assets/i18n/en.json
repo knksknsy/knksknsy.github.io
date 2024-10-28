@@ -18,7 +18,7 @@
         "summary": {
             "title": "Summary",
             "text": [
-                "<span class='mr-1' style='text-transform: uppercase; font-family: \"LatoWebHairline\";'>Summary</span>Fullstack Developer with 3 years experience in enterprise software development using Angular, Java, and Spring. Proficient in front- and backend development, including test automation with Selenium and Groovy, with a focus on E2E and API testing. Adept in agile methodologies and ability to collaborate in interdisciplinary teams, ensuring efficient project management and continuous improvement and delivery of software and delivery."
+                "<span class='mr-1' style='text-transform: uppercase; font-family: \"LatoWebHairline\";'>Summary</span>Fullstack Developer with experience in enterprise software development using Angular, Java, and Spring. Proficient in front- and backend development as well as test automation with Selenium and Groovy, specifically for E2E and API testing.. Adept in agile methodologies and ability to collaborate in cross-functional teams, ensuring efficient project management and continuous improvement and delivery of software and delivery."
             ]
         },
         "contact": "Contact",
@@ -62,23 +62,16 @@
                     "company": "Groz-Beckert KG",
                     "role": "Fullstack Developer",
                     "duration": "03/2022 &mdash; today",
-                    "tasks_old": [
-                        "Development and implementation of eCommerce platform",
-                        "Development and implementation of microservices using modern technologies, including Docker, Kubernetes",
-                        "Development of web apps using Angular, JavaScript and TypeScript",
-                        "Development in the SAP Hybris environment based on Java and Spring with interfaces to ERP, BW and FirstSpirit",
-                        "Introduction, consulting, training and 3rd level support of the solutions"
-                    ],
                     "tasks": [
-                        "Development, deployment, and maintenance of B2B and B2E software, including new features and customization of existing functionalities.",
-                        "Close collaboration in interdisciplinary teams consisting of front-end, back-end developers, testers, product owners, and stakeholders, which increased efficiency and product quality.",
-                        "Resolution of technical debt through refactoring and abstraction of software modules and components, improving code quality and maintainability and reducing future development and maintenance costs.",
-                        "Leading development and automation of return and refund processes, which increased processing speed and customer satisfaction.",
-                        "Leading development of a B2E resource and quality management system, which improved efficiency and safety standards in production facilities.",
+                        "Development, deployment, and maintenance of Angular web apps and in SAP Commerce Cloud based on Java and Spring, including new features and customization of existing functionalities.",
+                        "Resolving technical debt through refactoring and abstraction of software modules and components, improving code quality and maintainability and reducing future development and maintenance costs.",
+                        "Development and automation of return and refund processes, which increased processing speed and customer satisfaction.",
+                        "Development of a B2E resource and quality management system, which improved efficiency and safety standards in production facilities.",
                         "Development of a permissions concept for users with different roles, which enhanced security and compliance.",
                         "Introduction and implementation of Matomo for web analysis, leading to improved user insights and an optimized user experience.",
-                        "Leading development and automation of test result submission in Jira, accelerating the post-release process.",
-                        "Leading development, deployment, and hosting a software for integrating test management into the monitoring system and automated notification of the on-call service in case of system failures, which reduced downtime, shortened problem resolution times, and increased system availability."
+                        "Leading development of an automated integration of the test result from the test management system into Jira, resulting in an acceleration of the release processes.",
+                        "Leading development, deployment, and hosting of to integrate test management into the monitoring system with automated notification of system failures. This reduced downtimes, shortened response times for troubleshooting and increased system availability.",
+                        "Introduction, consulting, training and 3rd level support of the solutions"
                     ]
                 },
                 {
@@ -134,7 +127,7 @@
                     "name": "DevOps & Tools",
                     "skills": [
                         { "level": 5, "names": ["Git","SourceTree","IntelliJ IDEA"] },
-                        { "level": 3, "names": ["Bash","Bazel"] },
+                        { "level": 3, "names": ["Windows","Linux","Bash","Bazel"] },
                         { "level": 2, "names": ["CI/CD Pipelines","Docker","AWS (EC2, Route 53, Certificate Manager)"] }
                     ]
                 },

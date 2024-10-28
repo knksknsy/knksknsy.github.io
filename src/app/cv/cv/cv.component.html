@@ -89,7 +89,7 @@
 							<div class="d-flex flex-column right-content">
 								<p>{{comp.description}}</p>
 								<ul class="comp-tasks">
-									<li *ngFor="let task of comp.tasks">{{task}}</li>
+									<li *ngFor="let task of comp.tasks" [innerHTML]="task"></li>
 								</ul>
 								<p *ngIf="comp.technologies">{{ 'cv.technologies' | translate }}</p>
 								<ul class="d-flex flex-row m-0 languages">
