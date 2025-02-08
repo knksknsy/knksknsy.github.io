@@ -128,8 +128,7 @@
                     "skills": [
                         {
                             "names": [
-                                "JavsScript",
-                                "TypeScript",
+                                "TypeScript & JavaScript",
                                 "Java",
                                 "Python",
                                 "Groovy"
@@ -233,8 +232,8 @@
                         {
                             "names": [
                                 "German (Native)",
-                                "English (Fluent)",
-                                "Turkish (Fluent)"
+                                "Turkish (Native)",
+                                "English (Fluent)"
                             ],
                             "display": "column"
                         }
