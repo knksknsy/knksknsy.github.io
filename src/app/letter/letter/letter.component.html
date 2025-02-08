@@ -132,14 +132,21 @@
 							</form>
 						</ng-template>
 						<ng-template #LetterPrintView>
-							<p *ngFor="let p of company.letter">{{p}}</p>
+							<p *ngFor="let p of company.letter" [innerHTML]="p"></p>
 						</ng-template>
 					</div>
 
-					<div class="d-flex flex-column">
+					<div class="d-flex flex-column signature">
 						<p>{{ 'letter.sign_off' | translate}},</p>
 						<img class="img-fluid" src="./assets/images/signature.png" width="155px">
 						<p>Kaan Keskinsoy</p>
+					</div>
+
+					<div *ngIf="!!('letter.attachments' | translate)" class="d-flex flex-column attachments">
+						<p *ngIf="!!('letter.attachments_title' | translate)">{{ 'letter.attachments_title' | translate}}:</p>
+						<ul class="pl-4">
+							<li *ngFor="let attachment of 'letter.attachments' | translate">{{attachment}}</li>
+						</ul>
 					</div>
 
 				</div>

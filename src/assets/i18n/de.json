@@ -22,13 +22,19 @@
         "greeting_m": "Sehr geehrter Herr",
         "greeting_f": "Sehr geehrte Frau",
         "greeting_n": "Sehr geehrte Damen und Herren",
-        "sign_off": "Mit freundlichen Grüßen"
+        "sign_off": "Mit freundlichen Grüßen",
+        "attachments_title": "Anlagen",
+        "attachments": [
+            "Lebenslauf",
+            "Masterzeugnis",
+            "Arbeitszeugnis"
+        ]
     },
     "cv": {
         "summary": {
             "title": "Profil",
             "text": [
-                "<span class='mr-1' style='text-transform: uppercase; font-family: \"LatoWebHairline\";'>Profil</span>Fullstack-Developer mit Erfahrung in der Entwicklung von Enterprise-Software mit Angular, Java und Spring. Kompetent in Front- und Backend-Entwicklung, sowie in der Test&shy;automatisierung mittels Selenium und Groovy, insbesondere für E2E- und API-Tests. Expertise in agilen Metho&shy;dologien sowie in der Zusammenarbeit mit cross-funktionalen Teams, um Projekte erfolgreich abzu&shy;schließen und kontinuierliche Verbesserung und Lieferung von Software sicherzustellen."
+                "<span class='mr-1' style='text-transform: uppercase; font-family: \"LatoWebHairline\";'>Profil</span>Fullstack-Developer mit Erfahrung in der Entwicklung von Enterprise-Software mit Angular, Java und Spring. Kompetent in Front- und Backend-Entwicklung, sowie in der Test&shy;automatisierung mittels Selenium und Groovy, insbesondere für E2E- und API-Tests. Expertise in agilen Metho&shy;dologien sowie in der Zusammenarbeit mit cross-funktionalen Teams, um Projekte erfolgreich abzu&shy;schließen und kontinuierliche Verbesserung und Bereitstellung von Software sicherzustellen."
             ]
         },
         "contact": "Kontakt",
@@ -46,16 +52,28 @@
                     "location": "Stuttgart",
                     "duration": "03/2019 &mdash; 09/2021",
                     "major": "Computer Science and Media (Master of Science)",
-                    "grade": { "title": "Abschlussnote:", "value": "1,2" },
-                    "thesis": { "title": "Abschlussarbeit:", "value": "Machine Learning Methods for Facial Reenactment Creation and Detection" }
+                    "grade": {
+                        "title": "Abschlussnote:",
+                        "value": "1,2"
+                    },
+                    "thesis": {
+                        "title": "Abschlussarbeit:",
+                        "value": "Machine Learning Methods for Facial Reenactment Creation and Detection"
+                    }
                 },
                 {
                     "institution": "Hochschule der Medien",
                     "location": "Stuttgart",
                     "duration": "03/2014 &mdash; 03/2019",
                     "major": "Medieninformatik (Bachelor of Science)",
-                    "grade": { "title": "Abschlussnote:", "value": "1,9" },
-                    "thesis": { "title": "Abschlussarbeit:", "value": "Android Mobility Detection Library" }
+                    "grade": {
+                        "title": "Abschlussnote:",
+                        "value": "1,9"
+                    },
+                    "thesis": {
+                        "title": "Abschlussarbeit:",
+                        "value": "Android Mobility Detection Library"
+                    }
                 },
                 {
                     "institution": "Staatliche Feintechnikschule",
@@ -73,15 +91,15 @@
                     "role": "Fullstack Entwickler",
                     "duration": "03/2022 &mdash; heute",
                     "tasks": [
-                        "Entwicklung, Deployment und Wartung von Angular Web-Applikationen und in SAP Commerce Cloud auf Basis von Java und Spring, einschließlich neuer Features und Anpassung bestehender Funktionalitäten.",
-                        "Behebung technischer Schulden durch Refactoring und Abstraktion von Software&shy;modulen und -komponenten unter Anwendung der SOLID-Prinzipien. Dies führte zu einer ver&shy;bes&shy;ser&shy;ten Code&shy;qualität und Wartbarkeit sowie einer Senkung der zukünftigen Entwicklungs- und Wartungskosten.",
-                        "Entwicklung und Automatisierung von Rücksendungs- und Erstattungs&shy;prozessen, was die Bearbeitungs&shy;zeiten verkürzte und die Kunden&shy;zufriedenheit steigerte.",
-                        "Entwicklung eines B2E-Ressourcen- und Qualitäts&shy;management&shy;systems, das die Effizienz und Sicherheits&shy;standards in Produktions&shy;stätten verbesserte.",
-                        "Entwicklung eines Berechtigungs&shy;konzepts für Benutzer mit verschiedenen Rollen, das die Sicherheit und Compliance steigerte.",
-                        "Einführung und Implementierung von Matomo zur Webanalyse, wodurch tiefere Einblicke in die User Insights gewonnen und die User Experience optimiert werden konnte.",
-                        "Führende Entwicklung einer automatisierten Integration von Testergebnissen aus dem Test&shy;management&shy;system in Jira, was zu einer Beschleunigung der Release-Prozesse führte.",
-                        "Führende Entwicklung, Deployment und Hosting einer Software zur Integration des Test&shy;managements in das Monitoring-System mit automatisierter Benachrichtigung bei System&shy;ausfällen. Dies reduzierte Ausfallzeiten, verkürzte die Reaktionszeiten bei Problem&shy;behebungen und erhöhte die Systemverfügbarkeit.",
-                        "Einführung, Beratung, Schulung und 3rd Level Support der Lösungen"
+                        "Entwicklung, Deployment und Wartung von Web-Applikationen mit Angular, SAP Commerce Cloud auf Basis von Java und Spring für Enterprise-Lösungen.",
+                        "Refactoring und Abstraktion unter Anwendung von SOLID-Prinzipien, um Codequalität und Wartbarkeit zu verbessern.",
+                        "Automatisierung von Rücksendungs- und Erstattungsprozessen zur Effizienzsteigerung.",
+                        "Entwicklung eines B2E-Ressourcen- und Qualitätsmanagementsystems zur Optimierung von Sicherheitsstandards.",
+                        "Konzeption eines Berechtigungssystems für Benutzerrollen zur Steigerung von Sicherheit und Compliance.",
+                        "Einführung und Entwicklung von Matomo Web Analytics zur Optimierung der User Experience.",
+                        "Automatisierte Integration von Testergebnissen in Jira, wodurch Release-Prozesse beschleunigt wurden.",
+                        "Führende Entwicklung eines Monitoring-Systems mit automatisierter Fehlerbenachrichtigung zur Reduzierung von Ausfallzeiten.",
+                        "Beratung, Schulung und 3rd-Level-Support für implementierte Lösungen."
                     ]
                 },
                 {
@@ -89,7 +107,7 @@
                     "role": "Fullstack Entwickler (Werkstudent)",
                     "duration": "09/2016 &mdash; 03/2018",
                     "tasks": [
-                        "Entwicklung, Deployment und Wartung von Web-Applikationen im Bereich B2B",
+                        "Entwicklung, Deployment und Wartung von Web-Applikationen mit Angular und Ionic",
                         "Entwicklung und Anbindung von REST-Schnittstellen",
                         "Entwicklung von CLIs in Node.js",
                         "Entwicklung von Unit- und E2E-Tests",
@@ -100,7 +118,13 @@
         },
         "skills": {
             "title": "Kenntnisse",
-            "levels": [1,2,3,4,5],
+            "levels": [
+                1,
+                2,
+                3,
+                4,
+                5
+            ],
             "proficiency_levels": [
                 "Grundkenntnisse",
                 "Kompetent",
@@ -112,59 +136,118 @@
                 {
                     "name": "Programmiersprachen",
                     "skills": [
-                        { "level": 5, "names": ["JavsScript","TypeScript"] },
-                        { "level": 4, "names": ["Python","Java"] },
-                        { "level": 2, "names": ["C","C++"] }
+                        {
+                            "names": [
+                                "TypeScript & JavsScript",
+                                "Java",
+                                "Python",
+                                "Groovy"
+                            ],
+                            "display": "column"
+                        }
                     ]
                 },
                 {
                     "name": "Frontend",
                     "skills": [
-                        { "level": 5, "names": ["Angular","HTML","Bootstrap"] },
-                        { "level": 4, "names": ["RxJS","CSS"] }
+                        {
+                            "names": [
+                                "Angular",
+                                "RxJS",
+                                "HTML",
+                                "CSS",
+                                "Bootstrap"
+                            ],
+                            "display": "column"
+                        }
                     ]
                 },
                 {
                     "name": "Backend",
                     "skills": [
-                        { "level": 4, "names": ["RESTful APIs"] },
-                        { "level": 3, "names": ["SQL","NoSQL"] },
-                        { "level": 2, "names": ["Spring"] },
-                        { "level": 1, "names": ["SAP Commerce Cloud"] }
+                        {
+                            "names": [
+                                "Spring",
+                                "SAP Commerce Cloud",
+                                "RESTful APIs",
+                                "SQL",
+                                "NoSQL"
+                            ],
+                            "display": "column"
+                        }
                     ]
                 },
                 {
                     "name": "DevOps & Tools",
                     "skills": [
-                        { "level": 5, "names": ["Git","SourceTree","IntelliJ IDEA"] },
-                        { "level": 3, "names": ["Windows","Linux","Bash","Bazel"] },
-                        { "level": 2, "names": ["CI/CD Pipelines","Docker","AWS (EC2, Route 53, Certificate Manager)"] }
+                        {
+                            "names": [
+                                "Git",
+                                "Bash",
+                                "CI/CD Pipelines",
+                                "AWS (EC2, Route 53, Certificate Manager)",
+                                "Bazel",
+                                "Docker"
+                            ],
+                            "display": "column"
+                        }
                     ]
                 },
                 {
                     "name": "Testing",
                     "skills": [
-                        { "level": 4, "names": ["Katalon Platform","Selenium","Zephyr Squad API","E2E & API Testing"] }
+                        {
+                            "names": [
+                                "Katalon Platform",
+                                "E2E & API Testing",
+                                "Zephyr Squad API",
+                                "Selenium"
+                            ],
+                            "display": "column"
+                        }
                     ]
                 },
                 {
                     "name": "Web Analytics",
                     "skills": [
-                        { "level": 4, "names": ["Matomo (Tracking & Tag Manager APIs)"] }
+                        {
+                            "names": [
+                                "Matomo (Tracking & Tag Manager APIs)"
+                            ],
+                            "display": "column"
+                        }
                     ]
                 },
                 {
                     "name": "Agile Methodologien & Tools",
                     "skills": [
-                        { "names": ["Scrum", "Change Management", "Daily Standups", "Backlog Refinement", "Retrospektive", "Code Reviews", "Jira", "Confluence", "Arc42 Dokumentation"] }
+                        {
+                            "names": [
+                                "Scrum",
+                                "Jira",
+                                "Confluence",
+                                "Change Management",
+                                "Daily Standups",
+                                "Backlog Refinement",
+                                "Retrospektive",
+                                "Code Reviews",
+                                "Arc42 Dokumentation"
+                            ],
+                            "display": "row"
+                        }
                     ]
                 },
                 {
                     "name": "Sprachen",
                     "skills": [
-                        { "names": ["Deutsch (Muttersprache)"] },
-                        { "names": ["Englisch (Fließend)"] },
-                        { "names": ["Türkisch (Fließend)"] }
+                        {
+                            "names": [
+                                "Deutsch (Muttersprache)",
+                                "Englisch (Fließend)",
+                                "Türkisch (Fließend)"
+                            ],
+                            "display": "column"
+                        }
                     ]
                 }
             ]

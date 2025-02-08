@@ -365,3 +365,20 @@ div.print-section {
         width: 30vw;
     }
 }
+
+.signature {
+    p:first-child {
+        margin-bottom: 0.25rem;
+    }
+    p:last-child {
+        position: relative;
+        top: -1rem;
+    }
+}
+
+.attachments {
+    p {
+        text-decoration: underline;
+        margin-bottom: 0;
+    }
+}

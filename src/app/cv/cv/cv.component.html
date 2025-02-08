@@ -56,7 +56,7 @@
 					<div class="d-flex flex-column experience" *ngFor="let domain of ('cv.skills.domains' | translate)">
 						<h3>{{domain.name}}</h3>
 						<div *ngFor="let skill of domain.skills" [ngClass]="{'mb-1': !skill.level}">
-							<ul class="d-flex flex-row languages">
+							<ul class="d-flex languages" [ngClass]="skill.display === 'row' ? 'flex-row' : 'flex-column'">
 								<li *ngFor="let name of skill.names">{{name}}</li>
 							</ul>
 							<div *ngIf="skill.level" class="d-flex flex-row exp-bar">
