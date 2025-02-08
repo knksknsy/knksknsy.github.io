@@ -201,10 +201,10 @@
                     "name": "Web Analytics",
                     "skills": [
                         {
-                            "level": 4,
                             "names": [
                                 "Matomo (Tracking & Tag API)"
-                            ]
+                            ],
+                            "display": "column"
                         }
                     ]
                 },
