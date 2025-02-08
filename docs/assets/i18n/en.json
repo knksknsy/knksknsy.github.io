@@ -12,7 +12,13 @@
         "greeting_m": "Dear Mr.",
         "greeting_f": "Dear Ms.",
         "greeting_n": "Dear Hiring Manager",
-        "sign_off": "Sincerely"
+        "sign_off": "Sincerely",
+        "attachments_title": "Attachments",
+        "attachments": [
+            "CV",
+            "Master's Degree Certificate",
+            "Employer Reference"
+        ]
     },
     "cv": {
         "summary": {
@@ -36,16 +42,28 @@
                     "location": "Stuttgart",
                     "duration": "03/2019 &mdash; 09/2021",
                     "major": "Computer Science and Media (Master of Science)",
-                    "grade": { "title": "Final grade:", "value": "1.2" },
-                    "thesis": { "title": "Thesis:", "value": "Machine Learning Methods for Facial Reenactment Creation and Detection" }
+                    "grade": {
+                        "title": "Final grade:",
+                        "value": "1.2"
+                    },
+                    "thesis": {
+                        "title": "Thesis:",
+                        "value": "Machine Learning Methods for Facial Reenactment Creation and Detection"
+                    }
                 },
                 {
                     "institution": "Hochschule der Medien",
                     "location": "Stuttgart",
                     "duration": "03/2014 &mdash; 03/2019",
                     "major": "Computer Science and Media (Bachelor of Science)",
-                    "grade": { "title": "Final grade:", "value": "1.9" },
-                    "thesis": { "title": "Thesis:", "value": "Android Mobility Detection Library" }
+                    "grade": {
+                        "title": "Final grade:",
+                        "value": "1.9"
+                    },
+                    "thesis": {
+                        "title": "Thesis:",
+                        "value": "Android Mobility Detection Library"
+                    }
                 },
                 {
                     "institution": "Staatliche Feintechnikschule",
@@ -63,15 +81,15 @@
                     "role": "Fullstack Developer",
                     "duration": "03/2022 &mdash; today",
                     "tasks": [
-                        "Development, deployment, and maintenance of Angular web apps and in SAP Commerce Cloud based on Java and Spring, including new features and customization of existing functionalities.",
-                        "Resolving technical debt through refactoring and abstraction of software modules and components, improving code quality and maintainability and reducing future development and maintenance costs.",
-                        "Development and automation of return and refund processes, which increased processing speed and customer satisfaction.",
-                        "Development of a B2E resource and quality management system, which improved efficiency and safety standards in production facilities.",
-                        "Development of a permissions concept for users with different roles, which enhanced security and compliance.",
-                        "Introduction and implementation of Matomo for web analysis, leading to improved user insights and an optimized user experience.",
-                        "Leading development of an automated integration of the test result from the test management system into Jira, resulting in an acceleration of the release processes.",
-                        "Leading development, deployment, and hosting of to integrate test management into the monitoring system with automated notification of system failures. This reduced downtimes, shortened response times for troubleshooting and increased system availability.",
-                        "Introduction, consulting, training and 3rd level support of the solutions"
+                        "Development, deployment, and maintenance of web applications using Angular and SAP Commerce Cloud based on Java and Spring for enterprise solutions.",
+                        "Refactoring and abstraction using SOLID principles to improve code quality and maintainability.",
+                        "Automate return and refund processes, increasing operational efficiency.",
+                        "Development of a B2E resource and quality management system to enhance safety standards",
+                        "Development of a role-based authorization system to improve security and compliance.",
+                        "Introduction and development of Matomo Web Analytics to optimize user experience.",
+                        "Automate test result integration in Jira, accelerating release processes.",
+                        "Leading development of a monitoring system with automated error notifications, reducing downtime.",
+                        "Provide consulting, training, and 3rd-level support for implemented solutions."
                     ]
                 },
                 {
@@ -79,7 +97,7 @@
                     "role": "Fullstack Developer (student employee)",
                     "duration": "09/2016 &mdash; 03/2018",
                     "tasks": [
-                        "Development, deployment, and maintenance of B2E Web Apps",
+                        "Development, deployment, and maintenance of B2E web applications using using Angular and Ionic",
                         "Development and consumption of REST interfaces",
                         "Development of CLIs based on Node.js",
                         "Development of unit and E2E tests",
@@ -90,7 +108,13 @@
         },
         "skills": {
             "title": "Skills",
-            "levels": [1,2,3,4,5],
+            "levels": [
+                1,
+                2,
+                3,
+                4,
+                5
+            ],
             "proficiency_levels": [
                 "Beginner",
                 "Competent",
@@ -102,59 +126,118 @@
                 {
                     "name": "Programming Languages",
                     "skills": [
-                        { "level": 5, "names": ["JavsScript","TypeScript"] },
-                        { "level": 4, "names": ["Python","Java"] },
-                        { "level": 2, "names": ["C","C++"] }
+                        {
+                            "names": [
+                                "JavsScript",
+                                "TypeScript",
+                                "Java",
+                                "Python",
+                                "Groovy"
+                            ],
+                            "display": "column"
+                        }
                     ]
                 },
                 {
                     "name": "Frontend",
                     "skills": [
-                        { "level": 5, "names": ["Angular","HTML","Bootstrap"] },
-                        { "level": 4, "names": ["RxJS","CSS"] }
+                        {
+                            "names": [
+                                "Angular",
+                                "RxJS",
+                                "HTML",
+                                "CSS"
+                            ],
+                            "display": "column"
+                        }
                     ]
                 },
                 {
                     "name": "Backend",
                     "skills": [
-                        { "level": 4, "names": ["RESTful APIs"] },
-                        { "level": 3, "names": ["SQL","NoSQL"] },
-                        { "level": 2, "names": ["Spring"] },
-                        { "level": 1, "names": ["SAP Commerce Cloud"] }
+                        {
+                            "names": [
+                                "Spring",
+                                "SAP Commerce Cloud",
+                                "RESTful APIs",
+                                "SQL",
+                                "NoSQL"
+                            ],
+                            "display": "column"
+                        }
                     ]
                 },
                 {
                     "name": "DevOps & Tools",
                     "skills": [
-                        { "level": 5, "names": ["Git","SourceTree","IntelliJ IDEA"] },
-                        { "level": 3, "names": ["Windows","Linux","Bash","Bazel"] },
-                        { "level": 2, "names": ["CI/CD Pipelines","Docker","AWS (EC2, Route 53, Certificate Manager)"] }
+                        {
+                            "names": [
+                                "Git",
+                                "Bash",
+                                "CI/CD Pipelines",
+                                "AWS (EC2, Route 53, ACM)",
+                                "Bazel",
+                                "Docker"
+                            ],
+                            "display": "column"
+                        }
                     ]
                 },
                 {
                     "name": "Testing",
                     "skills": [
-                        { "level": 4, "names": ["Katalon Platform","Selenium","Zephyr Squad API","E2E & API Testing"] }
+                        {
+                            "names": [
+                                "Katalon Platform",
+                                "E2E & API Testing",
+                                "Zephyr Squad API",
+                                "Selenium"
+                            ],
+                            "display": "column"
+                        }
                     ]
                 },
                 {
                     "name": "Web Analytics",
                     "skills": [
-                        { "level": 4, "names": ["Matomo (Tracking & Tag Manager APIs)"] }
+                        {
+                            "names": [
+                                "Matomo (Tracking & Tag API)"
+                            ],
+                            "display": "column"
+                        }
                     ]
                 },
                 {
                     "name": "Agile Methodologies & Tools",
                     "skills": [
-                        { "names": ["Scrum", "Change Management", "Daily Standups", "Backlog Refinement", "Retrospective", "Code Reviews", "Jira", "Confluence", "Arc42 Documentation"] }
+                        {
+                            "names": [
+                                "Scrum",
+                                "Change Management",
+                                "Jira",
+                                "Confluence",
+                                "Daily Standups",
+                                "Backlog Refinement",
+                                "Retrospective",
+                                "Code Reviews",
+                                "Arc42 Documentation"
+                            ],
+                            "display": "row"
+                        }
                     ]
                 },
                 {
                     "name": "Languages",
                     "skills": [
-                        { "names": ["German (Native)"] },
-                        { "names": ["English (Fluent)"] },
-                        { "names": ["Turkish (Fluent)"] }
+                        {
+                            "names": [
+                                "German (Native)",
+                                "English (Fluent)",
+                                "Turkish (Fluent)"
+                            ],
+                            "display": "column"
+                        }
                     ]
                 }
             ]
