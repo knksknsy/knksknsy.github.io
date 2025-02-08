@@ -155,8 +155,7 @@
                                 "Angular",
                                 "RxJS",
                                 "HTML",
-                                "CSS",
-                                "Bootstrap"
+                                "CSS"
                             ],
                             "display": "column"
                         }
@@ -185,7 +184,7 @@
                                 "Git",
                                 "Bash",
                                 "CI/CD Pipelines",
-                                "AWS (EC2, Route 53, Certificate Manager)",
+                                "AWS (EC2, Route 53, ACM)",
                                 "Bazel",
                                 "Docker"
                             ],
@@ -212,7 +211,7 @@
                     "skills": [
                         {
                             "names": [
-                                "Matomo (Tracking & Tag Manager APIs)"
+                                "Matomo (Tracking & Tag API)"
                             ],
                             "display": "column"
                         }
@@ -224,9 +223,9 @@
                         {
                             "names": [
                                 "Scrum",
+                                "Change Management",
                                 "Jira",
                                 "Confluence",
-                                "Change Management",
                                 "Daily Standups",
                                 "Backlog Refinement",
                                 "Retrospektive",

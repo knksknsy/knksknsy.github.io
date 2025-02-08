@@ -1,4 +1,4 @@
-@import '../../../styles/variables';
+@import 'styles/variables';
 @import "bootstrap/scss/bootstrap-grid";
 
 @include media-breakpoint-down(md) {
@@ -212,7 +212,7 @@ fa-icon {
             .degree {
                 margin: 0;
                 font-family: LatoWebHairline;
-                font-size: 0.75em;
+                font-size: 1em;
             }
         }
     }
@@ -222,8 +222,8 @@ fa-icon {
             font-size: 9pt;
             margin: 0;
             display: block;
-            -webkit-hyphens: auto;
-            hyphens: auto;
+            // -webkit-hyphens: auto;
+            // hyphens: auto;
         }
         p.mobile {
             text-align: left;
@@ -271,7 +271,6 @@ fa-icon {
     h2 {
         font-family: LatoWebBold;
         font-size: 12pt;
-        margin: 0;
     }
     p {
         font-family: LatoWeb;
@@ -288,7 +287,6 @@ fa-icon {
     h2 {
         font-family: LatoWebBold;
         font-size: 12pt;
-        margin: 0;
     }
     .content {
         &:last-of-type {
@@ -307,7 +305,7 @@ fa-icon {
                 .hor-bar {
                     width: 100%;
                     height: 3px;
-                    background-color: #0066CC;
+                    background-color: $primary-color;
                     margin-right: -5px;
                     border-top-right-radius: 5rem;
                     border-bottom-right-radius: 5rem;
@@ -321,7 +319,7 @@ fa-icon {
                 h3, h3>a {
                     font-family: LatoWeb;
                     font-size: 10pt;
-                    color: #0066CC;
+                    color: $primary-color;
                     margin: 0;
                     span {
                         font-family: LatoWebLight;
@@ -353,7 +351,7 @@ fa-icon {
                 div {
                     width: 3px;
                     height: 100%;
-                    background-color: #0066CC;
+                    background-color: $primary-color;
                     border-bottom-left-radius: 5rem;
                     border-bottom-right-radius: 5rem;
                 }
@@ -377,6 +375,14 @@ fa-icon {
         margin-bottom: 0.5em;
         -webkit-hyphens: auto;
         hyphens: auto;
+        list-style-type: none;
+    }
+    li::before {
+        // position: relative;
+        // top: -5px;
+        text-indent: -7px;
+        content: "-";
+        display: inline-block;
     }
 }
 
@@ -397,7 +403,7 @@ ul {
     h3 {
         font-family: LatoWeb;
         font-size: 10pt;
-        color: #0066CC;
+        color: $primary-color;
         margin-bottom: 0.5em;
     }
     .exp-bar {
@@ -408,7 +414,7 @@ ul {
             margin: 2px 2px 2px 0;
             border-radius: 5rem;
             &.true {
-                background-color: #0066CC;
+                background-color: $primary-color;
             }
             &.false {
                 background-color: lightgray;    
@@ -436,7 +442,7 @@ ul {
     padding-left: 0.125rem;
     li {
         font-family: LatoWeb;
-        font-size: 8pt;
+        font-size: 9pt;
         list-style-position: inside;
     }
 }
@@ -456,11 +462,12 @@ ul {
     li:last-of-type::after {
         content: "";
     }
-    li::after {
-        position: relative;
-        bottom: 3px;
-        left: 5px;
-        content: ".";
+    li::before {
+        // position: relative;
+        // bottom: 3px;
+        // left: 5px;
+        text-indent: -7px;
+        content: "-";
         display: inline-block;
     }
 }
@@ -471,10 +478,11 @@ ul {
         white-space: nowrap;
     }
     li::before {
-        position: relative;
-        bottom: 3px;
-        left: -5px;
-        content: ".";
+        // position: relative;
+        // bottom: 3px;
+        // left: -5px;
+        text-indent: -7px;
+        content: "-";
         display: inline-block;
     }
 }

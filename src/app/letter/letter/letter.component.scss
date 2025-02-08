@@ -1,4 +1,4 @@
-@import "../../../styles/variables";
+@import "styles/variables";
 @import "bootstrap/scss/bootstrap-grid";
 
 @page {
@@ -73,7 +73,7 @@ textarea {
     border-bottom: 1px solid lightgray;
     &:focus {
         outline: none;
-        border-bottom: 2px solid #0066cc;
+        border-bottom: 2px solid $primary-color;
     }
 }
 
@@ -270,7 +270,7 @@ div.print-section {
                 .hor-bar {
                     width: 100%;
                     height: 3px;
-                    background-color: #0066cc;
+                    background-color: $primary-color;
                 }
             }
             .location {
@@ -281,7 +281,7 @@ div.print-section {
                 h3 {
                     font-family: LatoWeb;
                     font-size: 12pt;
-                    color: #0066cc;
+                    color: $primary-color;
                     margin: 0;
                     span {
                         font-family: LatoWebLight;
@@ -305,7 +305,7 @@ div.print-section {
                 div {
                     width: 3px;
                     height: 100%;
-                    background-color: #0066cc;
+                    background-color: $primary-color;
                 }
             }
         }
@@ -319,14 +319,14 @@ div.print-section {
     div h3 {
         font-family: LatoWeb;
         font-size: 12pt;
-        color: #0066cc;
+        color: $primary-color;
     }
     fa-icon {
         position: relative;
         left: -0.25rem;
     }
     div fa-icon {
-        color: #0066cc;
+        color: $primary-color;
     }
     p {
         margin: 0;
@@ -378,7 +378,15 @@ div.print-section {
 
 .attachments {
     p {
-        text-decoration: underline;
+        font-family: 'LatoWebBold';
         margin-bottom: 0;
+    }
+    li {
+        list-style-type: none;
+    }
+    li::before {
+        text-indent: -10px;
+        content: "-";
+        display: inline-block;
     }
 }
