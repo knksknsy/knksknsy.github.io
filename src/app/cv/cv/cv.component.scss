@@ -57,8 +57,12 @@ div.print-section {
     .btn.btn-circle {
         display: none;
     }
-    .private-contact a {
-        text-decoration: none;
+    .private-contact {
+        -webkit-filter: none !important;
+        filter: none !important;
+        a {
+            text-decoration: none;       
+        }
     }
 }
 
@@ -237,8 +241,6 @@ fa-icon {
     margin: 0;
     padding-top: 1.5rem !important;
 }
-
-
 
 .photo {
     .img-fluid {
