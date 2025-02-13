@@ -145,6 +145,8 @@ textarea {
 }
 
 div.print-section {
+    display: flex;
+    flex-direction: column;
     background-color: white;
     //box-shadow: 0 0 0.5cm rgba(0, 0, 0, 0.5);
     margin: 0 auto;
@@ -227,8 +229,9 @@ div.print-section {
 }
 
 .main-container {
+    display: flex;
+    flex-grow: 1;
     justify-content: center;
-    height: calc(90% - 3em);
     margin: 0;
     padding: 2.5rem 2.5rem 3rem 2.5rem !important;
     font-size: 10pt;
@@ -349,7 +352,10 @@ div.print-section {
     text-align: justify;
 }
 
-.right-box  {
+.right-box {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
     h3 {
         font-family: LatoWeb;
         font-size: 12pt;
@@ -377,6 +383,7 @@ div.print-section {
 }
 
 .attachments {
+    margin-top: auto;
     p {
         font-family: 'LatoWebBold';
         margin-bottom: 0;

@@ -81,15 +81,17 @@
                     "role": "Fullstack Developer",
                     "duration": "03/2022 &mdash; today",
                     "tasks": [
-                        "Development, deployment, and maintenance of web applications using Angular and SAP Commerce Cloud based on Java and Spring for enterprise solutions.",
-                        "Refactoring and abstraction using SOLID principles to improve code quality and maintainability.",
-                        "Automate return and refund processes, increasing operational efficiency.",
-                        "Development of a B2E resource and quality management system to enhance safety standards",
-                        "Development of a role-based authorization system to improve security and compliance.",
-                        "Introduction and development of Matomo Web Analytics to optimize user experience.",
-                        "Automate test result integration in Jira, accelerating release processes.",
-                        "Leading development of a monitoring system with automated error notifications, reducing downtime.",
-                        "Provide consulting, training, and 3rd-level support for implemented solutions."
+                        "Development, optimization, and maintenance of Angular web applications as part of a globally rolled-out customer portal with e-commerce functionality.",
+                        "Development and maintenance of e-commerce solutions based on SAP Commerce Cloud.",
+                        "Development and maintenance of scalable microservice architectures using Java and Spring.",
+                        "Automation of return and refund processes to increase efficiency.",
+                        "Development of an audit system for logging needle breaks in the manufacturing process.",
+                        "Design and development of a role-based authorization system.",
+                        "Development and optimization of the web analytics solution for the customer portal using Matomo to optimize the user experience.",
+                        "Conception, lead development, deployment, and optimization of a monitoring system for monitoring the test management system.",
+                        "Automated integration of test results in Jira, accelerating the release process.",
+                        "Utilization of agile methodologies and toolsets as a member of one of several Scrum teams.",
+                        "Consulting, training, and 2nd-level support for developed solutions."
                     ]
                 },
                 {
