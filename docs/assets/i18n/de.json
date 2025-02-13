@@ -91,15 +91,17 @@
                     "role": "Fullstack Entwickler",
                     "duration": "03/2022 &mdash; heute",
                     "tasks": [
-                        "Entwicklung, Deployment und Wartung von Web-Applikationen mit Angular, SAP Commerce Cloud auf Basis von Java und Spring für Enterprise-Lösungen.",
-                        "Refactoring und Abstraktion unter Anwendung von SOLID-Prinzipien, um Codequalität und Wartbarkeit zu verbessern.",
+                        "Entwicklung, Optimierung und Wartung von Angular-Webapplikationen im Rahmen eines weltweit ausgerollten Kundenportals mit E-Commerce Funktionalität.",
+                        "Entwicklung und Wartung von E-Commerce-Lösungen auf Basis der SAP Commerce Cloud.",
+                        "Entwicklung und Wartung skalierbarer Microservice-Architekturen mit Java und Spring.",
                         "Automatisierung von Rücksendungs- und Erstattungsprozessen zur Effizienzsteigerung.",
-                        "Entwicklung eines B2E-Ressourcen- und Qualitätsmanagementsystems zur Optimierung von Sicherheitsstandards.",
-                        "Konzeption eines Berechtigungssystems für Benutzerrollen zur Steigerung von Sicherheit und Compliance.",
-                        "Einführung und Entwicklung von Matomo Web Analytics zur Optimierung der User Experience.",
+                        "Entwicklung eines Auditsystems zur Protokollierung von Nadelbrüchen in der Konfektion.",
+                        "Konzeption und Entwicklung eines Berechtigungssystems für Benutzerrollen.",
+                        "Entwicklung und Optimierung der Web Analytics Lösung für das Kundenportal mit Hilfe von Matomo zur Optimierung der User Experience.",
+                        "Konzeption, Lead-Entwicklung, Deployment und Optimierung eines Monitoring-Systems zur Überwachung des Testmanagementsystems.",
                         "Automatisierte Integration von Testergebnissen in Jira, wodurch Release-Prozesse beschleunigt wurden.",
-                        "Führende Entwicklung eines Monitoring-Systems mit automatisierter Fehlerbenachrichtigung zur Reduzierung von Ausfallzeiten.",
-                        "Beratung, Schulung und 3rd-Level-Support für implementierte Lösungen."
+                        "Verwendung agiler Methoden und Toolsets als Mitglied eines von mehreren Scrum Teams.",
+                        "Beratung, Schulung und 2nd-Level-Support für entwickelte Lösungen."
                     ]
                 },
                 {
